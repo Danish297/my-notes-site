@@ -1,0 +1,165 @@
+[
+  {
+    "objectID": "notes/transformers.html",
+    "href": "notes/transformers.html",
+    "title": "Transformers",
+    "section": "",
+    "text": "Transformers process sequences using attention rather than recurrence.\n\n\nAttention lets a model decide which parts of an input sequence are relevant to each output position.\n\n\n\n\nTokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "Transformers"
+    ]
+  },
+  {
+    "objectID": "notes/transformers.html#why-attention-matters",
+    "href": "notes/transformers.html#why-attention-matters",
+    "title": "Transformers",
+    "section": "",
+    "text": "Attention lets a model decide which parts of an input sequence are relevant to each output position.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "Transformers"
+    ]
+  },
+  {
+    "objectID": "notes/transformers.html#notes",
+    "href": "notes/transformers.html#notes",
+    "title": "Transformers",
+    "section": "",
+    "text": "Tokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "Transformers"
+    ]
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Dainsh297",
+    "section": "",
+    "text": "I write practical notes on AI, computer vision, software engineering, and the things I’m learning while building.\nRead the notes View projects"
+  },
+  {
+    "objectID": "notes/index.html#now",
+    "href": "notes/index.html#now",
+    "title": "Dainsh297",
+    "section": "Now",
+    "text": "Now\nI’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.\nWhen I’m not reading papers or debugging training pipelines, I’m usually learning something new, improving my tooling, or writing about what I wish I had understood earlier."
+  },
+  {
+    "objectID": "notes/index.html#featured-notes",
+    "href": "notes/index.html#featured-notes",
+    "title": "Dainsh297",
+    "section": "Featured notes",
+    "text": "Featured notes\n\n\nDINOv3\nNotes on vision foundation models, representation learning, and how modern self-supervised models are trained.\nvision foundations\n\n\nPerception Encoder for ReID\nA practical walkthrough of CLIP-based perception encoders and their use in person re-identification.\nCLIP reid\n\n\nMulti-stage Training\nTraining notes, experiment setup, and lessons learned from fine-tuning detection models.\ntraining YOLO\n\n\nAll notes →"
+  },
+  {
+    "objectID": "notes/index.html#shelves",
+    "href": "notes/index.html#shelves",
+    "title": "Dainsh297",
+    "section": "Shelves",
+    "text": "Shelves\nHand-picked paths through the notes on this site.\n\n\nVision\nNotes on image models, representation learning, detection, and visual understanding.\n\n\nTraining\nExperiment logs, fine-tuning workflows, debugging notes, and practical model-training lessons.\n\n\nRe-identification\nNotes on embedding models, retrieval, metric learning, and person re-identification."
+  },
+  {
+    "objectID": "notes/index.html#projects",
+    "href": "notes/index.html#projects",
+    "title": "Dainsh297",
+    "section": "Projects",
+    "text": "Projects\nA few things I have built, explored, or documented.\n\n\nDatabase Upgrade from 12c to 19c\nUpgraded Oracle EBS database version 12.1.0.2 to 19.28 to make sure its latest while keep certified with our current EBS version 12.1.3. we have future plan to upgrade the EBS too from 12.1.3 to 12.2.14\nOracle EBS Oracle DB Solaris\n\n\nProject Two\nA short description of the problem solved and the main technical idea.\nONNX DeepStream Deployment\n\n\nProject Three\nA small tool, notebook, or experiment that demonstrates a concept.\nPython Notebooks Research\n\n\nView all projects →"
+  },
+  {
+    "objectID": "notes/index.html#elsewhere",
+    "href": "notes/index.html#elsewhere",
+    "title": "Dainsh297",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\n  Find me on"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nThis website is a personal learning notebook.\nIt is built with Quarto, hosted on GitHub Pages, and updated through Git."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dainsh297",
+    "section": "",
+    "text": "I write practical notes on AI, computer vision, software engineering, and the things I’m learning while building.\nRead the notes View projects"
+  },
+  {
+    "objectID": "index.html#now",
+    "href": "index.html#now",
+    "title": "Dainsh297",
+    "section": "Now",
+    "text": "Now\nI’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.\nWhen I’m not reading papers or debugging training pipelines, I’m usually learning something new, improving my tooling, or writing about what I wish I had understood earlier."
+  },
+  {
+    "objectID": "index.html#featured-notes",
+    "href": "index.html#featured-notes",
+    "title": "Dainsh297",
+    "section": "Featured notes",
+    "text": "Featured notes\n\n\nDINOv3\nNotes on vision foundation models, representation learning, and how modern self-supervised models are trained.\nvision foundations\n\n\nPerception Encoder for ReID\nA practical walkthrough of CLIP-based perception encoders and their use in person re-identification.\nCLIP reid\n\n\nMulti-stage Training\nTraining notes, experiment setup, and lessons learned from fine-tuning detection models.\ntraining YOLO\n\n\nAll notes →"
+  },
+  {
+    "objectID": "index.html#achievements",
+    "href": "index.html#achievements",
+    "title": "Dainsh297",
+    "section": "Achievements",
+    "text": "Achievements\nHand-picked paths through the notes on this site.\n\n\nOracle DB Recovery & Cloning Automation\nDesigned and implemented a menu-driven, automated Oracle Database recovery and cloning framework, replacing manual processes with a standardized solution to improve efficiency, reliability, scalability, and turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced the existing Oracle Database creation framework to support newer database versions and enable parallel database creation across multiple target nodes.\n\n\nBanking Application Logic Optimization\nIdentified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience"
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Dainsh297",
+    "section": "Projects",
+    "text": "Projects\nA few things I have built, explored, or documented.\n\n\nOracle DB & EBS Administration\nExperienced in Oracle Database and EBS administration, including Database/EBS upgrades, and deployment of various DB architectures such as RAC, non-RAC, and Multitenant (CDB/PDB).\nFocused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.\nTechnologies: Oracle DB 12c Linux Solaris Clients: CACIB · Mount Sinai · ECGC\n\n\nHadoop/Bigdata\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: Oracle DB 12c Linux Solaris Clients: CACIB · Mount Sinai · ECGC\n\n\nCloud Azure and GCP\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: Oracle DB 12c Linux Solaris Clients: CACIB · Mount Sinai · ECGC\n\n\nView all projects →"
+  },
+  {
+    "objectID": "index.html#elsewhere",
+    "href": "index.html#elsewhere",
+    "title": "Dainsh297",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\n  Find me on"
+  },
+  {
+    "objectID": "notes/neural-networks.html",
+    "href": "notes/neural-networks.html",
+    "title": "Neural Networks",
+    "section": "",
+    "text": "A neural network is a function composed of layers of simple mathematical operations.\n\n\nimport numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))\n\n\n\nEach layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "Neural Networks"
+    ]
+  },
+  {
+    "objectID": "notes/neural-networks.html#a-minimal-example",
+    "href": "notes/neural-networks.html#a-minimal-example",
+    "title": "Neural Networks",
+    "section": "",
+    "text": "import numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "Neural Networks"
+    ]
+  },
+  {
+    "objectID": "notes/neural-networks.html#key-idea",
+    "href": "notes/neural-networks.html#key-idea",
+    "title": "Neural Networks",
+    "section": "",
+    "text": "Each layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "Neural Networks"
+    ]
+  }
+]

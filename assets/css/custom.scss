@@ -1,0 +1,406 @@
+
+/* =========================================================
+   SECTION 1: GLOBAL THEME VARIABLES
+   Purpose: Define shared colors for the entire website.
+   ========================================================= */
+
+:root {
+  color-scheme: dark;
+
+  --page-bg: #0b0f19;
+  --navbar-bg: #0b0f19;
+  --sidebar-bg: #111827;
+  --surface-bg: #121a29;
+  --surface-hover: #192438;
+
+  --text-primary: #e6edf7;
+  --text-secondary: #a4aec2;
+  --text-muted: #7f8aa1;
+
+  --accent: #64f5d2;
+  --accent-hover: #8bffe3;
+  --border-color: #273244;
+
+  --radius-card: 10px;
+  --content-width: 1100px;
+}
+
+/* =========================================================
+   SECTION 2: LIGHT THEME OVERRIDES
+   Purpose: Change colors when the toggle selects light mode.
+   ========================================================= */
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --page-bg: #f5f7fb;
+  --navbar-bg: #ffffff;
+  --sidebar-bg: #edf1f7;
+  --surface-bg: #ffffff;
+  --surface-hover: #e8edf5;
+
+  --text-primary: #172033;
+  --text-secondary: #46536a;
+  --text-muted: #69758a;
+
+  --accent: #087f70;
+  --accent-hover: #06685c;
+  --border-color: #d5dce7;
+}
+
+/* =========================================================
+   SECTION 3: GLOBAL PAGE STYLES
+   Purpose: Set the page background, typography, and text colors.
+   ========================================================= */
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.75;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+#quarto-content,
+main.content,
+.page-columns,
+.content {
+  color: var(--text-primary);
+}
+
+p,
+li {
+  color: var(--text-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* =========================================================
+   SECTION 4: TOP NAVIGATION
+   Purpose: Style the navbar to match the reference screenshot.
+   ========================================================= */
+
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--border-color);
+  min-height: 68px;
+}
+
+.navbar,
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: var(--text-secondary) !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--accent) !important;
+  font-weight: 750;
+  font-size: 1.25rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* =========================================================
+   SECTION 5: NOTES SIDEBAR
+   Purpose: Remove the white sidebar and apply the dark theme.
+   ========================================================= */
+
+#quarto-sidebar,
+#quarto-sidebar-glass,
+.sidebar,
+.sidebar-navigation,
+.sidebar-menu-container,
+#quarto-sidebar .sidebar-menu-container {
+  background-color: var(--sidebar-bg) !important;
+  color: var(--text-secondary);
+}
+
+#quarto-sidebar {
+  border-right: 1px solid var(--border-color);
+}
+
+#quarto-sidebar a,
+.sidebar a,
+.sidebar-item-text,
+.sidebar-item,
+.sidebar-title {
+  color: var(--text-secondary) !important;
+}
+
+#quarto-sidebar a:hover,
+.sidebar a:hover,
+.sidebar .active > a,
+.sidebar-item.active .sidebar-item-text {
+  color: var(--accent) !important;
+}
+
+#quarto-sidebar .active > a,
+.sidebar .active > a {
+  border-left-color: var(--accent);
+}
+
+/* Also cover the sidebar's nested navigation links. */
+#quarto-sidebar .sidebar-item-container {
+  background-color: transparent !important;
+}
+
+#quarto-sidebar .sidebar-item-container:hover {
+  background-color: var(--surface-hover) !important;
+}
+
+/* =========================================================
+   SECTION 6: MAIN CONTENT WIDTH AND SPACING
+   Purpose: Keep headings and sections comfortably readable.
+   ========================================================= */
+
+main.content {
+  max-width: var(--content-width);
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+#quarto-content {
+  background-color: var(--page-bg);
+}
+
+/* =========================================================
+   SECTION 7: HERO SECTION
+   Purpose: Style the homepage introduction and main actions.
+   ========================================================= */
+
+.hero {
+  max-width: 780px;
+  margin-bottom: 5rem;
+  padding-top: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   SECTION 8: BUTTONS
+   Purpose: Provide consistent primary and secondary actions.
+   ========================================================= */
+
+.button,
+.button-secondary {
+  display: inline-block;
+  margin: 0.75rem 0.65rem 0 0;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button {
+  background-color: var(--accent);
+  color: #07131a !important;
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+  color: #07131a !important;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--accent) !important;
+}
+
+.button-secondary:hover {
+  background-color: var(--surface-hover);
+}
+
+/* =========================================================
+   SECTION 9: FEATURED NOTE CARDS
+   Purpose: Give articles a consistent card-based layout.
+   ========================================================= */
+
+.featured-grid,
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.note-card,
+.shelf,
+.project {
+  min-width: 0;
+  padding: 1.4rem;
+  background-color: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.note-card:hover,
+.shelf:hover,
+.project:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.note-card h3,
+.shelf h3,
+.project h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+/* =========================================================
+   SECTION 10: PROJECT LIST
+   Purpose: Display projects in a responsive vertical list.
+   ========================================================= */
+
+.project-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* =========================================================
+   SECTION 11: INLINE TAGS AND TEXT LINKS
+   Purpose: Distinguish technologies and secondary navigation.
+   ========================================================= */
+
+code {
+  color: var(--accent);
+  background-color: var(--surface-hover);
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 650;
+}
+
+/* =========================================================
+   SECTION 12: THEME TOGGLE
+   Purpose: Style the button inserted by theme-toggle.js.
+   ========================================================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 42px;
+  min-height: 38px;
+  margin-left: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  background-color: var(--surface-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   SECTION 13: RESPONSIVE LAYOUT
+   Purpose: Adapt the homepage cards and hero to smaller screens.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .featured-grid,
+  .shelf-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  main.content {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-grid,
+  .shelf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  main.content {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}
+
+/* =========================================================
+   SECTION 14: ACCESSIBILITY
+   Purpose: Respect reduced-motion preferences.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+

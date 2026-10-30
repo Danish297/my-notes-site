@@ -1,0 +1,464 @@
+/* ==================================================
+   1. Theme variables
+   Dark colors are the fallback before Quarto applies
+   its theme class.
+   ================================================== */
+
+:root {
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root,
+body.quarto-dark {
+  --bg: #0a0f1a;
+  --bg-soft: #101827;
+  --card: #131c2b;
+  --border: #233047;
+  --text: #ccd6f6;
+  --muted: #8892b0;
+  --accent: #64ffda;
+  --accent-soft: rgba(100, 255, 218, 0.08);
+  --heading: #e6f1ff;
+  --navbar-bg: rgba(10, 15, 26, 0.95);
+  --button-text: #0a0f1a;
+
+  color-scheme: dark;
+}
+
+body.quarto-light {
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
+  --card: #ffffff;
+  --border: #d6deea;
+  --text: #243247;
+  --muted: #526277;
+  --accent: #087f72;
+  --accent-soft: rgba(8, 127, 114, 0.08);
+  --heading: #142238;
+  --navbar-bg: rgba(248, 250, 252, 0.95);
+  --button-text: #ffffff;
+
+  color-scheme: light;
+}
+
+/* ==================================================
+   2. Base and layout
+   ================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.quarto-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main.content {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+/* ==================================================
+   3. Typography and links
+   ================================================== */
+
+h1,
+h2,
+h3 {
+  color: var(--heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+p {
+  max-width: 68ch;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-weight: 600;
+}
+
+/* ==================================================
+   4. Code and tags
+   ================================================== */
+
+code {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.9em;
+}
+
+pre {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+
+.note-card p code,
+.project p code {
+  margin-right: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* ==================================================
+   5. Hero and buttons
+   ================================================== */
+
+.hero {
+  padding: 4.5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero p {
+  max-width: 62ch;
+  font-size: 1.15rem;
+}
+
+.button,
+.button-secondary {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 1.5rem 0.75rem 0 0;
+  padding: 0.75rem 1.35rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.button,
+.button:hover {
+  background: var(--accent);
+  color: var(--button-text);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.button-secondary:hover {
+  background: var(--accent-soft);
+}
+
+.button:hover,
+.button-secondary:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ==================================================
+   6. Grids and cards
+   ================================================== */
+
+.featured-grid,
+.shelf-grid,
+.project-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.featured-grid,
+.shelf-grid {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 240px), 1fr)
+  );
+}
+
+.note-card,
+.shelf,
+.project {
+  min-width: 0;
+  border: 1px solid var(--border);
+}
+
+.note-card,
+.shelf {
+  padding: 1.35rem;
+  border-radius: 12px;
+}
+
+.note-card,
+.project {
+  background: var(--card);
+}
+
+.note-card {
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.note-card p,
+.shelf p {
+  font-size: 0.95rem;
+}
+
+.note-card p {
+  margin: 0.5rem 0 1rem;
+}
+
+.note-card h3 a {
+  color: var(--heading);
+}
+
+.note-card h3 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.shelf {
+  background: var(--bg-soft);
+}
+
+.shelf p {
+  margin: 0.5rem 0 0;
+}
+
+.project {
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+}
+
+.project p {
+  margin: 0.5rem 0 0.75rem;
+}
+
+/* ==================================================
+   7. Navbar
+   Keep !important where needed to override Quarto's
+   configured navbar background.
+   ================================================== */
+
+.navbar {
+  --bs-navbar-color: var(--text);
+  --bs-navbar-hover-color: var(--accent);
+  --bs-navbar-active-color: var(--accent);
+  --bs-navbar-brand-color: var(--accent);
+  --bs-navbar-brand-hover-color: var(--accent);
+
+  background: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.navbar .navbar-brand {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.navbar .nav-link {
+  color: var(--text);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--accent);
+}
+
+.navbar .quarto-color-scheme-toggle,
+.navbar .quarto-navbar-tools .quarto-navigation-tool,
+.navbar #quarto-search .aa-DetachedSearchButton {
+  color: var(--text);
+}
+
+/* Preserve the working light-mode toggle/search fixes. */
+
+body.quarto-light #quarto-header
+.quarto-color-scheme-toggle .bi::before,
+body.quarto-light #quarto-header
+#quarto-search .aa-DetachedSearchButtonIcon {
+  filter: brightness(0) !important;
+  opacity: 1 !important;
+}
+
+body.quarto-light #quarto-header #quarto-search,
+body.quarto-light #quarto-header #quarto-search button,
+body.quarto-light #quarto-header
+#quarto-search .aa-DetachedSearchButton,
+body.quarto-light #quarto-header
+#quarto-search .aa-DetachedSearchButtonIcon {
+  color: var(--text) !important;
+  opacity: 1 !important;
+}
+
+body.quarto-light #quarto-header #quarto-search svg {
+  color: var(--text) !important;
+  stroke: currentColor !important;
+}
+
+/* ==================================================
+   8. Sidebar and footer
+   ================================================== */
+
+#quarto-sidebar {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+#quarto-sidebar .sidebar-item-text {
+  color: var(--text);
+}
+
+#quarto-sidebar .sidebar-item-text:hover,
+#quarto-sidebar .sidebar-item-text.active {
+  color: var(--accent);
+}
+
+.nav-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ==================================================
+   9. Social links
+   ================================================== */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.social-label {
+  margin-right: 5px;
+  color: var(--muted);
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.social-icon img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  opacity: 0.75;
+}
+
+/* ==================================================
+   10. Small screens
+   ================================================== */
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .button,
+  .button-secondary {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .note-card,
+  .shelf,
+  .project {
+    padding: 1.1rem;
+  }
+}
+
+/* ==================================================
+   11. Reduced-motion preference
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .button-secondary,
+  .note-card,
+  .social-icon {
+    transition: none;
+  }
+
+  .button:hover,
+  .button-secondary:hover,
+  .note-card:hover {
+    transform: none;
+  }
+}

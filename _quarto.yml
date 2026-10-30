@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Danish297"
+  description: "Personal notes on AI, computer vision, software, and learning in public."
+  favicon: assets/favicon.svg
+  site-url: https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/
+
+  navbar:
+    background: dark
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: notes/index.qmd
+        text: Notes
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/danish297/
+        aria-label: "GitHub profile (opens in a new tab)"
+        target: _blank
+
+      - icon: linkedin
+        href: https://www.linkedin.com/in/hasnain-danish-shaikh/
+        aria-label: "LinkedIn profile (opens in a new tab)"
+        target: _blank
+
+  sidebar:
+    style: floating
+    background: "#0a0f1a"
+    foreground: "#ccd6f6"
+    contents:
+      - section: "Notes"
+        contents:
+          - notes/neural-networks.qmd
+          - notes/transformers.qmd
+
+  page-footer:
+    left: "© 2026 Danish297"
+    right:
+      - icon: github
+        href: https://github.com/danish297
+
+format:
+  html:
+    theme:
+      dark: darkly
+      light: flatly
+    respect-user-color-scheme: true
+    css: styles.css
+    toc: false
+    code-copy: true
+    link-external-icon: true

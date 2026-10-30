@@ -1,0 +1,10 @@
+---
+title: "About"
+---
+
+# About
+
+This website is a personal learning notebook.
+
+It is built with [Quarto](https://quarto.org/), hosted on
+GitHub Pages, and updated through Git.

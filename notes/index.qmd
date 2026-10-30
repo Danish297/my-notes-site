@@ -1,0 +1,183 @@
+---
+title: "Dainsh297"
+description: "Personal notes on AI, computer vision, software, and learning in public."
+image: assets/profile.jpg
+---
+
+::: {.hero}
+
+# Hi, I’m Danish. {#greeting}
+
+I write practical notes on **AI, computer vision, software engineering, and the things I’m learning while building**.
+
+[Read the notes](notes/neural-networks.qmd){.button}
+[View projects](#projects){.button-secondary}
+
+:::
+
+## Now
+
+I’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.
+
+When I’m not reading papers or debugging training pipelines, I’m usually
+learning something new, improving my tooling, or writing about what I
+wish I had understood earlier.
+
+## Featured notes
+
+::: {.featured-grid}
+
+::: {.note-card}
+
+### [DINOv3](vision/dinov3.qmd)
+
+Notes on vision foundation models, representation learning, and how
+modern self-supervised models are trained.
+
+`vision` `foundations`
+
+:::
+
+::: {.note-card}
+
+### [Perception Encoder for ReID](reid/pecore_clip_reid.qmd)
+
+A practical walkthrough of CLIP-based perception encoders and their use
+in person re-identification.
+
+`CLIP` `reid`
+
+:::
+
+::: {.note-card}
+
+### [Multi-stage Training](training/vcor_yolo_FT.qmd)
+
+Training notes, experiment setup, and lessons learned from fine-tuning
+detection models.
+
+`training` `YOLO`
+
+:::
+
+:::
+
+[All notes →](notes/index.qmd){.text-link}
+
+## Shelves
+
+Hand-picked paths through the notes on this site.
+
+::: {.shelf-grid}
+
+::: {.shelf}
+
+### [Vision](vision/index.qmd)
+
+Notes on image models, representation learning, detection, and visual
+understanding.
+
+:::
+
+::: {.shelf}
+
+### [Training](training/index.qmd)
+
+Experiment logs, fine-tuning workflows, debugging notes, and practical
+model-training lessons.
+
+:::
+
+::: {.shelf}
+
+### [Re-identification](reid/index.qmd)
+
+Notes on embedding models, retrieval, metric learning, and person
+re-identification.
+
+:::
+
+:::
+
+## Projects
+
+A few things I have built, explored, or documented.
+
+::: {.project-list}
+
+::: {.project}
+
+### [Database Upgrade from 12c to 19c](https://github.com/danish297/project-one)
+
+Upgraded Oracle EBS database version 12.1.0.2 to 19.28 to make sure its latest while keep certified with our current EBS version 12.1.3.
+we have future plan to upgrade the EBS too from 12.1.3 to 12.2.14
+
+`Oracle EBS` `Oracle DB` `Solaris`
+:::
+
+::: {.project}
+
+### [Project Two](https://github.com/your-username/project-two)
+
+A short description of the problem solved and the main technical idea.
+
+`ONNX` `DeepStream` `Deployment`
+
+:::
+
+::: {.project}
+
+### [Project Three](https://github.com/your-username/project-three)
+
+A small tool, notebook, or experiment that demonstrates a concept.
+
+`Python` `Notebooks` `Research`
+
+:::
+
+:::
+
+[View all projects →](https://github.com/your-username){.text-link}
+
+## Elsewhere
+
+```{=html}
+<div class="social-links" role="group" aria-label="Social profiles">
+  <span class="social-label">Find me on </span>
+
+  <a class="social-icon"
+     href="https://linkedin.com/in/hasnain-danish-shaikh"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="GitHub profile (opens in a new tab)">
+    <img src="assets/linkedin.svg" alt="" width="32" height="32">
+  </a>
+
+  <a class="social-icon"
+     href="https://www.github.com/Danish297"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="LinkedIn profile (opens in a new tab)">
+    <img src="assets/github.svg" alt="" width="26" height="26">
+  </a>
+
+  <a class="social-icon"
+     href="https://facebook.com/danish297"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="X profile (opens in a new tab)">
+    <img src="assets/facebook.svg" alt="" width="26" height="26">
+  </a>
+
+  <a class="social-icon"
+     href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Instagram profile (opens in a new tab)">
+    <img src="assets/x.svg" alt="" width="26" height="26">
+  </a>
+
+  <a class="social-icon"
+     href="https://www.instagram.com/danishfrnz/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Facebook profile (opens in a new tab)">
+    <img src="assets/instagram.svg" alt="" width="26" height="26">
+  </a>
+</div>
+```
