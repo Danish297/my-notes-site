@@ -67,7 +67,7 @@ body {
 
 main.content {
   padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding-bottom: 1rem;
 }
 
 /* ==================================================
@@ -388,13 +388,16 @@ body.quarto-light #quarto-header #quarto-search svg {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 1rem;
+  column-gap: 1px; /* Horizontal space between icons */
+  row-gap: 2px;     /* Vertical space if icons wrap */
+  margin-top: 0;
+  margin-bottom: 2px;
 }
 
 .social-label {
-  margin-right: 5px;
+  margin-right: 7px;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .social-icon {
@@ -404,6 +407,7 @@ body.quarto-light #quarto-header #quarto-search svg {
   line-height: 0;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  flex-shrink: 0;
 }
 
 .social-icon img {

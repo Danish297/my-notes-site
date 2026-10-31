@@ -1,0 +1,224 @@
+---
+title: "Dainsh297"
+description: "Personal notes on AI, computer vision, software, and learning in public."
+image: assets/profile.jpg
+---
+
+::: {.hero}
+
+# Hi, I’m Danish. {#greeting}
+
+I write practical notes on **AI, computer vision, software engineering, and the things I’m learning while building**.
+
+[Read the notes](notes/neural-networks.qmd){.button}
+[View projects](#projects){.button-secondary}
+
+:::
+
+## Now
+
+I’m continuously exploring emerging technologies, including AI, local LLMs, cloud databases, 
+and Red Hat OpenShift, turning ideas into practical applications while building skills in 
+cloud-native solutions and intelligent systems.
+
+When I’m not researching, experimenting, or building, I’m usually learning something new, 
+refining my tools, or sharing insights and lessons along the way.
+
+## Featured notes
+
+::: {.featured-grid}
+
+::: {.note-card}
+
+### [Local LLM](L-LLM/llm_learning.qmd)
+
+Exploring and building locally hosted Large Language Models (LLMs) to 
+enhance data privacy, ensure secure handling of personal information, 
+and maintain full control over sensitive data.
+
+`Ollama` `OpenWebUI`
+
+:::
+
+::: {.note-card}
+
+### [RedHat Openshift](openshift/openshift_learning.qmd)
+
+Building hands-on expertise in Kubernetes-based container orchestration, 
+cloud-native application deployment, and hybrid cloud technologies to 
+stay aligned with evolving enterprise IT trends.
+
+`Openshift`
+
+:::
+
+::: {.note-card}
+
+### [AI](AI/ai_learning.qmd)
+
+Leveraging AI to transform ideas into practical, real-world applications 
+by building intelligent solutions, automating workflows, and accelerating innovation.
+
+`ChatGPT` `Perplexity`
+
+:::
+
+:::
+
+[All notes →](notes/index.qmd){.text-link}
+
+## Achievements
+
+Hand-picked paths through the notes on this site.
+
+::: {.shelf-grid}
+
+::: {.shelf}
+
+### [Oracle DB Recovery & Cloning Automation](vision/index.qmd)
+
+Designed and implemented a menu-driven, automated Oracle Database recovery and cloning framework, replacing manual processes with a standardized solution to improve efficiency, reliability, scalability, and turnaround time.
+
+:::
+
+::: {.shelf}
+
+### [Oracle DB Creation – Enhancements & Bug Fixes](training/index.qmd)
+
+Enhanced the existing Oracle Database creation framework to support newer database versions and enable parallel database creation across multiple target nodes.
+
+:::
+
+::: {.shelf}
+
+### [Banking Application Logic Optimization](reid/index.qmd)
+
+Identified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience
+
+
+:::
+
+:::
+## Projects
+
+A few things I have built, explored, or documented.
+
+::: {.project-list}
+
+::: {.project}
+### [Oracle DB & EBS Administration](https://github.com/your-username/project-three)
+
+Experienced in Oracle Database and EBS administration, including Database/EBS upgrades, and deployment of various DB architectures such as RAC, non-RAC, and Multitenant (CDB/PDB).
+
+Focused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.
+
+**Technologies:** `Oracle DBs 10g-19c` `EBS 12.1.x, 12.2.x` `Linux` `Solaris`<br>
+**Clients:**
+<a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
+<a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> ·
+<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> .
+<a href="https://www.netapp.com/" target="_blank" rel="noopener noreferrer">NetApp</a> ·
+<a href="https://www.hdfc.bank.in/" target="_blank" rel="noopener noreferrer">HDFC Bank</a> ·
+<a href="https://www.bell.ca/" target="_blank" rel="noopener noreferrer">Bell</a> ·
+<a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">O2 telefonica</a> ·
+<a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouuse</a> .
+<a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniyafinance</a> 
+
+:::
+
+::: {.project}
+
+### [Hadoop/Bigdata](https://github.com/your-username/project-three)
+
+Created and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.
+
+These implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.
+
+**Technologies:** `hortonworks` `Cloudera` `Kafka`<br>
+**Clients:**
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers communications</a> ·
+<a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" rel="noopener noreferrer">BMO</a> ·
+<a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> .
+<a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> .
+<a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> .
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> 
+
+:::
+
+::: {.project}
+
+### [Cloud Azure and GCP](https://github.com/your-username/project-three)
+
+Created and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.
+
+These implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.
+
+**Technologies:** `Azure` `GCP` <br>
+**Clients:**
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers communications</a> ·
+<a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a> 
+
+:::
+
+::: {.project}
+
+### [Automation](https://github.com/danish297/automation)
+
+Automated several daily tasks and routine jobs, saving valuable time and allowing me to focus on higher-priority responsibilities, productivity, and continuous learning.
+
+**Technologies:** `Python` `Shell` `Windows PowerShell`<br>
+**Clients:**
+<a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouuse</a> .
+<a href="https://www.knitwellgroup.com/" target="_blank" rel="noopener noreferrer">Ascena</a>
+
+:::
+
+:::
+
+[View all projects →](https://github.com/your-username){.text-link}
+
+## Elsewhere
+
+```{=html}
+<div class="social-links" role="group" aria-label="Social profiles">
+  <span class="social-label">Find me on </span>
+
+  <a class="social-icon"
+     href="https://linkedin.com/in/hasnain-danish-shaikh"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="GitHub profile (opens in a new tab)">
+    <img src="assets/linkedin.svg" alt="" width="32" height="32">
+  </a>
+
+  <a class="social-icon"
+     href="https://www.github.com/Danish297"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="LinkedIn profile (opens in a new tab)">
+    <img src="assets/github.svg" alt="" width="26" height="26">
+  </a>
+
+  <a class="social-icon"
+     href="https://facebook.com/danish297"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="X profile (opens in a new tab)">
+    <img src="assets/facebook.svg" alt="" width="26" height="26">
+  </a>
+
+  <a class="social-icon"
+     href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Instagram profile (opens in a new tab)">
+    <img src="assets/x.svg" alt="" width="26" height="26">
+  </a>
+
+  <a class="social-icon"
+     href="https://www.instagram.com/danishfrnz/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Facebook profile (opens in a new tab)">
+    <img src="assets/instagram.svg" alt="" width="26" height="26">
+  </a>
+</div>
+```

@@ -1,39 +1,95 @@
 [
   {
-    "objectID": "notes/transformers.html",
-    "href": "notes/transformers.html",
-    "title": "Transformers",
+    "objectID": "notes/neural-networks.html",
+    "href": "notes/neural-networks.html",
+    "title": "Neural Networks",
     "section": "",
-    "text": "Transformers process sequences using attention rather than recurrence.\n\n\nAttention lets a model decide which parts of an input sequence are relevant to each output position.\n\n\n\n\nTokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
+    "text": "A neural network is a function composed of layers of simple mathematical operations.\n\n\nimport numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))\n\n\n\nEach layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
     "crumbs": [
       "Home",
       "Notes",
-      "Transformers"
+      "Neural Networks"
     ]
   },
   {
-    "objectID": "notes/transformers.html#why-attention-matters",
-    "href": "notes/transformers.html#why-attention-matters",
-    "title": "Transformers",
+    "objectID": "notes/neural-networks.html#a-minimal-example",
+    "href": "notes/neural-networks.html#a-minimal-example",
+    "title": "Neural Networks",
     "section": "",
-    "text": "Attention lets a model decide which parts of an input sequence are relevant to each output position.",
+    "text": "import numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))",
     "crumbs": [
       "Home",
       "Notes",
-      "Transformers"
+      "Neural Networks"
     ]
   },
   {
-    "objectID": "notes/transformers.html#notes",
-    "href": "notes/transformers.html#notes",
-    "title": "Transformers",
+    "objectID": "notes/neural-networks.html#key-idea",
+    "href": "notes/neural-networks.html#key-idea",
+    "title": "Neural Networks",
     "section": "",
-    "text": "Tokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
+    "text": "Each layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
     "crumbs": [
       "Home",
       "Notes",
-      "Transformers"
+      "Neural Networks"
     ]
+  },
+  {
+    "objectID": "L-LLM/llm_learning.html",
+    "href": "L-LLM/llm_learning.html",
+    "title": "Danish297",
+    "section": "",
+    "text": "sdfsd"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dainsh297",
+    "section": "",
+    "text": "I write practical notes on AI, computer vision, software engineering, and the things I’m learning while building.\nRead the notes View projects"
+  },
+  {
+    "objectID": "index.html#now",
+    "href": "index.html#now",
+    "title": "Dainsh297",
+    "section": "Now",
+    "text": "Now\nI’m continuously exploring emerging technologies, including AI, local LLMs, cloud databases, and Red Hat OpenShift, turning ideas into practical applications while building skills in cloud-native solutions and intelligent systems.\nWhen I’m not researching, experimenting, or building, I’m usually learning something new, refining my tools, or sharing insights and lessons along the way."
+  },
+  {
+    "objectID": "index.html#featured-notes",
+    "href": "index.html#featured-notes",
+    "title": "Dainsh297",
+    "section": "Featured notes",
+    "text": "Featured notes\n\n\nLocal LLM\nExploring and building locally hosted Large Language Models (LLMs) to enhance data privacy, ensure secure handling of personal information, and maintain full control over sensitive data.\nOllama OpenWebUI\n\n\nRedHat Openshift\nBuilding hands-on expertise in Kubernetes-based container orchestration, cloud-native application deployment, and hybrid cloud technologies to stay aligned with evolving enterprise IT trends.\nOpenshift\n\n\nAI\nLeveraging AI to transform ideas into practical, real-world applications by building intelligent solutions, automating workflows, and accelerating innovation.\nChatGPT Perplexity\n\n\nAll notes →"
+  },
+  {
+    "objectID": "index.html#achievements",
+    "href": "index.html#achievements",
+    "title": "Dainsh297",
+    "section": "Achievements",
+    "text": "Achievements\nHand-picked paths through the notes on this site.\n\n\nOracle DB Recovery & Cloning Automation\nDesigned and implemented a menu-driven, automated Oracle Database recovery and cloning framework, replacing manual processes with a standardized solution to improve efficiency, reliability, scalability, and turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced the existing Oracle Database creation framework to support newer database versions and enable parallel database creation across multiple target nodes.\n\n\nBanking Application Logic Optimization\nIdentified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience\n\n\nVideo Optimization\nDeveloped VEncoder, a macOS application that reduces video file sizes without compromising resolution. Supports multiple encoding formats and parallel processing to maximize hardware acceleration, improve performance, and optimize storage efficiency."
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Dainsh297",
+    "section": "Projects",
+    "text": "Projects\nA few things I have built, explored, or documented.\n\n\nOracle DB & EBS Administration\nExperienced in Oracle Database and EBS administration, including Database/EBS upgrades, and deployment of various DB architectures such as RAC, non-RAC, and Multitenant (CDB/PDB).\nFocused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.\nTechnologies: Oracle DBs 10g-19c EBS 12.1.x, 12.2.x Linux Solaris Clients: CACIB · Mount Sinai · ECGC . NetApp · HDFC Bank · Bell · O2 telefonica · Bajaj · Zakathouuse . Duniyafinance\n\n\nHadoop/Bigdata\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: hortonworks Cloudera Kafka Clients: Rogers communications · BMO · GAP . Marriott . SNCF . Mastercard\n\n\nCloud Azure and GCP\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: Azure GCP  Clients: Rogers communications · Enbridge\n\n\nAutomation\nAutomated several daily tasks and routine jobs, saving valuable time and allowing me to focus on higher-priority responsibilities, productivity, and continuous learning.\nTechnologies: Python Shell Windows PowerShell Clients: CACIB · Mastercard · Zakathouuse . Ascena\n\n\nView all projects →"
+  },
+  {
+    "objectID": "index.html#elsewhere",
+    "href": "index.html#elsewhere",
+    "title": "Dainsh297",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\n  Find me on"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nThis website is a personal learning notebook.\nIt is built with Quarto, hosted on GitHub Pages, and updated through Git."
   },
   {
     "objectID": "notes/index.html",
@@ -78,88 +134,39 @@
     "text": "Elsewhere\n\n  Find me on"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "notes/transformers.html",
+    "href": "notes/transformers.html",
+    "title": "Transformers",
     "section": "",
-    "text": "About\nThis website is a personal learning notebook.\nIt is built with Quarto, hosted on GitHub Pages, and updated through Git."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dainsh297",
-    "section": "",
-    "text": "I write practical notes on AI, computer vision, software engineering, and the things I’m learning while building.\nRead the notes View projects"
-  },
-  {
-    "objectID": "index.html#now",
-    "href": "index.html#now",
-    "title": "Dainsh297",
-    "section": "Now",
-    "text": "Now\nI’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.\nWhen I’m not reading papers or debugging training pipelines, I’m usually learning something new, improving my tooling, or writing about what I wish I had understood earlier."
-  },
-  {
-    "objectID": "index.html#featured-notes",
-    "href": "index.html#featured-notes",
-    "title": "Dainsh297",
-    "section": "Featured notes",
-    "text": "Featured notes\n\n\nDINOv3\nNotes on vision foundation models, representation learning, and how modern self-supervised models are trained.\nvision foundations\n\n\nPerception Encoder for ReID\nA practical walkthrough of CLIP-based perception encoders and their use in person re-identification.\nCLIP reid\n\n\nMulti-stage Training\nTraining notes, experiment setup, and lessons learned from fine-tuning detection models.\ntraining YOLO\n\n\nAll notes →"
-  },
-  {
-    "objectID": "index.html#achievements",
-    "href": "index.html#achievements",
-    "title": "Dainsh297",
-    "section": "Achievements",
-    "text": "Achievements\nHand-picked paths through the notes on this site.\n\n\nOracle DB Recovery & Cloning Automation\nDesigned and implemented a menu-driven, automated Oracle Database recovery and cloning framework, replacing manual processes with a standardized solution to improve efficiency, reliability, scalability, and turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced the existing Oracle Database creation framework to support newer database versions and enable parallel database creation across multiple target nodes.\n\n\nBanking Application Logic Optimization\nIdentified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience"
-  },
-  {
-    "objectID": "index.html#projects",
-    "href": "index.html#projects",
-    "title": "Dainsh297",
-    "section": "Projects",
-    "text": "Projects\nA few things I have built, explored, or documented.\n\n\nOracle DB & EBS Administration\nExperienced in Oracle Database and EBS administration, including Database/EBS upgrades, and deployment of various DB architectures such as RAC, non-RAC, and Multitenant (CDB/PDB).\nFocused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.\nTechnologies: Oracle DB 12c Linux Solaris Clients: CACIB · Mount Sinai · ECGC\n\n\nHadoop/Bigdata\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: Oracle DB 12c Linux Solaris Clients: CACIB · Mount Sinai · ECGC\n\n\nCloud Azure and GCP\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: Oracle DB 12c Linux Solaris Clients: CACIB · Mount Sinai · ECGC\n\n\nView all projects →"
-  },
-  {
-    "objectID": "index.html#elsewhere",
-    "href": "index.html#elsewhere",
-    "title": "Dainsh297",
-    "section": "Elsewhere",
-    "text": "Elsewhere\n\n  Find me on"
-  },
-  {
-    "objectID": "notes/neural-networks.html",
-    "href": "notes/neural-networks.html",
-    "title": "Neural Networks",
-    "section": "",
-    "text": "A neural network is a function composed of layers of simple mathematical operations.\n\n\nimport numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))\n\n\n\nEach layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
+    "text": "Transformers process sequences using attention rather than recurrence.\n\n\nAttention lets a model decide which parts of an input sequence are relevant to each output position.\n\n\n\n\nTokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
     "crumbs": [
       "Home",
       "Notes",
-      "Neural Networks"
+      "Transformers"
     ]
   },
   {
-    "objectID": "notes/neural-networks.html#a-minimal-example",
-    "href": "notes/neural-networks.html#a-minimal-example",
-    "title": "Neural Networks",
+    "objectID": "notes/transformers.html#why-attention-matters",
+    "href": "notes/transformers.html#why-attention-matters",
+    "title": "Transformers",
     "section": "",
-    "text": "import numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))",
+    "text": "Attention lets a model decide which parts of an input sequence are relevant to each output position.",
     "crumbs": [
       "Home",
       "Notes",
-      "Neural Networks"
+      "Transformers"
     ]
   },
   {
-    "objectID": "notes/neural-networks.html#key-idea",
-    "href": "notes/neural-networks.html#key-idea",
-    "title": "Neural Networks",
+    "objectID": "notes/transformers.html#notes",
+    "href": "notes/transformers.html#notes",
+    "title": "Transformers",
     "section": "",
-    "text": "Each layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
+    "text": "Tokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
     "crumbs": [
       "Home",
       "Notes",
-      "Neural Networks"
+      "Transformers"
     ]
   }
 ]

@@ -17,11 +17,12 @@ I write practical notes on **AI, computer vision, software engineering, and the 
 
 ## Now
 
-I’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.
+I’m continuously exploring emerging technologies, including AI, local LLMs, cloud databases, 
+and Red Hat OpenShift, turning ideas into practical applications while building skills in 
+cloud-native solutions and intelligent systems.
 
-When I’m not reading papers or debugging training pipelines, I’m usually
-learning something new, improving my tooling, or writing about what I
-wish I had understood earlier.
+When I’m not researching, experimenting, or building, I’m usually learning something new, 
+refining my tools, or sharing insights and lessons along the way.
 
 ## Featured notes
 
@@ -29,34 +30,36 @@ wish I had understood earlier.
 
 ::: {.note-card}
 
-### [DINOv3](vision/dinov3.qmd)
+### [Local LLM](L-LLM/llm_learning.qmd)
 
-Notes on vision foundation models, representation learning, and how
-modern self-supervised models are trained.
+Exploring and building locally hosted Large Language Models (LLMs) to 
+enhance data privacy, ensure secure handling of personal information, 
+and maintain full control over sensitive data.
 
-`vision` `foundations`
-
-:::
-
-::: {.note-card}
-
-### [Perception Encoder for ReID](reid/pecore_clip_reid.qmd)
-
-A practical walkthrough of CLIP-based perception encoders and their use
-in person re-identification.
-
-`CLIP` `reid`
+`Ollama` `OpenWebUI`
 
 :::
 
 ::: {.note-card}
 
-### [Multi-stage Training](training/vcor_yolo_FT.qmd)
+### [RedHat Openshift](openshift/openshift_learning.qmd)
 
-Training notes, experiment setup, and lessons learned from fine-tuning
-detection models.
+Building hands-on expertise in Kubernetes-based container orchestration, 
+cloud-native application deployment, and hybrid cloud technologies to 
+stay aligned with evolving enterprise IT trends.
 
-`training` `YOLO`
+`Openshift`
+
+:::
+
+::: {.note-card}
+
+### [AI](AI/ai_learning.qmd)
+
+Leveraging AI to transform ideas into practical, real-world applications 
+by building intelligent solutions, automating workflows, and accelerating innovation.
+
+`ChatGPT` `Perplexity`
 
 :::
 
@@ -92,6 +95,12 @@ Enhanced the existing Oracle Database creation framework to support newer databa
 
 Identified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience
 
+:::
+
+::: {.shelf}
+### [Video Optimization](macOSApp/index.qmd)
+Developed VEncoder, a macOS application that reduces video file sizes without compromising resolution. 
+Supports multiple encoding formats and parallel processing to maximize hardware acceleration, improve performance, and optimize storage efficiency.
 
 :::
 
@@ -109,11 +118,18 @@ Experienced in Oracle Database and EBS administration, including Database/EBS up
 
 Focused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.
 
-**Technologies:** `Oracle DB 12c` `Linux` `Solaris`<br>
+**Technologies:** `Oracle DBs 10g-19c` `EBS 12.1.x, 12.2.x` `Linux` `Solaris`<br>
 **Clients:**
 <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
 <a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> ·
-<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a>
+<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> .
+<a href="https://www.netapp.com/" target="_blank" rel="noopener noreferrer">NetApp</a> ·
+<a href="https://www.hdfc.bank.in/" target="_blank" rel="noopener noreferrer">HDFC Bank</a> ·
+<a href="https://www.bell.ca/" target="_blank" rel="noopener noreferrer">Bell</a> ·
+<a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">O2 telefonica</a> ·
+<a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouuse</a> .
+<a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniyafinance</a> 
 
 :::
 
@@ -125,11 +141,14 @@ Created and configured various Oracle Database environments, including RAC, non-
 
 These implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.
 
-**Technologies:** `Oracle DB 12c` `Linux` `Solaris`<br>
+**Technologies:** `hortonworks` `Cloudera` `Kafka`<br>
 **Clients:**
-<a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
-<a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> ·
-<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a>
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers communications</a> ·
+<a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" rel="noopener noreferrer">BMO</a> ·
+<a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> .
+<a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> .
+<a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> .
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> 
 
 :::
 
@@ -141,11 +160,25 @@ Created and configured various Oracle Database environments, including RAC, non-
 
 These implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.
 
-**Technologies:** `Oracle DB 12c` `Linux` `Solaris`<br>
+**Technologies:** `Azure` `GCP` <br>
+**Clients:**
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers communications</a> ·
+<a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a> 
+
+:::
+
+::: {.project}
+
+### [Automation](https://github.com/danish297/automation)
+
+Automated several daily tasks and routine jobs, saving valuable time and allowing me to focus on higher-priority responsibilities, productivity, and continuous learning.
+
+**Technologies:** `Python` `Shell` `Windows PowerShell`<br>
 **Clients:**
 <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
-<a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> ·
-<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a>
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouuse</a> .
+<a href="https://www.knitwellgroup.com/" target="_blank" rel="noopener noreferrer">Ascena</a>
 
 :::
 
@@ -181,7 +214,7 @@ These implementations demonstrate experience in database architecture, deploymen
   </a>
 
   <a class="social-icon"
-     href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+     href="https://www.x.com/danish297/"
      target="_blank" rel="noopener noreferrer"
      aria-label="Instagram profile (opens in a new tab)">
     <img src="assets/x.svg" alt="" width="26" height="26">
