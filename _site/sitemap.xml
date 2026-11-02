@@ -1,35 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/openshift/openshift_learning.html</loc>
+    <loc>https://danish297.github.io/my-notes-site/openshift/openshift_learning.html</loc>
     <lastmod>2026-10-31T05:24:41.414Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/notes/neural-networks.html</loc>
-    <lastmod>2026-10-23T05:08:54.669Z</lastmod>
+    <loc>https://danish297.github.io/my-notes-site/notes/wip.html</loc>
+    <lastmod>2026-11-02T20:46:14.104Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/L-LLM/llm_learning.html</loc>
+    <loc>https://danish297.github.io/my-notes-site/notes/transformers.html</loc>
+    <lastmod>2026-10-23T05:10:07.978Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danish297.github.io/my-notes-site/notes/index.html</loc>
+    <lastmod>2026-11-02T20:51:09.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danish297.github.io/my-notes-site/AI/ai_learning.html</loc>
+    <lastmod>2026-10-31T05:24:41.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danish297.github.io/my-notes-site/Achievements/wip.html</loc>
+    <lastmod>2026-11-02T17:55:26.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danish297.github.io/my-notes-site/about.html</loc>
+    <lastmod>2026-10-31T12:57:21.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danish297.github.io/my-notes-site/index.html</loc>
+    <lastmod>2026-11-02T20:58:48.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danish297.github.io/my-notes-site/L-LLM/llm_learning.html</loc>
     <lastmod>2026-10-31T05:24:09.451Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/index.html</loc>
-    <lastmod>2026-10-31T05:21:03.471Z</lastmod>
+    <loc>https://danish297.github.io/my-notes-site/Achievements/index.html</loc>
+    <lastmod>2026-11-02T20:05:11.019Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/about.html</loc>
-    <lastmod>2026-10-23T05:10:40.536Z</lastmod>
+    <loc>https://danish297.github.io/my-notes-site/wip.html</loc>
+    <lastmod>2026-11-02T19:32:27.309Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/AI/ai_learning.html</loc>
-    <lastmod>2026-10-31T05:24:41.414Z</lastmod>
+    <loc>https://danish297.github.io/my-notes-site/notes/neural-networks.html</loc>
+    <lastmod>2026-10-23T05:08:54.669Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/notes/index.html</loc>
-    <lastmod>2026-10-29T16:18:08.884Z</lastmod>
+    <loc>https://danish297.github.io/my-notes-site/notes/12c_new_features.html</loc>
+    <lastmod>2026-11-02T18:38:09.719Z</lastmod>
   </url>
   <url>
-    <loc>https://YOUR_GITHUB_USERNAME.github.io/my-notes-site/notes/transformers.html</loc>
-    <lastmod>2026-10-23T05:10:07.978Z</lastmod>
+    <loc>https://danish297.github.io/my-notes-site/notes/11g_Unknown_facts.html</loc>
+    <lastmod>2026-11-02T18:30:48.229Z</lastmod>
   </url>
 </urlset>

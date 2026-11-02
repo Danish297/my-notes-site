@@ -1,172 +1,469 @@
 [
   {
-    "objectID": "notes/neural-networks.html",
-    "href": "notes/neural-networks.html",
-    "title": "Neural Networks",
+    "objectID": "notes/wip.html",
+    "href": "notes/wip.html",
+    "title": "404 — Page not found",
     "section": "",
-    "text": "A neural network is a function composed of layers of simple mathematical operations.\n\n\nimport numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))\n\n\n\nEach layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
-    "crumbs": [
-      "Home",
-      "Notes",
-      "Neural Networks"
-    ]
-  },
-  {
-    "objectID": "notes/neural-networks.html#a-minimal-example",
-    "href": "notes/neural-networks.html#a-minimal-example",
-    "title": "Neural Networks",
-    "section": "",
-    "text": "import numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))",
-    "crumbs": [
-      "Home",
-      "Notes",
-      "Neural Networks"
-    ]
-  },
-  {
-    "objectID": "notes/neural-networks.html#key-idea",
-    "href": "notes/neural-networks.html#key-idea",
-    "title": "Neural Networks",
-    "section": "",
-    "text": "Each layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.",
-    "crumbs": [
-      "Home",
-      "Notes",
-      "Neural Networks"
-    ]
-  },
-  {
-    "objectID": "L-LLM/llm_learning.html",
-    "href": "L-LLM/llm_learning.html",
-    "title": "Danish297",
-    "section": "",
-    "text": "sdfsd"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dainsh297",
-    "section": "",
-    "text": "I write practical notes on AI, computer vision, software engineering, and the things I’m learning while building.\nRead the notes View projects"
-  },
-  {
-    "objectID": "index.html#now",
-    "href": "index.html#now",
-    "title": "Dainsh297",
-    "section": "Now",
-    "text": "Now\nI’m continuously exploring emerging technologies, including AI, local LLMs, cloud databases, and Red Hat OpenShift, turning ideas into practical applications while building skills in cloud-native solutions and intelligent systems.\nWhen I’m not researching, experimenting, or building, I’m usually learning something new, refining my tools, or sharing insights and lessons along the way."
-  },
-  {
-    "objectID": "index.html#featured-notes",
-    "href": "index.html#featured-notes",
-    "title": "Dainsh297",
-    "section": "Featured notes",
-    "text": "Featured notes\n\n\nLocal LLM\nExploring and building locally hosted Large Language Models (LLMs) to enhance data privacy, ensure secure handling of personal information, and maintain full control over sensitive data.\nOllama OpenWebUI\n\n\nRedHat Openshift\nBuilding hands-on expertise in Kubernetes-based container orchestration, cloud-native application deployment, and hybrid cloud technologies to stay aligned with evolving enterprise IT trends.\nOpenshift\n\n\nAI\nLeveraging AI to transform ideas into practical, real-world applications by building intelligent solutions, automating workflows, and accelerating innovation.\nChatGPT Perplexity\n\n\nAll notes →"
-  },
-  {
-    "objectID": "index.html#achievements",
-    "href": "index.html#achievements",
-    "title": "Dainsh297",
-    "section": "Achievements",
-    "text": "Achievements\nHand-picked paths through the notes on this site.\n\n\nOracle DB Recovery & Cloning Automation\nDesigned and implemented a menu-driven, automated Oracle Database recovery and cloning framework, replacing manual processes with a standardized solution to improve efficiency, reliability, scalability, and turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced the existing Oracle Database creation framework to support newer database versions and enable parallel database creation across multiple target nodes.\n\n\nBanking Application Logic Optimization\nIdentified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience\n\n\nVideo Optimization\nDeveloped VEncoder, a macOS application that reduces video file sizes without compromising resolution. Supports multiple encoding formats and parallel processing to maximize hardware acceleration, improve performance, and optimize storage efficiency."
-  },
-  {
-    "objectID": "index.html#projects",
-    "href": "index.html#projects",
-    "title": "Dainsh297",
-    "section": "Projects",
-    "text": "Projects\nA few things I have built, explored, or documented.\n\n\nOracle DB & EBS Administration\nExperienced in Oracle Database and EBS administration, including Database/EBS upgrades, and deployment of various DB architectures such as RAC, non-RAC, and Multitenant (CDB/PDB).\nFocused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.\nTechnologies: Oracle DBs 10g-19c EBS 12.1.x, 12.2.x Linux Solaris Clients: CACIB · Mount Sinai · ECGC . NetApp · HDFC Bank · Bell · O2 telefonica · Bajaj · Zakathouuse . Duniyafinance\n\n\nHadoop/Bigdata\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: hortonworks Cloudera Kafka Clients: Rogers communications · BMO · GAP . Marriott . SNCF . Mastercard\n\n\nCloud Azure and GCP\nCreated and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.\nThese implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.\nTechnologies: Azure GCP  Clients: Rogers communications · Enbridge\n\n\nAutomation\nAutomated several daily tasks and routine jobs, saving valuable time and allowing me to focus on higher-priority responsibilities, productivity, and continuous learning.\nTechnologies: Python Shell Windows PowerShell Clients: CACIB · Mastercard · Zakathouuse . Ascena\n\n\nView all projects →"
-  },
-  {
-    "objectID": "index.html#elsewhere",
-    "href": "index.html#elsewhere",
-    "title": "Dainsh297",
-    "section": "Elsewhere",
-    "text": "Elsewhere\n\n  Find me on"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About\nThis website is a personal learning notebook.\nIt is built with Quarto, hosted on GitHub Pages, and updated through Git."
-  },
-  {
-    "objectID": "notes/index.html",
-    "href": "notes/index.html",
-    "title": "Dainsh297",
-    "section": "",
-    "text": "I write practical notes on AI, computer vision, software engineering, and the things I’m learning while building.\nRead the notes View projects"
-  },
-  {
-    "objectID": "notes/index.html#now",
-    "href": "notes/index.html#now",
-    "title": "Dainsh297",
-    "section": "Now",
-    "text": "Now\nI’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.\nWhen I’m not reading papers or debugging training pipelines, I’m usually learning something new, improving my tooling, or writing about what I wish I had understood earlier."
-  },
-  {
-    "objectID": "notes/index.html#featured-notes",
-    "href": "notes/index.html#featured-notes",
-    "title": "Dainsh297",
-    "section": "Featured notes",
-    "text": "Featured notes\n\n\nDINOv3\nNotes on vision foundation models, representation learning, and how modern self-supervised models are trained.\nvision foundations\n\n\nPerception Encoder for ReID\nA practical walkthrough of CLIP-based perception encoders and their use in person re-identification.\nCLIP reid\n\n\nMulti-stage Training\nTraining notes, experiment setup, and lessons learned from fine-tuning detection models.\ntraining YOLO\n\n\nAll notes →"
-  },
-  {
-    "objectID": "notes/index.html#shelves",
-    "href": "notes/index.html#shelves",
-    "title": "Dainsh297",
-    "section": "Shelves",
-    "text": "Shelves\nHand-picked paths through the notes on this site.\n\n\nVision\nNotes on image models, representation learning, detection, and visual understanding.\n\n\nTraining\nExperiment logs, fine-tuning workflows, debugging notes, and practical model-training lessons.\n\n\nRe-identification\nNotes on embedding models, retrieval, metric learning, and person re-identification."
-  },
-  {
-    "objectID": "notes/index.html#projects",
-    "href": "notes/index.html#projects",
-    "title": "Dainsh297",
-    "section": "Projects",
-    "text": "Projects\nA few things I have built, explored, or documented.\n\n\nDatabase Upgrade from 12c to 19c\nUpgraded Oracle EBS database version 12.1.0.2 to 19.28 to make sure its latest while keep certified with our current EBS version 12.1.3. we have future plan to upgrade the EBS too from 12.1.3 to 12.2.14\nOracle EBS Oracle DB Solaris\n\n\nProject Two\nA short description of the problem solved and the main technical idea.\nONNX DeepStream Deployment\n\n\nProject Three\nA small tool, notebook, or experiment that demonstrates a concept.\nPython Notebooks Research\n\n\nView all projects →"
-  },
-  {
-    "objectID": "notes/index.html#elsewhere",
-    "href": "notes/index.html#elsewhere",
-    "title": "Dainsh297",
-    "section": "Elsewhere",
-    "text": "Elsewhere\n\n  Find me on"
+    "text": "404 — Page not found\nThe page you requested is under development.\nReturn home"
   },
   {
     "objectID": "notes/transformers.html",
     "href": "notes/transformers.html",
     "title": "Transformers",
     "section": "",
-    "text": "Transformers process sequences using attention rather than recurrence.\n\n\nAttention lets a model decide which parts of an input sequence are relevant to each output position.\n\n\n\n\nTokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
-    "crumbs": [
-      "Home",
-      "Notes",
-      "Transformers"
-    ]
+    "text": "Transformers process sequences using attention rather than recurrence.\n\n\nAttention lets a model decide which parts of an input sequence are relevant to each output position.\n\n\n\n\nTokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation."
   },
   {
     "objectID": "notes/transformers.html#why-attention-matters",
     "href": "notes/transformers.html#why-attention-matters",
     "title": "Transformers",
     "section": "",
-    "text": "Attention lets a model decide which parts of an input sequence are relevant to each output position.",
-    "crumbs": [
-      "Home",
-      "Notes",
-      "Transformers"
-    ]
+    "text": "Attention lets a model decide which parts of an input sequence are relevant to each output position."
   },
   {
     "objectID": "notes/transformers.html#notes",
     "href": "notes/transformers.html#notes",
     "title": "Transformers",
     "section": "",
-    "text": "Tokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation.",
+    "text": "Tokens are converted into vectors.\nAttention compares those vectors.\nThe result is used to build a contextual representation."
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Hi, I’m Danish.",
+    "section": "",
+    "text": "I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.\nMy interests include Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.\nHere, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.\nKeep learning. Keep building. Turn ideas into reality.\nExplore my notes View projects"
+  },
+  {
+    "objectID": "notes/index.html#now",
+    "href": "notes/index.html#now",
+    "title": "Hi, I’m Danish.",
+    "section": "Now",
+    "text": "Now\nI’m continuously exploring emerging technologies and expanding my technical knowledge in:\n\nArtificial Intelligence: Generative AI, Local LLMs, and intelligent applications.\nCloud Technologies: Microsoft Azure, Google Cloud Platform, and cloud-native solutions.\nContainers and Orchestration: Kubernetes, Red Hat OpenShift, and container technologies.\nDatabase Technologies: Oracle Database, cloud databases, and database automation.\nSoftware Engineering: Python, Shell scripting, automation, and application development.\n\nMy focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights."
+  },
+  {
+    "objectID": "notes/index.html#featured-notes",
+    "href": "notes/index.html#featured-notes",
+    "title": "Hi, I’m Danish.",
+    "section": "Featured Notes",
+    "text": "Featured Notes\nA collection of technical notes, experiments, and learning resources.\n\n\nLocal LLMs\nExploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.\nOllama OpenWebUI LLMs\n\n\nRed Hat OpenShift\nDeveloping hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.\nOpenShift Kubernetes Containers\n\n\nArtificial Intelligence\nExploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.\nChatGPT Perplexity GenAI\n\n\nExplore all notes →"
+  },
+  {
+    "objectID": "notes/index.html#achievements",
+    "href": "notes/index.html#achievements",
+    "title": "Hi, I’m Danish.",
+    "section": "Achievements",
+    "text": "Achievements\nSelected technical achievements, automation initiatives, and application development projects.\n\n\nOracle Database Recovery & Cloning Automation\nDesigned and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.\nThe framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.\nImproved automation capabilities, operational efficiency, and deployment flexibility.\n\n\nBanking Application Logic Optimization\nIdentified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.\nImproved application reliability and ensured accurate processing of user-selected options.\n\n\nVideo Optimization – VEncoder\nDeveloped VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.\nSupports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency."
+  },
+  {
+    "objectID": "notes/index.html#projects",
+    "href": "notes/index.html#projects",
+    "title": "Hi, I’m Danish.",
+    "section": "Projects",
+    "text": "Projects\nA selection of professional experience, technical implementations, automation solutions, and personal projects.\n\n\nOracle Database & EBS Administration\nExperienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.\nWorked with different database architectures, including:\n\nOracle RAC and non-RAC environments.\nMultitenant architecture (CDB/PDB).\nDatabase upgrades and migrations.\nOracle EBS 12.1.x and 12.2.x administration.\nLinux and Solaris environments.\n\nFocused on maintaining supported versions, application compatibility, availability, security, and performance.\nTechnologies: Oracle Database 10g–19c Oracle EBS 12.1.x–12.2.x Linux Solaris Clients: CACIB · Mount Sinai · ECGC · NetApp · HDFC Bank · Bell · Telefónica · Bajaj Finserv · Zakathouse · Duniya Finance\n\n\nHadoop & Big Data Technologies\nWorked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.\nExperience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.\nTechnologies: Hortonworks Cloudera Kafka Hadoop Clients: Rogers Communications · BMO · GAP · Marriott · SNCF · Mastercard\n\n\nCloud Technologies – Azure & GCP\nExploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.\nFocus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.\nTechnologies: Microsoft Azure Google Cloud Platform Clients: Rogers Communications · Enbridge\n\n\nAutomation & Scripting\nDeveloped automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.\nFocused on automating daily administrative tasks, routine jobs, and operational workflows.\nTechnologies: Python Shell PowerShell Clients: CACIB · Mastercard · Zakathouse · Ascena\n\n\nExplore all projects on GitHub →"
+  },
+  {
+    "objectID": "notes/index.html#elsewhere",
+    "href": "notes/index.html#elsewhere",
+    "title": "Hi, I’m Danish.",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\n\n  Connect with me on these platforms:"
+  },
+  {
+    "objectID": "Achievements/wip.html",
+    "href": "Achievements/wip.html",
+    "title": "404 — Page not found",
+    "section": "",
+    "text": "404 — Page not found\nThe page you requested is under development.\nReturn home"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About\nThis website serves as my personal knowledge hub, where I document my learning journey, share technical insights, showcase projects, and explore emerging technologies."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hi, I’m Danish.",
+    "section": "",
+    "text": "I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.\nMy interests include Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.\nHere, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.\nKeep learning. Keep building. Turn ideas into reality.\nExplore my notes View projects"
+  },
+  {
+    "objectID": "index.html#now",
+    "href": "index.html#now",
+    "title": "Hi, I’m Danish.",
+    "section": "Now",
+    "text": "Now\nI’m continuously exploring emerging technologies and expanding my technical knowledge in:\n\nArtificial Intelligence: Generative AI, Local LLMs, and intelligent applications.\nCloud Technologies: Microsoft Azure, Google Cloud Platform, and cloud-native solutions.\nContainers and Orchestration: Kubernetes, Red Hat OpenShift, and container technologies.\nDatabase Technologies: Oracle Database, cloud databases, and database automation.\nSoftware Engineering: Python, Shell scripting, automation, and application development.\n\nMy focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights."
+  },
+  {
+    "objectID": "index.html#featured-notes",
+    "href": "index.html#featured-notes",
+    "title": "Hi, I’m Danish.",
+    "section": "Featured Notes",
+    "text": "Featured Notes\nA collection of technical notes, experiments, and learning resources.\n\n\nLocal LLMs\nExploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.\nOllama OpenWebUI LLMs\n\n\nRed Hat OpenShift\nDeveloping hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.\nOpenShift Kubernetes Containers\n\n\nArtificial Intelligence\nExploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.\nChatGPT Perplexity GenAI\n\n\nExplore all notes →"
+  },
+  {
+    "objectID": "index.html#achievements",
+    "href": "index.html#achievements",
+    "title": "Hi, I’m Danish.",
+    "section": "Achievements",
+    "text": "Achievements\nSelected technical achievements, automation initiatives, and application development projects.\n\n\nOracle Database Recovery & Cloning Automation\nDesigned and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.\nThe framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.\nImproved automation capabilities, operational efficiency, and deployment flexibility.\n\n\nBanking Application Logic Optimization\nIdentified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.\nImproved application reliability and ensured accurate processing of user-selected options.\n\n\nVideo Optimization – VEncoder\nDeveloped VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.\nSupports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency."
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Hi, I’m Danish.",
+    "section": "Projects",
+    "text": "Projects\nA selection of professional experience, technical implementations, automation solutions, and personal projects.\n\n\nOracle Database & EBS Administration\nExperienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.\nWorked with different database architectures, including:\n\nOracle RAC and non-RAC environments.\nMultitenant architecture (CDB/PDB).\nDatabase upgrades and migrations.\nOracle EBS 12.1.x and 12.2.x administration.\nLinux and Solaris environments.\n\nFocused on maintaining supported versions, application compatibility, availability, security, and performance.\nTechnologies: Oracle Database 10g–19c Oracle EBS 12.1.x–12.2.x Linux Solaris Clients: CACIB · Mount Sinai · ECGC · NetApp · HDFC Bank · Bell · Telefónica · Bajaj Finserv · Zakathouse · Duniya Finance\n\n\nHadoop & Big Data Technologies\nWorked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.\nExperience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.\nTechnologies: Hortonworks Cloudera Kafka Hadoop Clients: Rogers Communications · BMO · GAP · Marriott · SNCF · Mastercard\n\n\nCloud Technologies – Azure & GCP\nExploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.\nFocus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.\nTechnologies: Microsoft Azure Google Cloud Platform Clients: Rogers Communications · Enbridge\n\n\nAutomation & Scripting\nDeveloped automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.\nFocused on automating daily administrative tasks, routine jobs, and operational workflows.\nTechnologies: Python Shell PowerShell Clients: CACIB · Mastercard · Zakathouse · Ascena\n\n\nExplore all projects on GitHub →"
+  },
+  {
+    "objectID": "index.html#elsewhere",
+    "href": "index.html#elsewhere",
+    "title": "Hi, I’m Danish.",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\n\n  Connect with me on these platforms:"
+  },
+  {
+    "objectID": "L-LLM/llm_learning.html",
+    "href": "L-LLM/llm_learning.html",
+    "title": "D@n!$h297",
+    "section": "",
+    "text": "sdfsd"
+  },
+  {
+    "objectID": "Achievements/index.html",
+    "href": "Achievements/index.html",
+    "title": "Hi, I’m Danish.",
+    "section": "",
+    "text": "I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.\nMy interests include Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.\nHere, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.\nKeep learning. Keep building. Turn ideas into reality.\nExplore my notes View projects"
+  },
+  {
+    "objectID": "Achievements/index.html#now",
+    "href": "Achievements/index.html#now",
+    "title": "Hi, I’m Danish.",
+    "section": "Now",
+    "text": "Now\nI’m continuously exploring emerging technologies and expanding my technical knowledge in:\n\nArtificial Intelligence: Generative AI, Local LLMs, and intelligent applications.\nCloud Technologies: Microsoft Azure, Google Cloud Platform, and cloud-native solutions.\nContainers and Orchestration: Kubernetes, Red Hat OpenShift, and container technologies.\nDatabase Technologies: Oracle Database, cloud databases, and database automation.\nSoftware Engineering: Python, Shell scripting, automation, and application development.\n\nMy focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights."
+  },
+  {
+    "objectID": "Achievements/index.html#featured-notes",
+    "href": "Achievements/index.html#featured-notes",
+    "title": "Hi, I’m Danish.",
+    "section": "Featured Notes",
+    "text": "Featured Notes\nA collection of technical notes, experiments, and learning resources.\n\n\nLocal LLMs\nExploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.\nOllama OpenWebUI LLMs\n\n\nRed Hat OpenShift\nDeveloping hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.\nOpenShift Kubernetes Containers\n\n\nArtificial Intelligence\nExploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.\nChatGPT Perplexity GenAI\n\n\nExplore all notes →"
+  },
+  {
+    "objectID": "Achievements/index.html#achievements",
+    "href": "Achievements/index.html#achievements",
+    "title": "Hi, I’m Danish.",
+    "section": "Achievements",
+    "text": "Achievements\nSelected technical achievements, automation initiatives, and application development projects.\n\n\nOracle Database Recovery & Cloning Automation\nDesigned and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.\nThe framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.\nImproved automation capabilities, operational efficiency, and deployment flexibility.\n\n\nBanking Application Logic Optimization\nIdentified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.\nImproved application reliability and ensured accurate processing of user-selected options.\n\n\nVideo Optimization – VEncoder\nDeveloped VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.\nSupports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency."
+  },
+  {
+    "objectID": "Achievements/index.html#projects",
+    "href": "Achievements/index.html#projects",
+    "title": "Hi, I’m Danish.",
+    "section": "Projects",
+    "text": "Projects\nA selection of professional experience, technical implementations, automation solutions, and personal projects.\n\n\nOracle Database & EBS Administration\nExperienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.\nWorked with different database architectures, including:\n\nOracle RAC and non-RAC environments.\nMultitenant architecture (CDB/PDB).\nDatabase upgrades and migrations.\nOracle EBS 12.1.x and 12.2.x administration.\nLinux and Solaris environments.\n\nFocused on maintaining supported versions, application compatibility, availability, security, and performance.\nTechnologies: Oracle Database 10g–19c Oracle EBS 12.1.x–12.2.x Linux Solaris Clients: CACIB · Mount Sinai · ECGC · NetApp · HDFC Bank · Bell · Telefónica · Bajaj Finserv · Zakathouse · Duniya Finance\n\n\nHadoop & Big Data Technologies\nWorked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.\nExperience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.\nTechnologies: Hortonworks Cloudera Kafka Hadoop Clients: Rogers Communications · BMO · GAP · Marriott · SNCF · Mastercard\n\n\nCloud Technologies – Azure & GCP\nExploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.\nFocus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.\nTechnologies: Microsoft Azure Google Cloud Platform Clients: Rogers Communications · Enbridge\n\n\nAutomation & Scripting\nDeveloped automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.\nFocused on automating daily administrative tasks, routine jobs, and operational workflows.\nTechnologies: Python Shell PowerShell Clients: CACIB · Mastercard · Zakathouse · Ascena\n\n\nExplore all projects on GitHub →"
+  },
+  {
+    "objectID": "Achievements/index.html#elsewhere",
+    "href": "Achievements/index.html#elsewhere",
+    "title": "Hi, I’m Danish.",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\n\n  Connect with me on these platforms:"
+  },
+  {
+    "objectID": "wip.html",
+    "href": "wip.html",
+    "title": "404 — Page not found",
+    "section": "",
+    "text": "404 — Page not found\nThe page you requested is under development.\nReturn home"
+  },
+  {
+    "objectID": "notes/neural-networks.html",
+    "href": "notes/neural-networks.html",
+    "title": "Neural Networks",
+    "section": "",
+    "text": "A neural network is a function composed of layers of simple mathematical operations.\n\n\nimport numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))\n\n\n\nEach layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs."
+  },
+  {
+    "objectID": "notes/neural-networks.html#a-minimal-example",
+    "href": "notes/neural-networks.html#a-minimal-example",
+    "title": "Neural Networks",
+    "section": "",
+    "text": "import numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\nx = np.array([-1.0, 0.5, 2.0])\nprint(relu(x))"
+  },
+  {
+    "objectID": "notes/neural-networks.html#key-idea",
+    "href": "notes/neural-networks.html#key-idea",
+    "title": "Neural Networks",
+    "section": "",
+    "text": "Each layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs."
+  },
+  {
+    "objectID": "notes/12c_new_features.html",
+    "href": "notes/12c_new_features.html",
+    "title": "12c New Features",
+    "section": "",
+    "text": "Oracle Database 12c introduced practical improvements for everyday SQL development: identity columns, native row limiting, invisible columns, enhanced defaults, and correlated joins with APPLY.\nThis post demonstrates five features introduced in Oracle Database 12c Release 1 (12.1). Each example includes SQL to try, expected results, and a key idea.\n\n\n\nUse a disposable schema on Oracle Database 12c Release 1 or later.\nYour user needs CREATE TABLE and sufficient tablespace quota.\nRun the examples once, in order, using SQL*Plus, SQLcl, or SQL Developer’s Run Script mode.\nThese are illustrative scripts, not scripts executed against a live database for this post.\nDDL can commit transactions. Do not run experiments in production.\nThe fenced SQL blocks are for display; Quarto does not execute them during rendering.\n\nSET SERVEROUTPUT ON\nSET LINESIZE 160\nSET PAGESIZE 100\nSET NULL '(null)'\n\n\n\nBefore 12c, applications commonly used a sequence, sometimes with a trigger, to populate numeric keys. Identity columns provide declarative syntax for automatic value generation.\nGENERATED ALWAYS AS IDENTITY asks Oracle to generate the value rather than accepting an application-supplied ID during an ordinary insert. The primary-key constraint is separate: it explicitly enforces key uniqueness.\n\n\nCREATE TABLE c12_identity_demo (\n    customer_id NUMBER GENERATED ALWAYS AS IDENTITY,\n    customer_name VARCHAR2(50) NOT NULL,\n    CONSTRAINT c12_identity_pk PRIMARY KEY (customer_id)\n);\n\nINSERT INTO c12_identity_demo (customer_name)\nVALUES ('Amina');\n\nINSERT INTO c12_identity_demo (customer_name)\nVALUES ('Omar');\n\nCOMMIT;\n\nSELECT customer_id, customer_name\nFROM c12_identity_demo\nORDER BY customer_id;\n\n\n\nFor a newly created table with these default identity settings and no intervening activity:\nCUSTOMER_ID  CUSTOMER_NAME\n-----------  -------------\n1            Amina\n2            Omar\nAn explicit ID is rejected by this identity mode:\nBEGIN\n    INSERT INTO c12_identity_demo (customer_id, customer_name)\n    VALUES (100, 'Explicit ID');\nEXCEPTION\n    WHEN OTHERS THEN\n        IF SQLCODE = -32795 THEN\n            DBMS_OUTPUT.PUT_LINE(\n                'Expected: explicit value rejected for ALWAYS identity'\n            );\n        ELSE\n            RAISE;\n        END IF;\nEND;\n/\n\n\n\nChoose the identity mode deliberately:\n\nGENERATED ALWAYS: Oracle generates values; ordinary explicit values are rejected.\nGENERATED BY DEFAULT: Oracle generates a value when the identity column is omitted; explicit values are allowed.\nGENERATED BY DEFAULT ON NULL: Oracle also generates a value when an explicit NULL is inserted.\n\nIdentity values are not gap-free business numbers. Rollbacks and sequence caching can leave gaps, and accepting explicit IDs requires care to avoid collisions with generated values.\n\n\n\n\nOracle 12c adds a row-limiting clause so queries can request a limited number of rows without a ROWNUM wrapper.\nUse a deterministic ORDER BY when the identity and ordering of returned rows matter. A unique tie-breaker makes page boundaries predictable for an unchanged data set.\n\n\nCREATE TABLE c12_products (\n    product_id NUMBER PRIMARY KEY,\n    product_name VARCHAR2(50) NOT NULL,\n    price NUMBER(10,2) NOT NULL\n);\n\nINSERT INTO c12_products VALUES (1, 'Monitor', 300);\nINSERT INTO c12_products VALUES (2, 'Keyboard', 80);\nINSERT INTO c12_products VALUES (3, 'Mouse', 40);\nINSERT INTO c12_products VALUES (4, 'Dock', 150);\nINSERT INTO c12_products VALUES (5, 'Webcam', 80);\nCOMMIT;\n\n-- The three most expensive products.\nSELECT product_id, product_name, price\nFROM c12_products\nORDER BY price DESC, product_id\nFETCH FIRST 3 ROWS ONLY;\n\n-- Skip the first two rows, then return the next two.\nSELECT product_id, product_name, price\nFROM c12_products\nORDER BY price DESC, product_id\nOFFSET 2 ROWS FETCH NEXT 2 ROWS ONLY;\n\n-- Include all rows tied at the cutoff price.\nSELECT product_id, product_name, price\nFROM c12_products\nORDER BY price DESC\nFETCH FIRST 3 ROWS WITH TIES;\n\n\n\n\nThe first query returns Monitor, Dock, and Keyboard.\nThe second query returns Keyboard and Webcam.\nThe third query returns four rows: Monitor, Dock, Keyboard, and Webcam. Both 80-priced products tie at the cutoff; their relative order is unspecified.\n\n\n\n\nWITH TIES compares the complete ORDER BY key. Adding a unique product ID to the third query’s ordering would remove the price tie for this purpose.\nOffset pagination is concise, but it does not freeze the data between requests. Concurrent changes can shift page boundaries, and large offsets can still require substantial processing.\n\n\n\n\nAn invisible column exists in the table and remains directly accessible, but generic access such as SELECT * omits it. This can help introduce a column without changing the projection of existing star queries.\n\n\nCREATE TABLE c12_customers (\n    customer_id NUMBER PRIMARY KEY,\n    customer_name VARCHAR2(50) NOT NULL,\n    internal_note VARCHAR2(100) INVISIBLE\n);\n\n-- With no column list, values map to visible columns only.\nINSERT INTO c12_customers\nVALUES (1, 'Amina');\n\n-- Name an invisible column explicitly to populate it.\nINSERT INTO c12_customers (\n    customer_id, customer_name, internal_note\n)\nVALUES (2, 'Omar', 'Review before renewal');\n\nCOMMIT;\n\nSELECT *\nFROM c12_customers\nORDER BY customer_id;\n\nSELECT customer_id, customer_name, internal_note\nFROM c12_customers\nORDER BY customer_id;\n\nALTER TABLE c12_customers MODIFY (internal_note VISIBLE);\n\nSELECT *\nFROM c12_customers\nORDER BY customer_id;\n\n\n\nThe first query shows only CUSTOMER_ID and CUSTOMER_NAME. The explicit query shows INTERNAL_NOTE, including Omar’s note. After the visibility change, SELECT * includes the note column too.\n\n\n\nInvisibility is an interface convenience, not a security boundary. A user with suitable access can explicitly select the column. Explicit column lists remain preferable for application code.\n\n\n\n\nAn ordinary column default applies when a column is omitted or the DEFAULT keyword is used. In 12c, DEFAULT ON NULL also applies when an insert supplies an expression that evaluates to NULL.\n\n\nCREATE TABLE c12_defaults_demo (\n    item_id NUMBER PRIMARY KEY,\n    ordinary_status VARCHAR2(20) DEFAULT 'NEW',\n    protected_status VARCHAR2(20) DEFAULT ON NULL 'NEW'\n);\n\n-- Both defaults apply because the columns are omitted.\nINSERT INTO c12_defaults_demo (item_id)\nVALUES (1);\n\n-- Only DEFAULT ON NULL replaces an explicit NULL.\nINSERT INTO c12_defaults_demo (\n    item_id, ordinary_status, protected_status\n)\nVALUES (2, NULL, NULL);\n\n-- Explicit non-NULL values are retained.\nINSERT INTO c12_defaults_demo (\n    item_id, ordinary_status, protected_status\n)\nVALUES (3, 'READY', 'READY');\n\nCOMMIT;\n\nSELECT item_id, ordinary_status, protected_status\nFROM c12_defaults_demo\nORDER BY item_id;\n\nSELECT column_name, nullable\nFROM user_tab_columns\nWHERE table_name = 'C12_DEFAULTS_DEMO'\n  AND column_name IN ('ORDINARY_STATUS', 'PROTECTED_STATUS')\nORDER BY column_name;\n\n\n\nITEM_ID  ORDINARY_STATUS  PROTECTED_STATUS\n-------  --------------- ----------------\n1        NEW             NEW\n2        (null)          NEW\n3        READY           READY\nPROTECTED_STATUS reports NULLABLE = N: DEFAULT ON NULL implicitly imposes a not-null constraint.\nIn 12c, the insert behavior does not mean an update to NULL receives the default:\nBEGIN\n    UPDATE c12_defaults_demo\n    SET protected_status = NULL\n    WHERE item_id = 1;\nEXCEPTION\n    WHEN OTHERS THEN\n        IF SQLCODE = -1407 THEN\n            DBMS_OUTPUT.PUT_LINE(\n                'Expected: UPDATE to NULL violates NOT NULL'\n            );\n        ELSE\n            RAISE;\n        END IF;\nEND;\n/\n\n\n\nFor 12c, distinguish default substitution during inserts from constraint checking during updates. DEFAULT ON NULL is not a general-purpose replacement for every assignment of NULL.\n\n\n\n\nThe right-hand query of an APPLY join can reference a table to its left. This makes patterns such as selecting the highest-paid employee in each department easier to express.\nCROSS APPLY drops left-hand rows with no right-hand result. OUTER APPLY preserves them and supplies nulls for right-hand columns.\n\n\nCREATE TABLE c12_departments (\n    department_id NUMBER PRIMARY KEY,\n    department_name VARCHAR2(50) NOT NULL\n);\n\nCREATE TABLE c12_employees (\n    employee_id NUMBER PRIMARY KEY,\n    department_id NUMBER NOT NULL,\n    employee_name VARCHAR2(50) NOT NULL,\n    salary NUMBER(10,2) NOT NULL,\n    CONSTRAINT c12_emp_dept_fk FOREIGN KEY (department_id)\n        REFERENCES c12_departments (department_id)\n);\n\nINSERT INTO c12_departments VALUES (10, 'Engineering');\nINSERT INTO c12_departments VALUES (20, 'Sales');\nINSERT INTO c12_departments VALUES (30, 'Support');\n\nINSERT INTO c12_employees VALUES (1, 10, 'Amina', 9000);\nINSERT INTO c12_employees VALUES (2, 10, 'Omar', 8000);\nINSERT INTO c12_employees VALUES (3, 20, 'Sara', 7000);\nCOMMIT;\n\n-- Departments with a matching employee only.\nSELECT d.department_name, e.employee_name, e.salary\nFROM c12_departments d\nCROSS APPLY (\n    SELECT x.employee_name, x.salary\n    FROM c12_employees x\n    WHERE x.department_id = d.department_id\n    ORDER BY x.salary DESC, x.employee_id\n    FETCH FIRST 1 ROW ONLY\n) e\nORDER BY d.department_id;\n\n-- Preserve departments with no employees as well.\nSELECT d.department_name, e.employee_name, e.salary\nFROM c12_departments d\nOUTER APPLY (\n    SELECT x.employee_name, x.salary\n    FROM c12_employees x\n    WHERE x.department_id = d.department_id\n    ORDER BY x.salary DESC, x.employee_id\n    FETCH FIRST 1 ROW ONLY\n) e\nORDER BY d.department_id;\n\n\n\nThe CROSS APPLY query returns:\nDEPARTMENT_NAME  EMPLOYEE_NAME  SALARY\n--------------- -------------  ------\nEngineering      Amina          9000\nSales            Sara           7000\nThe OUTER APPLY query also returns:\nSupport          (null)         (null)\n\n\n\nThe correlated subquery describes the desired result for each department. The optimizer determines the physical execution strategy; the syntax does not promise a particular procedural execution order or superior performance.\n\n\n\n\nRun only the statements for objects you created successfully. These commands permanently remove the demonstration tables.\nDROP TABLE c12_identity_demo PURGE;\nDROP TABLE c12_products PURGE;\nDROP TABLE c12_customers PURGE;\nDROP TABLE c12_defaults_demo PURGE;\nDROP TABLE c12_employees PURGE;\nDROP TABLE c12_departments PURGE;\n\n\n\nThe feature descriptions are based on Oracle’s documentation:\n\nOracle Database 12c Release 1 New Features Guide\nOracle Database 12c SQL Language Reference: CREATE TABLE\nOracle Database 12c SQL Language Reference: SELECT",
     "crumbs": [
       "Home",
       "Notes",
-      "Transformers"
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#before-you-begin",
+    "href": "notes/12c_new_features.html#before-you-begin",
+    "title": "12c New Features",
+    "section": "",
+    "text": "Use a disposable schema on Oracle Database 12c Release 1 or later.\nYour user needs CREATE TABLE and sufficient tablespace quota.\nRun the examples once, in order, using SQL*Plus, SQLcl, or SQL Developer’s Run Script mode.\nThese are illustrative scripts, not scripts executed against a live database for this post.\nDDL can commit transactions. Do not run experiments in production.\nThe fenced SQL blocks are for display; Quarto does not execute them during rendering.\n\nSET SERVEROUTPUT ON\nSET LINESIZE 160\nSET PAGESIZE 100\nSET NULL '(null)'",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#identity-columns-generate-numeric-keys-automatically",
+    "href": "notes/12c_new_features.html#identity-columns-generate-numeric-keys-automatically",
+    "title": "12c New Features",
+    "section": "",
+    "text": "Before 12c, applications commonly used a sequence, sometimes with a trigger, to populate numeric keys. Identity columns provide declarative syntax for automatic value generation.\nGENERATED ALWAYS AS IDENTITY asks Oracle to generate the value rather than accepting an application-supplied ID during an ordinary insert. The primary-key constraint is separate: it explicitly enforces key uniqueness.\n\n\nCREATE TABLE c12_identity_demo (\n    customer_id NUMBER GENERATED ALWAYS AS IDENTITY,\n    customer_name VARCHAR2(50) NOT NULL,\n    CONSTRAINT c12_identity_pk PRIMARY KEY (customer_id)\n);\n\nINSERT INTO c12_identity_demo (customer_name)\nVALUES ('Amina');\n\nINSERT INTO c12_identity_demo (customer_name)\nVALUES ('Omar');\n\nCOMMIT;\n\nSELECT customer_id, customer_name\nFROM c12_identity_demo\nORDER BY customer_id;\n\n\n\nFor a newly created table with these default identity settings and no intervening activity:\nCUSTOMER_ID  CUSTOMER_NAME\n-----------  -------------\n1            Amina\n2            Omar\nAn explicit ID is rejected by this identity mode:\nBEGIN\n    INSERT INTO c12_identity_demo (customer_id, customer_name)\n    VALUES (100, 'Explicit ID');\nEXCEPTION\n    WHEN OTHERS THEN\n        IF SQLCODE = -32795 THEN\n            DBMS_OUTPUT.PUT_LINE(\n                'Expected: explicit value rejected for ALWAYS identity'\n            );\n        ELSE\n            RAISE;\n        END IF;\nEND;\n/\n\n\n\nChoose the identity mode deliberately:\n\nGENERATED ALWAYS: Oracle generates values; ordinary explicit values are rejected.\nGENERATED BY DEFAULT: Oracle generates a value when the identity column is omitted; explicit values are allowed.\nGENERATED BY DEFAULT ON NULL: Oracle also generates a value when an explicit NULL is inserted.\n\nIdentity values are not gap-free business numbers. Rollbacks and sequence caching can leave gaps, and accepting explicit IDs requires care to avoid collisions with generated values.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#offset-and-fetch-simplify-top-n-queries-and-pagination",
+    "href": "notes/12c_new_features.html#offset-and-fetch-simplify-top-n-queries-and-pagination",
+    "title": "12c New Features",
+    "section": "",
+    "text": "Oracle 12c adds a row-limiting clause so queries can request a limited number of rows without a ROWNUM wrapper.\nUse a deterministic ORDER BY when the identity and ordering of returned rows matter. A unique tie-breaker makes page boundaries predictable for an unchanged data set.\n\n\nCREATE TABLE c12_products (\n    product_id NUMBER PRIMARY KEY,\n    product_name VARCHAR2(50) NOT NULL,\n    price NUMBER(10,2) NOT NULL\n);\n\nINSERT INTO c12_products VALUES (1, 'Monitor', 300);\nINSERT INTO c12_products VALUES (2, 'Keyboard', 80);\nINSERT INTO c12_products VALUES (3, 'Mouse', 40);\nINSERT INTO c12_products VALUES (4, 'Dock', 150);\nINSERT INTO c12_products VALUES (5, 'Webcam', 80);\nCOMMIT;\n\n-- The three most expensive products.\nSELECT product_id, product_name, price\nFROM c12_products\nORDER BY price DESC, product_id\nFETCH FIRST 3 ROWS ONLY;\n\n-- Skip the first two rows, then return the next two.\nSELECT product_id, product_name, price\nFROM c12_products\nORDER BY price DESC, product_id\nOFFSET 2 ROWS FETCH NEXT 2 ROWS ONLY;\n\n-- Include all rows tied at the cutoff price.\nSELECT product_id, product_name, price\nFROM c12_products\nORDER BY price DESC\nFETCH FIRST 3 ROWS WITH TIES;\n\n\n\n\nThe first query returns Monitor, Dock, and Keyboard.\nThe second query returns Keyboard and Webcam.\nThe third query returns four rows: Monitor, Dock, Keyboard, and Webcam. Both 80-priced products tie at the cutoff; their relative order is unspecified.\n\n\n\n\nWITH TIES compares the complete ORDER BY key. Adding a unique product ID to the third query’s ordering would remove the price tie for this purpose.\nOffset pagination is concise, but it does not freeze the data between requests. Concurrent changes can shift page boundaries, and large offsets can still require substantial processing.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#invisible-columns-stay-out-of-select",
+    "href": "notes/12c_new_features.html#invisible-columns-stay-out-of-select",
+    "title": "12c New Features",
+    "section": "",
+    "text": "An invisible column exists in the table and remains directly accessible, but generic access such as SELECT * omits it. This can help introduce a column without changing the projection of existing star queries.\n\n\nCREATE TABLE c12_customers (\n    customer_id NUMBER PRIMARY KEY,\n    customer_name VARCHAR2(50) NOT NULL,\n    internal_note VARCHAR2(100) INVISIBLE\n);\n\n-- With no column list, values map to visible columns only.\nINSERT INTO c12_customers\nVALUES (1, 'Amina');\n\n-- Name an invisible column explicitly to populate it.\nINSERT INTO c12_customers (\n    customer_id, customer_name, internal_note\n)\nVALUES (2, 'Omar', 'Review before renewal');\n\nCOMMIT;\n\nSELECT *\nFROM c12_customers\nORDER BY customer_id;\n\nSELECT customer_id, customer_name, internal_note\nFROM c12_customers\nORDER BY customer_id;\n\nALTER TABLE c12_customers MODIFY (internal_note VISIBLE);\n\nSELECT *\nFROM c12_customers\nORDER BY customer_id;\n\n\n\nThe first query shows only CUSTOMER_ID and CUSTOMER_NAME. The explicit query shows INTERNAL_NOTE, including Omar’s note. After the visibility change, SELECT * includes the note column too.\n\n\n\nInvisibility is an interface convenience, not a security boundary. A user with suitable access can explicitly select the column. Explicit column lists remain preferable for application code.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#default-on-null-handles-explicit-null-inserts",
+    "href": "notes/12c_new_features.html#default-on-null-handles-explicit-null-inserts",
+    "title": "12c New Features",
+    "section": "",
+    "text": "An ordinary column default applies when a column is omitted or the DEFAULT keyword is used. In 12c, DEFAULT ON NULL also applies when an insert supplies an expression that evaluates to NULL.\n\n\nCREATE TABLE c12_defaults_demo (\n    item_id NUMBER PRIMARY KEY,\n    ordinary_status VARCHAR2(20) DEFAULT 'NEW',\n    protected_status VARCHAR2(20) DEFAULT ON NULL 'NEW'\n);\n\n-- Both defaults apply because the columns are omitted.\nINSERT INTO c12_defaults_demo (item_id)\nVALUES (1);\n\n-- Only DEFAULT ON NULL replaces an explicit NULL.\nINSERT INTO c12_defaults_demo (\n    item_id, ordinary_status, protected_status\n)\nVALUES (2, NULL, NULL);\n\n-- Explicit non-NULL values are retained.\nINSERT INTO c12_defaults_demo (\n    item_id, ordinary_status, protected_status\n)\nVALUES (3, 'READY', 'READY');\n\nCOMMIT;\n\nSELECT item_id, ordinary_status, protected_status\nFROM c12_defaults_demo\nORDER BY item_id;\n\nSELECT column_name, nullable\nFROM user_tab_columns\nWHERE table_name = 'C12_DEFAULTS_DEMO'\n  AND column_name IN ('ORDINARY_STATUS', 'PROTECTED_STATUS')\nORDER BY column_name;\n\n\n\nITEM_ID  ORDINARY_STATUS  PROTECTED_STATUS\n-------  --------------- ----------------\n1        NEW             NEW\n2        (null)          NEW\n3        READY           READY\nPROTECTED_STATUS reports NULLABLE = N: DEFAULT ON NULL implicitly imposes a not-null constraint.\nIn 12c, the insert behavior does not mean an update to NULL receives the default:\nBEGIN\n    UPDATE c12_defaults_demo\n    SET protected_status = NULL\n    WHERE item_id = 1;\nEXCEPTION\n    WHEN OTHERS THEN\n        IF SQLCODE = -1407 THEN\n            DBMS_OUTPUT.PUT_LINE(\n                'Expected: UPDATE to NULL violates NOT NULL'\n            );\n        ELSE\n            RAISE;\n        END IF;\nEND;\n/\n\n\n\nFor 12c, distinguish default substitution during inserts from constraint checking during updates. DEFAULT ON NULL is not a general-purpose replacement for every assignment of NULL.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#cross-apply-and-outer-apply-support-correlated-inline-views",
+    "href": "notes/12c_new_features.html#cross-apply-and-outer-apply-support-correlated-inline-views",
+    "title": "12c New Features",
+    "section": "",
+    "text": "The right-hand query of an APPLY join can reference a table to its left. This makes patterns such as selecting the highest-paid employee in each department easier to express.\nCROSS APPLY drops left-hand rows with no right-hand result. OUTER APPLY preserves them and supplies nulls for right-hand columns.\n\n\nCREATE TABLE c12_departments (\n    department_id NUMBER PRIMARY KEY,\n    department_name VARCHAR2(50) NOT NULL\n);\n\nCREATE TABLE c12_employees (\n    employee_id NUMBER PRIMARY KEY,\n    department_id NUMBER NOT NULL,\n    employee_name VARCHAR2(50) NOT NULL,\n    salary NUMBER(10,2) NOT NULL,\n    CONSTRAINT c12_emp_dept_fk FOREIGN KEY (department_id)\n        REFERENCES c12_departments (department_id)\n);\n\nINSERT INTO c12_departments VALUES (10, 'Engineering');\nINSERT INTO c12_departments VALUES (20, 'Sales');\nINSERT INTO c12_departments VALUES (30, 'Support');\n\nINSERT INTO c12_employees VALUES (1, 10, 'Amina', 9000);\nINSERT INTO c12_employees VALUES (2, 10, 'Omar', 8000);\nINSERT INTO c12_employees VALUES (3, 20, 'Sara', 7000);\nCOMMIT;\n\n-- Departments with a matching employee only.\nSELECT d.department_name, e.employee_name, e.salary\nFROM c12_departments d\nCROSS APPLY (\n    SELECT x.employee_name, x.salary\n    FROM c12_employees x\n    WHERE x.department_id = d.department_id\n    ORDER BY x.salary DESC, x.employee_id\n    FETCH FIRST 1 ROW ONLY\n) e\nORDER BY d.department_id;\n\n-- Preserve departments with no employees as well.\nSELECT d.department_name, e.employee_name, e.salary\nFROM c12_departments d\nOUTER APPLY (\n    SELECT x.employee_name, x.salary\n    FROM c12_employees x\n    WHERE x.department_id = d.department_id\n    ORDER BY x.salary DESC, x.employee_id\n    FETCH FIRST 1 ROW ONLY\n) e\nORDER BY d.department_id;\n\n\n\nThe CROSS APPLY query returns:\nDEPARTMENT_NAME  EMPLOYEE_NAME  SALARY\n--------------- -------------  ------\nEngineering      Amina          9000\nSales            Sara           7000\nThe OUTER APPLY query also returns:\nSupport          (null)         (null)\n\n\n\nThe correlated subquery describes the desired result for each department. The optimizer determines the physical execution strategy; the syntax does not promise a particular procedural execution order or superior performance.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#cleanup",
+    "href": "notes/12c_new_features.html#cleanup",
+    "title": "12c New Features",
+    "section": "",
+    "text": "Run only the statements for objects you created successfully. These commands permanently remove the demonstration tables.\nDROP TABLE c12_identity_demo PURGE;\nDROP TABLE c12_products PURGE;\nDROP TABLE c12_customers PURGE;\nDROP TABLE c12_defaults_demo PURGE;\nDROP TABLE c12_employees PURGE;\nDROP TABLE c12_departments PURGE;",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/12c_new_features.html#further-reading",
+    "href": "notes/12c_new_features.html#further-reading",
+    "title": "12c New Features",
+    "section": "",
+    "text": "The feature descriptions are based on Oracle’s documentation:\n\nOracle Database 12c Release 1 New Features Guide\nOracle Database 12c SQL Language Reference: CREATE TABLE\nOracle Database 12c SQL Language Reference: SELECT",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "12c New Features"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html",
+    "href": "notes/11g_Unknown_facts.html",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Oracle Database 11g has several behaviors worth testing: invisible indexes still enforce uniqueness, empty tables can exist without segments, and edition-based redefinition allows different versions of database code to coexist.\nThese examples target Oracle Database 11g Release 2 (11.2). They are illustrative scripts, not scripts verified against a running Oracle instance for this post.\n\n\n\nUse a disposable schema and run each example once, in order.\nRun SQL*Plus, SQLcl, or SQL Developer in Run Script mode.\nYour user needs appropriate object-creation privileges and tablespace quota.\nVerify feature availability and licensing before trying the partitioning examples.\nExample 5 reuses Example 4’s table.\nExample 9 needs DBA-assisted setup in a separate disposable schema.\nDDL can commit transactions. Do not run these experiments in production.\n\nThe SQL blocks are displayed as examples; Quarto does not execute them during rendering.\nSET SERVEROUTPUT ON\nSET TIMING ON\nSET LINESIZE 160\nSET PAGESIZE 100\n\n\n\nAn invisible index is normally ignored by the optimizer, but Oracle continues maintaining it during inserts, updates, and deletes. A unique index therefore still rejects duplicates when it is invisible.\n\n\nCREATE TABLE f01_accounts (\n    account_id NUMBER,\n    account_name VARCHAR2(50)\n);\n\nCREATE UNIQUE INDEX f01_accounts_uix\n    ON f01_accounts (account_id) INVISIBLE;\n\nINSERT INTO f01_accounts VALUES (1, 'First account');\nCOMMIT;\n\nSELECT index_name, visibility, status\nFROM user_indexes\nWHERE index_name = 'F01_ACCOUNTS_UIX';\n\nBEGIN\n    INSERT INTO f01_accounts VALUES (1, 'Duplicate account');\n    DBMS_OUTPUT.PUT_LINE('Unexpected: duplicate accepted');\nEXCEPTION\n    WHEN DUP_VAL_ON_INDEX THEN\n        DBMS_OUTPUT.PUT_LINE('Expected: duplicate rejected');\nEND;\n/\n\n\n\nThe index reports INVISIBLE and remains valid. The duplicate insert is rejected.\nYou can allow the optimizer to consider invisible indexes in your session:\nALTER SESSION SET optimizer_use_invisible_indexes = TRUE;\n-- The optimizer may consider the index; selection is not guaranteed.\nALTER SESSION SET optimizer_use_invisible_indexes = FALSE;\n\n\n\nIndex visibility controls optimizer consideration, not maintenance or uniqueness enforcement. Hiding an index does not eliminate its write overhead.\n\n\n\n\nDeferred segment creation in 11g Release 2 allows Oracle to create a table definition before allocating its storage segment. The first insert materializes the segment, even if the insert is rolled back.\n\n\nCREATE TABLE f02_empty (id NUMBER)\nSEGMENT CREATION DEFERRED;\n\nSELECT table_name, segment_created\nFROM user_tables\nWHERE table_name = 'F02_EMPTY';\n\nSELECT COUNT(*) AS segment_count\nFROM user_segments\nWHERE segment_name = 'F02_EMPTY';\n\nINSERT INTO f02_empty VALUES (1);\nROLLBACK;\n\nSELECT COUNT(*) AS row_count FROM f02_empty;\n\nSELECT table_name, segment_created\nFROM user_tables\nWHERE table_name = 'F02_EMPTY';\n\nSELECT COUNT(*) AS segment_count\nFROM user_segments\nWHERE segment_name = 'F02_EMPTY';\n\n\n\nBefore the insert, SEGMENT_CREATED is NO and the segment count is zero. After the insert and rollback, the row count is zero, but SEGMENT_CREATED is YES and the segment count is one.\n\n\n\nAn empty table is not necessarily a table without allocated storage. Rolling back the first row does not undo segment allocation.\n\n\n\n\nFor eligible tables, Oracle 11g can optimize adding a column with a constant default and a NOT NULL constraint. Oracle stores the default in metadata rather than physically populating every existing row. Restrictions apply; this is not a guarantee for every defaulted-column operation.\n\n\nCREATE TABLE f03_defaults AS\nSELECT LEVEL AS id, RPAD('x', 100, 'x') AS payload\nFROM dual\nCONNECT BY LEVEL &lt;= 100000;\n\nSELECT bytes AS bytes_before\nFROM user_segments\nWHERE segment_name = 'F03_DEFAULTS'\n  AND segment_type = 'TABLE';\n\nALTER TABLE f03_defaults ADD (\n    status VARCHAR2(10) DEFAULT 'NEW' NOT NULL\n);\n\nSELECT status, COUNT(*) AS row_count\nFROM f03_defaults\nGROUP BY status;\n\nSELECT column_name, nullable, data_default\nFROM user_tab_columns\nWHERE table_name = 'F03_DEFAULTS'\n  AND column_name = 'STATUS';\n\nSELECT bytes AS bytes_after\nFROM user_segments\nWHERE segment_name = 'F03_DEFAULTS'\n  AND segment_type = 'TABLE';\n\n\n\nAll 100,000 rows return NEW, and NULLABLE is N. On an eligible configuration, the change should be fast and allocated segment bytes will typically remain unchanged.\n\n\n\nVisible default values confirm SQL semantics. Timing and unchanged allocated bytes are supporting observations, not conclusive proof that no rows were physically modified.\n\n\n\n\nA compound DML trigger can contain statement-level and row-level sections. Its common declaration section holds shared state for one triggering statement.\n\n\nCREATE TABLE f04_trigger_test (\n    id NUMBER PRIMARY KEY,\n    amount NUMBER\n);\n\nINSERT INTO f04_trigger_test VALUES (1, 10);\nINSERT INTO f04_trigger_test VALUES (2, 20);\nCOMMIT;\n\nCREATE OR REPLACE TRIGGER f04_compound_trg\nFOR UPDATE ON f04_trigger_test\nCOMPOUND TRIGGER\n    g_rows PLS_INTEGER := 0;\n\n    BEFORE STATEMENT IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('BEFORE STATEMENT');\n    END BEFORE STATEMENT;\n\n    BEFORE EACH ROW IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('BEFORE EACH ROW: id=' || :OLD.id);\n    END BEFORE EACH ROW;\n\n    AFTER EACH ROW IS\n    BEGIN\n        g_rows := g_rows + 1;\n    END AFTER EACH ROW;\n\n    AFTER STATEMENT IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('AFTER STATEMENT: rows=' || g_rows);\n    END AFTER STATEMENT;\nEND f04_compound_trg;\n/\n\nSHOW ERRORS TRIGGER f04_compound_trg\n\nUPDATE f04_trigger_test SET amount = amount + 1;\nROLLBACK;\n\n\n\nThe output includes a before-statement message, two before-row messages, and AFTER STATEMENT: rows=2. Do not rely on a particular row-processing order.\n\n\n\nThe counter belongs to the triggering statement. This pattern does not require package-level state.\n\n\n\n\nA compound trigger containing only row-level sections has nothing to execute when an update affects no rows. Statement-level sections can execute even when no rows qualify.\n\n\nThis example reuses F04_TRIGGER_TEST.\nDROP TRIGGER f04_compound_trg;\n\nCREATE OR REPLACE TRIGGER f05_row_only_trg\nFOR UPDATE ON f04_trigger_test\nCOMPOUND TRIGGER\n    AFTER EACH ROW IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('Row-only trigger fired');\n    END AFTER EACH ROW;\nEND f05_row_only_trg;\n/\n\nPROMPT Expect no trigger message\nUPDATE f04_trigger_test\nSET amount = amount + 1\nWHERE id = -1;\n\nCREATE OR REPLACE TRIGGER f05_row_only_trg\nFOR UPDATE ON f04_trigger_test\nCOMPOUND TRIGGER\n    AFTER EACH ROW IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('Row section fired');\n    END AFTER EACH ROW;\n\n    AFTER STATEMENT IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('Statement section fired');\n    END AFTER STATEMENT;\nEND f05_row_only_trg;\n/\n\nPROMPT Expect the statement message only\nUPDATE f04_trigger_test\nSET amount = amount + 1\nWHERE id = -1;\nROLLBACK;\n\n\n\nThe first update prints no trigger message. The second prints Statement section fired.\n\n\n\nAuditing a statement being issued is different from auditing rows being changed.\n\n\n\n\nInterval partitioning creates partitions as inserted data requires them. It does not need to materialize every intervening empty interval.\n\n\nRun only where Oracle Partitioning is available and appropriately licensed.\nCREATE TABLE f06_sales (\n    sale_id NUMBER,\n    sale_date DATE NOT NULL,\n    amount NUMBER\n)\nPARTITION BY RANGE (sale_date)\nINTERVAL (NUMTOYMINTERVAL(1, 'MONTH'))\n(\n    PARTITION p_before_2020\n        VALUES LESS THAN (DATE '2020-01-01')\n);\n\nINSERT INTO f06_sales VALUES (1, DATE '2020-01-15', 100);\nINSERT INTO f06_sales VALUES (2, DATE '2020-07-15', 200);\nCOMMIT;\n\nSELECT partition_name, partition_position, interval\nFROM user_tab_partitions\nWHERE table_name = 'F06_SALES'\nORDER BY partition_position;\n\nSELECT COUNT(*) AS partition_count\nFROM user_tab_partitions\nWHERE table_name = 'F06_SALES';\n\nSELECT COUNT(*) AS july_rows\nFROM f06_sales PARTITION FOR (DATE '2020-07-15');\n\n\n\nThere are three partitions: the initial range partition, a January interval partition, and a July interval partition. JULY_ROWS is one. Generated partition names can vary.\n\n\n\nA monthly interval definition does not imply a fully materialized calendar of monthly partitions.\n\n\n\n\nIn 11g Release 2, an interval-partitioning key must consist of one column of type NUMBER or DATE. A TIMESTAMP column is not a supported interval key in this release.\n\n\nThis block intentionally attempts invalid DDL and catches the error.\nBEGIN\n    EXECUTE IMMEDIATE q'[\n        CREATE TABLE f07_bad_interval (\n            event_id NUMBER,\n            event_ts TIMESTAMP\n        )\n        PARTITION BY RANGE (event_ts)\n        INTERVAL (NUMTOYMINTERVAL(1, 'MONTH'))\n        (\n            PARTITION p0 VALUES LESS THAN (\n                TIMESTAMP '2020-01-01 00:00:00'\n            )\n        )\n    ]';\n    DBMS_OUTPUT.PUT_LINE('Unexpected: TIMESTAMP key accepted');\nEXCEPTION\n    WHEN OTHERS THEN\n        DBMS_OUTPUT.PUT_LINE('CREATE TABLE failed: ' || SQLERRM);\nEND;\n/\n\n\n\nAn appropriately configured 11g R2 instance rejects the unsupported interval key.\n\n\n\nRead the error rather than treating every failure as proof of the datatype restriction. Missing privileges or unavailable partitioning functionality can also cause failure. Interval-partitioning restrictions should not be generalized to ordinary range partitioning.\n\n\n\n\nIn 11g Release 2, Oracle automatically detects the data sources accessed by a result-cached PL/SQL function. Committed changes to a dependent table invalidate affected cached results.\n\n\nCREATE TABLE f08_prices (\n    product_id NUMBER PRIMARY KEY,\n    price NUMBER\n);\n\nINSERT INTO f08_prices VALUES (1, 100);\nCOMMIT;\n\nCREATE OR REPLACE FUNCTION f08_get_price (\n    p_product_id NUMBER\n) RETURN NUMBER\nRESULT_CACHE\nIS\n    l_price NUMBER;\nBEGIN\n    SELECT price INTO l_price\n    FROM f08_prices\n    WHERE product_id = p_product_id;\n\n    RETURN l_price;\nEND;\n/\n\nSHOW ERRORS FUNCTION f08_get_price\n\nSELECT f08_get_price(1) AS first_call FROM dual;\nSELECT f08_get_price(1) AS repeated_call FROM dual;\n\nUPDATE f08_prices SET price = 125 WHERE product_id = 1;\nCOMMIT;\n\nSELECT f08_get_price(1) AS after_commit FROM dual;\nAn appropriately privileged user can inspect cache entries:\nSELECT name, status\nFROM v$result_cache_objects\nWHERE type = 'Result'\n  AND UPPER(name) LIKE '%F08_GET_PRICE%';\n\n\n\nThe calls return 100, 100, and 125.\n\n\n\nActual caching requires an enabled, usable server result cache. Correct output alone does not prove a cache hit: the function can return correct values when caching is disabled or bypassed.\n\n\n\n\nEdition-based redefinition, introduced in 11g Release 2, lets sessions use different editions of database application code. This experiment demonstrates code isolation, not a complete online application upgrade.\n\n\nHave a DBA create a fresh disposable user named EBR_LAB according to local password and tablespace policies, then run:\nALTER USER ebr_lab ENABLE EDITIONS;\nGRANT CREATE SESSION, CREATE PROCEDURE TO ebr_lab;\n\nCREATE EDITION f09_v2 AS CHILD OF ora$base;\nGRANT USE ON EDITION f09_v2 TO ebr_lab;\nEnabling editions is a significant schema change. Do not apply this setup to an existing application owner merely to try the example.\n\n\n\nALTER SESSION SET EDITION = ora$base;\n\nCREATE OR REPLACE FUNCTION f09_version\nRETURN VARCHAR2\nIS\nBEGIN\n    RETURN 'Version 1';\nEND;\n/\n\nSELECT f09_version() AS function_version FROM dual;\n\nALTER SESSION SET EDITION = f09_v2;\n\nCREATE OR REPLACE FUNCTION f09_version\nRETURN VARCHAR2\nIS\nBEGIN\n    RETURN 'Version 2';\nEND;\n/\n\nSELECT f09_version() AS function_version FROM dual;\n\nALTER SESSION SET EDITION = ora$base;\nSELECT f09_version() AS function_version FROM dual;\n\n\n\nThe three queries return Version 1, Version 2, and Version 1.\n\n\n\nThe session edition determines which implementation is visible. Shared-table changes require additional design and may involve editioning views and crossedition triggers.\nReconnect to the original disposable schema before continuing.\n\n\n\n\nOracle 11g Release 2 allows virtual columns in the primary or foreign keys used for reference partitioning. A child table can derive its parent key from another column and use that relationship to determine partition placement.\n\n\nRun only where Oracle Partitioning is available and appropriately licensed.\nCREATE TABLE f10_orders (\n    order_id NUMBER NOT NULL,\n    order_date DATE NOT NULL,\n    CONSTRAINT f10_orders_pk PRIMARY KEY (order_id)\n)\nPARTITION BY RANGE (order_date)\n(\n    PARTITION p_old VALUES LESS THAN (DATE '2020-01-01'),\n    PARTITION p_new VALUES LESS THAN (MAXVALUE)\n);\n\nCREATE TABLE f10_lines (\n    line_code VARCHAR2(30) NOT NULL,\n    order_id GENERATED ALWAYS AS (\n        TO_NUMBER(\n            SUBSTR(line_code, 1, INSTR(line_code, '-') - 1)\n        )\n    ) VIRTUAL CONSTRAINT f10_order_nn NOT NULL,\n    amount NUMBER,\n    CONSTRAINT f10_lines_fk FOREIGN KEY (order_id)\n        REFERENCES f10_orders (order_id)\n)\nPARTITION BY REFERENCE (f10_lines_fk);\n\nINSERT INTO f10_orders VALUES (10, DATE '2019-12-15');\nINSERT INTO f10_orders VALUES (20, DATE '2020-06-15');\n\nINSERT INTO f10_lines (line_code, amount) VALUES ('10-1', 100);\nINSERT INTO f10_lines (line_code, amount) VALUES ('20-1', 200);\nCOMMIT;\n\nSELECT line_code, order_id, amount\nFROM f10_lines PARTITION (p_old);\n\nSELECT line_code, order_id, amount\nFROM f10_lines PARTITION (p_new);\n\n\n\nP_OLD contains line 10-1, derived order ID 10, and amount 100. P_NEW contains line 20-1, derived order ID 20, and amount 200.\n\n\n\nThe child table stores no order date. Its partition placement follows the referenced parent row. The unnamed child partitions inherit their corresponding parent partition names in this example.\n\n\n\n\nRun this in the original disposable schema, not EBR_LAB. These commands permanently remove the demonstration tables and their dependent indexes and triggers. Run only the statements corresponding to objects you successfully created.\nDROP TABLE f01_accounts PURGE;\nDROP TABLE f02_empty PURGE;\nDROP TABLE f03_defaults PURGE;\nDROP TABLE f04_trigger_test PURGE;\nDROP TABLE f06_sales PURGE;\n\nDROP FUNCTION f08_get_price;\nDROP TABLE f08_prices PURGE;\n\nDROP TABLE f10_lines PURGE;\nDROP TABLE f10_orders PURGE;\nThe failed creation in Example 7 should leave no table. If it unexpectedly succeeded, remove F07_BAD_INTERVAL separately.\nHave the DBA handle cleanup of EBR_LAB and F09_V2 after confirming that no sessions or other test objects depend on them.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#before-you-begin",
+    "href": "notes/11g_Unknown_facts.html#before-you-begin",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Use a disposable schema and run each example once, in order.\nRun SQL*Plus, SQLcl, or SQL Developer in Run Script mode.\nYour user needs appropriate object-creation privileges and tablespace quota.\nVerify feature availability and licensing before trying the partitioning examples.\nExample 5 reuses Example 4’s table.\nExample 9 needs DBA-assisted setup in a separate disposable schema.\nDDL can commit transactions. Do not run these experiments in production.\n\nThe SQL blocks are displayed as examples; Quarto does not execute them during rendering.\nSET SERVEROUTPUT ON\nSET TIMING ON\nSET LINESIZE 160\nSET PAGESIZE 100",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#invisible-indexes-still-enforce-uniqueness",
+    "href": "notes/11g_Unknown_facts.html#invisible-indexes-still-enforce-uniqueness",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "An invisible index is normally ignored by the optimizer, but Oracle continues maintaining it during inserts, updates, and deletes. A unique index therefore still rejects duplicates when it is invisible.\n\n\nCREATE TABLE f01_accounts (\n    account_id NUMBER,\n    account_name VARCHAR2(50)\n);\n\nCREATE UNIQUE INDEX f01_accounts_uix\n    ON f01_accounts (account_id) INVISIBLE;\n\nINSERT INTO f01_accounts VALUES (1, 'First account');\nCOMMIT;\n\nSELECT index_name, visibility, status\nFROM user_indexes\nWHERE index_name = 'F01_ACCOUNTS_UIX';\n\nBEGIN\n    INSERT INTO f01_accounts VALUES (1, 'Duplicate account');\n    DBMS_OUTPUT.PUT_LINE('Unexpected: duplicate accepted');\nEXCEPTION\n    WHEN DUP_VAL_ON_INDEX THEN\n        DBMS_OUTPUT.PUT_LINE('Expected: duplicate rejected');\nEND;\n/\n\n\n\nThe index reports INVISIBLE and remains valid. The duplicate insert is rejected.\nYou can allow the optimizer to consider invisible indexes in your session:\nALTER SESSION SET optimizer_use_invisible_indexes = TRUE;\n-- The optimizer may consider the index; selection is not guaranteed.\nALTER SESSION SET optimizer_use_invisible_indexes = FALSE;\n\n\n\nIndex visibility controls optimizer consideration, not maintenance or uniqueness enforcement. Hiding an index does not eliminate its write overhead.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#an-empty-table-can-exist-without-a-storage-segment",
+    "href": "notes/11g_Unknown_facts.html#an-empty-table-can-exist-without-a-storage-segment",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Deferred segment creation in 11g Release 2 allows Oracle to create a table definition before allocating its storage segment. The first insert materializes the segment, even if the insert is rolled back.\n\n\nCREATE TABLE f02_empty (id NUMBER)\nSEGMENT CREATION DEFERRED;\n\nSELECT table_name, segment_created\nFROM user_tables\nWHERE table_name = 'F02_EMPTY';\n\nSELECT COUNT(*) AS segment_count\nFROM user_segments\nWHERE segment_name = 'F02_EMPTY';\n\nINSERT INTO f02_empty VALUES (1);\nROLLBACK;\n\nSELECT COUNT(*) AS row_count FROM f02_empty;\n\nSELECT table_name, segment_created\nFROM user_tables\nWHERE table_name = 'F02_EMPTY';\n\nSELECT COUNT(*) AS segment_count\nFROM user_segments\nWHERE segment_name = 'F02_EMPTY';\n\n\n\nBefore the insert, SEGMENT_CREATED is NO and the segment count is zero. After the insert and rollback, the row count is zero, but SEGMENT_CREATED is YES and the segment count is one.\n\n\n\nAn empty table is not necessarily a table without allocated storage. Rolling back the first row does not undo segment allocation.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#adding-a-defaulted-column-can-avoid-rewriting-existing-rows",
+    "href": "notes/11g_Unknown_facts.html#adding-a-defaulted-column-can-avoid-rewriting-existing-rows",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "For eligible tables, Oracle 11g can optimize adding a column with a constant default and a NOT NULL constraint. Oracle stores the default in metadata rather than physically populating every existing row. Restrictions apply; this is not a guarantee for every defaulted-column operation.\n\n\nCREATE TABLE f03_defaults AS\nSELECT LEVEL AS id, RPAD('x', 100, 'x') AS payload\nFROM dual\nCONNECT BY LEVEL &lt;= 100000;\n\nSELECT bytes AS bytes_before\nFROM user_segments\nWHERE segment_name = 'F03_DEFAULTS'\n  AND segment_type = 'TABLE';\n\nALTER TABLE f03_defaults ADD (\n    status VARCHAR2(10) DEFAULT 'NEW' NOT NULL\n);\n\nSELECT status, COUNT(*) AS row_count\nFROM f03_defaults\nGROUP BY status;\n\nSELECT column_name, nullable, data_default\nFROM user_tab_columns\nWHERE table_name = 'F03_DEFAULTS'\n  AND column_name = 'STATUS';\n\nSELECT bytes AS bytes_after\nFROM user_segments\nWHERE segment_name = 'F03_DEFAULTS'\n  AND segment_type = 'TABLE';\n\n\n\nAll 100,000 rows return NEW, and NULLABLE is N. On an eligible configuration, the change should be fast and allocated segment bytes will typically remain unchanged.\n\n\n\nVisible default values confirm SQL semantics. Timing and unchanged allocated bytes are supporting observations, not conclusive proof that no rows were physically modified.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#a-compound-trigger-can-share-state-across-four-timing-points",
+    "href": "notes/11g_Unknown_facts.html#a-compound-trigger-can-share-state-across-four-timing-points",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "A compound DML trigger can contain statement-level and row-level sections. Its common declaration section holds shared state for one triggering statement.\n\n\nCREATE TABLE f04_trigger_test (\n    id NUMBER PRIMARY KEY,\n    amount NUMBER\n);\n\nINSERT INTO f04_trigger_test VALUES (1, 10);\nINSERT INTO f04_trigger_test VALUES (2, 20);\nCOMMIT;\n\nCREATE OR REPLACE TRIGGER f04_compound_trg\nFOR UPDATE ON f04_trigger_test\nCOMPOUND TRIGGER\n    g_rows PLS_INTEGER := 0;\n\n    BEFORE STATEMENT IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('BEFORE STATEMENT');\n    END BEFORE STATEMENT;\n\n    BEFORE EACH ROW IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('BEFORE EACH ROW: id=' || :OLD.id);\n    END BEFORE EACH ROW;\n\n    AFTER EACH ROW IS\n    BEGIN\n        g_rows := g_rows + 1;\n    END AFTER EACH ROW;\n\n    AFTER STATEMENT IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('AFTER STATEMENT: rows=' || g_rows);\n    END AFTER STATEMENT;\nEND f04_compound_trg;\n/\n\nSHOW ERRORS TRIGGER f04_compound_trg\n\nUPDATE f04_trigger_test SET amount = amount + 1;\nROLLBACK;\n\n\n\nThe output includes a before-statement message, two before-row messages, and AFTER STATEMENT: rows=2. Do not rely on a particular row-processing order.\n\n\n\nThe counter belongs to the triggering statement. This pattern does not require package-level state.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#a-row-only-compound-trigger-does-nothing-for-a-zero-row-update",
+    "href": "notes/11g_Unknown_facts.html#a-row-only-compound-trigger-does-nothing-for-a-zero-row-update",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "A compound trigger containing only row-level sections has nothing to execute when an update affects no rows. Statement-level sections can execute even when no rows qualify.\n\n\nThis example reuses F04_TRIGGER_TEST.\nDROP TRIGGER f04_compound_trg;\n\nCREATE OR REPLACE TRIGGER f05_row_only_trg\nFOR UPDATE ON f04_trigger_test\nCOMPOUND TRIGGER\n    AFTER EACH ROW IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('Row-only trigger fired');\n    END AFTER EACH ROW;\nEND f05_row_only_trg;\n/\n\nPROMPT Expect no trigger message\nUPDATE f04_trigger_test\nSET amount = amount + 1\nWHERE id = -1;\n\nCREATE OR REPLACE TRIGGER f05_row_only_trg\nFOR UPDATE ON f04_trigger_test\nCOMPOUND TRIGGER\n    AFTER EACH ROW IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('Row section fired');\n    END AFTER EACH ROW;\n\n    AFTER STATEMENT IS\n    BEGIN\n        DBMS_OUTPUT.PUT_LINE('Statement section fired');\n    END AFTER STATEMENT;\nEND f05_row_only_trg;\n/\n\nPROMPT Expect the statement message only\nUPDATE f04_trigger_test\nSET amount = amount + 1\nWHERE id = -1;\nROLLBACK;\n\n\n\nThe first update prints no trigger message. The second prints Statement section fired.\n\n\n\nAuditing a statement being issued is different from auditing rows being changed.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#interval-partitions-are-created-on-demand",
+    "href": "notes/11g_Unknown_facts.html#interval-partitions-are-created-on-demand",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Interval partitioning creates partitions as inserted data requires them. It does not need to materialize every intervening empty interval.\n\n\nRun only where Oracle Partitioning is available and appropriately licensed.\nCREATE TABLE f06_sales (\n    sale_id NUMBER,\n    sale_date DATE NOT NULL,\n    amount NUMBER\n)\nPARTITION BY RANGE (sale_date)\nINTERVAL (NUMTOYMINTERVAL(1, 'MONTH'))\n(\n    PARTITION p_before_2020\n        VALUES LESS THAN (DATE '2020-01-01')\n);\n\nINSERT INTO f06_sales VALUES (1, DATE '2020-01-15', 100);\nINSERT INTO f06_sales VALUES (2, DATE '2020-07-15', 200);\nCOMMIT;\n\nSELECT partition_name, partition_position, interval\nFROM user_tab_partitions\nWHERE table_name = 'F06_SALES'\nORDER BY partition_position;\n\nSELECT COUNT(*) AS partition_count\nFROM user_tab_partitions\nWHERE table_name = 'F06_SALES';\n\nSELECT COUNT(*) AS july_rows\nFROM f06_sales PARTITION FOR (DATE '2020-07-15');\n\n\n\nThere are three partitions: the initial range partition, a January interval partition, and a July interval partition. JULY_ROWS is one. Generated partition names can vary.\n\n\n\nA monthly interval definition does not imply a fully materialized calendar of monthly partitions.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#oracle-11g-interval-partitioning-rejects-a-timestamp-key",
+    "href": "notes/11g_Unknown_facts.html#oracle-11g-interval-partitioning-rejects-a-timestamp-key",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "In 11g Release 2, an interval-partitioning key must consist of one column of type NUMBER or DATE. A TIMESTAMP column is not a supported interval key in this release.\n\n\nThis block intentionally attempts invalid DDL and catches the error.\nBEGIN\n    EXECUTE IMMEDIATE q'[\n        CREATE TABLE f07_bad_interval (\n            event_id NUMBER,\n            event_ts TIMESTAMP\n        )\n        PARTITION BY RANGE (event_ts)\n        INTERVAL (NUMTOYMINTERVAL(1, 'MONTH'))\n        (\n            PARTITION p0 VALUES LESS THAN (\n                TIMESTAMP '2020-01-01 00:00:00'\n            )\n        )\n    ]';\n    DBMS_OUTPUT.PUT_LINE('Unexpected: TIMESTAMP key accepted');\nEXCEPTION\n    WHEN OTHERS THEN\n        DBMS_OUTPUT.PUT_LINE('CREATE TABLE failed: ' || SQLERRM);\nEND;\n/\n\n\n\nAn appropriately configured 11g R2 instance rejects the unsupported interval key.\n\n\n\nRead the error rather than treating every failure as proof of the datatype restriction. Missing privileges or unavailable partitioning functionality can also cause failure. Interval-partitioning restrictions should not be generalized to ordinary range partitioning.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#result-cached-functions-can-track-dependencies-automatically",
+    "href": "notes/11g_Unknown_facts.html#result-cached-functions-can-track-dependencies-automatically",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "In 11g Release 2, Oracle automatically detects the data sources accessed by a result-cached PL/SQL function. Committed changes to a dependent table invalidate affected cached results.\n\n\nCREATE TABLE f08_prices (\n    product_id NUMBER PRIMARY KEY,\n    price NUMBER\n);\n\nINSERT INTO f08_prices VALUES (1, 100);\nCOMMIT;\n\nCREATE OR REPLACE FUNCTION f08_get_price (\n    p_product_id NUMBER\n) RETURN NUMBER\nRESULT_CACHE\nIS\n    l_price NUMBER;\nBEGIN\n    SELECT price INTO l_price\n    FROM f08_prices\n    WHERE product_id = p_product_id;\n\n    RETURN l_price;\nEND;\n/\n\nSHOW ERRORS FUNCTION f08_get_price\n\nSELECT f08_get_price(1) AS first_call FROM dual;\nSELECT f08_get_price(1) AS repeated_call FROM dual;\n\nUPDATE f08_prices SET price = 125 WHERE product_id = 1;\nCOMMIT;\n\nSELECT f08_get_price(1) AS after_commit FROM dual;\nAn appropriately privileged user can inspect cache entries:\nSELECT name, status\nFROM v$result_cache_objects\nWHERE type = 'Result'\n  AND UPPER(name) LIKE '%F08_GET_PRICE%';\n\n\n\nThe calls return 100, 100, and 125.\n\n\n\nActual caching requires an enabled, usable server result cache. Correct output alone does not prove a cache hit: the function can return correct values when caching is disabled or bypassed.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#two-editions-can-expose-different-versions-of-one-function",
+    "href": "notes/11g_Unknown_facts.html#two-editions-can-expose-different-versions-of-one-function",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Edition-based redefinition, introduced in 11g Release 2, lets sessions use different editions of database application code. This experiment demonstrates code isolation, not a complete online application upgrade.\n\n\nHave a DBA create a fresh disposable user named EBR_LAB according to local password and tablespace policies, then run:\nALTER USER ebr_lab ENABLE EDITIONS;\nGRANT CREATE SESSION, CREATE PROCEDURE TO ebr_lab;\n\nCREATE EDITION f09_v2 AS CHILD OF ora$base;\nGRANT USE ON EDITION f09_v2 TO ebr_lab;\nEnabling editions is a significant schema change. Do not apply this setup to an existing application owner merely to try the example.\n\n\n\nALTER SESSION SET EDITION = ora$base;\n\nCREATE OR REPLACE FUNCTION f09_version\nRETURN VARCHAR2\nIS\nBEGIN\n    RETURN 'Version 1';\nEND;\n/\n\nSELECT f09_version() AS function_version FROM dual;\n\nALTER SESSION SET EDITION = f09_v2;\n\nCREATE OR REPLACE FUNCTION f09_version\nRETURN VARCHAR2\nIS\nBEGIN\n    RETURN 'Version 2';\nEND;\n/\n\nSELECT f09_version() AS function_version FROM dual;\n\nALTER SESSION SET EDITION = ora$base;\nSELECT f09_version() AS function_version FROM dual;\n\n\n\nThe three queries return Version 1, Version 2, and Version 1.\n\n\n\nThe session edition determines which implementation is visible. Shared-table changes require additional design and may involve editioning views and crossedition triggers.\nReconnect to the original disposable schema before continuing.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#reference-partitioning-can-use-a-virtual-column-foreign-key",
+    "href": "notes/11g_Unknown_facts.html#reference-partitioning-can-use-a-virtual-column-foreign-key",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Oracle 11g Release 2 allows virtual columns in the primary or foreign keys used for reference partitioning. A child table can derive its parent key from another column and use that relationship to determine partition placement.\n\n\nRun only where Oracle Partitioning is available and appropriately licensed.\nCREATE TABLE f10_orders (\n    order_id NUMBER NOT NULL,\n    order_date DATE NOT NULL,\n    CONSTRAINT f10_orders_pk PRIMARY KEY (order_id)\n)\nPARTITION BY RANGE (order_date)\n(\n    PARTITION p_old VALUES LESS THAN (DATE '2020-01-01'),\n    PARTITION p_new VALUES LESS THAN (MAXVALUE)\n);\n\nCREATE TABLE f10_lines (\n    line_code VARCHAR2(30) NOT NULL,\n    order_id GENERATED ALWAYS AS (\n        TO_NUMBER(\n            SUBSTR(line_code, 1, INSTR(line_code, '-') - 1)\n        )\n    ) VIRTUAL CONSTRAINT f10_order_nn NOT NULL,\n    amount NUMBER,\n    CONSTRAINT f10_lines_fk FOREIGN KEY (order_id)\n        REFERENCES f10_orders (order_id)\n)\nPARTITION BY REFERENCE (f10_lines_fk);\n\nINSERT INTO f10_orders VALUES (10, DATE '2019-12-15');\nINSERT INTO f10_orders VALUES (20, DATE '2020-06-15');\n\nINSERT INTO f10_lines (line_code, amount) VALUES ('10-1', 100);\nINSERT INTO f10_lines (line_code, amount) VALUES ('20-1', 200);\nCOMMIT;\n\nSELECT line_code, order_id, amount\nFROM f10_lines PARTITION (p_old);\n\nSELECT line_code, order_id, amount\nFROM f10_lines PARTITION (p_new);\n\n\n\nP_OLD contains line 10-1, derived order ID 10, and amount 100. P_NEW contains line 20-1, derived order ID 20, and amount 200.\n\n\n\nThe child table stores no order date. Its partition placement follows the referenced parent row. The unnamed child partitions inherit their corresponding parent partition names in this example.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
+    ]
+  },
+  {
+    "objectID": "notes/11g_Unknown_facts.html#cleanup",
+    "href": "notes/11g_Unknown_facts.html#cleanup",
+    "title": "11g Unknown facts",
+    "section": "",
+    "text": "Run this in the original disposable schema, not EBR_LAB. These commands permanently remove the demonstration tables and their dependent indexes and triggers. Run only the statements corresponding to objects you successfully created.\nDROP TABLE f01_accounts PURGE;\nDROP TABLE f02_empty PURGE;\nDROP TABLE f03_defaults PURGE;\nDROP TABLE f04_trigger_test PURGE;\nDROP TABLE f06_sales PURGE;\n\nDROP FUNCTION f08_get_price;\nDROP TABLE f08_prices PURGE;\n\nDROP TABLE f10_lines PURGE;\nDROP TABLE f10_orders PURGE;\nThe failed creation in Example 7 should leave no table. If it unexpectedly succeeded, remove F07_BAD_INTERVAL separately.\nHave the DBA handle cleanup of EBR_LAB and F09_V2 after confirming that no sessions or other test objects depend on them.",
+    "crumbs": [
+      "Home",
+      "Notes",
+      "11g Unknown facts"
     ]
   }
 ]

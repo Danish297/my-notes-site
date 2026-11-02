@@ -60,7 +60,7 @@ body {
 }
 
 .quarto-container {
-  max-width: 880px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
@@ -161,14 +161,32 @@ pre {
    5. Hero and buttons
    ================================================== */
 
+/* Remove top spacing from hero section */
+.hero {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove top spacing around profile image */
+.hero .profile-image {
+  margin-top: 0 !important;
+  display: block;
+}
+
 .hero {
   padding: 4.5rem 0 3rem;
   border-bottom: 1px solid var(--border);
 }
 
+/* Hero text alignment */
 .hero p {
-  max-width: 62ch;
+  max-width: 70ch;
   font-size: 1.15rem;
+  line-height: 1.85;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  margin-bottom: 1.4rem;
 }
 
 .button,
@@ -293,13 +311,35 @@ pre {
   margin: 0.5rem 0 0.75rem;
 }
 
+
 /* ==================================================
-   7. Navbar
-   Keep !important where needed to override Quarto's
-   configured navbar background.
+   7. Navbar - Quarto Headroom Compatible
    ================================================== */
 
-.navbar {
+/* Let Quarto manage fixed positioning and scrolling */
+#quarto-header {
+  z-index: 1030;
+}
+
+/* Control only the primary navbar, not the entire header */
+#quarto-header > .navbar {
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Primary navbar container */
+#quarto-header > .navbar > .container,
+#quarto-header > .navbar > .container-fluid {
+  height: 40px !important;
+  min-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Main navbar */
+#quarto-header .navbar {
   --bs-navbar-color: var(--text);
   --bs-navbar-hover-color: var(--accent);
   --bs-navbar-active-color: var(--accent);
@@ -309,44 +349,107 @@ pre {
   background: var(--navbar-bg) !important;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
+
+  width: 100%;
+  min-height: 40px !important;
+  height: 60px !important;
+  padding: 0 !important;
 }
 
-.navbar .navbar-brand {
+/* Navbar container and alignment */
+#quarto-header .navbar .container,
+#quarto-header .navbar .container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 40px !important;
+  height: 40px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  margin: 0 auto;
+  padding: 0 20px !important;
+}
+
+/* Brand / Website title */
+#quarto-header .navbar .navbar-brand {
   color: var(--accent);
   font-weight: 700;
+  white-space: nowrap;
+
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 !important;
+  margin-right: 20px !important;
+
+  display: flex !important;
+  align-items: center !important;
 }
 
-.navbar .nav-link {
+/* Navbar navigation links */
+#quarto-header .navbar .navbar-nav {
+  align-items: center !important;
+}
+
+#quarto-header .navbar .nav-link {
   color: var(--text);
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 12px !important;
+
+  display: flex !important;
+  align-items: center !important;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
+#quarto-header .navbar .nav-link:hover,
+#quarto-header .navbar .nav-link.active {
   color: var(--accent);
 }
 
-.navbar .quarto-color-scheme-toggle,
-.navbar .quarto-navbar-tools .quarto-navigation-tool,
-.navbar #quarto-search .aa-DetachedSearchButton {
+/* Navbar collapse and left-side navigation */
+#quarto-header .navbar .navbar-collapse {
+  flex-grow: 1 !important;
+}
+
+/* Right-side tools: Search, social icons and theme toggle */
+#quarto-header .navbar .navbar-nav:last-child,
+#quarto-header .navbar .quarto-navbar-tools {
+  margin-left: auto !important;
+}
+
+#quarto-header .navbar .quarto-navbar-tools {
+  display: flex;
+  align-items: center !important;
+  gap: 12px;
+  flex-shrink: 0 !important;
+}
+
+/* Prevent search and toolbar elements from wrapping */
+#quarto-header .navbar #quarto-search,
+#quarto-header .navbar .quarto-navbar-tools {
+  flex-shrink: 0 !important;
+  align-items: center !important;
+}
+
+/* Search and theme toggle colors */
+#quarto-header .navbar .quarto-color-scheme-toggle,
+#quarto-header .navbar .quarto-navbar-tools .quarto-navigation-tool,
+#quarto-header .navbar #quarto-search .aa-DetachedSearchButton {
   color: var(--text);
 }
 
-/* Preserve the working light-mode toggle/search fixes. */
-
-body.quarto-light #quarto-header
-.quarto-color-scheme-toggle .bi::before,
-body.quarto-light #quarto-header
-#quarto-search .aa-DetachedSearchButtonIcon {
+/* Light mode: Search and theme toggle visibility */
+body.quarto-light #quarto-header .quarto-color-scheme-toggle .bi::before,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
   filter: brightness(0) !important;
   opacity: 1 !important;
 }
 
 body.quarto-light #quarto-header #quarto-search,
 body.quarto-light #quarto-header #quarto-search button,
-body.quarto-light #quarto-header
-#quarto-search .aa-DetachedSearchButton,
-body.quarto-light #quarto-header
-#quarto-search .aa-DetachedSearchButtonIcon {
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButton,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
   color: var(--text) !important;
   opacity: 1 !important;
 }
@@ -355,6 +458,8 @@ body.quarto-light #quarto-header #quarto-search svg {
   color: var(--text) !important;
   stroke: currentColor !important;
 }
+
+
 
 /* ==================================================
    8. Sidebar and footer
@@ -465,4 +570,158 @@ body.quarto-light #quarto-header #quarto-search svg {
   .note-card:hover {
     transform: none;
   }
+}
+
+/* ==================================================
+   7.2 Theme Toggle - Sun and Moon Icons
+   ================================================== */
+
+/* Theme toggle button */
+#quarto-header .quarto-color-scheme-toggle {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px;
+  height: 40px;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  color: var(--accent) !important;
+  cursor: pointer;
+}
+
+/* Hide original Quarto icon */
+#quarto-header .quarto-color-scheme-toggle .bi {
+  visibility: hidden !important;
+}
+
+/* Dark mode: Show sun */
+body.quarto-dark #quarto-header
+.quarto-color-scheme-toggle::after {
+  content: "☀";
+  font-size: 23px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* Light mode: Bold half-circle */
+body.quarto-light #quarto-header
+.quarto-color-scheme-toggle::after {
+  content: "◐";
+  font-size: 25px;
+  font-weight: 900;
+  color: #087f72;
+  -webkit-text-stroke: 0.8px #087f72;
+}
+
+/* Hover effect */
+#quarto-header .quarto-color-scheme-toggle:hover {
+  opacity: 0.75;
+}
+
+
+
+/* Inline social links */
+.social-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 12px;
+}
+
+.social-text {
+  margin-right: 14px;
+}
+
+.social-inline .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.social-inline .social-icon img {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.social-inline .social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   12. Global Content Text Alignment
+   Apply consistent paragraph alignment throughout
+   the website.
+   ================================================== */
+
+main.content p,
+main.content li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.85;
+}
+
+/* Consistent paragraph spacing */
+main.content p {
+  margin-bottom: 1.2rem;
+}
+
+/* Keep headings naturally left-aligned */
+main.content h1,
+main.content h2,
+main.content h3,
+main.content h4,
+main.content h5,
+main.content h6 {
+  text-align: left;
+}
+
+/* Keep buttons and links naturally aligned */
+main.content .button,
+main.content .button-secondary,
+main.content .text-link {
+  text-align: center;
+}
+
+
+/* ==========================================
+   Fully Clickable Featured Note Cards
+   ========================================== */
+
+.note-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.note-card .card-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.note-card .card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+}
+
+.note-card:hover .card-link {
+  text-decoration: underline;
+}
+
+.note-card:focus-within {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 3px;
 }

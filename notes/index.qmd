@@ -1,183 +1,258 @@
----
-title: "Dainsh297"
-description: "Personal notes on AI, computer vision, software, and learning in public."
-image: assets/profile.jpg
----
-
 ::: {.hero}
 
-# Hi, I’m Danish. {#greeting}
+![](../assets/profile.jpeg){.profile-image}
 
-I write practical notes on **AI, computer vision, software engineering, and the things I’m learning while building**.
+# Hi, I'm Danish. {#greeting}
 
-[Read the notes](notes/neural-networks.qmd){.button}
+I'm a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.
+
+My interests include **Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.**
+
+Here, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.
+
+**Keep learning. Keep building. Turn ideas into reality.**
+
+[Explore my notes](../notes/11g_Unknown_facts.qmd){.button}
 [View projects](#projects){.button-secondary}
 
 :::
 
-## Now
+## Now {#now}
 
-I’m currently exploring modern cloud database ways to process messy data into clear, reusable notes.
+I'm continuously exploring emerging technologies and expanding my technical knowledge in:
 
-When I’m not reading papers or debugging training pipelines, I’m usually
-learning something new, improving my tooling, or writing about what I
-wish I had understood earlier.
+- **Artificial Intelligence:** Generative AI, Local LLMs, and intelligent applications.
+- **Cloud Technologies:** Microsoft Azure, Google Cloud Platform, and cloud-native solutions.
+- **Containers and Orchestration:** Kubernetes, Red Hat OpenShift, and container technologies.
+- **Database Technologies:** Oracle Database, cloud databases, and database automation.
+- **Software Engineering:** Python, Shell scripting, automation, and application development.
 
-## Featured notes
+My focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights.
+
+## Featured Notes {#featured-notes}
+
+A collection of technical notes, experiments, and learning resources.
 
 ::: {.featured-grid}
 
 ::: {.note-card}
 
-### [DINOv3](vision/dinov3.qmd)
+### [Local LLMs](../wip.qmd)
 
-Notes on vision foundation models, representation learning, and how
-modern self-supervised models are trained.
+Exploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.
 
-`vision` `foundations`
-
-:::
-
-::: {.note-card}
-
-### [Perception Encoder for ReID](reid/pecore_clip_reid.qmd)
-
-A practical walkthrough of CLIP-based perception encoders and their use
-in person re-identification.
-
-`CLIP` `reid`
+`Ollama` `OpenWebUI` `LLMs`
 
 :::
 
 ::: {.note-card}
 
-### [Multi-stage Training](training/vcor_yolo_FT.qmd)
+### [Red Hat OpenShift](../wip.qmd)
 
-Training notes, experiment setup, and lessons learned from fine-tuning
-detection models.
+Developing hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.
 
-`training` `YOLO`
+`OpenShift` `Kubernetes` `Containers`
+
+:::
+
+::: {.note-card}
+
+### [Artificial Intelligence](../wip.qmd)
+
+Exploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.
+
+`ChatGPT` `Perplexity` `GenAI`
 
 :::
 
 :::
 
-[All notes →](notes/index.qmd){.text-link}
+[Explore all notes →](../notes/11g_Unknown_facts.qmd){.button .text-link}
 
-## Shelves
 
-Hand-picked paths through the notes on this site.
+## Achievements {#achievements}
+
+Selected technical achievements, automation initiatives, and application development projects.
 
 ::: {.shelf-grid}
 
 ::: {.shelf}
 
-### [Vision](vision/index.qmd)
+### [Oracle Database Recovery & Cloning Automation](../Achievements/wip.qmd)
 
-Notes on image models, representation learning, detection, and visual
-understanding.
+Designed and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.
 
-:::
-
-::: {.shelf}
-
-### [Training](training/index.qmd)
-
-Experiment logs, fine-tuning workflows, debugging notes, and practical
-model-training lessons.
+The framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.
 
 :::
 
 ::: {.shelf}
 
-### [Re-identification](reid/index.qmd)
+### [Oracle DB Creation – Enhancements & Bug Fixes](../Achievements/wip.qmd)
 
-Notes on embedding models, retrieval, metric learning, and person
-re-identification.
+Enhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.
+
+Improved automation capabilities, operational efficiency, and deployment flexibility.
+
+:::
+
+::: {.shelf}
+
+### [Banking Application Logic Optimization](../Achievements/wip.qmd)
+
+Identified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.
+
+Improved application reliability and ensured accurate processing of user-selected options.
+
+:::
+
+::: {.shelf}
+
+### [Video Optimization – VEncoder](../Achievements/wip.qmd)
+
+Developed VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.
+
+Supports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency.
 
 :::
 
 :::
 
-## Projects
+## Projects {#projects}
 
-A few things I have built, explored, or documented.
+A selection of professional experience, technical implementations, automation solutions, and personal projects.
 
 ::: {.project-list}
 
 ::: {.project}
 
-### [Database Upgrade from 12c to 19c](https://github.com/danish297/project-one)
+### [Oracle Database & EBS Administration](wip.qmd)
 
-Upgraded Oracle EBS database version 12.1.0.2 to 19.28 to make sure its latest while keep certified with our current EBS version 12.1.3.
-we have future plan to upgrade the EBS too from 12.1.3 to 12.2.14
+Experienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.
 
-`Oracle EBS` `Oracle DB` `Solaris`
+Worked with different database architectures, including:
+
+- Oracle RAC and non-RAC environments.
+- Multitenant architecture (CDB/PDB).
+- Database upgrades and migrations.
+- Oracle EBS 12.1.x and 12.2.x administration.
+- Linux and Solaris environments.
+
+Focused on maintaining supported versions, application compatibility, availability, security, and performance.
+
+**Technologies:** `Oracle Database 10g–19c` `Oracle EBS 12.1.x–12.2.x` `Linux` `Solaris`<br>
+**Clients:**
+<a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
+<a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> ·
+<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> ·
+<a href="https://www.netapp.com/" target="_blank" rel="noopener noreferrer">NetApp</a> ·
+<a href="https://www.hdfc.bank.in/" target="_blank" rel="noopener noreferrer">HDFC Bank</a> ·
+<a href="https://www.bell.ca/" target="_blank" rel="noopener noreferrer">Bell</a> ·
+<a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">Telefónica</a> ·
+<a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj Finserv</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> ·
+<a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniya Finance</a>
+
 :::
 
 ::: {.project}
 
-### [Project Two](https://github.com/your-username/project-two)
+### [Hadoop & Big Data Technologies](wip.qmd)
 
-A short description of the problem solved and the main technical idea.
+Worked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.
 
-`ONNX` `DeepStream` `Deployment`
+Experience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.
+
+**Technologies:** `Hortonworks` `Cloudera` `Kafka` `Hadoop`<br>
+**Clients:**
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> ·
+<a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" rel="noopener noreferrer">BMO</a> ·
+<a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> ·
+<a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> ·
+<a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> ·
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a>
 
 :::
 
 ::: {.project}
 
-### [Project Three](https://github.com/your-username/project-three)
+### [Cloud Technologies – Azure & GCP](wip.qmd)
 
-A small tool, notebook, or experiment that demonstrates a concept.
+Exploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.
 
-`Python` `Notebooks` `Research`
+Focus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.
+
+**Technologies:** `Microsoft Azure` `Google Cloud Platform`<br>
+**Clients:**
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> ·
+<a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a>
+
+:::
+
+::: {.project}
+
+### [Automation & Scripting](wip.qmd)
+
+Developed automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.
+
+Focused on automating daily administrative tasks, routine jobs, and operational workflows.
+
+**Technologies:** `Python` `Shell` `PowerShell`<br>
+**Clients:**
+<a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> ·
+<a href="https://www.knitwellgroup.com/" target="_blank" rel="noopener noreferrer">Ascena</a>
 
 :::
 
 :::
 
-[View all projects →](https://github.com/your-username){.text-link}
+[Explore all projects on GitHub →](https://github.com/Danish297){.text-link}
 
-## Elsewhere
+
+## Elsewhere {#elsewhere}
 
 ```{=html}
-<div class="social-links" role="group" aria-label="Social profiles">
-  <span class="social-label">Find me on </span>
+<div class="social-inline" role="group" aria-label="Social media profiles">
+
+  <span class="social-text">Connect with me on these platforms:</span>
 
   <a class="social-icon"
      href="https://linkedin.com/in/hasnain-danish-shaikh"
      target="_blank" rel="noopener noreferrer"
-     aria-label="GitHub profile (opens in a new tab)">
-    <img src="assets/linkedin.svg" alt="" width="32" height="32">
+     aria-label="LinkedIn profile">
+    <img src="../assets/linkedin.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
-     href="https://www.github.com/Danish297"
+     href="https://github.com/Danish297"
      target="_blank" rel="noopener noreferrer"
-     aria-label="LinkedIn profile (opens in a new tab)">
-    <img src="assets/github.svg" alt="" width="26" height="26">
+     aria-label="GitHub profile">
+    <img src="../assets/github.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
      href="https://facebook.com/danish297"
      target="_blank" rel="noopener noreferrer"
-     aria-label="X profile (opens in a new tab)">
-    <img src="assets/facebook.svg" alt="" width="26" height="26">
+     aria-label="Facebook profile">
+    <img src="../assets/facebook.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
-     href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+     href="https://x.com/danish297/"
      target="_blank" rel="noopener noreferrer"
-     aria-label="Instagram profile (opens in a new tab)">
-    <img src="assets/x.svg" alt="" width="26" height="26">
+     aria-label="X profile">
+    <img src="../assets/x.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
-     href="https://www.instagram.com/danishfrnz/"
+     href="https://instagram.com/danishfrnz/"
      target="_blank" rel="noopener noreferrer"
-     aria-label="Facebook profile (opens in a new tab)">
-    <img src="assets/instagram.svg" alt="" width="26" height="26">
+     aria-label="Instagram profile">
+    <img src="../assets/instagram.svg" alt="" width="26" height="26">
   </a>
+
 </div>
 ```
+

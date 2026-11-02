@@ -1,0 +1,554 @@
+---
+title: "11g Unknown facts"
+date: 2016-11-02
+categories: [oracle, database, sql]
+---
+
+# 10 Lesser-Known Oracle Database 11g Facts
+
+Oracle Database 11g has several behaviors worth testing: invisible indexes still enforce uniqueness, empty tables can exist without segments, and edition-based redefinition allows different versions of database code to coexist.
+
+These examples target Oracle Database 11g Release 2 (11.2). They are illustrative scripts, not scripts verified against a running Oracle instance for this post.
+
+## Before you begin
+
+- Use a disposable schema and run each example once, in order.
+- Run SQL*Plus, SQLcl, or SQL Developer in Run Script mode.
+- Your user needs appropriate object-creation privileges and tablespace quota.
+- Verify feature availability and licensing before trying the partitioning examples.
+- Example 5 reuses Example 4's table.
+- Example 9 needs DBA-assisted setup in a separate disposable schema.
+- DDL can commit transactions. Do not run these experiments in production.
+
+The SQL blocks are displayed as examples; Quarto does not execute them during rendering.
+
+```sql
+SET SERVEROUTPUT ON
+SET TIMING ON
+SET LINESIZE 160
+SET PAGESIZE 100
+```
+
+## 1. Invisible indexes still enforce uniqueness
+
+An invisible index is normally ignored by the optimizer, but Oracle continues maintaining it during inserts, updates, and deletes. A unique index therefore still rejects duplicates when it is invisible.
+
+### Try it
+
+```sql
+CREATE TABLE f01_accounts (
+    account_id NUMBER,
+    account_name VARCHAR2(50)
+);
+
+CREATE UNIQUE INDEX f01_accounts_uix
+    ON f01_accounts (account_id) INVISIBLE;
+
+INSERT INTO f01_accounts VALUES (1, 'First account');
+COMMIT;
+
+SELECT index_name, visibility, status
+FROM user_indexes
+WHERE index_name = 'F01_ACCOUNTS_UIX';
+
+BEGIN
+    INSERT INTO f01_accounts VALUES (1, 'Duplicate account');
+    DBMS_OUTPUT.PUT_LINE('Unexpected: duplicate accepted');
+EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+        DBMS_OUTPUT.PUT_LINE('Expected: duplicate rejected');
+END;
+/
+```
+
+### Expected result
+
+The index reports `INVISIBLE` and remains valid. The duplicate insert is rejected.
+
+You can allow the optimizer to consider invisible indexes in your session:
+
+```sql
+ALTER SESSION SET optimizer_use_invisible_indexes = TRUE;
+-- The optimizer may consider the index; selection is not guaranteed.
+ALTER SESSION SET optimizer_use_invisible_indexes = FALSE;
+```
+
+### Key idea
+
+Index visibility controls optimizer consideration, not maintenance or uniqueness enforcement. Hiding an index does not eliminate its write overhead.
+
+## 2. An empty table can exist without a storage segment
+
+Deferred segment creation in 11g Release 2 allows Oracle to create a table definition before allocating its storage segment. The first insert materializes the segment, even if the insert is rolled back.
+
+### Try it
+
+```sql
+CREATE TABLE f02_empty (id NUMBER)
+SEGMENT CREATION DEFERRED;
+
+SELECT table_name, segment_created
+FROM user_tables
+WHERE table_name = 'F02_EMPTY';
+
+SELECT COUNT(*) AS segment_count
+FROM user_segments
+WHERE segment_name = 'F02_EMPTY';
+
+INSERT INTO f02_empty VALUES (1);
+ROLLBACK;
+
+SELECT COUNT(*) AS row_count FROM f02_empty;
+
+SELECT table_name, segment_created
+FROM user_tables
+WHERE table_name = 'F02_EMPTY';
+
+SELECT COUNT(*) AS segment_count
+FROM user_segments
+WHERE segment_name = 'F02_EMPTY';
+```
+
+### Expected result
+
+Before the insert, `SEGMENT_CREATED` is `NO` and the segment count is zero. After the insert and rollback, the row count is zero, but `SEGMENT_CREATED` is `YES` and the segment count is one.
+
+### Key idea
+
+An empty table is not necessarily a table without allocated storage. Rolling back the first row does not undo segment allocation.
+
+## 3. Adding a defaulted column can avoid rewriting existing rows
+
+For eligible tables, Oracle 11g can optimize adding a column with a constant default and a `NOT NULL` constraint. Oracle stores the default in metadata rather than physically populating every existing row. Restrictions apply; this is not a guarantee for every defaulted-column operation.
+
+### Try it
+
+```sql
+CREATE TABLE f03_defaults AS
+SELECT LEVEL AS id, RPAD('x', 100, 'x') AS payload
+FROM dual
+CONNECT BY LEVEL <= 100000;
+
+SELECT bytes AS bytes_before
+FROM user_segments
+WHERE segment_name = 'F03_DEFAULTS'
+  AND segment_type = 'TABLE';
+
+ALTER TABLE f03_defaults ADD (
+    status VARCHAR2(10) DEFAULT 'NEW' NOT NULL
+);
+
+SELECT status, COUNT(*) AS row_count
+FROM f03_defaults
+GROUP BY status;
+
+SELECT column_name, nullable, data_default
+FROM user_tab_columns
+WHERE table_name = 'F03_DEFAULTS'
+  AND column_name = 'STATUS';
+
+SELECT bytes AS bytes_after
+FROM user_segments
+WHERE segment_name = 'F03_DEFAULTS'
+  AND segment_type = 'TABLE';
+```
+
+### Expected result
+
+All 100,000 rows return `NEW`, and `NULLABLE` is `N`. On an eligible configuration, the change should be fast and allocated segment bytes will typically remain unchanged.
+
+### Key idea
+
+Visible default values confirm SQL semantics. Timing and unchanged allocated bytes are supporting observations, not conclusive proof that no rows were physically modified.
+
+## 4. A compound trigger can share state across four timing points
+
+A compound DML trigger can contain statement-level and row-level sections. Its common declaration section holds shared state for one triggering statement.
+
+### Try it
+
+```sql
+CREATE TABLE f04_trigger_test (
+    id NUMBER PRIMARY KEY,
+    amount NUMBER
+);
+
+INSERT INTO f04_trigger_test VALUES (1, 10);
+INSERT INTO f04_trigger_test VALUES (2, 20);
+COMMIT;
+
+CREATE OR REPLACE TRIGGER f04_compound_trg
+FOR UPDATE ON f04_trigger_test
+COMPOUND TRIGGER
+    g_rows PLS_INTEGER := 0;
+
+    BEFORE STATEMENT IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('BEFORE STATEMENT');
+    END BEFORE STATEMENT;
+
+    BEFORE EACH ROW IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('BEFORE EACH ROW: id=' || :OLD.id);
+    END BEFORE EACH ROW;
+
+    AFTER EACH ROW IS
+    BEGIN
+        g_rows := g_rows + 1;
+    END AFTER EACH ROW;
+
+    AFTER STATEMENT IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('AFTER STATEMENT: rows=' || g_rows);
+    END AFTER STATEMENT;
+END f04_compound_trg;
+/
+
+SHOW ERRORS TRIGGER f04_compound_trg
+
+UPDATE f04_trigger_test SET amount = amount + 1;
+ROLLBACK;
+```
+
+### Expected result
+
+The output includes a before-statement message, two before-row messages, and `AFTER STATEMENT: rows=2`. Do not rely on a particular row-processing order.
+
+### Key idea
+
+The counter belongs to the triggering statement. This pattern does not require package-level state.
+
+## 5. A row-only compound trigger does nothing for a zero-row update
+
+A compound trigger containing only row-level sections has nothing to execute when an update affects no rows. Statement-level sections can execute even when no rows qualify.
+
+### Try it
+
+This example reuses `F04_TRIGGER_TEST`.
+
+```sql
+DROP TRIGGER f04_compound_trg;
+
+CREATE OR REPLACE TRIGGER f05_row_only_trg
+FOR UPDATE ON f04_trigger_test
+COMPOUND TRIGGER
+    AFTER EACH ROW IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Row-only trigger fired');
+    END AFTER EACH ROW;
+END f05_row_only_trg;
+/
+
+PROMPT Expect no trigger message
+UPDATE f04_trigger_test
+SET amount = amount + 1
+WHERE id = -1;
+
+CREATE OR REPLACE TRIGGER f05_row_only_trg
+FOR UPDATE ON f04_trigger_test
+COMPOUND TRIGGER
+    AFTER EACH ROW IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Row section fired');
+    END AFTER EACH ROW;
+
+    AFTER STATEMENT IS
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Statement section fired');
+    END AFTER STATEMENT;
+END f05_row_only_trg;
+/
+
+PROMPT Expect the statement message only
+UPDATE f04_trigger_test
+SET amount = amount + 1
+WHERE id = -1;
+ROLLBACK;
+```
+
+### Expected result
+
+The first update prints no trigger message. The second prints `Statement section fired`.
+
+### Key idea
+
+Auditing a statement being issued is different from auditing rows being changed.
+
+## 6. Interval partitions are created on demand
+
+Interval partitioning creates partitions as inserted data requires them. It does not need to materialize every intervening empty interval.
+
+### Try it
+
+Run only where Oracle Partitioning is available and appropriately licensed.
+
+```sql
+CREATE TABLE f06_sales (
+    sale_id NUMBER,
+    sale_date DATE NOT NULL,
+    amount NUMBER
+)
+PARTITION BY RANGE (sale_date)
+INTERVAL (NUMTOYMINTERVAL(1, 'MONTH'))
+(
+    PARTITION p_before_2020
+        VALUES LESS THAN (DATE '2020-01-01')
+);
+
+INSERT INTO f06_sales VALUES (1, DATE '2020-01-15', 100);
+INSERT INTO f06_sales VALUES (2, DATE '2020-07-15', 200);
+COMMIT;
+
+SELECT partition_name, partition_position, interval
+FROM user_tab_partitions
+WHERE table_name = 'F06_SALES'
+ORDER BY partition_position;
+
+SELECT COUNT(*) AS partition_count
+FROM user_tab_partitions
+WHERE table_name = 'F06_SALES';
+
+SELECT COUNT(*) AS july_rows
+FROM f06_sales PARTITION FOR (DATE '2020-07-15');
+```
+
+### Expected result
+
+There are three partitions: the initial range partition, a January interval partition, and a July interval partition. `JULY_ROWS` is one. Generated partition names can vary.
+
+### Key idea
+
+A monthly interval definition does not imply a fully materialized calendar of monthly partitions.
+
+## 7. Oracle 11g interval partitioning rejects a TIMESTAMP key
+
+In 11g Release 2, an interval-partitioning key must consist of one column of type `NUMBER` or `DATE`. A `TIMESTAMP` column is not a supported interval key in this release.
+
+### Try it
+
+This block intentionally attempts invalid DDL and catches the error.
+
+```sql
+BEGIN
+    EXECUTE IMMEDIATE q'[
+        CREATE TABLE f07_bad_interval (
+            event_id NUMBER,
+            event_ts TIMESTAMP
+        )
+        PARTITION BY RANGE (event_ts)
+        INTERVAL (NUMTOYMINTERVAL(1, 'MONTH'))
+        (
+            PARTITION p0 VALUES LESS THAN (
+                TIMESTAMP '2020-01-01 00:00:00'
+            )
+        )
+    ]';
+    DBMS_OUTPUT.PUT_LINE('Unexpected: TIMESTAMP key accepted');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('CREATE TABLE failed: ' || SQLERRM);
+END;
+/
+```
+
+### Expected result
+
+An appropriately configured 11g R2 instance rejects the unsupported interval key.
+
+### Key idea
+
+Read the error rather than treating every failure as proof of the datatype restriction. Missing privileges or unavailable partitioning functionality can also cause failure. Interval-partitioning restrictions should not be generalized to ordinary range partitioning.
+
+## 8. Result-cached functions can track dependencies automatically
+
+In 11g Release 2, Oracle automatically detects the data sources accessed by a result-cached PL/SQL function. Committed changes to a dependent table invalidate affected cached results.
+
+### Try it
+
+```sql
+CREATE TABLE f08_prices (
+    product_id NUMBER PRIMARY KEY,
+    price NUMBER
+);
+
+INSERT INTO f08_prices VALUES (1, 100);
+COMMIT;
+
+CREATE OR REPLACE FUNCTION f08_get_price (
+    p_product_id NUMBER
+) RETURN NUMBER
+RESULT_CACHE
+IS
+    l_price NUMBER;
+BEGIN
+    SELECT price INTO l_price
+    FROM f08_prices
+    WHERE product_id = p_product_id;
+
+    RETURN l_price;
+END;
+/
+
+SHOW ERRORS FUNCTION f08_get_price
+
+SELECT f08_get_price(1) AS first_call FROM dual;
+SELECT f08_get_price(1) AS repeated_call FROM dual;
+
+UPDATE f08_prices SET price = 125 WHERE product_id = 1;
+COMMIT;
+
+SELECT f08_get_price(1) AS after_commit FROM dual;
+```
+
+An appropriately privileged user can inspect cache entries:
+
+```sql
+SELECT name, status
+FROM v$result_cache_objects
+WHERE type = 'Result'
+  AND UPPER(name) LIKE '%F08_GET_PRICE%';
+```
+
+### Expected result
+
+The calls return `100`, `100`, and `125`.
+
+### Key idea
+
+Actual caching requires an enabled, usable server result cache. Correct output alone does not prove a cache hit: the function can return correct values when caching is disabled or bypassed.
+
+## 9. Two editions can expose different versions of one function
+
+Edition-based redefinition, introduced in 11g Release 2, lets sessions use different editions of database application code. This experiment demonstrates code isolation, not a complete online application upgrade.
+
+### DBA-assisted setup
+
+Have a DBA create a fresh disposable user named `EBR_LAB` according to local password and tablespace policies, then run:
+
+```sql
+ALTER USER ebr_lab ENABLE EDITIONS;
+GRANT CREATE SESSION, CREATE PROCEDURE TO ebr_lab;
+
+CREATE EDITION f09_v2 AS CHILD OF ora$base;
+GRANT USE ON EDITION f09_v2 TO ebr_lab;
+```
+
+Enabling editions is a significant schema change. Do not apply this setup to an existing application owner merely to try the example.
+
+### Try it as EBR_LAB
+
+```sql
+ALTER SESSION SET EDITION = ora$base;
+
+CREATE OR REPLACE FUNCTION f09_version
+RETURN VARCHAR2
+IS
+BEGIN
+    RETURN 'Version 1';
+END;
+/
+
+SELECT f09_version() AS function_version FROM dual;
+
+ALTER SESSION SET EDITION = f09_v2;
+
+CREATE OR REPLACE FUNCTION f09_version
+RETURN VARCHAR2
+IS
+BEGIN
+    RETURN 'Version 2';
+END;
+/
+
+SELECT f09_version() AS function_version FROM dual;
+
+ALTER SESSION SET EDITION = ora$base;
+SELECT f09_version() AS function_version FROM dual;
+```
+
+### Expected result
+
+The three queries return `Version 1`, `Version 2`, and `Version 1`.
+
+### Key idea
+
+The session edition determines which implementation is visible. Shared-table changes require additional design and may involve editioning views and crossedition triggers.
+
+Reconnect to the original disposable schema before continuing.
+
+## 10. Reference partitioning can use a virtual-column foreign key
+
+Oracle 11g Release 2 allows virtual columns in the primary or foreign keys used for reference partitioning. A child table can derive its parent key from another column and use that relationship to determine partition placement.
+
+### Try it
+
+Run only where Oracle Partitioning is available and appropriately licensed.
+
+```sql
+CREATE TABLE f10_orders (
+    order_id NUMBER NOT NULL,
+    order_date DATE NOT NULL,
+    CONSTRAINT f10_orders_pk PRIMARY KEY (order_id)
+)
+PARTITION BY RANGE (order_date)
+(
+    PARTITION p_old VALUES LESS THAN (DATE '2020-01-01'),
+    PARTITION p_new VALUES LESS THAN (MAXVALUE)
+);
+
+CREATE TABLE f10_lines (
+    line_code VARCHAR2(30) NOT NULL,
+    order_id GENERATED ALWAYS AS (
+        TO_NUMBER(
+            SUBSTR(line_code, 1, INSTR(line_code, '-') - 1)
+        )
+    ) VIRTUAL CONSTRAINT f10_order_nn NOT NULL,
+    amount NUMBER,
+    CONSTRAINT f10_lines_fk FOREIGN KEY (order_id)
+        REFERENCES f10_orders (order_id)
+)
+PARTITION BY REFERENCE (f10_lines_fk);
+
+INSERT INTO f10_orders VALUES (10, DATE '2019-12-15');
+INSERT INTO f10_orders VALUES (20, DATE '2020-06-15');
+
+INSERT INTO f10_lines (line_code, amount) VALUES ('10-1', 100);
+INSERT INTO f10_lines (line_code, amount) VALUES ('20-1', 200);
+COMMIT;
+
+SELECT line_code, order_id, amount
+FROM f10_lines PARTITION (p_old);
+
+SELECT line_code, order_id, amount
+FROM f10_lines PARTITION (p_new);
+```
+
+### Expected result
+
+`P_OLD` contains line `10-1`, derived order ID `10`, and amount `100`. `P_NEW` contains line `20-1`, derived order ID `20`, and amount `200`.
+
+### Key idea
+
+The child table stores no order date. Its partition placement follows the referenced parent row. The unnamed child partitions inherit their corresponding parent partition names in this example.
+
+## Cleanup
+
+Run this in the original disposable schema, not `EBR_LAB`. These commands permanently remove the demonstration tables and their dependent indexes and triggers. Run only the statements corresponding to objects you successfully created.
+
+```sql
+DROP TABLE f01_accounts PURGE;
+DROP TABLE f02_empty PURGE;
+DROP TABLE f03_defaults PURGE;
+DROP TABLE f04_trigger_test PURGE;
+DROP TABLE f06_sales PURGE;
+
+DROP FUNCTION f08_get_price;
+DROP TABLE f08_prices PURGE;
+
+DROP TABLE f10_lines PURGE;
+DROP TABLE f10_orders PURGE;
+```
+
+The failed creation in Example 7 should leave no table. If it unexpectedly succeeded, remove `F07_BAD_INTERVAL` separately.
+
+Have the DBA handle cleanup of `EBR_LAB` and `F09_V2` after confirming that no sessions or other test objects depend on them.

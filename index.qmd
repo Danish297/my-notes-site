@@ -1,230 +1,258 @@
----
-title: "Dainsh297"
-description: "Personal notes on AI, computer vision, software, and learning in public."
-image: assets/profile.jpg
----
-
 ::: {.hero}
 
-# Hi, I’m Danish. {#greeting}
+![](assets/profile.jpeg){.profile-image}
 
-I write practical notes on **AI, computer vision, software engineering, and the things I’m learning while building**.
+# Hi, I'm Danish. {#greeting}
 
-[Read the notes](notes/neural-networks.qmd){.button}
+I'm a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.
+
+My interests include **Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.**
+
+Here, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.
+
+**Keep learning. Keep building. Turn ideas into reality.**
+
+[Explore my notes](notes/11g_Unknown_facts.qmd){.button}
 [View projects](#projects){.button-secondary}
 
 :::
 
-## Now
+## Now {#now}
 
-I’m continuously exploring emerging technologies, including AI, local LLMs, cloud databases, 
-and Red Hat OpenShift, turning ideas into practical applications while building skills in 
-cloud-native solutions and intelligent systems.
+I'm continuously exploring emerging technologies and expanding my technical knowledge in:
 
-When I’m not researching, experimenting, or building, I’m usually learning something new, 
-refining my tools, or sharing insights and lessons along the way.
+- **Artificial Intelligence:** Generative AI, Local LLMs, and intelligent applications.
+- **Cloud Technologies:** Microsoft Azure, Google Cloud Platform, and cloud-native solutions.
+- **Containers and Orchestration:** Kubernetes, Red Hat OpenShift, and container technologies.
+- **Database Technologies:** Oracle Database, cloud databases, and database automation.
+- **Software Engineering:** Python, Shell scripting, automation, and application development.
 
-## Featured notes
+My focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights.
+
+## Featured Notes {#featured-notes}
+
+A collection of technical notes, experiments, and learning resources.
 
 ::: {.featured-grid}
 
 ::: {.note-card}
 
-### [Local LLM](L-LLM/llm_learning.qmd)
+### [Local LLMs](notes/wip.qmd){.card-link}
 
-Exploring and building locally hosted Large Language Models (LLMs) to 
-enhance data privacy, ensure secure handling of personal information, 
-and maintain full control over sensitive data.
+Exploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.
 
-`Ollama` `OpenWebUI`
+`Ollama` `OpenWebUI` `LLMs`
 
 :::
 
 ::: {.note-card}
 
-### [RedHat Openshift](openshift/openshift_learning.qmd)
+### [Red Hat OpenShift](notes/wip.qmd){.card-link}
 
-Building hands-on expertise in Kubernetes-based container orchestration, 
-cloud-native application deployment, and hybrid cloud technologies to 
-stay aligned with evolving enterprise IT trends.
+Developing hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.
 
-`Openshift`
+`OpenShift` `Kubernetes` `Containers`
 
 :::
 
 ::: {.note-card}
 
-### [AI](AI/ai_learning.qmd)
+### [Artificial Intelligence](notes/wip.qmd){.card-link}
 
-Leveraging AI to transform ideas into practical, real-world applications 
-by building intelligent solutions, automating workflows, and accelerating innovation.
+Exploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.
 
-`ChatGPT` `Perplexity`
-
-:::
+`ChatGPT` `Perplexity` `GenAI`
 
 :::
 
-[All notes →](notes/index.qmd){.text-link}
+:::
 
-## Achievements
+[Explore all notes →](notes/11g_Unknown_facts.qmd){.button .text-link}
 
-Hand-picked paths through the notes on this site.
+
+## Achievements {#achievements}
+
+Selected technical achievements, automation initiatives, and application development projects.
 
 ::: {.shelf-grid}
 
 ::: {.shelf}
 
-### [Oracle DB Recovery & Cloning Automation](vision/index.qmd)
+### [Oracle Database Recovery & Cloning Automation](Achievements/wip.qmd)
 
-Designed and implemented a menu-driven, automated Oracle Database recovery and cloning framework, replacing manual processes with a standardized solution to improve efficiency, reliability, scalability, and turnaround time.
+Designed and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.
 
-:::
-
-::: {.shelf}
-
-### [Oracle DB Creation – Enhancements & Bug Fixes](training/index.qmd)
-
-Enhanced the existing Oracle Database creation framework to support newer database versions and enable parallel database creation across multiple target nodes.
+The framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.
 
 :::
 
 ::: {.shelf}
 
-### [Banking Application Logic Optimization](reid/index.qmd)
+### [Oracle DB Creation – Enhancements & Bug Fixes](Achievements/wip.qmd)
 
-Identified and fixed a code issue in the Finacle banking application, ensuring accurate interpretation of user inputs and proper handling of option selections for a more reliable user experience
+Enhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.
+
+Improved automation capabilities, operational efficiency, and deployment flexibility.
 
 :::
 
 ::: {.shelf}
-### [Video Optimization](macOSApp/index.qmd)
-Developed VEncoder, a macOS application that reduces video file sizes without compromising resolution. 
-Supports multiple encoding formats and parallel processing to maximize hardware acceleration, improve performance, and optimize storage efficiency.
+
+### [Banking Application Logic Optimization](Achievements/wip.qmd)
+
+Identified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.
+
+Improved application reliability and ensured accurate processing of user-selected options.
+
+:::
+
+::: {.shelf}
+
+### [Video Optimization – VEncoder](Achievements/wip.qmd)
+
+Developed VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.
+
+Supports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency.
 
 :::
 
 :::
-## Projects
 
-A few things I have built, explored, or documented.
+## Projects {#projects}
+
+A selection of professional experience, technical implementations, automation solutions, and personal projects.
 
 ::: {.project-list}
 
 ::: {.project}
-### [Oracle DB & EBS Administration](https://github.com/your-username/project-three)
 
-Experienced in Oracle Database and EBS administration, including Database/EBS upgrades, and deployment of various DB architectures such as RAC, non-RAC, and Multitenant (CDB/PDB).
+### [Oracle Database & EBS Administration](wip.qmd)
 
-Focused on maintaining supported versions, ensuring application compatibility, and delivering stable, scalable, secure, and highly available database environments.
+Experienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.
 
-**Technologies:** `Oracle DBs 10g-19c` `EBS 12.1.x, 12.2.x` `Linux` `Solaris`<br>
+Worked with different database architectures, including:
+
+- Oracle RAC and non-RAC environments.
+- Multitenant architecture (CDB/PDB).
+- Database upgrades and migrations.
+- Oracle EBS 12.1.x and 12.2.x administration.
+- Linux and Solaris environments.
+
+Focused on maintaining supported versions, application compatibility, availability, security, and performance.
+
+**Technologies:** `Oracle Database 10g–19c` `Oracle EBS 12.1.x–12.2.x` `Linux` `Solaris`<br>
 **Clients:**
 <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
 <a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> ·
-<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> .
+<a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> ·
 <a href="https://www.netapp.com/" target="_blank" rel="noopener noreferrer">NetApp</a> ·
 <a href="https://www.hdfc.bank.in/" target="_blank" rel="noopener noreferrer">HDFC Bank</a> ·
 <a href="https://www.bell.ca/" target="_blank" rel="noopener noreferrer">Bell</a> ·
-<a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">O2 telefonica</a> ·
-<a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj</a> ·
-<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouuse</a> .
-<a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniyafinance</a> 
+<a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">Telefónica</a> ·
+<a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj Finserv</a> ·
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> ·
+<a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniya Finance</a>
 
 :::
 
 ::: {.project}
 
-### [Hadoop/Bigdata](https://github.com/your-username/project-three)
+### [Hadoop & Big Data Technologies](wip.qmd)
 
-Created and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.
+Worked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.
 
-These implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.
+Experience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.
 
-**Technologies:** `hortonworks` `Cloudera` `Kafka`<br>
+**Technologies:** `Hortonworks` `Cloudera` `Kafka` `Hadoop`<br>
 **Clients:**
-<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers communications</a> ·
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> ·
 <a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" rel="noopener noreferrer">BMO</a> ·
-<a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> .
-<a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> .
-<a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> .
-<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> 
+<a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> ·
+<a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> ·
+<a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> ·
+<a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a>
 
 :::
 
 ::: {.project}
 
-### [Cloud Azure and GCP](https://github.com/your-username/project-three)
+### [Cloud Technologies – Azure & GCP](wip.qmd)
 
-Created and configured various Oracle Database environments, including RAC, non-RAC, and multitenant architectures (CDB/PDB), to meet different application requirements and infrastructure needs.
+Exploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.
 
-These implementations demonstrate experience in database architecture, deployment, and configuration, with a focus on scalability, availability, and efficient resource management.
+Focus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.
 
-**Technologies:** `Azure` `GCP` <br>
+**Technologies:** `Microsoft Azure` `Google Cloud Platform`<br>
 **Clients:**
-<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers communications</a> ·
-<a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a> 
+<a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> ·
+<a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a>
 
 :::
 
 ::: {.project}
 
-### [Automation](https://github.com/danish297/automation)
+### [Automation & Scripting](wip.qmd)
 
-Automated several daily tasks and routine jobs, saving valuable time and allowing me to focus on higher-priority responsibilities, productivity, and continuous learning.
+Developed automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.
 
-**Technologies:** `Python` `Shell` `Windows PowerShell`<br>
+Focused on automating daily administrative tasks, routine jobs, and operational workflows.
+
+**Technologies:** `Python` `Shell` `PowerShell`<br>
 **Clients:**
 <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> ·
 <a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> ·
-<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouuse</a> .
+<a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> ·
 <a href="https://www.knitwellgroup.com/" target="_blank" rel="noopener noreferrer">Ascena</a>
 
 :::
 
 :::
 
-[View all projects →](https://github.com/your-username){.text-link}
+[Explore all projects on GitHub →](https://github.com/Danish297){.text-link}
 
-## Elsewhere
+
+## Elsewhere {#elsewhere}
 
 ```{=html}
-<div class="social-links" role="group" aria-label="Social profiles">
-  <span class="social-label">Find me on </span>
+<div class="social-inline" role="group" aria-label="Social media profiles">
+
+  <span class="social-text">Connect with me on these platforms:</span>
 
   <a class="social-icon"
      href="https://linkedin.com/in/hasnain-danish-shaikh"
      target="_blank" rel="noopener noreferrer"
-     aria-label="GitHub profile (opens in a new tab)">
-    <img src="assets/linkedin.svg" alt="" width="32" height="32">
+     aria-label="LinkedIn profile">
+    <img src="assets/linkedin.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
-     href="https://www.github.com/Danish297"
+     href="https://github.com/Danish297"
      target="_blank" rel="noopener noreferrer"
-     aria-label="LinkedIn profile (opens in a new tab)">
+     aria-label="GitHub profile">
     <img src="assets/github.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
      href="https://facebook.com/danish297"
      target="_blank" rel="noopener noreferrer"
-     aria-label="X profile (opens in a new tab)">
+     aria-label="Facebook profile">
     <img src="assets/facebook.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
-     href="https://www.x.com/danish297/"
+     href="https://x.com/danish297/"
      target="_blank" rel="noopener noreferrer"
-     aria-label="Instagram profile (opens in a new tab)">
+     aria-label="X profile">
     <img src="assets/x.svg" alt="" width="26" height="26">
   </a>
 
   <a class="social-icon"
-     href="https://www.instagram.com/danishfrnz/"
+     href="https://instagram.com/danishfrnz/"
      target="_blank" rel="noopener noreferrer"
-     aria-label="Facebook profile (opens in a new tab)">
+     aria-label="Instagram profile">
     <img src="assets/instagram.svg" alt="" width="26" height="26">
   </a>
+
 </div>
 ```
+

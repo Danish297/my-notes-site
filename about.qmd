@@ -1,10 +1,5 @@
----
-title: "About"
----
-
 # About
 
-This website is a personal learning notebook.
+This website serves as my personal knowledge hub, where I document my learning journey, share technical insights, showcase projects, and explore emerging technologies.
 
-It is built with [Quarto](https://quarto.org/), hosted on
-GitHub Pages, and updated through Git.
+
