@@ -725,3 +725,115 @@ main.content .text-link {
   outline: 2px solid var(--bs-primary);
   outline-offset: 3px;
 }
+
+
+/* ==========================================
+   Professional IT Animated Tagline
+   ========================================== */
+
+.animated-tagline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 28px 0;
+  padding: 12px 0;
+  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.animated-tagline span {
+  display: inline-block;
+  background: linear-gradient(
+    100deg,
+    #38bdf8,
+    #6366f1,
+    #a78bfa,
+    #38bdf8
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation:
+    taglineReveal 0.8s ease forwards,
+    taglineGlow 5s linear infinite;
+}
+
+.animated-tagline span:nth-child(1) {
+  animation-delay: 0.2s, 1s;
+}
+
+.animated-tagline span:nth-child(2) {
+  animation-delay: 0.6s, 1s;
+}
+
+.animated-tagline span:nth-child(3) {
+  animation-delay: 1s, 1s;
+}
+
+/* Smooth entrance */
+@keyframes taglineReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated gradient */
+@keyframes taglineGlow {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: 250% center;
+  }
+}
+
+/* Professional glowing accent */
+.animated-tagline::after {
+  content: "";
+  width: 65px;
+  height: 3px;
+  flex-basis: 65px;
+  align-self: center;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #38bdf8,
+    #6366f1
+  );
+  box-shadow: 0 0 12px #38bdf888;
+  animation: accentPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes accentPulse {
+  from {
+    opacity: 0.5;
+    width: 45px;
+  }
+
+  to {
+    opacity: 1;
+    width: 75px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animated-tagline span {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .animated-tagline::after {
+    animation: none;
+  }
+}
+
