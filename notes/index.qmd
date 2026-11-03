@@ -19,6 +19,9 @@ Here, I share technical knowledge, hands-on projects, practical notes, and lesso
 
 [Explore my notes](../notes/11g_Unknown_facts.qmd){.button}
 [View projects](#projects){.button-secondary}
+[Achievements](#achievements){.button}
+[Featured Notes](#featured-notes){.button-secondary}
+
 
 :::
 
