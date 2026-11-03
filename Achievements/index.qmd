@@ -37,7 +37,7 @@ A collection of technical notes, experiments, and learning resources.
 
 ::: {.note-card}
 
-### [Local LLMs](../wip.qmd)
+### [Local LLMs](../notes/wip.qmd){.card-link}
 
 Exploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.
 
@@ -47,7 +47,7 @@ Exploring locally hosted Large Language Models to build private, secure, and int
 
 ::: {.note-card}
 
-### [Red Hat OpenShift](../wip.qmd)
+### [Red Hat OpenShift](../notes/wip.qmd){.card-link}
 
 Developing hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.
 
@@ -57,7 +57,7 @@ Developing hands-on expertise in Kubernetes-based container orchestration, enter
 
 ::: {.note-card}
 
-### [Artificial Intelligence](../wip.qmd)
+### [Artificial Intelligence](../notes/wip.qmd){.card-link}
 
 Exploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.
 
