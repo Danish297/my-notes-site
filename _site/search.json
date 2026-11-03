@@ -88,7 +88,7 @@
     "href": "index.html",
     "title": "Hi, I’m Danish.",
     "section": "",
-    "text": "I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.\nMy interests include Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.\nHere, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.\n\nKeep learning. Keep building. Turn ideas into reality.\n\nExplore my notes View projects"
+    "text": "I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.\nMy interests include Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.\nHere, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.\n\nKeep learning. Keep building. Turn ideas into reality.\n\nExplore my notes View projects Achievements Featured Notes"
   },
   {
     "objectID": "index.html#now",
@@ -465,5 +465,12 @@
       "Notes",
       "11g Unknown facts"
     ]
+  },
+  {
+    "objectID": "index.html#Achievements",
+    "href": "index.html#Achievements",
+    "title": "Hi, I’m Danish.",
+    "section": "Achievements",
+    "text": "Achievements\nSelected technical achievements, automation initiatives, and application development projects.\n\n\nOracle Database Recovery & Cloning Automation\nDesigned and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.\nThe framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.\n\n\nOracle DB Creation – Enhancements & Bug Fixes\nEnhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.\nImproved automation capabilities, operational efficiency, and deployment flexibility.\n\n\nBanking Application Logic Optimization\nIdentified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.\nImproved application reliability and ensured accurate processing of user-selected options.\n\n\nVideo Optimization – VEncoder\nDeveloped VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.\nSupports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency."
   }
 ]
