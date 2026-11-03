@@ -14,6 +14,11 @@ Here, I share technical knowledge, hands-on projects, practical notes, and lesso
   <span>Keep learning.</span>
   <span>Keep building.</span>
   <span>Turn ideas into reality.</span>
+
+  <span class="tagline-cursor">
+    <i></i>
+    <i></i>
+  </span>
 </div>
 
 [Explore my notes](../notes/11g_Unknown_facts.qmd){.button}

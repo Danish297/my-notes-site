@@ -10,11 +10,17 @@ My interests include **Artificial Intelligence, Local LLMs, Computer Vision, Ora
 
 Here, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.
 
+```{=html}
 <div class="animated-tagline">
   <span>Keep learning.</span>
   <span>Keep building.</span>
   <span>Turn ideas into reality.</span>
+  <span class="tagline-cursor" aria-hidden="true">
+    <i></i>
+    <i></i>
+  </span>
 </div>
+```
 
 [Explore my notes](notes/11g_Unknown_facts.qmd){.button}
 [View projects](#projects){.button-secondary}
