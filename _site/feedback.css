@@ -1,0 +1,187 @@
+/* Feedback page: scoped rules reuse the site's dark/light palette. */
+.fb-page { --fb-accent: var(--accent, #087f72); --fb-bg: var(--card, #fff); --fb-text: var(--text, #243247); --fb-border: var(--border, #d6deea); color: var(--fb-text); }
+.fb-page *, .fb-page *::before, .fb-page *::after { box-sizing: border-box; }
+.fb-intro { padding: 1rem 0 2rem; }
+.fb-eyebrow { color: var(--fb-accent); font-size: .8rem; font-weight: 700; letter-spacing: .12em; }
+.fb-intro h2 { border: 0; margin: .7rem 0; font-size: clamp(1.7rem, 4vw, 2.6rem); }
+.fb-badges { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; padding: 0; }
+.fb-badges li { border: 1px solid var(--fb-border); border-radius: 2rem; padding: .3rem .75rem; font-size: .85rem; }
+.fb-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr); gap: 1.5rem; align-items: start; }
+.fb-aside, .fb-form { border: 1px solid var(--fb-border); border-radius: 14px; padding: clamp(1rem, 3vw, 1.7rem); background: var(--fb-bg); min-width: 0; }
+.fb-aside h2 { margin: 0 0 1rem; font-size: 1.15rem; border: 0; }
+.fb-page p, .fb-page li { text-align: start; overflow-wrap: anywhere; }
+.fb-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.fb-form legend { float: none; width: auto; font-size: 1.15rem; font-weight: 700; padding: 0; margin-bottom: 1.2rem; }
+.fb-field { margin-bottom: 1.1rem; min-width: 0; }
+.fb-field label { display: block; font-size: .95rem; font-weight: 600; margin-bottom: .4rem; }
+.fb-field input, .fb-field select, .fb-field textarea { display: block; width: 100%; max-width: 100%; min-height: 44px; padding: .7rem .8rem; border: 1px solid var(--fb-border); border-radius: 7px; background: var(--bg, #f8fafc); color: var(--fb-text); font: inherit; line-height: 1.5; }
+.fb-field textarea { resize: vertical; min-height: 8rem; }
+.fb-field small, #fb-send-note { display: block; color: var(--muted, #526277); font-size: .82rem; margin-top: .35rem; }
+.fb-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1rem; }
+.fb-details { border-top: 1px solid var(--fb-border); padding: 1rem 0; }
+.fb-details summary { cursor: pointer; font-weight: 600; padding: .3rem 0; }
+.fb-details[open] summary { margin-bottom: 1rem; }
+.fb-check { display: flex; align-items: flex-start; gap: .65rem; margin: .75rem 0; font-weight: 400; }
+.fb-check input { flex: 0 0 auto; width: 1.15rem; height: 1.15rem; margin-top: .3rem; accent-color: var(--fb-accent); }
+.fb-topics legend { font-size: 1rem; }
+.fb-ack { border-top: 1px solid var(--fb-border); padding-top: 1.2rem; }
+.fb-notice { border-left: 3px solid var(--fb-accent); background: var(--accent-soft, #e8f6f2); padding: .8rem 1rem; }
+.fb-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-top: 1.5rem; }
+.fb-actions button { min-height: 44px; border: 1px solid var(--fb-accent); border-radius: 7px; padding: .7rem 1.2rem; background: var(--fb-accent); color: var(--button-text, #fff); font: inherit; font-weight: 600; }
+.fb-actions button:disabled { opacity: .6; cursor: not-allowed; }
+.fb-actions button:not(:disabled) { cursor: pointer; }
+.fb-page :is(input, select, textarea, button, summary):focus-visible { outline: 2px solid var(--fb-accent); outline-offset: 3px; }
+@media (max-width: 800px) { .fb-layout { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 540px) { .fb-grid { grid-template-columns: minmax(0, 1fr); } }
+/* Leave room for the existing bottom-right Feedback link. */
+.fb-page { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+@media print { .fb-actions { display: none; } }
+/* Explicit page-local layout, independent of Quarto's margin columns. */
+.fb-page .fb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(15rem, 1fr);
+  grid-template-areas: "form note";
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Place the form in the primary column. */
+.fb-page .fb-layout > #feedback-form {
+  grid-area: form;
+  position: static;
+  float: none;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+/* Keep guidance in this grid rather than a Quarto margin column. */
+.fb-page .fb-layout > .fb-aside {
+  grid-area: note;
+  position: static;
+  float: none;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+/* Override the existing global justified-text rules within the form. */
+main.content .fb-page p,
+main.content .fb-page li,
+main.content .fb-page label,
+main.content .fb-page small {
+  text-align: start;
+  text-justify: auto;
+  hyphens: none;
+}
+
+/* Stack the sections when two columns would make the form too narrow. */
+@media (max-width: 900px) {
+  .fb-page .fb-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "form"
+      "note";
+  }
+}
+/* Measure the actual feedback content width, not the browser viewport. */
+.fb-page {
+  container-name: feedback-page;
+  container-type: inline-size;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Default: full-width form followed by the guidance panel. */
+.fb-page .fb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "form"
+    "note";
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.fb-page .fb-layout > #feedback-form {
+  grid-area: form;
+}
+
+.fb-page .fb-layout > .fb-aside {
+  grid-area: note;
+}
+
+.fb-page .fb-layout > #feedback-form,
+.fb-page .fb-layout > .fb-aside {
+  position: static;
+  float: none;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+/* Optional paired inputs also stack until the form has enough space. */
+.fb-page .fb-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Enable paired inputs when the feedback section is sufficiently wide. */
+@container feedback-page (min-width: 42rem) {
+  .fb-page .fb-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Two main columns only when there is ample content width. */
+@container feedback-page (min-width: 64rem) {
+  .fb-page .fb-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+    grid-template-areas: "form note";
+  }
+}
+
+/* Keep form instructions readable rather than justified. */
+main.content .fb-page p,
+main.content .fb-page li,
+main.content .fb-page label,
+main.content .fb-page small {
+  text-align: start;
+  text-justify: auto;
+  hyphens: none;
+}
+/* Keep guidance above the form at every screen and container width. */
+.fb-page .fb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "note"
+    "form";
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Guidance panel comes first. */
+.fb-page .fb-layout > .fb-aside {
+  grid-area: note;
+}
+
+/* Feedback form follows the guidance panel. */
+.fb-page .fb-layout > #feedback-form {
+  grid-area: form;
+}
+
+/* Both panels fill the available content width. */
+.fb-page .fb-layout > .fb-aside,
+.fb-page .fb-layout > #feedback-form {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
