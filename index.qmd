@@ -1,6 +1,8 @@
+<!-- Hero: keep the above-the-fold portrait eager and preserve all calls to action. -->
+
 ::: {.hero}
 
-![](assets/profile.jpeg){.profile-image}
+![](assets/profile.jpeg){.profile-image fig-alt="Profile photograph of Danish" loading="eager"}
 
 # Hi, I'm Danish. {#greeting}
 
@@ -29,6 +31,8 @@ Here, I share technical knowledge, hands-on projects, practical notes, and lesso
 
 :::
 
+<!-- Current learning interests. -->
+
 ## Now {#now}
 
 I'm continuously exploring emerging technologies and expanding my technical knowledge in:
@@ -40,6 +44,8 @@ I'm continuously exploring emerging technologies and expanding my technical know
 - **Software Engineering:** Python, Shell scripting, automation, and application development.
 
 My focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights.
+
+<!-- Featured notes: CSS stretches each single heading link across its card. -->
 
 ## Featured Notes {#featured-notes}
 
@@ -81,6 +87,8 @@ Exploring how AI can transform ideas into practical applications through intelli
 
 [Explore all notes →](notes/11g_Unknown_facts.qmd){.button .text-link}
 
+
+<!-- Achievement summaries; linked detail pages are separate project inputs. -->
 
 ## Achievements {#achievements}
 
@@ -129,6 +137,8 @@ Supports multiple encoding formats and parallel processing to leverage hardware 
 :::
 
 :::
+
+<!-- Project experience and external client references. -->
 
 ## Projects {#projects}
 
@@ -223,6 +233,8 @@ Focused on automating daily administrative tasks, routine jobs, and operational 
 [Explore all projects on GitHub →](https://github.com/Danish297){.text-link}
 
 
+<!-- Social profiles: decorative icons use link labels for accessible names. -->
+
 ## Elsewhere {#elsewhere}
 
 ```{=html}
@@ -234,35 +246,35 @@ Focused on automating daily administrative tasks, routine jobs, and operational 
      href="https://linkedin.com/in/hasnain-danish-shaikh"
      target="_blank" rel="noopener noreferrer"
      aria-label="LinkedIn profile">
-    <img src="assets/linkedin.svg" alt="" width="26" height="26">
+    <img src="assets/linkedin.svg" alt="" width="26" height="26" loading="lazy" decoding="async">
   </a>
 
   <a class="social-icon"
      href="https://github.com/Danish297"
      target="_blank" rel="noopener noreferrer"
      aria-label="GitHub profile">
-    <img src="assets/github.svg" alt="" width="26" height="26">
+    <img src="assets/github.svg" alt="" width="26" height="26" loading="lazy" decoding="async">
   </a>
 
   <a class="social-icon"
      href="https://facebook.com/danish297"
      target="_blank" rel="noopener noreferrer"
      aria-label="Facebook profile">
-    <img src="assets/facebook.svg" alt="" width="26" height="26">
+    <img src="assets/facebook.svg" alt="" width="26" height="26" loading="lazy" decoding="async">
   </a>
 
   <a class="social-icon"
      href="https://x.com/danish297/"
      target="_blank" rel="noopener noreferrer"
      aria-label="X profile">
-    <img src="assets/x.svg" alt="" width="26" height="26">
+    <img src="assets/x.svg" alt="" width="26" height="26" loading="lazy" decoding="async">
   </a>
 
   <a class="social-icon"
      href="https://instagram.com/danishfrnz/"
      target="_blank" rel="noopener noreferrer"
      aria-label="Instagram profile">
-    <img src="assets/instagram.svg" alt="" width="26" height="26">
+    <img src="assets/instagram.svg" alt="" width="26" height="26" loading="lazy" decoding="async">
   </a>
 
 </div>

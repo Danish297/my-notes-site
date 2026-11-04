@@ -1,3 +1,4 @@
+# Quarto project configuration: save as _quarto.yml in the project root.
 project:
   type: website
   output-dir: _site
@@ -8,6 +9,7 @@ website:
   favicon: assets/favicon.svg
   site-url: https://danish297.github.io/my-notes-site/
 
+  # Preserve Quarto-managed search, navigation, and responsive collapse.
   navbar:
     background: dark
     search: true
@@ -24,11 +26,13 @@ website:
         href: https://github.com/danish297/
         aria-label: "GitHub profile (opens in a new tab)"
         target: _blank
+        rel: "noopener noreferrer"
 
       - icon: linkedin
         href: https://www.linkedin.com/in/hasnain-danish-shaikh/
         aria-label: "LinkedIn profile (opens in a new tab)"
         target: _blank
+        rel: "noopener noreferrer"
 
   sidebar:
     style: floating
@@ -39,6 +43,8 @@ website:
         contents:
           - notes/11g_Unknown_facts.qmd
           - notes/12c_new_features.qmd
+          - notes/19c_vs_23ai.qmd
+          - notes/NewOracleDB.qmd
 
   page-footer:
     left: "© 2026 Danish297"
@@ -46,6 +52,8 @@ website:
       - icon: github
         href: https://github.com/danish297
 
+
+# Local stylesheet overrides both built-in themes; no new runtime libraries.
 format:
   html:
     theme:
@@ -53,7 +61,9 @@ format:
       light: flatly
     respect-user-color-scheme: true
     css: styles.css
-    #include-in-header: navbar-fix.js
+    # Add the floating feedback link to every rendered HTML page.
+    include-after-body:
+      - feedback.html
     toc: false
     code-copy: true
     link-external-icon: true

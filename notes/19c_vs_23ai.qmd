@@ -1,0 +1,320 @@
+---
+title: "19c vs. 23ai for DBAs"
+date: 2026-09-07
+categories: [oracle, database, dba, migration]
+---
+
+# 19c vs. 23ai for DBAs
+
+The biggest DBA-facing differences are architecture, workload management, security controls, recovery operations, and high-availability granularity. Moving from 19c to 23ai can change how you organize databases, grant privileges, diagnose blocking, protect backups, and perform disaster recovery.
+
+This comparison groups the changes into five operational areas and explains their effects on daily administration and migration.
+
+## Scope and release caveats
+
+This compares Oracle Database 19c with the 23ai release family, not every feature subsequently added to Oracle AI Database 26ai. Some Oracle documentation URLs now display newer branding or later Release Updates (RUs).
+
+Check each feature against the exact target RU, deployment platform, edition, compatibility setting, and licensing entitlement. A feature available in a later 23ai RU is not necessarily available in the original release.
+
+## Comparison at a glance
+
+| Area | Oracle Database 19c | Oracle Database 23ai | Practical impact |
+|---|---|---|---|
+| Architecture | Supports non-CDB and CDB/PDB deployments. | Requires multitenant architecture. | Container-aware administration is mandatory; non-CDBs need conversion. |
+| Performance and workload management | Established relational tuning and automation capabilities. | Adds AI Vector Search, Priority Transactions, and further automation. | New memory/index workloads and application-aware blocking policies. |
+| Security and auditing | Existing privilege and audit configurations are the migration starting point. | Adds SQL Firewall and schema privileges; changes traditional-auditing support. | Revise provisioning, audit policies, and application-change procedures. |
+| Backup and recovery | Existing RMAN and Flashback operational model. | Adds RMAN enhancements, encryption changes under relevant compatibility settings, and separate Flashback log destinations. | Retest runbooks, storage monitoring, key management, and backup tooling. |
+| High availability | Conventional Data Guard protects at database/CDB level. | Adds more granular PDB protection and transaction-recovery fault isolation. | Greater granularity with additional topology and monitoring considerations. |
+
+## 1. Architecture: multitenant becomes mandatory
+
+### What changes?
+
+Oracle Database 19c is the last release supporting non-CDB architecture. In 23ai, the supported architecture is a container database containing pluggable databases.
+
+A 19c non-CDB therefore requires both an upgrade and conversion to a PDB. AutoUpgrade can coordinate these operations.
+
+- If your 19c database is already a CDB, migration primarily involves upgrading and validating the existing multitenant deployment.
+- If it is a non-CDB, application connections, administration, monitoring, and recovery procedures must account for its new PDB identity.
+
+### Practical DBA impact
+
+The first troubleshooting question becomes: “Which container am I connected to?”
+
+An availability incident may concern one PDB, its service, or its open state rather than the entire CDB. Root-level administration and application-PDB administration must be distinguished.
+
+```sql
+-- Run with appropriate catalog privileges.
+SELECT name, cdb
+FROM v$database;
+
+SELECT SYS_CONTEXT('USERENV', 'CON_NAME') AS current_container
+FROM dual;
+
+-- Relevant when connected to a CDB.
+SELECT con_id, name, open_mode, restricted
+FROM v$pdbs
+ORDER BY con_id;
+```
+
+These are inventory queries, not an upgrade script. The SQL blocks are displayed as examples and are not executed by Quarto.
+
+### Day-to-day administration
+
+Update operating procedures to identify:
+
+- The target CDB and PDB for every scheduled job.
+- Which credentials are common versus local.
+- Which services applications use.
+- Which operations affect one PDB versus the shared container.
+- Which resource and maintenance policies apply to each workload.
+
+Common and local users, roles, and grants are not interchangeable. Scripts that assume a single database context need explicit review.
+
+### Migration and troubleshooting impact
+
+Do not treat non-CDB conversion as a reversible naming change. Establish and test recovery or fallback before migration. Oracle specifically cautions against relying on read-only tablespaces as a fallback mechanism during the documented non-CDB-to-PDB conversion workflow.
+
+Reference: [AutoUpgrade: upgrade and convert a non-CDB to a PDB](https://docs.oracle.com/en/database/oracle/oracle-database/19/spucs/using-autoupgrade-upgrade-and-convert-non-cdbs-pdb-same-operating-system.pdf).
+
+## 2. Performance: new workloads and policy-driven intervention
+
+### What changes?
+
+The difference is not simply that every SQL statement runs faster. The more important operational change is a broader workload and control surface:
+
+- AI Vector Search introduces vector data, indexes, and similarity-search execution.
+- Priority Transactions introduces application-aware intervention for row-lock blocking.
+- Additional automation includes Automatic SecureFiles Shrink and enhancements to In-Memory workload optimization.
+
+### AI Vector Search changes capacity planning
+
+DBAs need to understand vector dimensions, index selection, memory requirements, and the trade-off between approximate-search accuracy and execution cost.
+
+Review:
+
+- Whether vector workloads share capacity with critical OLTP.
+- Index-build and maintenance windows.
+- Memory demand and index availability.
+- Effects on existing application latency.
+- Accuracy requirements as well as response time.
+
+Do not assume all vector capabilities exist in the initial 23ai release. Automatic vector-memory management and additional vector-index capabilities arrived in later RUs.
+
+### Priority Transactions changes blocking management
+
+Applications assign transaction priorities and administrators configure wait targets. When a lower-priority transaction blocks higher-priority work beyond the configured threshold, the database can roll back the lower-priority transaction to release its row locks.
+
+| Reactive administration | Policy-driven administration |
+|---|---|
+| Investigate blocking after an alert. | Define which transactions deserve priority. |
+| Coordinate intervention in a blocking session. | Configure rollback behavior for qualifying lower-priority blockers. |
+| Handle application consequences after intervention. | Test rollback and error handling before enabling policy. |
+
+This does not fix long transactions or poor transaction boundaries. It changes failure behavior and requires application-owner approval and testing.
+
+### Automation and monitoring
+
+Monitor automation outcomes, not just enabled settings:
+
+- Which transactions were rolled back and why.
+- Whether high-priority response times improved.
+- Whether maintenance competes with peak workload.
+- Whether new indexes increase memory and storage pressure.
+
+For licensed and supported In-Memory deployments, automatic feature selection can improve workload optimization. It is not a universal benefit for every database.
+
+### Migration and maintenance impact
+
+Benchmark representative workloads. Compare throughput, latency, blocking, CPU, I/O, and plan stability. Validate existing SQL before introducing optional features so upgrade regressions remain distinguishable from feature-adoption effects.
+
+References:
+
+- [Oracle release-family new features guide](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/toc.htm)
+- [AI Vector Search documentation](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
+- [In-Memory enhancements](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/data_analytics_in_memory.html)
+
+## 3. Security: SQL Firewall, schema privileges, and audit modernization
+
+### SQL Firewall
+
+Oracle 23ai SQL Firewall restricts database activity using authorized SQL and connection contexts. It helps address SQL injection and misuse of stolen credentials, complementing application security and auditing.
+
+The DBA workflow includes:
+
+1. Capture representative legitimate activity.
+2. Review the resulting allow-list.
+3. Evaluate violations.
+4. Introduce blocking after validation.
+5. Update policies when approved application behavior changes.
+
+Incomplete capture is an operational risk. Routine transactions alone may omit month-end processing, rare reports, or maintenance operations.
+
+Audit violations when blocking is enabled, and include policy administration in security monitoring. Verify licensing and deployment availability before adoption.
+
+### Schema privileges
+
+Schema privileges provide another authorization scope between individual-object grants and broad database-wide privileges.
+
+This can reduce grant-maintenance work as objects change. However, schema-wide access can still exceed an account's requirements. Review access by business role rather than mechanically reproducing historical grants.
+
+### Auditing
+
+Unified auditing is not new in 23ai. The important change is the desupport of traditional auditing, with specific treatment of existing settings during upgrades. Existing settings may continue to be honored in an upgraded environment; this is not a reason to retain the old model indefinitely.
+
+Review:
+
+- Traditional audit settings and equivalent unified policies.
+- Audit-trail collection and retention.
+- SIEM or Audit Vault integration.
+- Audit volume after changes.
+- Procedures for policy administration.
+
+23ai also adds unified auditing of individual columns in tables and views, enabling more targeted policies.
+
+### Migration and troubleshooting impact
+
+Validate both permitted and rejected behavior. A successful login does not prove that privileges, audit records, and firewall policy are correct.
+
+Include scheduled jobs, reporting accounts, support access, deployment tools, and emergency administration in testing.
+
+References:
+
+- [Oracle SQL Firewall FAQ](https://www.oracle.com/a/ocom/docs/security/oracle-sql-firewall-faq.pdf)
+- [Unified audit best-practice guidelines](https://www.oracle.com/a/tech/docs/dbsec/unified-audit-best-practice-guidelines.pdf)
+
+## 4. Backup and recovery: RMAN remains central, but operations evolve
+
+### What stays familiar?
+
+RMAN remains the foundation for physical backup and recovery. The changes evolve existing workflows rather than replace RMAN with an AI backup engine.
+
+### Backup encryption and compatibility
+
+Oracle documents AES-256 in XTS mode for new encrypted backups when `COMPATIBLE` is set to `23.0.0` or higher, while retaining compatibility with previously configured algorithms.
+
+Distinguish two decisions:
+
+- A stronger encryption default does not automatically encrypt all backups.
+- Changing compatibility and changing encryption configuration are separate operations.
+
+Validate wallet or key access, recovery-host readiness, and restore compatibility rather than relying only on the backup job's exit status.
+
+### Separate Flashback log destination
+
+23ai introduces a separate destination for Flashback Database logs using:
+
+```text
+DB_FLASHBACK_LOG_DEST
+DB_FLASHBACK_LOG_DEST_SIZE
+```
+
+Oracle documents disabling and reenabling Flashback logging when changing the destination. Plan the operation around recovery requirements and verify the exact target RU's procedure.
+
+The benefit is independent placement and capacity management. The consequence is another recovery-critical destination to monitor: an FRA-only dashboard is no longer the complete storage picture.
+
+### RMAN operational enhancements
+
+Oracle's 23ai RMAN guidance describes:
+
+- Oracle-supplied backup modules and aliases.
+- Configuration support for OCI immutable buckets.
+- Copying backup sets between SBT destinations.
+- Simplified transport and platform-migration workflows.
+- Improved diagnostics and catalog-operation resilience.
+
+Not every convenience is exclusive to 23ai. For example, Oracle notes that the Recovery Appliance backup module is also included starting with 19c RU 19.27. Compare exact RUs, not just major-version names.
+
+### Migration and recovery impact
+
+Retest with the actual target software and infrastructure:
+
+- Restore to an alternate host.
+- Recover to a required point in time.
+- Restore encrypted backups using the intended key-management process.
+- Validate individual-PDB recovery where needed.
+- Confirm cloud or media-manager integration.
+
+Transport-based migration has workflow-specific limitations. Oracle's documented PDB transport workflow includes same-endian and local-undo requirements. Do not generalize one supported path into unrestricted cross-platform PDB transport.
+
+References:
+
+- [RMAN 23ai new features, part 1](https://blogs.oracle.com/maa/oracle-database-23ai-rman-part-1)
+- [RMAN 23ai new features, part 2](https://blogs.oracle.com/maa/oracle-database-23ai-recovery-manager-rman-new-features-part-2-celebrating-three-decades-of-data-protection-more)
+
+## 5. High availability: granular protection and fault containment
+
+### Data Guard per PDB
+
+Conventional Data Guard protects the CDB as a database. Data Guard per PDB offers more granular protection and role transitions for individual pluggable databases.
+
+This matters when consolidated applications have different availability requirements. A selected PDB can be the unit of protection and role transition rather than treating all PDBs as one application service.
+
+Data Guard per PDB originated in the 21c line and was enhanced in 23ai. It is a difference from 19c, not a feature first invented in 23ai.
+
+### Granularity adds dependencies to manage
+
+Review:
+
+- Source and destination CDB infrastructure.
+- PDB-specific protection and apply state.
+- Application services and reconnection.
+- Backup policies after role transitions.
+- Recovery objectives for each application.
+
+Do not assume feature parity with every conventional Data Guard or Active Data Guard configuration. Validate the exact RU's restrictions, topology, and licensing requirements.
+
+### Automatic Transaction Quarantine
+
+Automatic Transaction Quarantine isolates problematic transaction recovery so the database can remain available while other work continues. Alerts and diagnostics still require investigation.
+
+| Feature | Problem addressed |
+|---|---|
+| Priority Transactions | A lower-priority transaction holds row locks that block higher-priority work. |
+| Automatic Transaction Quarantine | A transaction encounters a problematic failure during transaction recovery. |
+
+One is a workload policy; the other is a fault-containment mechanism. Neither removes the need to diagnose the underlying cause.
+
+### Migration and availability testing
+
+Expand testing beyond startup:
+
+- Switchover and failover at the intended protection scope.
+- Client reconnection and transaction retries.
+- Backups after role transitions.
+- Recovery monitoring and alert routing.
+- Service ownership and operational handoffs.
+
+Measure availability end to end, not merely by whether an instance or PDB is open.
+
+References:
+
+- [Data Guard new features](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/data_guard.html)
+- [Release-family new features guide](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/toc.htm)
+
+## Day-to-day DBA checklist
+
+| Task | What to revise for 23ai |
+|---|---|
+| Morning health checks | Identify CDB/PDB scope and inspect applicable recovery, quarantine, and workload-policy alerts. |
+| Access provisioning | Consider schema privileges while preserving least privilege. |
+| Application releases | Review SQL Firewall policies when enabled. |
+| Performance troubleshooting | Separate ordinary SQL regressions from vector pressure and priority-driven rollback. |
+| Capacity planning | Include vector resources and separate Flashback destinations where configured. |
+| Backup monitoring | Review recoverability, encryption keys, and destination accessibility, not just completion. |
+| DR exercises | Test the actual CDB-level or PDB-level protection model and client behavior. |
+| Maintenance automation | Make jobs container-aware and validate features against the installed RU. |
+
+Not every item applies to every deployment. Existing monitoring and troubleshooting skills remain essential; new features add context rather than eliminate the need for fundamentals.
+
+## Recommended migration approach
+
+1. Inventory 19c: architecture, RU, options, services, auditing, backups, and HA topology.
+2. Separate required changes from optional adoption. Non-CDB conversion is mandatory where applicable; vector search, SQL Firewall enforcement, and Priority Transactions are separate decisions.
+3. Select the exact target RU and verify platform support, client compatibility, feature restrictions, and licensing.
+4. Rehearse upgrade and conversion with AutoUpgrade where appropriate.
+5. Establish representative normal, peak, batch, and maintenance performance baselines.
+6. Validate recovery and fallback independently. A successful upgrade does not prove recoverability.
+7. Rehearse security and HA behavior, including rare operations, audit collection, service relocation, client retry, and post-failover backups.
+
+The decision is not simply whether 23ai has more features. It is whether its architectural requirements and operational capabilities improve your environment enough to justify the migration, testing, and runbook changes.

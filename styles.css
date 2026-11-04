@@ -161,12 +161,6 @@ pre {
    5. Hero and buttons
    ================================================== */
 
-/* Remove top spacing from hero section */
-.hero {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
 /* Remove top spacing around profile image */
 .hero .profile-image {
   margin-top: 0 !important;
@@ -174,7 +168,8 @@ pre {
 }
 
 .hero {
-  padding: 4.5rem 0 3rem;
+  margin-top: 0;
+  padding: 0 0 3rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -265,9 +260,9 @@ pre {
 }
 
 .note-card {
-  transition:
-    transform 0.18s ease,
-    border-color 0.18s ease;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .note-card:hover {
@@ -321,23 +316,6 @@ pre {
   z-index: 1030;
 }
 
-/* Control only the primary navbar, not the entire header */
-#quarto-header > .navbar {
-  height: 40px !important;
-  min-height: 40px !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
-
-/* Primary navbar container */
-#quarto-header > .navbar > .container,
-#quarto-header > .navbar > .container-fluid {
-  height: 40px !important;
-  min-height: 40px !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
 /* Main navbar */
 #quarto-header .navbar {
   --bs-navbar-color: var(--text);
@@ -348,21 +326,24 @@ pre {
 
   background: var(--navbar-bg) !important;
   border-bottom: 1px solid var(--border);
+  /* Retain translucent styling; the background remains usable without blur. */
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 
   width: 100%;
   min-height: 40px !important;
-  height: 60px !important;
+  height: auto;
   padding: 0 !important;
 }
 
 /* Navbar container and alignment */
 #quarto-header .navbar .container,
 #quarto-header .navbar .container-fluid {
+  box-sizing: border-box;
   max-width: 100% !important;
   width: 100% !important;
   min-height: 40px !important;
-  height: 40px !important;
+  height: auto;
 
   display: flex !important;
   align-items: center !important;
@@ -459,8 +440,6 @@ body.quarto-light #quarto-header #quarto-search svg {
   stroke: currentColor !important;
 }
 
-
-
 /* ==================================================
    8. Sidebar and footer
    ================================================== */
@@ -531,10 +510,6 @@ body.quarto-light #quarto-header #quarto-search svg {
    ================================================== */
 
 @media (max-width: 700px) {
-  .hero {
-    padding-top: 3rem;
-  }
-
   .button,
   .button-secondary {
     width: 100%;
@@ -546,29 +521,6 @@ body.quarto-light #quarto-header #quarto-search svg {
   .shelf,
   .project {
     padding: 1.1rem;
-  }
-}
-
-/* ==================================================
-   11. Reduced-motion preference
-   ================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .button,
-  .button-secondary,
-  .note-card,
-  .social-icon {
-    transition: none;
-  }
-
-  .button:hover,
-  .button-secondary:hover,
-  .note-card:hover {
-    transform: none;
   }
 }
 
@@ -619,8 +571,6 @@ body.quarto-light #quarto-header
 #quarto-header .quarto-color-scheme-toggle:hover {
   opacity: 0.75;
 }
-
-
 
 /* Inline social links */
 .social-inline {
@@ -693,13 +643,6 @@ main.content .text-link {
    Fully Clickable Featured Note Cards
    ========================================== */
 
-.note-card {
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.2s ease,
-              box-shadow 0.2s ease;
-}
-
 .note-card .card-link {
   color: inherit;
   text-decoration: none;
@@ -713,33 +656,18 @@ main.content .text-link {
   z-index: 1;
 }
 
-.note-card:hover {
-  transform: translateY(-4px);
-}
-
 .note-card:hover .card-link {
   text-decoration: underline;
 }
 
 .note-card:focus-within {
-  outline: 2px solid var(--bs-primary);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
 /* ==========================================
    Professional IT Animated Tagline
    ========================================== */
-
-/*.animated-tagline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  margin: 28px 0;
-  padding: 12px 0;
-  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
-  font-weight: 750;
-  letter-spacing: -0.5px;
-}*/
 
 .animated-tagline {
   display: flex;
@@ -755,28 +683,22 @@ main.content .text-link {
   line-height: 1.4;
 }
 
-/* Apply the gradient and entrance animation to text only */
+/* Solid text is the fallback; only supporting engines receive clipped gradients. */
 .animated-tagline > span:not(.tagline-cursor) {
   display: inline-block;
+  color: var(--accent);
+  animation: taglineReveal 0.8s ease both;
+}
 
-  background: linear-gradient(
-    100deg,
-    #38bdf8,
-    #6366f1,
-    #a78bfa,
-    #38bdf8
-  );
-  background-size: 250% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  opacity: 0;
-  transform: translateY(18px);
-
-  animation:
-    taglineReveal 0.8s ease forwards,
-    taglineGlow 5s linear infinite;
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .animated-tagline > span:not(.tagline-cursor) {
+    background: linear-gradient(100deg, #38bdf8, #6366f1, #a78bfa, #38bdf8);
+    background-size: 250% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: taglineReveal 0.8s ease both, taglineGlow 5s linear infinite;
+  }
 }
 
 /* Staggered text entrance */
@@ -794,6 +716,10 @@ main.content .text-link {
 
 /* Smooth entrance */
 @keyframes taglineReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -866,20 +792,104 @@ main.content .text-link {
   }
 }
 
-/* Accessibility: disable motion and keep text/bars visible */
+/* Keep the cursor baseline unchanged in the normal animation mode. */
+.animated-tagline > .tagline-cursor {
+  transform: translateY(7px);
+}
+
+/* Intrinsic image ratio is preserved; dimensions must come from the real asset. */
+.hero .profile-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Long URLs and inline tags must not force cards beyond the viewport. */
+.note-card, .shelf, .project {
+  overflow-wrap: anywhere;
+}
+
+/* Quarto/Bootstrap owns collapse state. Do not constrain expanded menu height. */
+#quarto-header .navbar .navbar-collapse {
+  min-width: 0;
+}
+
+/* These rules intentionally come last so hover rules cannot re-enable motion. */
 @media (prefers-reduced-motion: reduce) {
-  .animated-tagline > span:not(.tagline-cursor) {
+  html { scroll-behavior: auto; }
+  .button, .button-secondary, .note-card, .social-icon,
+  .social-inline .social-icon { transition: none; }
+  .button:hover, .button-secondary:hover, .note-card:hover,
+  .social-inline .social-icon:hover { transform: none; }
+  .animated-tagline > span:not(.tagline-cursor),
+  .animated-tagline > .tagline-cursor > i {
     animation: none;
     opacity: 1;
     transform: none;
   }
+}
 
+/* System colors keep clipped gradient text legible in forced-colors mode. */
+@media (forced-colors: active) {
+  .animated-tagline > span:not(.tagline-cursor) {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+  }
   .animated-tagline > .tagline-cursor > i {
-    animation: none;
-    opacity: 1;
+    background: CanvasText;
+    box-shadow: none;
   }
 }
-/* Lower both cursor bars toward the text baseline */
-.animated-tagline > .tagline-cursor {
-  transform: translateY(7px);
+
+/* Floating feedback link: fixed to the viewport, independent of page scrolling. */
+.floating-feedback {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  /* Keep clear of supported mobile-device safe areas. */
+  right: calc(0.5rem + env(safe-area-inset-right, 0px));
+  bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+
+  /* Above ordinary content, below Bootstrap modal dialogs. */
+  z-index: 1040;
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0.65rem 1.1rem;
+
+  border: 1px solid var(--accent, #64ffda);
+  border-radius: 999px;
+  background: var(--accent, #64ffda);
+  color: var(--button-text, #0a0f1a);
+
+  font-family: var(--font, system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 18%);
+}
+
+.floating-feedback:hover {
+  background: var(--accent, #64ffda);
+  color: var(--button-text, #0a0f1a);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.floating-feedback:focus-visible {
+  outline: 3px solid var(--heading, #e6f1ff);
+  outline-offset: 4px;
+}
+
+/* Keep printed pages free of floating interface controls. */
+@media print {
+  .floating-feedback {
+    display: none;
+  }
 }

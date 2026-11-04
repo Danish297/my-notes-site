@@ -1,0 +1,92 @@
+---
+title: "NewOracleDB"
+date: 2026-01-12
+categories: [oracle, database, dba, cloud, autonomous-database]
+---
+
+# Oracle Autonomous Database vs. Traditional Oracle Databases
+
+Oracle Autonomous Database is a managed Oracle database service that automates much of the infrastructure and database administration normally handled by a DBA team. Traditional Oracle databases provide more direct operational control, but their administrators typically take responsibility for installation, configuration, patching, backup execution, and infrastructure maintenance.
+
+Here, “traditional” means a self-managed Oracle database, on premises or on cloud infrastructure. Self-managed Oracle databases can also use substantial automation; the main difference is who operates and remains responsible for it.
+
+Oracle now also uses the name Autonomous AI Database. Capabilities and controls vary by Serverless or Dedicated deployment, infrastructure, compute model, and service version.
+
+## Key advantages and DBA differences
+
+| Area | Traditional, self-managed Oracle database | Autonomous Database | DBA impact |
+|---|---|---|---|
+| Administration | The team provisions and maintains the database stack and its automation. | Oracle automates provisioning and much of routine platform administration. | Less installation and infrastructure work; more service configuration and governance. |
+| Performance | DBAs configure resources, investigate SQL, and operate tuning tools. | The service automates many tuning and resource-management tasks; supported workloads can use automatic indexing. | Less routine tuning, but application SQL, data design, and performance validation still matter. |
+| Security | The team operates patching, encryption, access controls, and audit infrastructure. | Oracle manages platform security maintenance and encryption; customers manage access, data exposure, and application security. | Responsibility shifts rather than disappears. |
+| Patching | DBAs plan, test, install, and troubleshoot patches across the stack. | Oracle applies platform and database patches through managed maintenance processes. | Less patch execution; compatibility testing and maintenance awareness remain important. |
+| Backup and recovery | DBAs configure RMAN, storage, retention, monitoring, and restore procedures. | The service performs automatic backups and provides managed restore/recovery workflows. | Focus moves to recovery requirements, retention, restore authorization, and recovery testing. |
+| Scalability | The team provisions capacity and manages infrastructure constraints. | Compute and storage can be adjusted through service controls; supported autoscaling responds to demand within service limits. | Faster capacity changes, with continued cost and quota oversight. |
+
+## Automated administration and performance optimization
+
+Autonomous Database reduces repetitive work such as database provisioning, backup scheduling, patch installation, and routine platform maintenance. Performance automation helps manage the database without requiring every adjustment to be performed manually.
+
+This does not guarantee that every query is automatically optimal. Poor SQL, unsuitable data models, connection storms, and inefficient application behavior still require investigation. Customers remain responsible for application health and the performance of the queries and updates their applications issue.
+
+## Security and patching
+
+Oracle manages security maintenance of the service and automates encryption and patch deployment. This reduces the risk of missing platform patches and removes much of the manual patching workload.
+
+Customers still own important controls:
+
+- User accounts, roles, and least-privilege access.
+- Network access and application connection configuration.
+- Data classification, audit requirements, and compliance decisions.
+- Application vulnerabilities and credential handling.
+
+Managed patching is designed to minimize disruption, but do not interpret that as a promise that every maintenance event is invisible to every application. Review deployment-specific maintenance behavior and test client reconnection and retry handling.
+
+## Backup, recovery, and availability
+
+Automatic backups remove much of the manual backup-execution work. Managed recovery workflows support recovery to available points within the configured retention period.
+
+For Autonomous Database Serverless, Oracle documents a default automatic-backup retention of 60 days. Eligible ECPU deployments support configuring retention between 1 and 60 days. Verify the applicable service configuration rather than assuming this rule applies to every Autonomous deployment.
+
+A successful managed backup is not a substitute for a recovery plan. DBAs and application owners must still define recovery time and recovery point objectives, verify retention, authorize restores, and rehearse application recovery. Disaster-recovery capabilities and protection choices should be evaluated separately from backup retention.
+
+## Scalability and cost management
+
+Autonomous Database makes capacity adjustments easier than procuring and configuring new servers. Supported autoscaling can increase resources as workload demand grows and reduce their use when demand falls.
+
+DBAs still need to monitor resource consumption, service limits, workload concurrency, and cost. Autoscaling is not unlimited capacity, and inefficient workloads can become more expensive rather than automatically become efficient.
+
+## What changes in the DBA role?
+
+The DBA becomes less of an infrastructure operator and more of a service, data, and application-performance administrator.
+
+### Less routine work
+
+- Installing and maintaining the database platform.
+- Manually executing platform patches.
+- Scheduling and operating routine backups.
+- Performing repetitive infrastructure and capacity operations.
+
+### Responsibilities that remain
+
+- Schema design, SQL review, and application-performance troubleshooting.
+- Access governance, auditing requirements, and compliance.
+- Data migration, integration, and application compatibility.
+- Recovery planning and validation.
+- Capacity, cost, and service-level management.
+
+Customers also give up some low-level control. Autonomous Database is not an unrestricted host or database installation: supported privileges, parameters, tools, and administrative operations differ from a self-managed system. Validate dependencies on operating-system access and privileged administration before migration.
+
+## Key idea
+
+Autonomous Database reduces operational effort by making Oracle responsible for much of the platform's operation. Traditional Oracle databases offer more direct control and customization but require the customer to operate and maintain more of the stack.
+
+The choice is a trade-off between managed automation and operational control—not between having a DBA and needing no database expertise.
+
+## Sources
+
+- [Oracle shared responsibility model](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared-responsibility-model.html)
+- [What is an Autonomous AI Database?](https://www.oracle.com/autonomous-database/what-is-autonomous-database/)
+- [Autonomous Database FAQs](https://www.oracle.com/database/technologies/datawarehouse-bigdata/adb-faqs.html)
+- [Serverless backup and recovery](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/backup-intro.html)
+- [Configure automatic-backup retention](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/backup-edit-retention.html)
