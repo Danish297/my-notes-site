@@ -1,0 +1,159 @@
+---
+title: "Suggest a Topic"
+sidebar: false
+toc: false
+---
+
+Have an idea for a future note? Share the topic and a brief description
+of what you would like me to cover.
+
+```{=html}
+<form
+  class="topic-suggestion-form"
+  action="[https://formsubmit.co/hasnainfrnz@gmail.com](https://formsubmit.co/hasnainfrnz@gmail.com)"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="_subject"
+    value="New topic suggestion — Danish297"
+  >
+
+  <div class="topic-field">
+    <label for="topic-name">Topic name</label>
+    <input
+      id="topic-name"
+      name="topic"
+      type="text"
+      placeholder="e.g. Oracle 23ai vector search"
+      maxlength="120"
+      required
+    >
+  </div>
+
+  <div class="topic-field">
+    <label for="topic-description">Short description</label>
+    <textarea
+      id="topic-description"
+      name="description"
+      rows="4"
+      placeholder="What would you like to learn about this topic?"
+      maxlength="1000"
+      aria-describedby="description-help"
+      required
+    ></textarea>
+    <small id="description-help">
+      A few sentences are enough. Maximum 1,000 characters.
+    </small>
+  </div>
+
+  <p class="topic-privacy">
+    Suggestions are sent through FormSubmit. Please do not include
+    personal or confidential information.
+  </p>
+
+  <button class="button" type="submit">Submit</button>
+</form>
+
+<script>
+(() => {
+  const form = document.querySelector(".topic-suggestion-form");
+  if (!form) return;
+
+  const button = form.querySelector('button[type="submit"]');
+  let submitting = false;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (submitting) return;
+
+    submitting = true;
+    const originalLabel = button.textContent;
+
+    button.disabled = true;
+    button.textContent = "Sending…";
+    form.setAttribute("aria-busy", "true");
+
+    let success = false;
+    let errorMessage = "";
+
+    try {
+      const endpoint = new URL(form.action);
+
+      if (
+        endpoint.hostname !== "formsubmit.co" ||
+        endpoint.pathname.includes("YOUR_EMAIL")
+      ) {
+        throw new Error(
+          "Replace the form action with your actual FormSubmit email or identifier."
+        );
+      }
+
+      endpoint.pathname =
+        "/ajax/" + endpoint.pathname.replace(/^\/(?:ajax\/)?/, "");
+
+      const response = await fetch(endpoint.href, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(
+          Object.fromEntries(new FormData(form).entries())
+        )
+      });
+
+      const text = await response.text();
+      let result;
+
+      try {
+        result = JSON.parse(text);
+      } catch {
+        console.error("Unexpected FormSubmit response:", text);
+        throw new Error(
+          "The service returned an unexpected response. Check the browser console."
+        );
+      }
+
+      console.log("FormSubmit response:", response.status, result);
+
+      if (
+        !response.ok ||
+        String(result.success).toLowerCase() !== "true"
+      ) {
+        throw new Error(
+          result.message ||
+          result.error ||
+          `The service did not confirm submission (HTTP ${response.status}).`
+        );
+      }
+
+      success = true;
+    } catch (error) {
+      console.error("Topic submission failed:", error);
+      errorMessage = error.message || "An unknown error occurred.";
+    } finally {
+      submitting = false;
+      button.disabled = false;
+      button.textContent = originalLabel;
+      form.removeAttribute("aria-busy");
+    }
+
+    if (success) {
+      form.reset();
+
+      window.alert(
+        "Thank you for the suggestion. I will review it and take the necessary action."
+      );
+    } else {
+      window.alert(
+        "Your suggestion could not be confirmed.\n\n" +
+        errorMessage +
+        "\n\nYour text has been kept. Please try again."
+      );
+    }
+  });
+})();
+</script>
+```
+Suggestions help me plan future notes, but publication is not guaranteed.

@@ -1,0 +1,59 @@
+---
+title: "Suggest a Topic"
+description: "Suggest a topic for a future note."
+toc: false
+---
+
+Have an idea for a future note? Share the topic and a brief description
+of what you would like me to cover.
+
+```{=html}
+<form
+  class="topic-suggestion-form"
+  action="[https://formsubmit.co/YOUR_EMAIL@example.com](https://formsubmit.co/YOUR_EMAIL@example.com)"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="_subject"
+    value="New topic suggestion — Danish297"
+  >
+
+  <div class="topic-field">
+    <label for="topic-name">Topic name</label>
+    <input
+      id="topic-name"
+      name="topic"
+      type="text"
+      placeholder="e.g. Oracle 23ai vector search"
+      maxlength="120"
+      required
+    >
+  </div>
+
+  <div class="topic-field">
+    <label for="topic-description">Short description</label>
+    <textarea
+      id="topic-description"
+      name="description"
+      rows="4"
+      placeholder="What would you like to learn about this topic?"
+      maxlength="1000"
+      aria-describedby="description-help"
+      required
+    ></textarea>
+    <small id="description-help">
+      A few sentences are enough. Maximum 1,000 characters.
+    </small>
+  </div>
+
+  <p class="topic-privacy">
+    Suggestions are sent through FormSubmit. Please do not include
+    personal or confidential information.
+  </p>
+
+  <button class="button" type="submit">Suggest topic</button>
+</form>
+```
+
+Suggestions help me plan future notes, but publication is not guaranteed.

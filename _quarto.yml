@@ -59,7 +59,7 @@ format:
     theme:
       dark: darkly
       light: flatly
-    respect-user-color-scheme: true
+#    respect-user-color-scheme: true
     css: styles.css
     # Add the floating feedback link to every rendered HTML page.
     include-after-body:

@@ -14,20 +14,25 @@ Here, I share technical knowledge, hands-on projects, practical notes, and lesso
 
 ```{=html}
 <div class="animated-tagline">
-  <span>Keep learning.</span>
-  <span>Keep building.</span>
-  <span>Turn ideas into reality.</span>
+  <span>Keep learning. </span>
+  <span>Keep building. </span>
+  <span>Turn ideas into reality. </span>
   <span class="tagline-cursor" aria-hidden="true">
     <i></i>
     <i></i>
   </span>
 </div>
 ```
+::: {.home-actions}
 
 [Explore my notes](notes/11g_Unknown_facts.qmd){.button}
 [View projects](#projects){.button-secondary}
 [Achievements](#achievements){.button}
 [Featured Notes](#featured-notes){.button-secondary}
+[Suggest a Topic](suggest_topics.qmd){.button-secondary}
+[Download Profile](assets/Danish297-Profile.pdf){.button download="Danish297-Profile.pdf"}
+
+:::
 
 :::
 

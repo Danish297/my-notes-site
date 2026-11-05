@@ -1,0 +1,1022 @@
+/* ==================================================
+   1. Theme variables
+   Dark colors are the fallback before Quarto applies
+   its theme class.
+   ================================================== */
+
+:root {
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root,
+body.quarto-dark {
+  --bg: #0a0f1a;
+  --bg-soft: #101827;
+  --card: #131c2b;
+  --border: #233047;
+  --text: #ccd6f6;
+  --muted: #8892b0;
+  --accent: #64ffda;
+  --accent-soft: rgba(100, 255, 218, 0.08);
+  --heading: #e6f1ff;
+  --navbar-bg: rgba(10, 15, 26, 0.95);
+  --button-text: #0a0f1a;
+
+  color-scheme: dark;
+}
+
+body.quarto-light {
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
+  --card: #ffffff;
+  --border: #d6deea;
+  --text: #243247;
+  --muted: #526277;
+  --accent: #087f72;
+  --accent-soft: rgba(8, 127, 114, 0.08);
+  --heading: #142238;
+  --navbar-bg: rgba(248, 250, 252, 0.95);
+  --button-text: #ffffff;
+
+  color-scheme: light;
+}
+
+/* ==================================================
+   2. Base and layout
+   ================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.quarto-container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main.content {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+/* ==================================================
+   3. Typography and links
+   ================================================== */
+
+h1,
+h2,
+h3 {
+  color: var(--heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+p {
+  max-width: 68ch;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-weight: 600;
+}
+
+/* ==================================================
+   4. Code and tags
+   ================================================== */
+
+code {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.9em;
+}
+
+pre {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+
+.note-card p code,
+.project p code {
+  margin-right: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* ==================================================
+   5. Hero and buttons
+   ================================================== */
+
+/* Remove top spacing around profile image */
+.hero .profile-image {
+  margin-top: 0 !important;
+  display: block;
+}
+
+.hero {
+  margin-top: 0;
+  padding: 0 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Hero text alignment */
+.hero p {
+  max-width: 70ch;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  margin-bottom: 1.4rem;
+}
+
+.button,
+.button-secondary {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 1.5rem 0.75rem 0 0;
+  padding: 0.75rem 1.35rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.button,
+.button:hover {
+  background: var(--accent);
+  color: var(--button-text);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.button-secondary:hover {
+  background: var(--accent-soft);
+}
+
+.button:hover,
+.button-secondary:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ==================================================
+   6. Grids and cards
+   ================================================== */
+
+.featured-grid,
+.shelf-grid,
+.project-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.featured-grid,
+.shelf-grid {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 240px), 1fr)
+  );
+}
+
+.note-card,
+.shelf,
+.project {
+  min-width: 0;
+  border: 1px solid var(--border);
+}
+
+.note-card,
+.shelf {
+  padding: 1.35rem;
+  border-radius: 12px;
+}
+
+.note-card,
+.project {
+  background: var(--card);
+}
+
+.note-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.note-card p,
+.shelf p {
+  font-size: 0.95rem;
+}
+
+.note-card p {
+  margin: 0.5rem 0 1rem;
+}
+
+.note-card h3 a {
+  color: var(--heading);
+}
+
+.note-card h3 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.shelf {
+  background: var(--bg-soft);
+}
+
+.shelf p {
+  margin: 0.5rem 0 0;
+}
+
+.project {
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+}
+
+.project p {
+  margin: 0.5rem 0 0.75rem;
+}
+
+
+/* ==================================================
+   7. Navbar - Quarto Headroom Compatible
+   ================================================== */
+
+/* Let Quarto manage fixed positioning and scrolling */
+#quarto-header {
+  z-index: 1030;
+}
+
+/* Main navbar */
+#quarto-header .navbar {
+  --bs-navbar-color: var(--text);
+  --bs-navbar-hover-color: var(--accent);
+  --bs-navbar-active-color: var(--accent);
+  --bs-navbar-brand-color: var(--accent);
+  --bs-navbar-brand-hover-color: var(--accent);
+
+  background: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--border);
+  /* Retain translucent styling; the background remains usable without blur. */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  width: 100%;
+  min-height: 40px !important;
+  height: auto;
+  padding: 0 !important;
+}
+
+/* Navbar container and alignment */
+#quarto-header .navbar .container,
+#quarto-header .navbar .container-fluid {
+  box-sizing: border-box;
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 40px !important;
+  height: auto;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  margin: 0 auto;
+  padding: 0 20px !important;
+}
+
+/* Brand / Website title */
+#quarto-header .navbar .navbar-brand {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 !important;
+  margin-right: 20px !important;
+
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Navbar navigation links */
+#quarto-header .navbar .navbar-nav {
+  align-items: center !important;
+}
+
+#quarto-header .navbar .nav-link {
+  color: var(--text);
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 12px !important;
+
+  display: flex !important;
+  align-items: center !important;
+}
+
+#quarto-header .navbar .nav-link:hover,
+#quarto-header .navbar .nav-link.active {
+  color: var(--accent);
+}
+
+/* Navbar collapse and left-side navigation */
+#quarto-header .navbar .navbar-collapse {
+  flex-grow: 1 !important;
+}
+
+/* Right-side tools: Search, social icons and theme toggle */
+#quarto-header .navbar .navbar-nav:last-child,
+#quarto-header .navbar .quarto-navbar-tools {
+  margin-left: auto !important;
+}
+
+#quarto-header .navbar .quarto-navbar-tools {
+  display: flex;
+  align-items: center !important;
+  gap: 12px;
+  flex-shrink: 0 !important;
+}
+
+/* Prevent search and toolbar elements from wrapping */
+#quarto-header .navbar #quarto-search,
+#quarto-header .navbar .quarto-navbar-tools {
+  flex-shrink: 0 !important;
+  align-items: center !important;
+}
+
+/* Search and theme toggle colors */
+#quarto-header .navbar .quarto-color-scheme-toggle,
+#quarto-header .navbar .quarto-navbar-tools .quarto-navigation-tool,
+#quarto-header .navbar #quarto-search .aa-DetachedSearchButton {
+  color: var(--text);
+}
+
+/* Light mode: Search and theme toggle visibility */
+body.quarto-light #quarto-header .quarto-color-scheme-toggle .bi::before,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
+  filter: brightness(0) !important;
+  opacity: 1 !important;
+}
+
+body.quarto-light #quarto-header #quarto-search,
+body.quarto-light #quarto-header #quarto-search button,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButton,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
+  color: var(--text) !important;
+  opacity: 1 !important;
+}
+
+body.quarto-light #quarto-header #quarto-search svg {
+  color: var(--text) !important;
+  stroke: currentColor !important;
+}
+
+/* ==================================================
+   8. Sidebar and footer
+   ================================================== */
+
+#quarto-sidebar {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+#quarto-sidebar .sidebar-item-text {
+  color: var(--text);
+}
+
+#quarto-sidebar .sidebar-item-text:hover,
+#quarto-sidebar .sidebar-item-text.active {
+  color: var(--accent);
+}
+
+.nav-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ==================================================
+   9. Social links
+   ================================================== */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1px; /* Horizontal space between icons */
+  row-gap: 2px;     /* Vertical space if icons wrap */
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.social-label {
+  margin-right: 7px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.social-icon img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  opacity: 0.75;
+}
+
+/* ==================================================
+   10. Small screens
+   ================================================== */
+
+@media (max-width: 700px) {
+  .button,
+  .button-secondary {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .note-card,
+  .shelf,
+  .project {
+    padding: 1.1rem;
+  }
+}
+
+/* ==================================================
+   7.2 Theme Toggle - Sun and Moon Icons
+   ================================================== */
+
+/* Theme toggle button */
+#quarto-header .quarto-color-scheme-toggle {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px;
+  height: 40px;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  color: var(--accent) !important;
+  cursor: pointer;
+}
+
+/* Hide original Quarto icon */
+#quarto-header .quarto-color-scheme-toggle .bi {
+  visibility: hidden !important;
+}
+
+/* Dark mode: Show sun */
+body.quarto-dark #quarto-header
+.quarto-color-scheme-toggle::after {
+  content: "☀";
+  font-size: 23px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* Light mode: Bold half-circle */
+body.quarto-light #quarto-header
+.quarto-color-scheme-toggle::after {
+  content: "◐";
+  font-size: 25px;
+  font-weight: 900;
+  color: #087f72;
+  -webkit-text-stroke: 0.8px #087f72;
+}
+
+/* Hover effect */
+#quarto-header .quarto-color-scheme-toggle:hover {
+  opacity: 0.75;
+}
+
+/* Inline social links */
+.social-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 12px;
+}
+
+.social-text {
+  margin-right: 14px;
+}
+
+.social-inline .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.social-inline .social-icon img {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.social-inline .social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   12. Global Content Text Alignment
+   Apply consistent paragraph alignment throughout
+   the website.
+   ================================================== */
+
+main.content p,
+main.content li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.85;
+}
+
+/* Consistent paragraph spacing */
+main.content p {
+  margin-bottom: 1.2rem;
+}
+
+/* Keep headings naturally left-aligned */
+main.content h1,
+main.content h2,
+main.content h3,
+main.content h4,
+main.content h5,
+main.content h6 {
+  text-align: left;
+}
+
+/* Keep buttons and links naturally aligned */
+main.content .button,
+main.content .button-secondary,
+main.content .text-link {
+  text-align: center;
+}
+
+
+/* ==========================================
+   Fully Clickable Featured Note Cards
+   ========================================== */
+
+.note-card .card-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.note-card .card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.note-card:hover .card-link {
+  text-decoration: underline;
+}
+
+.note-card:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   Professional IT Animated Tagline
+   ========================================== */
+
+.animated-tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 28px 0;
+  padding: 12px 0;
+
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  font-weight: 750;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+/* Solid text is the fallback; only supporting engines receive clipped gradients. */
+.animated-tagline > span:not(.tagline-cursor) {
+  display: inline-block;
+  color: var(--accent);
+  animation: taglineReveal 0.8s ease both;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .animated-tagline > span:not(.tagline-cursor) {
+    background: linear-gradient(100deg, #38bdf8, #6366f1, #a78bfa, #38bdf8);
+    background-size: 250% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: taglineReveal 0.8s ease both, taglineGlow 5s linear infinite;
+  }
+}
+
+/* Staggered text entrance */
+.animated-tagline > span:not(.tagline-cursor):nth-child(1) {
+  animation-delay: 0.2s, 1s;
+}
+
+.animated-tagline > span:not(.tagline-cursor):nth-child(2) {
+  animation-delay: 0.6s, 1s;
+}
+
+.animated-tagline > span:not(.tagline-cursor):nth-child(3) {
+  animation-delay: 1s, 1s;
+}
+
+/* Smooth entrance */
+@keyframes taglineReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated text gradient */
+@keyframes taglineGlow {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: 250% center;
+  }
+}
+
+/* Two horizontal blinking bars */
+.animated-tagline > .tagline-cursor {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-self: center;
+  justify-content: flex-start;
+  gap: 6px;
+
+  flex: 0 0 auto;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+/* Individual bars: use empty <i> elements */
+.animated-tagline > .tagline-cursor > i {
+  display: block;
+  flex: 0 0 25px;
+  width: 25px;
+  height: 3px;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+
+  background: #38bdf8;
+  box-shadow:
+    0 0 8px #38bdf8,
+    0 0 14px #6366f188;
+
+  animation: taglineBarBlink 1.2s step-end infinite;
+}
+
+/* Offset the second bar for alternating blinking */
+.animated-tagline > .tagline-cursor > i:nth-child(2) {
+  animation-delay: -0.6s;
+}
+
+/* Fully visible for half the cycle, then fully hidden */
+@keyframes taglineBarBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Keep the cursor baseline unchanged in the normal animation mode. */
+.animated-tagline > .tagline-cursor {
+  transform: translateY(7px);
+}
+
+/* Intrinsic image ratio is preserved; dimensions must come from the real asset. */
+.hero .profile-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Long URLs and inline tags must not force cards beyond the viewport. */
+.note-card, .shelf, .project {
+  overflow-wrap: anywhere;
+}
+
+/* Quarto/Bootstrap owns collapse state. Do not constrain expanded menu height. */
+#quarto-header .navbar .navbar-collapse {
+  min-width: 0;
+}
+
+/* These rules intentionally come last so hover rules cannot re-enable motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button, .button-secondary, .note-card, .social-icon,
+  .social-inline .social-icon { transition: none; }
+  .button:hover, .button-secondary:hover, .note-card:hover,
+  .social-inline .social-icon:hover { transform: none; }
+  .animated-tagline > span:not(.tagline-cursor),
+  .animated-tagline > .tagline-cursor > i {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* System colors keep clipped gradient text legible in forced-colors mode. */
+@media (forced-colors: active) {
+  .animated-tagline > span:not(.tagline-cursor) {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+  }
+  .animated-tagline > .tagline-cursor > i {
+    background: CanvasText;
+    box-shadow: none;
+  }
+}
+
+/* Floating feedback link: fixed to the viewport, independent of page scrolling. */
+.floating-feedback {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  /* Keep clear of supported mobile-device safe areas. */
+  right: calc(0.5rem + env(safe-area-inset-right, 0px));
+  bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+
+  /* Above ordinary content, below Bootstrap modal dialogs. */
+  z-index: 1040;
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0.65rem 1.1rem;
+
+  border: 1px solid var(--accent, #64ffda);
+  border-radius: 999px;
+  background: var(--accent, #64ffda);
+  color: var(--button-text, #0a0f1a);
+
+  font-family: var(--font, system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 18%);
+}
+
+.floating-feedback:hover {
+  background: var(--accent, #64ffda);
+  color: var(--button-text, #0a0f1a);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.floating-feedback:focus-visible {
+  outline: 3px solid var(--heading, #e6f1ff);
+  outline-offset: 4px;
+}
+
+/* Keep printed pages free of floating interface controls. */
+@media print {
+  .floating-feedback {
+    display: none;
+  }
+}
+
+/* Keep the current navbar tab underlined. */
+#quarto-header .navbar .nav-link.active,
+#quarto-header .navbar .nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+/* Profile download: Home and About */
+.profile-download {
+  margin: 1rem 0 2rem;
+}
+
+.profile-download .button {
+  margin: 0;
+}
+
+main.content .profile-download p {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  text-align: left;
+}
+/* Minimal topic suggestion form */
+.topic-suggestion-form {
+  max-width: 640px;
+  margin: 1.5rem 0 2rem;
+}
+
+.topic-suggestion-form .topic-field {
+  margin-bottom: 1.25rem;
+}
+
+.topic-suggestion-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.topic-suggestion-form input[type="text"],
+.topic-suggestion-form textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+  line-height: 1.5;
+}
+
+.topic-suggestion-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.topic-suggestion-form input::placeholder,
+.topic-suggestion-form textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.topic-suggestion-form input:focus-visible,
+.topic-suggestion-form textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.topic-suggestion-form small {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+main.content .topic-suggestion-form .topic-privacy {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.topic-suggestion-form .button {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Home: equal-sized buttons with consistent spacing */
+.home-actions > p {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 760px;
+  margin: 1.5rem 0;
+}
+
+.home-actions .button,
+.home-actions .button-secondary {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Two columns on smaller screens */
+@media (max-width: 700px) {
+  .home-actions > p {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* One column on narrow phones */
+@media (max-width: 400px) {
+  .home-actions > p {
+    grid-template-columns: 1fr;
+  }
+}
