@@ -166,7 +166,7 @@ main.content .text-link {
    Requires the .about-copy wrapper in about.qmd. */
 main.content .about-copy p {
   width: 100%;
-  max-width: none;
+  max-width: 2000px; 
   text-align: left;
   text-justify: auto;
   -webkit-hyphens: none;
@@ -1022,3 +1022,37 @@ main.content .page-return-links > p {
   }
 }
 
+/* About page: full-width, left-aligned content and refined spacing */
+
+.about-page {
+  width: 100%;
+  max-width: none;
+  text-align: left;
+}
+
+.about-page p,
+.about-page ul,
+.about-page ol {
+  width: 100%;
+  max-width: none !important;
+  text-align: left;
+}
+
+.about-page h2,
+.about-page h3 {
+  text-align: left;
+}
+
+.about-page .hero {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.about-page .animated-tagline {
+  margin-bottom: 0 !important;
+}
+
+.about-page .hero + h2 {
+  margin-top: 0.5rem !important;
+}

@@ -738,9 +738,30 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About this website",
     "section": "",
-    "text": "This website serves as my personal knowledge hub, where I document my learning journey, share technical insights, showcase projects, and explore emerging technologies.\nI believe in continuous learning, hands-on experimentation, and sharing knowledge. Through these notes and projects, I aim to turn what I learn into practical resources that others can explore and build upon.\nThank you for stopping by! I hope you find something useful, discover a new idea, or leave inspired to learn and create. Your feedback and suggestions are always welcome.\n\n\nHome | Achievements | Featured Notes | Projects | Notes"
+    "text": "This website serves as my personal knowledge hub, where I document my learning journey, share technical insights, showcase projects, and explore emerging technologies.\nI believe in continuous learning, hands-on experimentation, and sharing knowledge. Through these notes and projects, I aim to turn what I learn into practical resources that others can explore and build upon.\nThank you for stopping by! I hope you find something useful, discover a new idea, or leave inspired to learn and create. Your feedback and suggestions are always welcome.\n\n  Learn continuously. \n  Experiment fearlessly. \n  Share knowledge. \n  \n    \n    \n  \n\n\n\n\n\nI believe technology is best understood through practical experience. Reading, experimenting, solving problems, and sharing what works are essential parts of continuous growth.\nMy approach revolves around three principles:\n\n\n\nStaying curious, exploring new technologies, and continuously expanding technical knowledge to keep pace with an evolving technology landscape.\n\n\n\nTurning theoretical concepts into practical implementations through experiments, automation, troubleshooting, and real-world projects.\n\n\n\nDocumenting discoveries, lessons learned, technical solutions, and useful resources to make knowledge accessible to others.\n\n\n\n\n\n\nThis website is more than a portfolio. It is a continuously evolving collection of technical knowledge, practical experiences, and experiments.\nThrough this platform, I aim to:\n\nDocument: Maintain useful technical notes, configurations, troubleshooting steps, and learning resources.\nShare: Publish practical solutions, discoveries, and lessons learned from real-world experience.\nBuild: Showcase automation initiatives, personal projects, and technology experiments.\nExplore: Investigate emerging technologies and discover new ways to solve technical challenges.\nConnect: Exchange ideas, learn from others, and contribute to the technology community.\n\n\n\n\n\nTechnology never stops evolving, and neither should learning.\nI hope you find something useful here, discover a new idea, or get inspired to experiment and build something of your own.\nWhether you are exploring a technical topic, looking for a practical solution, or simply sharing an idea, your feedback and suggestions are always welcome.\n\n\nHome | Achievements | Featured Notes | Projects | Notes"
+  },
+  {
+    "objectID": "about.html#my-approach",
+    "href": "about.html#my-approach",
+    "title": "About this website",
+    "section": "",
+    "text": "I believe technology is best understood through practical experience. Reading, experimenting, solving problems, and sharing what works are essential parts of continuous growth.\nMy approach revolves around three principles:\n\n\n\nStaying curious, exploring new technologies, and continuously expanding technical knowledge to keep pace with an evolving technology landscape.\n\n\n\nTurning theoretical concepts into practical implementations through experiments, automation, troubleshooting, and real-world projects.\n\n\n\nDocumenting discoveries, lessons learned, technical solutions, and useful resources to make knowledge accessible to others."
+  },
+  {
+    "objectID": "about.html#why-this-website",
+    "href": "about.html#why-this-website",
+    "title": "About this website",
+    "section": "",
+    "text": "This website is more than a portfolio. It is a continuously evolving collection of technical knowledge, practical experiences, and experiments.\nThrough this platform, I aim to:\n\nDocument: Maintain useful technical notes, configurations, troubleshooting steps, and learning resources.\nShare: Publish practical solutions, discoveries, and lessons learned from real-world experience.\nBuild: Showcase automation initiatives, personal projects, and technology experiments.\nExplore: Investigate emerging technologies and discover new ways to solve technical challenges.\nConnect: Exchange ideas, learn from others, and contribute to the technology community."
+  },
+  {
+    "objectID": "about.html#lets-connect",
+    "href": "about.html#lets-connect",
+    "title": "About this website",
+    "section": "",
+    "text": "Technology never stops evolving, and neither should learning.\nI hope you find something useful here, discover a new idea, or get inspired to experiment and build something of your own.\nWhether you are exploring a technical topic, looking for a practical solution, or simply sharing an idea, your feedback and suggestions are always welcome.\n\n\nHome | Achievements | Featured Notes | Projects | Notes"
   },
   {
     "objectID": "L-LLM/feedback.html",
