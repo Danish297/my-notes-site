@@ -27,16 +27,20 @@ body.quarto-dark {
 }
 
 body.quarto-light {
-  --bg: #f8fafc;
-  --bg-soft: #f1f5f9;
+  /*--bg: #f8fafc;*/
+  --bg: #EFF6FC;
+/*  --bg-soft: #f1f5f9;*/
+  --bg-soft: #EFF6FC; 
   --card: #ffffff;
   --border: #d6deea;
   --text: #243247;
   --muted: #526277;
   --accent: #087f72;
-  --accent-soft: rgba(8, 127, 114, 0.08);
+/*  --accent-soft: rgba(8, 127, 114, 0.08);*/
+  --accent-soft: #EFF6FC;
   --heading: #142238;
-  --navbar-bg: rgba(248, 250, 252, 0.95);
+  /*--navbar-bg: rgba(248, 250, 252, 0.95);*/
+  --navbar-bg: #EFF6FC;
   --button-text: #ffffff;
 
   color-scheme: light;
@@ -844,8 +848,8 @@ main.content .text-link {
 /* Floating feedback link: fixed to the viewport, independent of page scrolling. */
 .floating-feedback {
   position: fixed;
-  right: 0.5rem;
-  bottom: 0.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
 
   /* Keep clear of supported mobile-device safe areas. */
   right: calc(0.5rem + env(safe-area-inset-right, 0px));
@@ -885,6 +889,11 @@ main.content .text-link {
 .floating-feedback:focus-visible {
   outline: 3px solid var(--heading, #e6f1ff);
   outline-offset: 4px;
+}
+
+/* Keep the floating Feedback button clear of the footer */
+.floating-feedback {
+  bottom: calc(40px + 8px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Keep printed pages free of floating interface controls. */
@@ -985,9 +994,9 @@ main.content .topic-suggestion-form .topic-privacy {
 /* Home: equal-sized buttons with consistent spacing */
 .home-actions > p {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
-  max-width: 760px;
+  max-width: 1000px;
   margin: 1.5rem 0;
 }
 
@@ -1020,3 +1029,56 @@ main.content .topic-suggestion-form .topic-privacy {
     grid-template-columns: 1fr;
   }
 }
+/* Mobile: put all social icons below the introductory text */
+@media (max-width: 700px) {
+  .social-inline,
+  .social-links {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .social-inline .social-text,
+  .social-links .social-label {
+    flex: 0 0 100%;
+    margin: 0;
+    white-space: normal;
+    text-align: left;
+  }
+}
+/* same BG for project and note cards */
+body.quarto-light .project,
+body.quarto-light .note-card {
+  background: #EFF6FC;
+}
+
+/* Match the footer to the navbar's 40px height */
+.nav-footer {
+  box-sizing: border-box;
+  min-height: 40px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  align-items: center;
+}
+
+.nav-footer > div {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-footer p {
+  margin: 0;
+}
+
+/* Center the bottom navigation links */
+main.content .page-return-links {
+  width: 100%;
+}
+
+main.content .page-return-links > p {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 1.5rem auto;
+  text-align: center !important;
+}
+

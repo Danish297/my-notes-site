@@ -90,3 +90,9 @@ The choice is a trade-off between managed automation and operational control—n
 - [Autonomous Database FAQs](https://www.oracle.com/database/technologies/datawarehouse-bigdata/adb-faqs.html)
 - [Serverless backup and recovery](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/backup-intro.html)
 - [Configure automatic-backup retention](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/backup-edit-retention.html)
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

@@ -1,0 +1,251 @@
+---
+title: "Hadoop & Enterprise Big Data Platform Administration"
+description: "Enterprise Big Data administration across Hortonworks, Cloudera, Hadoop, Kafka, and Azure, with a focus on security, automation, platform modernization, and workload performance."
+toc: true
+---
+
+I administer and support enterprise Big Data platforms and distributed
+data-processing environments, with experience across Hortonworks,
+Cloudera, the Hadoop ecosystem, and streaming platforms such as Kafka.
+
+My work covers platform configuration, cluster administration, security,
+patching, upgrades, migrations, workload optimization, and operational
+automation.
+
+I also support Azure-based data platforms, helping maintain reliable
+data processing through resource administration, pipeline
+troubleshooting, and capacity management.
+
+## Core Areas of Experience
+
+| Area | Technologies and responsibilities |
+|:--|:--|
+| Enterprise distributions | Hortonworks Data Platform (HDP) and Cloudera Data Platform (CDP) |
+| Distributed storage | Hadoop Distributed File System (HDFS) |
+| Processing and data services | Hive, Spark, and HBase |
+| Streaming platforms | Apache Kafka |
+| Data movement | Apache NiFi, ingestion, replication, and migration |
+| Security | Kerberos, Apache Ranger, HDFS ACLs, and HDFS encryption |
+| Recovery and data protection | HDFS snapshots and data replication |
+| Automation and deployment | Ansible and Git |
+| Workload scheduling | Control-M |
+| Azure data services | Azure Databricks, Azure Data Factory, and Integration Runtime |
+| Azure resource administration | Resource Groups, Key Vault, and quota management |
+
+## Hadoop Cluster Administration
+
+I manage Hadoop environments throughout their operational lifecycle,
+supporting day-to-day administration alongside changes in platform
+capacity and business requirements.
+
+My responsibilities include:
+
+- Configuring and administering enterprise Hadoop clusters.
+- Monitoring platform health and investigating operational issues.
+- Commissioning and decommissioning cluster nodes.
+- Using Ansible to automate node-management activities.
+- Planning capacity and supporting cluster scaling.
+- Managing data replication and coordinating maintenance activities.
+- Supporting reliable execution of enterprise data-processing workloads.
+
+The focus is on keeping the platform manageable as its storage,
+processing, and operational requirements evolve.
+
+## Platform Security and Data Protection
+
+I administer security controls across Hadoop environments, addressing
+authentication, authorization, data access, and recovery requirements.
+
+### Authentication and Access Control
+
+- Configured and maintained Kerberos-based cluster authentication.
+- Managed access policies using Apache Ranger.
+- Applied HDFS access control lists (ACLs) to manage permissions.
+- Supported security and compliance requirements through controlled
+  access to platform resources.
+
+### Encryption, Snapshots, and Recovery Support
+
+- Implemented HDFS encryption to protect stored data.
+- Managed HDFS snapshots to support recovery requirements.
+- Supported data replication activities.
+- Maintained data-protection controls alongside cluster maintenance
+  and operational changes.
+
+## Patching, Upgrades, and Platform Migration
+
+I performed platform maintenance and modernization activities across
+Hortonworks and Cloudera environments.
+
+### HDP Maintenance
+
+- Applied HDP patches and supported cluster upgrades.
+- Coordinated node commissioning and decommissioning.
+- Supported capacity planning and cluster expansion.
+- Used automation to make recurring administration activities more
+  consistent.
+
+### Migration from HDP to CDP
+
+Participated in the migration of Hortonworks Data Platform environments
+to Cloudera Data Platform.
+
+My responsibilities included platform administration and migration
+support, alongside the maintenance and scaling activities required
+across the cluster lifecycle.
+
+The objective was to support platform modernization while maintaining
+operational continuity for enterprise data workloads.
+
+## Performance Optimization
+
+I investigate long-running workloads and scheduled jobs to identify
+bottlenecks and improve execution efficiency.
+
+My experience includes optimizing:
+
+- Hive workloads.
+- Spark processing jobs.
+- HBase workloads.
+- Control-M jobs and associated execution workflows.
+
+The work focuses on workload performance, reliable completion, and
+reducing the operational impact of extended processing times.
+
+### Key Achievement: Control-M Job Optimization
+
+I optimized a long-running Control-M job, reducing its execution time
+from 52 hours to 4.5 hours.
+
+| Measure | Result |
+|:--|--:|
+| Execution time before optimization | 52 hours |
+| Execution time after optimization | 4.5 hours |
+| Time saved per execution | 47.5 hours |
+| Execution-time reduction | Approximately 91% |
+
+This improvement substantially shortened the execution window for the
+specific job.
+
+The reduction describes that workload's before-and-after execution time;
+it is not a benchmark for every job or the entire Big Data platform.
+
+## Automation and Deployment
+
+I use automation to reduce repetitive operational work and improve
+consistency across platform administration and deployment activities.
+
+### Code Deployment
+
+- Automated code deployments using Ansible and Git.
+- Supported repeatable deployment workflows.
+- Used version-controlled code and automation to streamline
+  operational changes.
+
+### Cluster Operations
+
+- Automated node commissioning and decommissioning activities.
+- Applied Ansible-based workflows to recurring administration tasks.
+- Supported consistent execution across multiple cluster nodes.
+
+### Hive Storage Housekeeping
+
+Automated the deletion of obsolete Hive tables to reclaim storage and
+align data retention with business requirements.
+
+This reduced the need for repeated manual cleanup and helped keep
+storage consumption aligned with the required data lifecycle.
+
+## Data Ingestion, Replication, and Migration
+
+I supported enterprise data movement using Apache NiFi, including:
+
+- Data ingestion.
+- Replication workflows.
+- Data migration activities.
+- Operational support for data movement between environments.
+
+This work complemented cluster administration by supporting the flow
+of data into and across the platform.
+
+My broader platform experience also includes Apache Kafka within
+enterprise streaming environments.
+
+## Azure Data Platform Administration
+
+Alongside Hadoop administration, I provision and manage Azure resources
+used by enterprise data-processing platforms.
+
+### Resource Provisioning and Configuration
+
+My experience includes:
+
+- Azure Resource Groups.
+- Azure Databricks (ADB).
+- Azure Data Factory (ADF).
+- Azure Key Vault.
+
+The focus is on secure configuration, scalability, resource planning,
+and cost-aware operations.
+
+### Pipeline and Integration Troubleshooting
+
+I monitor and troubleshoot Azure Data Factory processing issues,
+including:
+
+- Pipeline failures.
+- Integration Runtime (IR) issues.
+- Azure quota constraints.
+
+These activities support operational continuity by addressing issues
+that interrupt or prevent scheduled data processing.
+
+## Operational Impact
+
+| Area | Contribution |
+|:--|:--|
+| Workload performance | Reduced one Control-M job from 52 hours to 4.5 hours |
+| Platform security | Administered Kerberos, Ranger policies, ACLs, and HDFS encryption |
+| Data protection | Managed snapshots and supported replication |
+| Platform modernization | Performed HDP maintenance and supported migration to CDP |
+| Scalability | Supported capacity planning and node lifecycle management |
+| Automation | Automated deployments, node operations, and Hive housekeeping |
+| Azure reliability | Investigated ADF failures, IR issues, and quota constraints |
+
+The clearest quantified outcome is the approximately 91% reduction in
+the identified Control-M job's execution time.
+
+Other contributions strengthened platform operations through security
+administration, automation, maintenance, and troubleshooting without
+assigning unmeasured percentage improvements.
+
+## Client Environments Supported
+
+My experience includes work supporting environments for:
+
+Rogers Communications · BMO · GAP · Marriott · SNCF · Mastercard
+
+The technologies and responsibilities described on this page reflect
+experience across these engagements; not every technology was used
+for every client.
+
+## Professional Focus
+
+I combine Big Data platform administration with security, automation,
+and workload optimization.
+
+My focus is on keeping distributed data environments secure, scalable,
+and operationally reliable while simplifying maintenance and supporting
+platform modernization.
+
+From Hadoop cluster operations to Azure pipeline troubleshooting, the
+goal is consistent: reduce operational friction and help enterprise
+data workloads complete reliably.
+
+---
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

@@ -1,0 +1,183 @@
+---
+title: "Cloud Technologies: Microsoft Azure & Google Cloud"
+description: "Cloud infrastructure and enterprise data-platform experience, with hands-on Azure resource administration, pipeline troubleshooting, and ongoing exploration of Google Cloud Platform."
+toc: true
+---
+
+I work with cloud infrastructure and enterprise data services, with
+hands-on experience provisioning and managing Microsoft Azure resources
+and an ongoing focus on exploring Google Cloud Platform (GCP).
+
+My interests span resource provisioning, deployment architectures, and
+integrating enterprise technologies with cloud platforms.
+
+My practical Azure responsibilities include resource administration,
+data-platform support, and troubleshooting issues that affect reliable
+data processing.
+
+## Core Areas of Experience
+
+| Area | Experience and focus |
+|:--|:--|
+| Microsoft Azure | Resource provisioning, configuration, and operational support |
+| Azure Resource Groups | Organization and administration of related cloud resources |
+| Azure Databricks (ADB) | Provisioning and resource management |
+| Azure Data Factory (ADF) | Resource administration, pipeline monitoring, and troubleshooting |
+| Integration Runtime (IR) | Investigation and resolution of operational issues |
+| Azure Key Vault | Provisioning and administration with a security focus |
+| Azure quotas | Investigation and resolution of resource quota constraints |
+| Google Cloud Platform | Ongoing exploration of infrastructure, services, and deployment approaches |
+| Cross-platform interests | Enterprise integration, scalability, security, and cost-aware operations |
+
+## Microsoft Azure: Resource Provisioning and Management
+
+I provisioned and managed Azure resources supporting enterprise
+data-platform environments.
+
+The work covered Azure Resource Groups, Azure Databricks, Azure Data
+Factory, and Azure Key Vault, with attention to security, scalability,
+and cost optimization.
+
+### Resource Groups
+
+Managed Azure Resource Groups as part of organizing and administering
+cloud resources supporting enterprise workloads.
+
+This work formed part of the broader provisioning and maintenance
+activities required to keep the cloud environment aligned with
+operational needs.
+
+### Azure Databricks
+
+Provisioned and managed Azure Databricks resources within enterprise
+data environments.
+
+My responsibilities focused on resource administration and supporting
+the infrastructure requirements of the platform.
+
+### Azure Data Factory
+
+Provisioned and administered Azure Data Factory resources and supported
+the ongoing operation of data-processing pipelines.
+
+This included monitoring pipeline execution, investigating failures,
+and resolving issues affecting operational continuity.
+
+### Azure Key Vault
+
+Provisioned and managed Azure Key Vault resources as part of the
+environment's security-focused cloud administration.
+
+## Data Pipeline Monitoring and Troubleshooting
+
+A significant part of my Azure work involved investigating issues that
+interrupted data processing or prevented workloads from running as
+expected.
+
+### ADF Pipeline Failures
+
+- Monitored pipeline execution and identified failed runs.
+- Investigated failures affecting data-processing workflows.
+- Applied corrective actions to restore pipeline operations.
+- Supported reliable processing and operational continuity.
+
+### Integration Runtime Issues
+
+Investigated and resolved Integration Runtime issues affecting Azure
+Data Factory operations.
+
+The focus was on identifying the cause of processing interruptions
+and restoring the affected workflows.
+
+### Azure Quota Constraints
+
+Investigated and addressed Azure quota constraints affecting resource
+provisioning or workload execution.
+
+This work supported capacity requirements and helped resolve
+resource-related barriers to ongoing operations.
+
+## Security, Scalability, and Cost Awareness
+
+My approach to cloud administration considers operational requirements
+alongside security, growth, and resource consumption.
+
+### Security
+
+Maintained a security-focused approach when provisioning and managing
+Azure services, including Key Vault.
+
+### Scalability
+
+Considered workload requirements and resource constraints when
+supporting cloud environments, including issues involving service
+quotas and available capacity.
+
+### Cost Optimization
+
+Included cost considerations in resource-management activities,
+with a focus on aligning cloud resources with operational needs.
+
+These were guiding priorities in my administration work. No specific
+cost-saving percentage or platform-wide availability improvement is
+claimed here.
+
+## Google Cloud Platform: Ongoing Exploration
+
+Alongside my Azure experience, I am exploring Google Cloud Platform
+to broaden my understanding of cloud infrastructure and enterprise
+deployment options.
+
+My areas of interest include:
+
+- Cloud infrastructure and resource provisioning.
+- Deployment architectures.
+- Integrating enterprise technologies with cloud services.
+- Security, scalability, and operational management.
+- Comparing approaches across Azure and GCP.
+
+My detailed delivery experience on this page relates to Azure. The GCP
+section reflects ongoing exploration rather than a claim of equivalent
+production administration experience.
+
+## Operational Contributions
+
+| Area | Contribution |
+|:--|:--|
+| Resource provisioning | Provisioned and managed Azure services supporting enterprise data environments |
+| Platform administration | Supported Resource Groups, Databricks, Data Factory, and Key Vault |
+| Pipeline reliability | Monitored and resolved ADF pipeline failures |
+| Integration support | Investigated and resolved Integration Runtime issues |
+| Capacity constraints | Addressed Azure quota issues affecting operations |
+| Resource management | Considered security, scalability, and cost requirements |
+
+These contributions focused on maintaining operational continuity
+and supporting dependable cloud-based data processing.
+
+## Client Environments Supported
+
+My cloud-related experience includes work supporting environments for:
+
+Rogers Communications · Enbridge
+
+The responsibilities described reflect experience across these
+engagements; they do not imply that every service or platform was
+used for both clients.
+
+## Professional Focus
+
+I am building on hands-on Azure administration experience while
+expanding my knowledge of Google Cloud Platform.
+
+My focus is on connecting enterprise infrastructure and data-platform
+requirements with practical cloud operations: provisioning the right
+resources, investigating failures, managing constraints, and keeping
+security and cost considerations visible.
+
+---
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

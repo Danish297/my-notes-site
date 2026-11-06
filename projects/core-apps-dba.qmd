@@ -1,0 +1,219 @@
+---
+title: "Oracle Database & E-Business Suite Administration"
+description: "Enterprise Oracle Database and EBS administration across RAC, non-RAC, and multitenant environments, with a focus on availability, automation, recovery, and performance."
+toc: true
+---
+
+I administer Oracle Database and Oracle E-Business Suite environments
+across development, test, and production, supporting installation,
+configuration, deployment, cloning, patching, upgrades, and migrations.
+
+My experience spans Oracle Database 10g–19c, Oracle EBS 12.1.x and
+12.2.x, multi-node RAC clusters, non-RAC databases, and multitenant
+architectures on Linux and Solaris.
+
+My focus is on reliable operations, application compatibility, security,
+performance, and keeping environments aligned with support and
+maintenance requirements.
+
+## Core Areas of Experience
+
+| Area | Experience |
+|:--|:--|
+| Oracle Database | Oracle Database 10g–19c |
+| Database architectures | Multi-node RAC, non-RAC, and multitenant CDB/PDB environments |
+| Oracle applications | Oracle E-Business Suite 12.1.x and 12.2.x |
+| Operating systems | Linux and Solaris |
+| Availability and recovery | RMAN backup and recovery, Active Data Guard, and cluster monitoring |
+| Automation | Python scripting, Ansible playbooks, and menu-driven workflows |
+| Performance and scheduling | SQL tuning, AWR, ADDM, Statspack, and Control-M |
+| Supporting platforms | Oracle APEX, Tableau, Microsoft SQL Server, Docker, and Kubernetes |
+| Service delivery | ServiceNow, incident management, SLA tracking, and client reporting |
+
+## Database Administration and Lifecycle Management
+
+I manage database environments throughout their operational lifecycle,
+from initial installation and configuration to ongoing maintenance,
+upgrades, and migrations.
+
+My responsibilities include:
+
+- Administering multi-node Oracle RAC clusters and non-RAC databases.
+- Supporting multitenant environments using container databases and
+  pluggable databases.
+- Executing database cloning, patching, upgrades, and migrations across
+  development, test, and production.
+- Managing database users, access privileges, and tablespaces.
+- Performing data import/export operations and schema refreshes.
+- Coordinating changes with application and infrastructure teams to
+  maintain compatibility and operational continuity.
+
+## Oracle E-Business Suite Administration
+
+I support Oracle EBS 12.1.x and 12.2.x environments, covering application
+maintenance, access administration, cloning, and operational support.
+
+### Cloning, Patching, and Maintenance
+
+- Performed EBS cloning and patching activities.
+- Managed patch merging in EBS 12.1.x environments.
+- Conducted pre-patch analysis and coordinated client approvals before
+  applying changes.
+- Used Oracle AD utilities, including `adadmin`, `adctrl`, `adpatch`,
+  and `adsplice`, as appropriate to the environment and maintenance task.
+- Used `adop` for online patching activities in EBS 12.2.x environments.
+
+### Application Operations and Access Controls
+
+- Administered user accounts, responsibilities, menus, and profile options.
+- Supported Oracle Workflow and Concurrent Manager operations.
+- Managed application password resets using `FNDCPASS`.
+- Maintained appropriate application access controls and supported
+  security-related administration.
+
+## Automation and Operational Improvements
+
+I develop automation to reduce repetitive administration, standardize
+execution, and make routine operations easier to monitor.
+
+### Weekly Database Cloning Automation
+
+I developed a menu-driven workflow for weekly database cloning,
+bringing related operations into a centralized execution process.
+
+| Measure | Result |
+|:--|--:|
+| Execution time before automation | Approximately 11 hours |
+| Execution time after automation | Approximately 6.5 hours |
+| Time saved per weekly execution | Approximately 4.5 hours |
+| Execution-time reduction | Approximately 41% |
+
+The workflow reduced manual intervention and opportunities for execution
+errors while improving consistency across repeated cloning activities.
+
+### Automated Health Checks and Reporting
+
+- Automated daily health checks and reporting using Python scripts and
+  Ansible playbooks.
+- Designed KPI dashboards and automated reports to improve monitoring
+  visibility.
+- Prepared and delivered monthly system health reports to multiple clients.
+- Automated recurring housekeeping activities to reduce manual overhead.
+
+## Performance Monitoring and Workload Optimization
+
+I monitor database and operating-system performance to identify
+bottlenecks, investigate long-running workloads, and support business SLAs.
+
+My work includes:
+
+- Tuning long-running jobs and Control-M workflows to reduce execution
+  time and improve throughput.
+- Investigating SQL performance and applying query-tuning improvements.
+- Rebuilding indexes and reorganizing tables where appropriate to the
+  identified issue.
+- Generating and analyzing AWR, ADDM, and Statspack reports.
+- Monitoring cluster health and resource utilization.
+- Using `sar`, `top`, and `vmstat` to investigate system activity and
+  resource constraints.
+- Applying corrective measures and reviewing their effect on workloads.
+
+## Backup, Recovery, and Availability
+
+I support recovery readiness and availability through backup management,
+recovery operations, standby configuration, and incident investigation.
+
+### RMAN Backup and Recovery
+
+- Managed RMAN backups across database environments.
+- Performed complete and incomplete database recovery.
+- Supported database restoration and recovery requirements.
+- Managed schema refreshes and data movement between environments.
+
+### Active Data Guard
+
+Configured Active Data Guard to support recovery point objective
+(RPO) and recovery time objective (RTO) requirements.
+
+The focus was on aligning standby configuration and recovery planning
+with the business's availability and disaster-recovery needs.
+
+### Incident Analysis and Long-Term Remediation
+
+Performed root cause analysis on recurring incidents and implemented
+long-term fixes to improve resilience and reduce repeat disruptions.
+
+This included investigating database behavior, reviewing resource
+utilization, and coordinating corrective actions across technical teams.
+
+## Oracle APEX Administration
+
+I support Oracle APEX administration and environment synchronization.
+
+- Created and administered APEX workspaces and users.
+- Automated workspace and application migrations from production to
+  non-production environments.
+- Supported repeatable migration workflows for development and testing.
+
+## Tableau and Reporting Platform Support
+
+My responsibilities also include supporting the data connections and
+maintenance activities behind reporting platforms.
+
+- Created and published Tableau data sources using Oracle and
+  Microsoft SQL Server.
+- Refreshed data extracts to keep reporting data current.
+- Automated monthly log cleanup to support reliable Tableau operations.
+- Developed KPI dashboards and health reporting to improve operational
+  visibility.
+
+## Containerized Database Testing
+
+I orchestrated containerized database testing environments using Docker
+and Kubernetes to support development and QA teams.
+
+This work helped make testing environments easier to prepare and
+coordinate, supporting faster development and release workflows.
+
+## Service Delivery and Client Collaboration
+
+I coordinate operational work through ServiceNow, supporting timely
+ticket resolution, SLA compliance, and cross-team collaboration.
+
+My responsibilities include:
+
+- Coordinating team workflows and tracking operational tasks.
+- Managing incidents and service requests.
+- Working with application, infrastructure, and business teams.
+- Obtaining client approvals for planned patching activities.
+- Communicating system health, recurring issues, and corrective actions
+  through monthly reporting.
+
+## Client Environments Supported
+
+My experience includes work supporting environments for:
+
+CACIB · Mount Sinai · ECGC · NetApp · HDFC Bank · Bell · Telefónica ·
+Bajaj Finserv · Zakathouse · Duniya Finance
+
+The technologies and responsibilities described on this page reflect
+experience across these engagements; not every technology was used for
+every client.
+
+## Professional Focus
+
+I combine Oracle Database and EBS administration with automation,
+performance analysis, and structured service delivery.
+
+My aim is to make enterprise environments more reliable and easier to
+operate—reducing repetitive work, improving visibility, strengthening
+recovery readiness, and supporting consistent execution across
+development, test, and production.
+
+---
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

@@ -318,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Have an idea for a future note? Share the topic and a brief description of what you would like me to cover.</p>
-<form class="topic-suggestion-form" action="[https://formsubmit.co/hasnainfrnz@gmail.com](https://formsubmit.co/hasnainfrnz@gmail.com)" method="POST">
+<form id="topic-suggestion-form" class="topic-suggestion-form" action="https://formsubmit.co/hasnainfrnz@gmail.com" method="POST">
   <input type="hidden" name="_subject" value="New topic suggestion — Danish297">
 
   <div class="topic-field">
@@ -329,6 +329,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="topic-field">
     <label for="topic-description">Short description</label>
     <textarea id="topic-description" name="description" rows="4" placeholder="What would you like to learn about this topic?" maxlength="1000" aria-describedby="description-help" required=""></textarea>
+
     <small id="description-help">
       A few sentences are enough. Maximum 1,000 characters.
     </small>
@@ -344,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script>
 (() => {
-  const form = document.querySelector(".topic-suggestion-form");
+  const form = document.getElementById("topic-suggestion-form");
   if (!form) return;
 
   const button = form.querySelector('button[type="submit"]');
@@ -352,10 +353,16 @@ ul.task-list li input[type="checkbox"] {
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (submitting) return;
+
+    if (submitting || !form.reportValidity()) return;
 
     submitting = true;
+
     const originalLabel = button.textContent;
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => {
+      controller.abort();
+    }, 30000);
 
     button.disabled = true;
     button.textContent = "Sending…";
@@ -368,11 +375,11 @@ ul.task-list li input[type="checkbox"] {
       const endpoint = new URL(form.action);
 
       if (
-        endpoint.hostname !== "formsubmit.co" ||
-        endpoint.pathname.includes("YOUR_EMAIL")
+        endpoint.protocol !== "https:" ||
+        endpoint.hostname !== "formsubmit.co"
       ) {
         throw new Error(
-          "Replace the form action with your actual FormSubmit email or identifier."
+          "The form submission address is not configured correctly."
         );
       }
 
@@ -382,44 +389,61 @@ ul.task-list li input[type="checkbox"] {
       const response = await fetch(endpoint.href, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(
-          Object.fromEntries(new FormData(form).entries())
-        )
+        body: new FormData(form),
+        signal: controller.signal
       });
 
-      const text = await response.text();
-      let result;
-
-      try {
-        result = JSON.parse(text);
-      } catch {
-        console.error("Unexpected FormSubmit response:", text);
+      if (response.status >= 500) {
         throw new Error(
-          "The service returned an unexpected response. Check the browser console."
+          "The submission service is temporarily unavailable. Please try again later."
         );
       }
 
-      console.log("FormSubmit response:", response.status, result);
+      const responseText = await response.text();
+      let result;
+
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        throw new Error(
+          "The submission service returned an unexpected response. Please try again later."
+        );
+      }
 
       if (
         !response.ok ||
         String(result.success).toLowerCase() !== "true"
       ) {
+        const serviceMessage = result.message || result.error;
+
         throw new Error(
-          result.message ||
-          result.error ||
-          `The service did not confirm submission (HTTP ${response.status}).`
+          typeof serviceMessage === "string"
+            ? serviceMessage
+            : "The submission service did not confirm your suggestion."
         );
       }
 
       success = true;
     } catch (error) {
       console.error("Topic submission failed:", error);
-      errorMessage = error.message || "An unknown error occurred.";
+
+      if (error.name === "AbortError") {
+        errorMessage =
+          "The submission request timed out. Delivery could not be confirmed. Retrying may create a duplicate.";
+      } else if (
+        error instanceof TypeError ||
+        error.message === "Failed to fetch"
+      ) {
+        errorMessage =
+          "The submission service could not be reached, or its response could not be read. Please try again later.";
+      } else {
+        errorMessage =
+          error.message || "An unexpected error occurred.";
+      }
     } finally {
+      window.clearTimeout(timeoutId);
       submitting = false;
       button.disabled = false;
       button.textContent = originalLabel;
@@ -436,7 +460,7 @@ ul.task-list li input[type="checkbox"] {
       window.alert(
         "Your suggestion could not be confirmed.\n\n" +
         errorMessage +
-        "\n\nYour text has been kept. Please try again."
+        "\n\nYour text has been kept in the form."
       );
     }
   });

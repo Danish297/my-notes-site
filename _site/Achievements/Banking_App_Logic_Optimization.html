@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index – D@n!$h297</title>
+<title>banking_app_logic_optimization – D@n!$h297</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -353,153 +388,78 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="hero">
-<p><img src="../assets/profile.jpeg" class="profile-image img-fluid"></p>
-<section id="greeting" class="level1">
-<h1>Hi, I’m Danish.</h1>
-<p>I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.</p>
-<p>My interests include <strong>Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.</strong></p>
-<p>Here, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.</p>
-<div class="animated-tagline">
-<p><span>Keep learning.</span> <span>Keep building.</span> <span>Turn ideas into reality.</span></p>
-<p><span class="tagline-cursor"> <i></i> <i></i> </span></p>
-</div>
-<p><a href="../notes/11g_Unknown_facts.html" class="button">Explore my notes</a> <a href="#projects" class="button-secondary">View projects</a> <a href="#achievements" class="button">Achievements</a> <a href="#featured-notes" class="button-secondary">Featured Notes</a></p>
-</section>
-</div>
-<section id="now" class="level2">
-<h2 class="anchored" data-anchor-id="now">Now</h2>
-<p>I’m continuously exploring emerging technologies and expanding my technical knowledge in:</p>
+<section id="major-achievement-finacle-banking-application-logic-enhancement" class="level2">
+<h2 class="anchored" data-anchor-id="major-achievement-finacle-banking-application-logic-enhancement">Major Achievement: Finacle Banking Application Logic Enhancement</h2>
+<p>Identified and resolved a critical application logic issue in the Finacle banking system related to user input interpretation and option selection, where incorrect handling of input values could lead to unintended processing behavior.</p>
+<section id="the-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="the-challenge">1. The Challenge</h3>
 <ul>
-<li><strong>Artificial Intelligence:</strong> Generative AI, Local LLMs, and intelligent applications.</li>
-<li><strong>Cloud Technologies:</strong> Microsoft Azure, Google Cloud Platform, and cloud-native solutions.</li>
-<li><strong>Containers and Orchestration:</strong> Kubernetes, Red Hat OpenShift, and container technologies.</li>
-<li><strong>Database Technologies:</strong> Oracle Database, cloud databases, and database automation.</li>
-<li><strong>Software Engineering:</strong> Python, Shell scripting, automation, and application development.</li>
+<li>Investigated inconsistencies in how the application interpreted user inputs and selected options.</li>
+<li>Identified a logical flaw in the conditional processing and option-mapping mechanism.</li>
+<li>Incorrect interpretation of selected values could result in unexpected application behavior.</li>
 </ul>
-<p>My focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights.</p>
 </section>
-<section id="featured-notes" class="level2">
-<h2 class="anchored" data-anchor-id="featured-notes">Featured Notes</h2>
-<p>A collection of technical notes, experiments, and learning resources.</p>
-<div class="featured-grid">
-<section id="local-llms" class="level3 note-card">
-<h3 class="anchored" data-anchor-id="local-llms"><a href="../notes/wip.html" class="card-link">Local LLMs</a></h3>
-<p>Exploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.</p>
-<p><code>Ollama</code> <code>OpenWebUI</code> <code>LLMs</code></p>
-</section>
-<section id="red-hat-openshift" class="level3 note-card">
-<h3 class="anchored" data-anchor-id="red-hat-openshift"><a href="../notes/wip.html" class="card-link">Red Hat OpenShift</a></h3>
-<p>Developing hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.</p>
-<p><code>OpenShift</code> <code>Kubernetes</code> <code>Containers</code></p>
-</section>
-<section id="artificial-intelligence" class="level3 note-card">
-<h3 class="anchored" data-anchor-id="artificial-intelligence"><a href="../notes/wip.html" class="card-link">Artificial Intelligence</a></h3>
-<p>Exploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.</p>
-<p><code>ChatGPT</code> <code>Perplexity</code> <code>GenAI</code></p>
-</section>
-</div>
-<p><a href="../notes/11g_Unknown_facts.html" class="button text-link">Explore all notes →</a></p>
-</section>
-<section id="achievements" class="level2">
-<h2 class="anchored" data-anchor-id="achievements">Achievements</h2>
-<p>Selected technical achievements, automation initiatives, and application development projects.</p>
-<div class="shelf-grid">
-<section id="oracle-database-recovery-cloning-automation" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="oracle-database-recovery-cloning-automation"><a href="../Achievements/wip.html">Oracle Database Recovery &amp; Cloning Automation</a></h3>
-<p>Designed and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.</p>
-<p>The framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.</p>
-</section>
-<section id="oracle-db-creation-enhancements-bug-fixes" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="oracle-db-creation-enhancements-bug-fixes"><a href="../Achievements/wip.html">Oracle DB Creation – Enhancements &amp; Bug Fixes</a></h3>
-<p>Enhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.</p>
-<p>Improved automation capabilities, operational efficiency, and deployment flexibility.</p>
-</section>
-<section id="banking-application-logic-optimization" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="banking-application-logic-optimization"><a href="../Achievements/wip.html">Banking Application Logic Optimization</a></h3>
-<p>Identified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.</p>
-<p>Improved application reliability and ensured accurate processing of user-selected options.</p>
-</section>
-<section id="video-optimization-vencoder" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="video-optimization-vencoder"><a href="../Achievements/wip.html">Video Optimization – VEncoder</a></h3>
-<p>Developed VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.</p>
-<p>Supports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency.</p>
-</section>
-</div>
-</section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">Projects</h2>
-<p>A selection of professional experience, technical implementations, automation solutions, and personal projects.</p>
-<div class="project-list">
-<section id="oracle-database-ebs-administration" class="level3 project">
-<h3 class="anchored" data-anchor-id="oracle-database-ebs-administration"><a href="../notes/wip.html">Oracle Database &amp; EBS Administration</a></h3>
-<p>Experienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.</p>
-<p>Worked with different database architectures, including:</p>
+<section id="technical-solution" class="level3">
+<h3 class="anchored" data-anchor-id="technical-solution">2. Technical Solution</h3>
 <ul>
-<li>Oracle RAC and non-RAC environments.</li>
-<li>Multitenant architecture (CDB/PDB).</li>
-<li>Database upgrades and migrations.</li>
-<li>Oracle EBS 12.1.x and 12.2.x administration.</li>
-<li>Linux and Solaris environments.</li>
+<li>Analyzed the existing application logic and traced the issue to the input-validation and option-handling flow.</li>
+<li>Reviewed conditional statements, parameter handling, and selection-mapping logic.</li>
+<li>Corrected the underlying logic to ensure accurate interpretation of user inputs.</li>
+<li>Improved validation and conditional checks to handle different input scenarios consistently.</li>
 </ul>
-<p>Focused on maintaining supported versions, application compatibility, availability, security, and performance.</p>
-<p><strong>Technologies:</strong> <code>Oracle Database 10g–19c</code> <code>Oracle EBS 12.1.x–12.2.x</code> <code>Linux</code> <code>Solaris</code><br> <strong>Clients:</strong> <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> · <a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> · <a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> · <a href="https://www.netapp.com/" target="_blank" rel="noopener noreferrer">NetApp</a> · <a href="https://www.hdfc.bank.in/" target="_blank" rel="noopener noreferrer">HDFC Bank</a> · <a href="https://www.bell.ca/" target="_blank" rel="noopener noreferrer">Bell</a> · <a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">Telefónica</a> · <a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj Finserv</a> · <a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> · <a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniya Finance</a></p>
 </section>
-<section id="hadoop-big-data-technologies" class="level3 project">
-<h3 class="anchored" data-anchor-id="hadoop-big-data-technologies"><a href="../notes/wip.html">Hadoop &amp; Big Data Technologies</a></h3>
-<p>Worked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.</p>
-<p>Experience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.</p>
-<p><strong>Technologies:</strong> <code>Hortonworks</code> <code>Cloudera</code> <code>Kafka</code> <code>Hadoop</code><br> <strong>Clients:</strong> <a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> · <a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" rel="noopener noreferrer">BMO</a> · <a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> · <a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> · <a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> · <a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a></p>
+<section id="results-and-business-impact" class="level3">
+<h3 class="anchored" data-anchor-id="results-and-business-impact">3. Results and Business Impact</h3>
+<ul>
+<li>Eliminated the identified logic issue.</li>
+<li>Ensured accurate processing of user-selected options.</li>
+<li>Improved application reliability and consistency.</li>
+<li>Reduced the risk of incorrect transaction or application processing.</li>
+<li>Strengthened the overall stability of the Finacle banking application.</li>
+</ul>
+<p>Key Achievement: Successfully diagnosed and resolved a critical business-logic issue in a banking application, demonstrating strong debugging, analytical problem-solving, and application-level troubleshooting skills.</p>
 </section>
-<section id="cloud-technologies-azure-gcp" class="level3 project">
-<h3 class="anchored" data-anchor-id="cloud-technologies-azure-gcp"><a href="../notes/wip.html">Cloud Technologies – Azure &amp; GCP</a></h3>
-<p>Exploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.</p>
-<p>Focus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.</p>
-<p><strong>Technologies:</strong> <code>Microsoft Azure</code> <code>Google Cloud Platform</code><br> <strong>Clients:</strong> <a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> · <a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a></p>
-</section>
-<section id="automation-scripting" class="level3 project">
-<h3 class="anchored" data-anchor-id="automation-scripting"><a href="../notes/wip.html">Automation &amp; Scripting</a></h3>
-<p>Developed automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.</p>
-<p>Focused on automating daily administrative tasks, routine jobs, and operational workflows.</p>
-<p><strong>Technologies:</strong> <code>Python</code> <code>Shell</code> <code>PowerShell</code><br> <strong>Clients:</strong> <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> · <a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> · <a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> · <a href="https://www.knitwellgroup.com/" target="_blank" rel="noopener noreferrer">Ascena</a></p>
-</section>
-</div>
-<p><a href="https://github.com/Danish297" class="text-link">Explore all projects on GitHub →</a></p>
-</section>
-<section id="elsewhere" class="level2">
-<h2 class="anchored" data-anchor-id="elsewhere">Elsewhere</h2>
-<div class="social-inline" role="group" aria-label="Social media profiles">
-
-  <span class="social-text">Connect with me on these platforms:</span>
-
-  <a class="social-icon" href="https://linkedin.com/in/hasnain-danish-shaikh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-    <img src="../assets/linkedin.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://github.com/Danish297" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-    <img src="../assets/github.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://facebook.com/danish297" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile">
-    <img src="../assets/facebook.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://x.com/danish297/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-    <img src="../assets/x.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://instagram.com/danishfrnz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-    <img src="../assets/instagram.svg" alt="" width="26" height="26">
-  </a>
-
+<section id="technical-illustration-simplified-example" class="level3">
+<h3 class="anchored" data-anchor-id="technical-illustration-simplified-example">Technical illustration (simplified example)</h3>
+<p>You can include a small illustrative code example in your blog to explain the nature of the fix. This is generic pseudocode, not actual Finacle source code.</p>
+<p>Before – Potentially incorrect option handling:</p>
+<p>java</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>userInput <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">processOption</span><span class="op">(</span>userInput<span class="op">);</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After – Improved validation and option handling:</p>
+<p>java</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>userInput <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> <span class="op">!</span>userInput<span class="op">.</span><span class="fu">trim</span><span class="op">().</span><span class="fu">isEmpty</span><span class="op">())</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> selectedOption <span class="op">=</span> userInput<span class="op">.</span><span class="fu">trim</span><span class="op">();</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">switch</span> <span class="op">(</span>selectedOption<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="st">"1"</span><span class="op">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="fu">processOptionA</span><span class="op">();</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">case</span> <span class="st">"2"</span><span class="op">:</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">processOptionB</span><span class="op">();</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">IllegalArgumentException</span><span class="op">(</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Invalid option selected"</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">);</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This illustrates how explicit validation and controlled option mapping can prevent incorrect input interpretation.</p>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
 <!-- Site-wide floating link to the rendered feedback page. -->
-<a class="floating-feedback" href="../notes/feedback.html">
+<a class="floating-feedback" href="../feedback.html">
   Feedback
 </a>
 <script id="quarto-html-after-body" type="application/javascript">

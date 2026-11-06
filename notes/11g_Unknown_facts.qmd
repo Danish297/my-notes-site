@@ -552,3 +552,9 @@ DROP TABLE f10_orders PURGE;
 The failed creation in Example 7 should leave no table. If it unexpectedly succeeded, remove `F07_BAD_INTERVAL` separately.
 
 Have the DBA handle cleanup of `EBR_LAB` and `F09_V2` after confirming that no sessions or other test objects depend on them.
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Operational automation using Python, Shell, PowerShell, and Ansible, covering database health checks, reporting, maintenance, application monitoring, and workflow optimization.">
+
+<title>Automation &amp; Scripting for Enterprise Operations – D@n!$h297</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-afa4035314ad2e524346014eeb445aef.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b7b6128cb1513921274ca2ff62cf13f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">D@n!$h297</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../notes/11g_Unknown_facts.html" aria-current="page"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/danish297/" rel="noopener noreferrer" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub profile (opens in a new tab)">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/hasnain-danish-shaikh/" rel="noopener noreferrer" target="_blank"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn profile (opens in a new tab)">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Automation &amp; Scripting for Enterprise Operations</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/11g_Unknown_facts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11g Unknown facts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/12c_new_features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12c New Features</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/19c_vs_23ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19c vs.&nbsp;23ai for DBAs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/NewOracleDB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NewOracleDB</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#core-areas-of-experience" id="toc-core-areas-of-experience" class="nav-link active" data-scroll-target="#core-areas-of-experience">Core Areas of Experience</a></li>
+  <li><a href="#measurable-workflow-improvements" id="toc-measurable-workflow-improvements" class="nav-link" data-scroll-target="#measurable-workflow-improvements">Measurable Workflow Improvements</a>
+  <ul class="collapse">
+  <li><a href="#control-m-job-optimization" id="toc-control-m-job-optimization" class="nav-link" data-scroll-target="#control-m-job-optimization">Control-M Job Optimization</a></li>
+  <li><a href="#weekly-database-cloning-automation" id="toc-weekly-database-cloning-automation" class="nav-link" data-scroll-target="#weekly-database-cloning-automation">Weekly Database Cloning Automation</a></li>
+  </ul></li>
+  <li><a href="#daily-health-checks-and-reporting" id="toc-daily-health-checks-and-reporting" class="nav-link" data-scroll-target="#daily-health-checks-and-reporting">Daily Health Checks and Reporting</a></li>
+  <li><a href="#completed-operational-automations" id="toc-completed-operational-automations" class="nav-link" data-scroll-target="#completed-operational-automations">Completed Operational Automations</a>
+  <ul class="collapse">
+  <li><a href="#database-daily-health-report" id="toc-database-daily-health-report" class="nav-link" data-scroll-target="#database-daily-health-report">1. Database Daily Health Report</a></li>
+  <li><a href="#daily-auditing-reports" id="toc-daily-auditing-reports" class="nav-link" data-scroll-target="#daily-auditing-reports">2. Daily Auditing Reports</a></li>
+  <li><a href="#automated-database-table-statistics-gathering" id="toc-automated-database-table-statistics-gathering" class="nav-link" data-scroll-target="#automated-database-table-statistics-gathering">3. Automated Database Table Statistics Gathering</a></li>
+  <li><a href="#daily-alert-log-monitoring" id="toc-daily-alert-log-monitoring" class="nav-link" data-scroll-target="#daily-alert-log-monitoring">4. Daily Alert Log Monitoring</a></li>
+  <li><a href="#application-availability-reporting" id="toc-application-availability-reporting" class="nav-link" data-scroll-target="#application-availability-reporting">5. Application Availability Reporting</a></li>
+  <li><a href="#daily-table-growth-tracking" id="toc-daily-table-growth-tracking" class="nav-link" data-scroll-target="#daily-table-growth-tracking">6. Daily Table Growth Tracking</a></li>
+  <li><a href="#tableau-log-management" id="toc-tableau-log-management" class="nav-link" data-scroll-target="#tableau-log-management">7. Tableau Log Management</a></li>
+  <li><a href="#table-and-tablespace-space-management" id="toc-table-and-tablespace-space-management" class="nav-link" data-scroll-target="#table-and-tablespace-space-management">8. Table and Tablespace Space Management</a></li>
+  <li><a href="#database-alert-log-management" id="toc-database-alert-log-management" class="nav-link" data-scroll-target="#database-alert-log-management">9. Database Alert Log Management</a></li>
+  </ul></li>
+  <li><a href="#operational-reporting-in-practice" id="toc-operational-reporting-in-practice" class="nav-link" data-scroll-target="#operational-reporting-in-practice">Operational Reporting in Practice</a>
+  <ul class="collapse">
+  <li><a href="#database-reports" id="toc-database-reports" class="nav-link" data-scroll-target="#database-reports">Database Reports</a></li>
+  <li><a href="#application-reports" id="toc-application-reports" class="nav-link" data-scroll-target="#application-reports">Application Reports</a></li>
+  <li><a href="#exception-visibility" id="toc-exception-visibility" class="nav-link" data-scroll-target="#exception-visibility">Exception Visibility</a></li>
+  </ul></li>
+  <li><a href="#reusability-and-extensibility" id="toc-reusability-and-extensibility" class="nav-link" data-scroll-target="#reusability-and-extensibility">Reusability and Extensibility</a></li>
+  <li><a href="#business-and-operational-value" id="toc-business-and-operational-value" class="nav-link" data-scroll-target="#business-and-operational-value">Business and Operational Value</a></li>
+  <li><a href="#client-environments-supported" id="toc-client-environments-supported" class="nav-link" data-scroll-target="#client-environments-supported">Client Environments Supported</a></li>
+  <li><a href="#professional-focus" id="toc-professional-focus" class="nav-link" data-scroll-target="#professional-focus">Professional Focus</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Automation &amp; Scripting for Enterprise Operations</h1>
+</div>
+
+<div>
+  <div class="description">
+    Operational automation using Python, Shell, PowerShell, and Ansible, covering database health checks, reporting, maintenance, application monitoring, and workflow optimization.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>I develop automation solutions that simplify repetitive administrative tasks, reduce manual intervention, and improve operational productivity.</p>
+<p>My work spans database administration, application monitoring, reporting, storage management, and scheduled enterprise workflows.</p>
+<p>Using Python, Shell, PowerShell, and Ansible, I turn recurring operational activities into repeatable processes that are easier to execute, monitor, and maintain.</p>
+<section id="core-areas-of-experience" class="level2">
+<h2 class="anchored" data-anchor-id="core-areas-of-experience">Core Areas of Experience</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Technologies and focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Scripting</td>
+<td style="text-align: left;">Python, Shell, and PowerShell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Operational automation</td>
+<td style="text-align: left;">Ansible playbooks and reusable scripts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Database operations</td>
+<td style="text-align: left;">Oracle health checks, cloning, statistics, auditing, and storage monitoring</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Application monitoring</td>
+<td style="text-align: left;">Availability checks, status reports, and exception reporting</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Workload optimization</td>
+<td style="text-align: left;">Control-M, Hive, Spark, and HBase</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Housekeeping</td>
+<td style="text-align: left;">Tableau logs and database alert logs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reporting</td>
+<td style="text-align: left;">Scheduled HTML reports and operational summaries</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="measurable-workflow-improvements" class="level2">
+<h2 class="anchored" data-anchor-id="measurable-workflow-improvements">Measurable Workflow Improvements</h2>
+<p>Two projects delivered measurable reductions in execution time.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Workflow</th>
+<th style="text-align: right;">Before</th>
+<th style="text-align: right;">After</th>
+<th style="text-align: right;">Time saved</th>
+<th style="text-align: right;">Reduction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Control-M job</td>
+<td style="text-align: right;">52 hours</td>
+<td style="text-align: right;">4.5 hours</td>
+<td style="text-align: right;">47.5 hours per execution</td>
+<td style="text-align: right;">Approximately 91%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weekly database cloning</td>
+<td style="text-align: right;">Approximately 11 hours</td>
+<td style="text-align: right;">Approximately 6.5 hours</td>
+<td style="text-align: right;">Approximately 4.5 hours per week</td>
+<td style="text-align: right;">Approximately 41%</td>
+</tr>
+</tbody>
+</table>
+<p>These figures describe the specific workflows measured, not a platform-wide performance improvement or a separately measured reduction in administrator effort.</p>
+<section id="control-m-job-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="control-m-job-optimization">Control-M Job Optimization</h3>
+<p>I optimized a long-running Control-M job, reducing execution time from 52 hours to 4.5 hours.</p>
+<p>This substantially shortened the job’s processing window and improved its operational turnaround.</p>
+<p>My broader performance work also includes optimizing long-running Hive, Spark, and HBase workloads and associated Control-M jobs to improve execution efficiency and operational reliability.</p>
+</section>
+<section id="weekly-database-cloning-automation" class="level3">
+<h3 class="anchored" data-anchor-id="weekly-database-cloning-automation">Weekly Database Cloning Automation</h3>
+<p>I developed a menu-driven workflow for weekly Oracle Database cloning.</p>
+<p>The framework brought related operations into a centralized process, reducing repeated manual intervention and opportunities for execution errors.</p>
+<p>Weekly execution time decreased from approximately 11 hours to 6.5 hours, saving approximately 4.5 hours each week.</p>
+</section>
+</section>
+<section id="daily-health-checks-and-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="daily-health-checks-and-reporting">Daily Health Checks and Reporting</h2>
+<p>I automated daily health checks and reporting using Python scripts and Ansible playbooks.</p>
+<p>The objective was to consolidate recurring checks into a consistent operational view rather than requiring administrators to collect the same information manually each day.</p>
+<p>The generated reports support routine review, exception identification, and investigation of issues requiring attention.</p>
+</section>
+<section id="completed-operational-automations" class="level2">
+<h2 class="anchored" data-anchor-id="completed-operational-automations">Completed Operational Automations</h2>
+<p>The following nine automations have been completed and are running successfully.</p>
+<p>Their successful operation refers to the automation workflows themselves. Monitoring reports may still identify failed backups, unavailable applications, or other conditions requiring investigation.</p>
+<section id="database-daily-health-report" class="level3">
+<h3 class="anchored" data-anchor-id="database-daily-health-report">1. Database Daily Health Report</h3>
+<p>Automated the collection and presentation of key database, application, and server-health information.</p>
+<p>The reporting scope includes:</p>
+<ul>
+<li>Instance status and database information.</li>
+<li>Database size and space utilization.</li>
+<li>ASM disk-group utilization.</li>
+<li>Tablespace capacity and low-free-space checks, including checks for less than 5% available space.</li>
+<li>Archive log statistics.</li>
+<li>Daily RMAN backup status.</li>
+<li>Top SQL queries by resource consumption.</li>
+<li>Sessions with high physical I/O activity.</li>
+<li>EBS Concurrent Manager status.</li>
+<li>Database export-backup verification.</li>
+<li>Disk-space details for database and application servers.</li>
+</ul>
+<p>This provides a consolidated starting point for daily operational review and helps identify storage constraints, backup issues, and resource-intensive activity.</p>
+<p>The reporting approach is modular, allowing additional checks, databases, and servers to be incorporated as requirements evolve.</p>
+</section>
+<section id="daily-auditing-reports" class="level3">
+<h3 class="anchored" data-anchor-id="daily-auditing-reports">2. Daily Auditing Reports</h3>
+<p>Automated daily auditing reports to improve visibility and traceability of database activities.</p>
+<p>The reports support audit review and compliance-related activities without requiring the same information to be gathered manually.</p>
+<p>The approach accommodates different database audit configurations and user-activity reporting requirements.</p>
+</section>
+<section id="automated-database-table-statistics-gathering" class="level3">
+<h3 class="anchored" data-anchor-id="automated-database-table-statistics-gathering">3. Automated Database Table Statistics Gathering</h3>
+<p>Automated statistics gathering for selected database tables to keep optimizer statistics current.</p>
+<p>This standardizes a recurring maintenance activity and supports consistent query-optimization inputs.</p>
+<p>Additional tables can be included as application and maintenance requirements change.</p>
+</section>
+<section id="daily-alert-log-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="daily-alert-log-monitoring">4. Daily Alert Log Monitoring</h3>
+<p>Automated database alert-log review to surface errors and warnings requiring attention.</p>
+<p>The workflow produces log outputs that support investigation without requiring administrators to manually inspect every full alert log.</p>
+<p>The monitoring approach can accommodate different log locations, formats, and alert levels across environments.</p>
+</section>
+<section id="application-availability-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="application-availability-reporting">5. Application Availability Reporting</h3>
+<p>Automated application endpoint checks and generated reports showing availability status and response information.</p>
+<p>The reporting includes:</p>
+<ul>
+<li>A consolidated application-health view.</li>
+<li>Working, warning, and failed status categories.</li>
+<li>Response information for individual checks.</li>
+<li>A separate exception report highlighting failed or warning entries.</li>
+</ul>
+<p>This helps direct operational attention to services requiring investigation.</p>
+<p>Availability results reflect the checks performed at the reporting time; they are not a guarantee of continuous application availability.</p>
+<p>The configuration-based approach allows additional application endpoints and environments to be included.</p>
+</section>
+<section id="daily-table-growth-tracking" class="level3">
+<h3 class="anchored" data-anchor-id="daily-table-growth-tracking">6. Daily Table Growth Tracking</h3>
+<p>Automated daily table-growth tracking to improve visibility into changing storage consumption.</p>
+<p>The reports support:</p>
+<ul>
+<li>Reviewing growth trends.</li>
+<li>Identifying unusual increases.</li>
+<li>Planning future capacity.</li>
+<li>Prioritizing storage investigations.</li>
+</ul>
+<p>The approach can be reused across databases, environments, and projects.</p>
+</section>
+<section id="tableau-log-management" class="level3">
+<h3 class="anchored" data-anchor-id="tableau-log-management">7. Tableau Log Management</h3>
+<p>Automated Tableau log housekeeping on Windows servers to reclaim space and support reliable platform operations.</p>
+<p>This reduces recurring manual cleanup and helps prevent unnecessary log accumulation from consuming available disk capacity.</p>
+<p>The housekeeping approach can be adapted to other tools with similar log-management requirements.</p>
+</section>
+<section id="table-and-tablespace-space-management" class="level3">
+<h3 class="anchored" data-anchor-id="table-and-tablespace-space-management">8. Table and Tablespace Space Management</h3>
+<p>Automated space-management activities to support table growth and reduce dependence on repeated manual intervention.</p>
+<p>The objective is to address capacity constraints before they interrupt database operations.</p>
+<p>This complements growth tracking and low-space reporting by bringing recurring space-management work into an automated workflow.</p>
+</section>
+<section id="database-alert-log-management" class="level3">
+<h3 class="anchored" data-anchor-id="database-alert-log-management">9. Database Alert Log Management</h3>
+<p>Automated scheduled database alert-log housekeeping, including monthly purging and backup for future reference.</p>
+<p>This is separate from daily alert-log monitoring:</p>
+<ul>
+<li>Monitoring identifies errors and warnings.</li>
+<li>Housekeeping manages accumulated log files and retained copies.</li>
+</ul>
+<p>The approach can be applied across multiple database environments.</p>
+</section>
+</section>
+<section id="operational-reporting-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="operational-reporting-in-practice">Operational Reporting in Practice</h2>
+<p>The reporting solutions bring database and application information into readable HTML outputs.</p>
+<section id="database-reports" class="level3">
+<h3 class="anchored" data-anchor-id="database-reports">Database Reports</h3>
+<p>Database reports consolidate information such as instance state, database size, tablespace utilization, archive activity, RMAN backup status, SQL activity, physical I/O, and server storage.</p>
+<p>Where applicable, they also include ASM information and EBS Concurrent Manager status.</p>
+</section>
+<section id="application-reports" class="level3">
+<h3 class="anchored" data-anchor-id="application-reports">Application Reports</h3>
+<p>Application reports present endpoint status and response information in a consolidated view.</p>
+<p>A separate exception-focused report helps operators concentrate on entries requiring attention rather than reviewing every successful check individually.</p>
+</section>
+<section id="exception-visibility" class="level3">
+<h3 class="anchored" data-anchor-id="exception-visibility">Exception Visibility</h3>
+<p>The purpose of monitoring automation is not to make every report appear healthy. It is to make operational conditions visible.</p>
+<p>A successfully generated report that identifies a failed backup or an unavailable application is performing its monitoring role.</p>
+</section>
+</section>
+<section id="reusability-and-extensibility" class="level2">
+<h2 class="anchored" data-anchor-id="reusability-and-extensibility">Reusability and Extensibility</h2>
+<p>I focus on automation that can evolve with operational requirements.</p>
+<p>Across these solutions, extension points include:</p>
+<ul>
+<li>Adding databases and application servers.</li>
+<li>Introducing new health checks.</li>
+<li>Updating monitored application endpoints.</li>
+<li>Expanding table lists and reporting scope.</li>
+<li>Adapting log paths and housekeeping requirements.</li>
+<li>Reusing scripts across environments.</li>
+</ul>
+<p>This makes the work more useful than a collection of isolated, one-time scripts.</p>
+</section>
+<section id="business-and-operational-value" class="level2">
+<h2 class="anchored" data-anchor-id="business-and-operational-value">Business and Operational Value</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Productivity</td>
+<td style="text-align: left;">Reduced repeated manual collection and maintenance activities</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Execution efficiency</td>
+<td style="text-align: left;">Shortened the measured Control-M and cloning workflows</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Monitoring visibility</td>
+<td style="text-align: left;">Consolidated database and application status into scheduled reports</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Capacity management</td>
+<td style="text-align: left;">Added growth tracking, space checks, and space-management automation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maintenance consistency</td>
+<td style="text-align: left;">Standardized statistics gathering and log housekeeping</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Investigation support</td>
+<td style="text-align: left;">Produced audit, alert, and exception information for operational review</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Extensibility</td>
+<td style="text-align: left;">Enabled additional checks and targets to be incorporated</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond the two measured execution-time improvements, the main value is operational consistency: recurring tasks follow a repeatable process, and administrators have clearer information for review and follow-up.</p>
+</section>
+<section id="client-environments-supported" class="level2">
+<h2 class="anchored" data-anchor-id="client-environments-supported">Client Environments Supported</h2>
+<p>My automation and scripting experience includes work supporting environments for:</p>
+<p>CACIB · Mastercard · Zakathouse · Ascena</p>
+<p>The responsibilities described reflect experience across these engagements. The nine-item operational automation portfolio described above relates to the Zakat House environment.</p>
+</section>
+<section id="professional-focus" class="level2">
+<h2 class="anchored" data-anchor-id="professional-focus">Professional Focus</h2>
+<p>I use scripting and automation to make enterprise operations easier to manage, not simply to replace individual commands.</p>
+<p>My focus is on repeatable workflows, useful reporting, reduced manual intervention, and solutions that can be extended as operational needs change.</p>
+<p>From daily health checks to database cloning and workload optimization, the goal is to give teams more consistent execution and better visibility into the systems they support.</p>
+<hr>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Site-wide floating link to the rendered feedback page. -->
+<a class="floating-feedback" href="../feedback.html">
+  Feedback
+</a>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/danish297\.github\.io\/my-notes-site\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Danish297</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/danish297">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

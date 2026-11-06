@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-23">
+<meta name="description" content="Cloud infrastructure and enterprise data-platform experience, with hands-on Azure resource administration, pipeline troubleshooting, and ongoing exploration of Google Cloud Platform.">
 
-<title>Neural Networks – D@n!$h297</title>
+<title>Cloud Technologies: Microsoft Azure &amp; Google Cloud – D@n!$h297</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -116,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -329,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Neural Networks</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Cloud Technologies: Microsoft Azure &amp; Google Cloud</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -381,30 +346,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#core-areas-of-experience" id="toc-core-areas-of-experience" class="nav-link active" data-scroll-target="#core-areas-of-experience">Core Areas of Experience</a></li>
+  <li><a href="#microsoft-azure-resource-provisioning-and-management" id="toc-microsoft-azure-resource-provisioning-and-management" class="nav-link" data-scroll-target="#microsoft-azure-resource-provisioning-and-management">Microsoft Azure: Resource Provisioning and Management</a>
+  <ul class="collapse">
+  <li><a href="#resource-groups" id="toc-resource-groups" class="nav-link" data-scroll-target="#resource-groups">Resource Groups</a></li>
+  <li><a href="#azure-databricks" id="toc-azure-databricks" class="nav-link" data-scroll-target="#azure-databricks">Azure Databricks</a></li>
+  <li><a href="#azure-data-factory" id="toc-azure-data-factory" class="nav-link" data-scroll-target="#azure-data-factory">Azure Data Factory</a></li>
+  <li><a href="#azure-key-vault" id="toc-azure-key-vault" class="nav-link" data-scroll-target="#azure-key-vault">Azure Key Vault</a></li>
+  </ul></li>
+  <li><a href="#data-pipeline-monitoring-and-troubleshooting" id="toc-data-pipeline-monitoring-and-troubleshooting" class="nav-link" data-scroll-target="#data-pipeline-monitoring-and-troubleshooting">Data Pipeline Monitoring and Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#adf-pipeline-failures" id="toc-adf-pipeline-failures" class="nav-link" data-scroll-target="#adf-pipeline-failures">ADF Pipeline Failures</a></li>
+  <li><a href="#integration-runtime-issues" id="toc-integration-runtime-issues" class="nav-link" data-scroll-target="#integration-runtime-issues">Integration Runtime Issues</a></li>
+  <li><a href="#azure-quota-constraints" id="toc-azure-quota-constraints" class="nav-link" data-scroll-target="#azure-quota-constraints">Azure Quota Constraints</a></li>
+  </ul></li>
+  <li><a href="#security-scalability-and-cost-awareness" id="toc-security-scalability-and-cost-awareness" class="nav-link" data-scroll-target="#security-scalability-and-cost-awareness">Security, Scalability, and Cost Awareness</a>
+  <ul class="collapse">
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security">Security</a></li>
+  <li><a href="#scalability" id="toc-scalability" class="nav-link" data-scroll-target="#scalability">Scalability</a></li>
+  <li><a href="#cost-optimization" id="toc-cost-optimization" class="nav-link" data-scroll-target="#cost-optimization">Cost Optimization</a></li>
+  </ul></li>
+  <li><a href="#google-cloud-platform-ongoing-exploration" id="toc-google-cloud-platform-ongoing-exploration" class="nav-link" data-scroll-target="#google-cloud-platform-ongoing-exploration">Google Cloud Platform: Ongoing Exploration</a></li>
+  <li><a href="#operational-contributions" id="toc-operational-contributions" class="nav-link" data-scroll-target="#operational-contributions">Operational Contributions</a></li>
+  <li><a href="#client-environments-supported" id="toc-client-environments-supported" class="nav-link" data-scroll-target="#client-environments-supported">Client Environments Supported</a></li>
+  <li><a href="#professional-focus" id="toc-professional-focus" class="nav-link" data-scroll-target="#professional-focus">Professional Focus</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Neural Networks</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">machine-learning</div>
-  </div>
-  </div>
+<h1 class="title">Cloud Technologies: Microsoft Azure &amp; Google Cloud</h1>
+</div>
 
+<div>
+  <div class="description">
+    Cloud infrastructure and enterprise data-platform experience, with hands-on Azure resource administration, pipeline troubleshooting, and ongoing exploration of Google Cloud Platform.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 23, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -414,30 +406,202 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="neural-networks" class="level1">
-<h1>Neural Networks</h1>
-<p>A neural network is a function composed of layers of simple mathematical operations.</p>
-<section id="a-minimal-example" class="level2">
-<h2 class="anchored" data-anchor-id="a-minimal-example">A minimal example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> relu(x):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.maximum(<span class="dv">0</span>, x)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">2.0</span>])</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(relu(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>I work with cloud infrastructure and enterprise data services, with hands-on experience provisioning and managing Microsoft Azure resources and an ongoing focus on exploring Google Cloud Platform (GCP).</p>
+<p>My interests span resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.</p>
+<p>My practical Azure responsibilities include resource administration, data-platform support, and troubleshooting issues that affect reliable data processing.</p>
+<section id="core-areas-of-experience" class="level2">
+<h2 class="anchored" data-anchor-id="core-areas-of-experience">Core Areas of Experience</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Experience and focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Microsoft Azure</td>
+<td style="text-align: left;">Resource provisioning, configuration, and operational support</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Azure Resource Groups</td>
+<td style="text-align: left;">Organization and administration of related cloud resources</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Azure Databricks (ADB)</td>
+<td style="text-align: left;">Provisioning and resource management</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Azure Data Factory (ADF)</td>
+<td style="text-align: left;">Resource administration, pipeline monitoring, and troubleshooting</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Integration Runtime (IR)</td>
+<td style="text-align: left;">Investigation and resolution of operational issues</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Azure Key Vault</td>
+<td style="text-align: left;">Provisioning and administration with a security focus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Azure quotas</td>
+<td style="text-align: left;">Investigation and resolution of resource quota constraints</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Google Cloud Platform</td>
+<td style="text-align: left;">Ongoing exploration of infrastructure, services, and deployment approaches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cross-platform interests</td>
+<td style="text-align: left;">Enterprise integration, scalability, security, and cost-aware operations</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="key-idea" class="level2">
-<h2 class="anchored" data-anchor-id="key-idea">Key idea</h2>
-<p>Each layer transforms its input. Training adjusts the weights so the network’s predictions become closer to the desired outputs.</p>
+<section id="microsoft-azure-resource-provisioning-and-management" class="level2">
+<h2 class="anchored" data-anchor-id="microsoft-azure-resource-provisioning-and-management">Microsoft Azure: Resource Provisioning and Management</h2>
+<p>I provisioned and managed Azure resources supporting enterprise data-platform environments.</p>
+<p>The work covered Azure Resource Groups, Azure Databricks, Azure Data Factory, and Azure Key Vault, with attention to security, scalability, and cost optimization.</p>
+<section id="resource-groups" class="level3">
+<h3 class="anchored" data-anchor-id="resource-groups">Resource Groups</h3>
+<p>Managed Azure Resource Groups as part of organizing and administering cloud resources supporting enterprise workloads.</p>
+<p>This work formed part of the broader provisioning and maintenance activities required to keep the cloud environment aligned with operational needs.</p>
+</section>
+<section id="azure-databricks" class="level3">
+<h3 class="anchored" data-anchor-id="azure-databricks">Azure Databricks</h3>
+<p>Provisioned and managed Azure Databricks resources within enterprise data environments.</p>
+<p>My responsibilities focused on resource administration and supporting the infrastructure requirements of the platform.</p>
+</section>
+<section id="azure-data-factory" class="level3">
+<h3 class="anchored" data-anchor-id="azure-data-factory">Azure Data Factory</h3>
+<p>Provisioned and administered Azure Data Factory resources and supported the ongoing operation of data-processing pipelines.</p>
+<p>This included monitoring pipeline execution, investigating failures, and resolving issues affecting operational continuity.</p>
+</section>
+<section id="azure-key-vault" class="level3">
+<h3 class="anchored" data-anchor-id="azure-key-vault">Azure Key Vault</h3>
+<p>Provisioned and managed Azure Key Vault resources as part of the environment’s security-focused cloud administration.</p>
+</section>
+</section>
+<section id="data-pipeline-monitoring-and-troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="data-pipeline-monitoring-and-troubleshooting">Data Pipeline Monitoring and Troubleshooting</h2>
+<p>A significant part of my Azure work involved investigating issues that interrupted data processing or prevented workloads from running as expected.</p>
+<section id="adf-pipeline-failures" class="level3">
+<h3 class="anchored" data-anchor-id="adf-pipeline-failures">ADF Pipeline Failures</h3>
+<ul>
+<li>Monitored pipeline execution and identified failed runs.</li>
+<li>Investigated failures affecting data-processing workflows.</li>
+<li>Applied corrective actions to restore pipeline operations.</li>
+<li>Supported reliable processing and operational continuity.</li>
+</ul>
+</section>
+<section id="integration-runtime-issues" class="level3">
+<h3 class="anchored" data-anchor-id="integration-runtime-issues">Integration Runtime Issues</h3>
+<p>Investigated and resolved Integration Runtime issues affecting Azure Data Factory operations.</p>
+<p>The focus was on identifying the cause of processing interruptions and restoring the affected workflows.</p>
+</section>
+<section id="azure-quota-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="azure-quota-constraints">Azure Quota Constraints</h3>
+<p>Investigated and addressed Azure quota constraints affecting resource provisioning or workload execution.</p>
+<p>This work supported capacity requirements and helped resolve resource-related barriers to ongoing operations.</p>
+</section>
+</section>
+<section id="security-scalability-and-cost-awareness" class="level2">
+<h2 class="anchored" data-anchor-id="security-scalability-and-cost-awareness">Security, Scalability, and Cost Awareness</h2>
+<p>My approach to cloud administration considers operational requirements alongside security, growth, and resource consumption.</p>
+<section id="security" class="level3">
+<h3 class="anchored" data-anchor-id="security">Security</h3>
+<p>Maintained a security-focused approach when provisioning and managing Azure services, including Key Vault.</p>
+</section>
+<section id="scalability" class="level3">
+<h3 class="anchored" data-anchor-id="scalability">Scalability</h3>
+<p>Considered workload requirements and resource constraints when supporting cloud environments, including issues involving service quotas and available capacity.</p>
+</section>
+<section id="cost-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="cost-optimization">Cost Optimization</h3>
+<p>Included cost considerations in resource-management activities, with a focus on aligning cloud resources with operational needs.</p>
+<p>These were guiding priorities in my administration work. No specific cost-saving percentage or platform-wide availability improvement is claimed here.</p>
+</section>
+</section>
+<section id="google-cloud-platform-ongoing-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="google-cloud-platform-ongoing-exploration">Google Cloud Platform: Ongoing Exploration</h2>
+<p>Alongside my Azure experience, I am exploring Google Cloud Platform to broaden my understanding of cloud infrastructure and enterprise deployment options.</p>
+<p>My areas of interest include:</p>
+<ul>
+<li>Cloud infrastructure and resource provisioning.</li>
+<li>Deployment architectures.</li>
+<li>Integrating enterprise technologies with cloud services.</li>
+<li>Security, scalability, and operational management.</li>
+<li>Comparing approaches across Azure and GCP.</li>
+</ul>
+<p>My detailed delivery experience on this page relates to Azure. The GCP section reflects ongoing exploration rather than a claim of equivalent production administration experience.</p>
+</section>
+<section id="operational-contributions" class="level2">
+<h2 class="anchored" data-anchor-id="operational-contributions">Operational Contributions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Resource provisioning</td>
+<td style="text-align: left;">Provisioned and managed Azure services supporting enterprise data environments</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platform administration</td>
+<td style="text-align: left;">Supported Resource Groups, Databricks, Data Factory, and Key Vault</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pipeline reliability</td>
+<td style="text-align: left;">Monitored and resolved ADF pipeline failures</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Integration support</td>
+<td style="text-align: left;">Investigated and resolved Integration Runtime issues</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Capacity constraints</td>
+<td style="text-align: left;">Addressed Azure quota issues affecting operations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Resource management</td>
+<td style="text-align: left;">Considered security, scalability, and cost requirements</td>
+</tr>
+</tbody>
+</table>
+<p>These contributions focused on maintaining operational continuity and supporting dependable cloud-based data processing.</p>
+</section>
+<section id="client-environments-supported" class="level2">
+<h2 class="anchored" data-anchor-id="client-environments-supported">Client Environments Supported</h2>
+<p>My cloud-related experience includes work supporting environments for:</p>
+<p>Rogers Communications · Enbridge</p>
+<p>The responsibilities described reflect experience across these engagements; they do not imply that every service or platform was used for both clients.</p>
+</section>
+<section id="professional-focus" class="level2">
+<h2 class="anchored" data-anchor-id="professional-focus">Professional Focus</h2>
+<p>I am building on hands-on Azure administration experience while expanding my knowledge of Google Cloud Platform.</p>
+<p>My focus is on connecting enterprise infrastructure and data-platform requirements with practical cloud operations: provisioning the right resources, investigating failures, managing constraints, and keeping security and cost considerations visible.</p>
+<hr>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
 <!-- Site-wide floating link to the rendered feedback page. -->
-<a class="floating-feedback" href="../notes/feedback.html">
+<a class="floating-feedback" href="../feedback.html">
   Feedback
 </a>
 <script id="quarto-html-after-body" type="application/javascript">

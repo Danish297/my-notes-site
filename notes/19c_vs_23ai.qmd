@@ -318,3 +318,9 @@ Not every item applies to every deployment. Existing monitoring and troubleshoot
 7. Rehearse security and HA behavior, including rare operations, audit collection, service relocation, client retry, and post-failover backups.
 
 The decision is not simply whether 23ai has more features. It is whether its architectural requirements and operational capabilities improve your environment enough to justify the migration, testing, and runbook changes.
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

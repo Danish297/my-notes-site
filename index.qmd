@@ -39,7 +39,6 @@ Here, I share technical knowledge, hands-on projects, practical notes, and lesso
 <!-- Current learning interests. -->
 
 ## Now {#now}
-
 I'm continuously exploring emerging technologies and expanding my technical knowledge in:
 
 - **Artificial Intelligence:** Generative AI, Local LLMs, and intelligent applications.
@@ -60,7 +59,7 @@ A collection of technical notes, experiments, and learning resources.
 
 ::: {.note-card}
 
-### [Local LLMs](notes/wip.qmd){.card-link}
+### [Local LLMs](notes/local-llm.qmd){.card-link}
 
 Exploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.
 
@@ -70,7 +69,7 @@ Exploring locally hosted Large Language Models to build private, secure, and int
 
 ::: {.note-card}
 
-### [Red Hat OpenShift](notes/wip.qmd){.card-link}
+### [Red Hat OpenShift](notes/openshift.qmd){.card-link}
 
 Developing hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.
 
@@ -80,7 +79,7 @@ Developing hands-on expertise in Kubernetes-based container orchestration, enter
 
 ::: {.note-card}
 
-### [Artificial Intelligence](notes/wip.qmd){.card-link}
+### [Artificial Intelligence](notes/ai.qmd){.card-link}
 
 Exploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.
 
@@ -103,27 +102,26 @@ Selected technical achievements, automation initiatives, and application develop
 
 ::: {.shelf}
 
-### [Oracle Database Recovery & Cloning Automation](Achievements/wip.qmd)
+### [Oracle Database Recovery & Cloning Automation](Achievements/DB_rman-clone-automation.qmd)
 
-Designed and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.
+Designed an automated, menu-driven Oracle Database recovery and cloning framework, replacing manual procedures.
 
-The framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.
+It Reduced weekly cloning time by 41% (11 to 6.5 hours), minimizing errors and improving efficiency, reliability, and scalability.
+:::
+
+::: {.shelf}
+
+### [Oracle DB Creation – Enhancements & Bug Fixes](Achievements/db_script_enhancement.qmd)
+
+Enhanced and modernized the Oracle Database creation framework to support Oracle 10g+ and enable parallel provisioning across 200+ target nodes.
+
+It significantly improving automation, scalability, operational efficiency, and enterprise deployment flexibility.
 
 :::
 
 ::: {.shelf}
 
-### [Oracle DB Creation – Enhancements & Bug Fixes](Achievements/wip.qmd)
-
-Enhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.
-
-Improved automation capabilities, operational efficiency, and deployment flexibility.
-
-:::
-
-::: {.shelf}
-
-### [Banking Application Logic Optimization](Achievements/wip.qmd)
+### [Banking Application Logic Optimization](Achievements/Banking_App_Logic_Optimization.qmd)
 
 Identified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.
 
@@ -133,7 +131,7 @@ Improved application reliability and ensured accurate processing of user-selecte
 
 ::: {.shelf}
 
-### [Video Optimization – VEncoder](Achievements/wip.qmd)
+### [Video Optimization – VEncoder](Achievements/vencoder.qmd)
 
 Developed VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.
 
@@ -153,19 +151,11 @@ A selection of professional experience, technical implementations, automation so
 
 ::: {.project}
 
-### [Oracle Database & EBS Administration](wip.qmd)
+### [Oracle Database & EBS Administration](projects/core-apps-dba.qmd)
 
-Experienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.
+Experienced in Oracle Database and E-Business Suite administration, including installation, configuration, upgrades, and deployments across RAC, non-RAC, CDB/PDB, and EBS 12.1.x/12.2.x environments.
 
-Worked with different database architectures, including:
-
-- Oracle RAC and non-RAC environments.
-- Multitenant architecture (CDB/PDB).
-- Database upgrades and migrations.
-- Oracle EBS 12.1.x and 12.2.x administration.
-- Linux and Solaris environments.
-
-Focused on maintaining supported versions, application compatibility, availability, security, and performance.
+Skilled in Linux and Solaris, with a focus on version compliance, application compatibility, availability, security, and performance.
 
 **Technologies:** `Oracle Database 10g–19c` `Oracle EBS 12.1.x–12.2.x` `Linux` `Solaris`<br>
 **Clients:**
@@ -184,7 +174,7 @@ Focused on maintaining supported versions, application compatibility, availabili
 
 ::: {.project}
 
-### [Hadoop & Big Data Technologies](wip.qmd)
+### [Hadoop & Big Data Technologies](projects/hadoop-bidata.qmd)
 
 Worked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.
 
@@ -203,7 +193,7 @@ Experience includes platform configuration, cluster administration, and supporti
 
 ::: {.project}
 
-### [Cloud Technologies – Azure & GCP](wip.qmd)
+### [Cloud Technologies – Azure & GCP](projects/cloud.qmd)
 
 Exploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.
 
@@ -218,7 +208,7 @@ Focus areas include cloud infrastructure, resource provisioning, deployment arch
 
 ::: {.project}
 
-### [Automation & Scripting](wip.qmd)
+### [Automation & Scripting](projects/automation-scripting.qmd)
 
 Developed automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.
 

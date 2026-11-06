@@ -8,3 +8,10 @@ This website serves as my personal knowledge hub, where I document my learning j
 I believe in continuous learning, hands-on experimentation, and sharing knowledge. Through these notes and projects, I aim to turn what I learn into practical resources that others can explore and build upon.
 
 **Thank you for stopping by!** I hope you find something useful, discover a new idea, or leave inspired to learn and create. Your feedback and suggestions are always welcome.
+
+::: {.page-return-links}
+
+---
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

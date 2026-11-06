@@ -1,14 +1,21 @@
 /* ==================================================
    1. Theme variables
-   Dark colors are the fallback before Quarto applies
-   its theme class.
    ================================================== */
 
 :root {
   --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --nav-height: 40px;
+  --text-gradient: linear-gradient(
+    100deg,
+    #38bdf8,
+    #6366f1,
+    #a78bfa,
+    #38bdf8
+  );
 }
 
+/* Dark mode also serves as the initial fallback. */
 :root,
 body.quarto-dark {
   --bg: #0a0f1a;
@@ -27,27 +34,23 @@ body.quarto-dark {
 }
 
 body.quarto-light {
-  /*--bg: #f8fafc;*/
-  --bg: #EFF6FC;
-/*  --bg-soft: #f1f5f9;*/
-  --bg-soft: #EFF6FC; 
-  --card: #ffffff;
+  --bg: #eff6fc;
+  --bg-soft: #eff6fc;
+  --card: #eff6fc;
   --border: #d6deea;
   --text: #243247;
   --muted: #526277;
   --accent: #087f72;
-/*  --accent-soft: rgba(8, 127, 114, 0.08);*/
-  --accent-soft: #EFF6FC;
+  --accent-soft: #eff6fc;
   --heading: #142238;
-  /*--navbar-bg: rgba(248, 250, 252, 0.95);*/
-  --navbar-bg: #EFF6FC;
+  --navbar-bg: #eff6fc;
   --button-text: #ffffff;
 
   color-scheme: light;
 }
 
 /* ==================================================
-   2. Base and layout
+   2. Base layout
    ================================================== */
 
 html {
@@ -75,7 +78,7 @@ main.content {
 }
 
 /* ==================================================
-   3. Typography and links
+   3. Typography, links, and content alignment
    ================================================== */
 
 h1,
@@ -88,21 +91,21 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
   margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 1.9rem);
   margin-top: 3.5rem;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
 }
 
 h3 {
-  font-size: 1.1rem;
   margin-top: 0;
+  font-size: 1.1rem;
 }
 
 p {
@@ -126,14 +129,54 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+main.content p,
+main.content li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.85;
+}
+
+main.content p {
+  margin-bottom: 1.2rem;
+}
+
+main.content h1,
+main.content h2,
+main.content h3,
+main.content h4,
+main.content h5,
+main.content h6 {
+  text-align: left;
+}
+
 .text-link {
   display: inline-block;
   margin-top: 1.25rem;
   font-weight: 600;
 }
 
+main.content .button,
+main.content .button-secondary,
+main.content .text-link {
+  text-align: center;
+}
+
+/* About text: natural spacing and no automatic word splitting.
+   Requires the .about-copy wrapper in about.qmd. */
+main.content .about-copy p {
+  width: 100%;
+  max-width: none;
+  text-align: left;
+  text-justify: auto;
+  -webkit-hyphens: none;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
 /* ==================================================
-   4. Code and tags
+   4. Code and inline tags
    ================================================== */
 
 code {
@@ -162,14 +205,8 @@ pre {
 }
 
 /* ==================================================
-   5. Hero and buttons
+   5. Hero and profile image
    ================================================== */
-
-/* Remove top spacing around profile image */
-.hero .profile-image {
-  margin-top: 0 !important;
-  display: block;
-}
 
 .hero {
   margin-top: 0;
@@ -177,16 +214,26 @@ pre {
   border-bottom: 1px solid var(--border);
 }
 
-/* Hero text alignment */
+.hero .profile-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0 !important;
+}
+
 .hero p {
   max-width: 70ch;
+  margin-bottom: 1.4rem;
   font-size: 1.15rem;
   line-height: 1.85;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
-  margin-bottom: 1.4rem;
 }
+
+/* ==================================================
+   6. Buttons and Home action grid
+   ================================================== */
 
 .button,
 .button-secondary {
@@ -225,8 +272,29 @@ pre {
   text-decoration: none;
 }
 
+.home-actions > p {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 1.5rem 0;
+}
+
+.home-actions .button,
+.home-actions .button-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
 /* ==================================================
-   6. Grids and cards
+   7. Cards, grids, and projects
    ================================================== */
 
 .featured-grid,
@@ -250,6 +318,7 @@ pre {
 .project {
   min-width: 0;
   border: 1px solid var(--border);
+  overflow-wrap: anywhere;
 }
 
 .note-card,
@@ -310,343 +379,7 @@ pre {
   margin: 0.5rem 0 0.75rem;
 }
 
-
-/* ==================================================
-   7. Navbar - Quarto Headroom Compatible
-   ================================================== */
-
-/* Let Quarto manage fixed positioning and scrolling */
-#quarto-header {
-  z-index: 1030;
-}
-
-/* Main navbar */
-#quarto-header .navbar {
-  --bs-navbar-color: var(--text);
-  --bs-navbar-hover-color: var(--accent);
-  --bs-navbar-active-color: var(--accent);
-  --bs-navbar-brand-color: var(--accent);
-  --bs-navbar-brand-hover-color: var(--accent);
-
-  background: var(--navbar-bg) !important;
-  border-bottom: 1px solid var(--border);
-  /* Retain translucent styling; the background remains usable without blur. */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-
-  width: 100%;
-  min-height: 40px !important;
-  height: auto;
-  padding: 0 !important;
-}
-
-/* Navbar container and alignment */
-#quarto-header .navbar .container,
-#quarto-header .navbar .container-fluid {
-  box-sizing: border-box;
-  max-width: 100% !important;
-  width: 100% !important;
-  min-height: 40px !important;
-  height: auto;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-
-  margin: 0 auto;
-  padding: 0 20px !important;
-}
-
-/* Brand / Website title */
-#quarto-header .navbar .navbar-brand {
-  color: var(--accent);
-  font-weight: 700;
-  white-space: nowrap;
-
-  height: 40px !important;
-  min-height: 40px !important;
-  padding: 0 !important;
-  margin-right: 20px !important;
-
-  display: flex !important;
-  align-items: center !important;
-}
-
-/* Navbar navigation links */
-#quarto-header .navbar .navbar-nav {
-  align-items: center !important;
-}
-
-#quarto-header .navbar .nav-link {
-  color: var(--text);
-  height: 40px !important;
-  min-height: 40px !important;
-  padding: 0 12px !important;
-
-  display: flex !important;
-  align-items: center !important;
-}
-
-#quarto-header .navbar .nav-link:hover,
-#quarto-header .navbar .nav-link.active {
-  color: var(--accent);
-}
-
-/* Navbar collapse and left-side navigation */
-#quarto-header .navbar .navbar-collapse {
-  flex-grow: 1 !important;
-}
-
-/* Right-side tools: Search, social icons and theme toggle */
-#quarto-header .navbar .navbar-nav:last-child,
-#quarto-header .navbar .quarto-navbar-tools {
-  margin-left: auto !important;
-}
-
-#quarto-header .navbar .quarto-navbar-tools {
-  display: flex;
-  align-items: center !important;
-  gap: 12px;
-  flex-shrink: 0 !important;
-}
-
-/* Prevent search and toolbar elements from wrapping */
-#quarto-header .navbar #quarto-search,
-#quarto-header .navbar .quarto-navbar-tools {
-  flex-shrink: 0 !important;
-  align-items: center !important;
-}
-
-/* Search and theme toggle colors */
-#quarto-header .navbar .quarto-color-scheme-toggle,
-#quarto-header .navbar .quarto-navbar-tools .quarto-navigation-tool,
-#quarto-header .navbar #quarto-search .aa-DetachedSearchButton {
-  color: var(--text);
-}
-
-/* Light mode: Search and theme toggle visibility */
-body.quarto-light #quarto-header .quarto-color-scheme-toggle .bi::before,
-body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
-  filter: brightness(0) !important;
-  opacity: 1 !important;
-}
-
-body.quarto-light #quarto-header #quarto-search,
-body.quarto-light #quarto-header #quarto-search button,
-body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButton,
-body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
-  color: var(--text) !important;
-  opacity: 1 !important;
-}
-
-body.quarto-light #quarto-header #quarto-search svg {
-  color: var(--text) !important;
-  stroke: currentColor !important;
-}
-
-/* ==================================================
-   8. Sidebar and footer
-   ================================================== */
-
-#quarto-sidebar {
-  background-color: var(--bg) !important;
-  color: var(--text) !important;
-}
-
-#quarto-sidebar .sidebar-item-text {
-  color: var(--text);
-}
-
-#quarto-sidebar .sidebar-item-text:hover,
-#quarto-sidebar .sidebar-item-text.active {
-  color: var(--accent);
-}
-
-.nav-footer {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-}
-
-/* ==================================================
-   9. Social links
-   ================================================== */
-
-.social-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 1px; /* Horizontal space between icons */
-  row-gap: 2px;     /* Vertical space if icons wrap */
-  margin-top: 0;
-  margin-bottom: 2px;
-}
-
-.social-label {
-  margin-right: 7px;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 0;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-  flex-shrink: 0;
-}
-
-.social-icon img {
-  display: block;
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-}
-
-.social-icon:hover {
-  opacity: 0.75;
-}
-
-/* ==================================================
-   10. Small screens
-   ================================================== */
-
-@media (max-width: 700px) {
-  .button,
-  .button-secondary {
-    width: 100%;
-    margin-right: 0;
-    text-align: center;
-  }
-
-  .note-card,
-  .shelf,
-  .project {
-    padding: 1.1rem;
-  }
-}
-
-/* ==================================================
-   7.2 Theme Toggle - Sun and Moon Icons
-   ================================================== */
-
-/* Theme toggle button */
-#quarto-header .quarto-color-scheme-toggle {
-  position: relative;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 36px;
-  height: 40px;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  color: var(--accent) !important;
-  cursor: pointer;
-}
-
-/* Hide original Quarto icon */
-#quarto-header .quarto-color-scheme-toggle .bi {
-  visibility: hidden !important;
-}
-
-/* Dark mode: Show sun */
-body.quarto-dark #quarto-header
-.quarto-color-scheme-toggle::after {
-  content: "☀";
-  font-size: 23px;
-  line-height: 1;
-  color: var(--accent);
-}
-
-/* Light mode: Bold half-circle */
-body.quarto-light #quarto-header
-.quarto-color-scheme-toggle::after {
-  content: "◐";
-  font-size: 25px;
-  font-weight: 900;
-  color: #087f72;
-  -webkit-text-stroke: 0.8px #087f72;
-}
-
-/* Hover effect */
-#quarto-header .quarto-color-scheme-toggle:hover {
-  opacity: 0.75;
-}
-
-/* Inline social links */
-.social-inline {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2px;
-  margin-top: 12px;
-}
-
-.social-text {
-  margin-right: 14px;
-}
-
-.social-inline .social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease;
-}
-
-.social-inline .social-icon img {
-  display: block;
-  width: 26px;
-  height: 26px;
-}
-
-.social-inline .social-icon:hover {
-  transform: translateY(-3px);
-}
-
-/* ==================================================
-   12. Global Content Text Alignment
-   Apply consistent paragraph alignment throughout
-   the website.
-   ================================================== */
-
-main.content p,
-main.content li {
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  line-height: 1.85;
-}
-
-/* Consistent paragraph spacing */
-main.content p {
-  margin-bottom: 1.2rem;
-}
-
-/* Keep headings naturally left-aligned */
-main.content h1,
-main.content h2,
-main.content h3,
-main.content h4,
-main.content h5,
-main.content h6 {
-  text-align: left;
-}
-
-/* Keep buttons and links naturally aligned */
-main.content .button,
-main.content .button-secondary,
-main.content .text-link {
-  text-align: center;
-}
-
-
-/* ==========================================
-   Fully Clickable Featured Note Cards
-   ========================================== */
-
+/* Full-card clickable links. */
 .note-card .card-link {
   color: inherit;
   text-decoration: none;
@@ -669,25 +402,283 @@ main.content .text-link {
   outline-offset: 3px;
 }
 
-/* ==========================================
-   Professional IT Animated Tagline
-   ========================================== */
+/* ==================================================
+   8. Navbar
+   Quarto retains control of positioning and collapse.
+   ================================================== */
+
+#quarto-header {
+  z-index: 1030;
+}
+
+#quarto-header .navbar {
+  --bs-navbar-color: var(--text);
+  --bs-navbar-hover-color: var(--accent);
+  --bs-navbar-active-color: var(--accent);
+  --bs-navbar-brand-color: var(--accent);
+  --bs-navbar-brand-hover-color: var(--accent);
+
+  width: 100%;
+  min-height: var(--nav-height) !important;
+  height: auto;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border);
+  background: var(--navbar-bg) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+#quarto-header .navbar .container,
+#quarto-header .navbar .container-fluid {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: var(--nav-height) !important;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 20px !important;
+}
+
+#quarto-header .navbar .navbar-brand,
+#quarto-header .navbar .nav-link {
+  display: flex !important;
+  align-items: center !important;
+  height: var(--nav-height) !important;
+  min-height: var(--nav-height) !important;
+}
+
+#quarto-header .navbar .navbar-brand {
+  margin-right: 20px !important;
+  padding: 0 !important;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#quarto-header .navbar .navbar-nav {
+  align-items: center !important;
+}
+
+#quarto-header .navbar .nav-link {
+  padding: 0 12px !important;
+  color: var(--text);
+}
+
+#quarto-header .navbar .nav-link:hover,
+#quarto-header .navbar .nav-link.active,
+#quarto-header .navbar .nav-link[aria-current="page"] {
+  color: var(--accent);
+}
+
+#quarto-header .navbar .nav-link.active,
+#quarto-header .navbar .nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+#quarto-header .navbar .navbar-collapse {
+  flex-grow: 1 !important;
+  min-width: 0;
+}
+
+/* Search, social tools, and theme toggle. */
+#quarto-header .navbar .navbar-nav:last-child,
+#quarto-header .navbar .quarto-navbar-tools {
+  margin-left: auto !important;
+}
+
+#quarto-header .navbar .quarto-navbar-tools {
+  display: flex;
+  gap: 12px;
+}
+
+#quarto-header .navbar #quarto-search,
+#quarto-header .navbar .quarto-navbar-tools {
+  flex-shrink: 0 !important;
+  align-items: center !important;
+}
+
+#quarto-header .navbar .quarto-navbar-tools .quarto-navigation-tool,
+#quarto-header .navbar #quarto-search .aa-DetachedSearchButton {
+  color: var(--text);
+}
+
+body.quarto-light #quarto-header #quarto-search,
+body.quarto-light #quarto-header #quarto-search button,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButton,
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
+  color: var(--text) !important;
+  opacity: 1 !important;
+}
+
+body.quarto-light #quarto-header #quarto-search .aa-DetachedSearchButtonIcon {
+  filter: brightness(0) !important;
+}
+
+body.quarto-light #quarto-header #quarto-search svg {
+  color: var(--text) !important;
+  stroke: currentColor !important;
+}
+
+/* ==================================================
+   9. Theme toggle
+   ================================================== */
+
+#quarto-header .quarto-color-scheme-toggle {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px;
+  height: var(--nav-height);
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  color: var(--accent) !important;
+  cursor: pointer;
+}
+
+#quarto-header .quarto-color-scheme-toggle .bi {
+  visibility: hidden !important;
+}
+
+body.quarto-dark #quarto-header .quarto-color-scheme-toggle::after {
+  content: "☀";
+  color: var(--accent);
+  font-size: 23px;
+  line-height: 1;
+}
+
+body.quarto-light #quarto-header .quarto-color-scheme-toggle::after {
+  content: "◐";
+  color: var(--accent);
+  font-size: 25px;
+  font-weight: 900;
+  -webkit-text-stroke: 0.8px var(--accent);
+}
+
+#quarto-header .quarto-color-scheme-toggle:hover {
+  opacity: 0.75;
+}
+
+/* ==================================================
+   10. Sidebar and footer
+   ================================================== */
+
+#quarto-sidebar {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+#quarto-sidebar .sidebar-item-text {
+  color: var(--text);
+}
+
+#quarto-sidebar .sidebar-item-text:hover,
+#quarto-sidebar .sidebar-item-text.active {
+  color: var(--accent);
+}
+
+.nav-footer {
+  box-sizing: border-box;
+  min-height: var(--nav-height);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+}
+
+.nav-footer > div {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-footer p {
+  margin: 0;
+}
+
+/* ==================================================
+   11. Social links
+   ================================================== */
+
+.social-links,
+.social-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
+
+.social-links {
+  column-gap: 1px;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.social-inline {
+  column-gap: 2px;
+  margin-top: 12px;
+}
+
+.social-label {
+  margin-right: 7px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.social-text {
+  margin-right: 14px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  opacity: 0.75;
+}
+
+.social-inline .social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   12. Animated tagline
+   ================================================== */
 
 .animated-tagline {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px 8px;
   margin: 28px 0;
   padding: 12px 0;
-
   font-size: clamp(0.9rem, 1.8vw, 1.2rem);
   font-weight: 750;
   letter-spacing: -0.3px;
   line-height: 1.4;
 }
 
-/* Solid text is the fallback; only supporting engines receive clipped gradients. */
 .animated-tagline > span:not(.tagline-cursor) {
   display: inline-block;
   color: var(--accent);
@@ -696,16 +687,17 @@ main.content .text-link {
 
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
   .animated-tagline > span:not(.tagline-cursor) {
-    background: linear-gradient(100deg, #38bdf8, #6366f1, #a78bfa, #38bdf8);
+    background: var(--text-gradient);
     background-size: 250% auto;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: taglineReveal 0.8s ease both, taglineGlow 5s linear infinite;
+    animation:
+      taglineReveal 0.8s ease both,
+      taglineGlow 5s linear infinite;
   }
 }
 
-/* Staggered text entrance */
 .animated-tagline > span:not(.tagline-cursor):nth-child(1) {
   animation-delay: 0.2s, 1s;
 }
@@ -718,19 +710,55 @@ main.content .text-link {
   animation-delay: 1s, 1s;
 }
 
-/* Smooth entrance */
+.animated-tagline > .tagline-cursor {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-self: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  gap: 6px;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  background: none;
+  opacity: 1;
+  transform: translateY(7px);
+  animation: none;
+}
+
+.animated-tagline > .tagline-cursor > i {
+  display: block;
+  flex: 0 0 25px;
+  width: 25px;
+  height: 3px;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  background: #38bdf8;
+  box-shadow:
+    0 0 8px #38bdf8,
+    0 0 14px #6366f188;
+  animation: taglineBarBlink 1.2s step-end infinite;
+}
+
+.animated-tagline > .tagline-cursor > i:nth-child(2) {
+  animation-delay: -0.6s;
+}
+
 @keyframes taglineReveal {
   from {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Animated text gradient */
 @keyframes taglineGlow {
   from {
     background-position: 0% center;
@@ -741,53 +769,9 @@ main.content .text-link {
   }
 }
 
-/* Two horizontal blinking bars */
-.animated-tagline > .tagline-cursor {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  align-self: center;
-  justify-content: flex-start;
-  gap: 6px;
-
-  flex: 0 0 auto;
-  width: max-content;
-  margin: 0;
-  padding: 0;
-
-  background: none;
-  opacity: 1;
-  transform: none;
-  animation: none;
-}
-
-/* Individual bars: use empty <i> elements */
-.animated-tagline > .tagline-cursor > i {
-  display: block;
-  flex: 0 0 25px;
-  width: 25px;
-  height: 3px;
-  margin: 0;
-  padding: 0;
-  border-radius: 5px;
-
-  background: #38bdf8;
-  box-shadow:
-    0 0 8px #38bdf8,
-    0 0 14px #6366f188;
-
-  animation: taglineBarBlink 1.2s step-end infinite;
-}
-
-/* Offset the second bar for alternating blinking */
-.animated-tagline > .tagline-cursor > i:nth-child(2) {
-  animation-delay: -0.6s;
-}
-
-/* Fully visible for half the cycle, then fully hidden */
 @keyframes taglineBarBlink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
 
@@ -796,122 +780,10 @@ main.content .text-link {
   }
 }
 
-/* Keep the cursor baseline unchanged in the normal animation mode. */
-.animated-tagline > .tagline-cursor {
-  transform: translateY(7px);
-}
+/* ==================================================
+   13. Profile download
+   ================================================== */
 
-/* Intrinsic image ratio is preserved; dimensions must come from the real asset. */
-.hero .profile-image {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Long URLs and inline tags must not force cards beyond the viewport. */
-.note-card, .shelf, .project {
-  overflow-wrap: anywhere;
-}
-
-/* Quarto/Bootstrap owns collapse state. Do not constrain expanded menu height. */
-#quarto-header .navbar .navbar-collapse {
-  min-width: 0;
-}
-
-/* These rules intentionally come last so hover rules cannot re-enable motion. */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .button, .button-secondary, .note-card, .social-icon,
-  .social-inline .social-icon { transition: none; }
-  .button:hover, .button-secondary:hover, .note-card:hover,
-  .social-inline .social-icon:hover { transform: none; }
-  .animated-tagline > span:not(.tagline-cursor),
-  .animated-tagline > .tagline-cursor > i {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* System colors keep clipped gradient text legible in forced-colors mode. */
-@media (forced-colors: active) {
-  .animated-tagline > span:not(.tagline-cursor) {
-    background: none;
-    color: CanvasText;
-    -webkit-text-fill-color: currentColor;
-  }
-  .animated-tagline > .tagline-cursor > i {
-    background: CanvasText;
-    box-shadow: none;
-  }
-}
-
-/* Floating feedback link: fixed to the viewport, independent of page scrolling. */
-.floating-feedback {
-  position: fixed;
-  right: 1.5rem;
-  bottom: 1.5rem;
-
-  /* Keep clear of supported mobile-device safe areas. */
-  right: calc(0.5rem + env(safe-area-inset-right, 0px));
-  bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
-
-  /* Above ordinary content, below Bootstrap modal dialogs. */
-  z-index: 1040;
-
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 30px;
-  padding: 0.65rem 1.1rem;
-
-  border: 1px solid var(--accent, #64ffda);
-  border-radius: 999px;
-  background: var(--accent, #64ffda);
-  color: var(--button-text, #0a0f1a);
-
-  font-family: var(--font, system-ui, sans-serif);
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.3;
-  white-space: nowrap;
-  text-decoration: none;
-  box-shadow: 0 3px 12px rgb(0 0 0 / 18%);
-}
-
-.floating-feedback:hover {
-  background: var(--accent, #64ffda);
-  color: var(--button-text, #0a0f1a);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.floating-feedback:focus-visible {
-  outline: 3px solid var(--heading, #e6f1ff);
-  outline-offset: 4px;
-}
-
-/* Keep the floating Feedback button clear of the footer */
-.floating-feedback {
-  bottom: calc(40px + 8px + env(safe-area-inset-bottom, 0px));
-}
-
-/* Keep printed pages free of floating interface controls. */
-@media print {
-  .floating-feedback {
-    display: none;
-  }
-}
-
-/* Keep the current navbar tab underlined. */
-#quarto-header .navbar .nav-link.active,
-#quarto-header .navbar .nav-link[aria-current="page"] {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-}
-/* Profile download: Home and About */
 .profile-download {
   margin: 1rem 0 2rem;
 }
@@ -925,7 +797,11 @@ main.content .profile-download p {
   font-size: 0.85rem;
   text-align: left;
 }
-/* Minimal topic suggestion form */
+
+/* ==================================================
+   14. Topic suggestion form
+   ================================================== */
+
 .topic-suggestion-form {
   max-width: 640px;
   margin: 1.5rem 0 2rem;
@@ -957,8 +833,8 @@ main.content .profile-download p {
 }
 
 .topic-suggestion-form textarea {
-  resize: vertical;
   min-height: 120px;
+  resize: vertical;
 }
 
 .topic-suggestion-form input::placeholder,
@@ -991,49 +867,92 @@ main.content .topic-suggestion-form .topic-privacy {
   cursor: pointer;
 }
 
-/* Home: equal-sized buttons with consistent spacing */
-.home-actions > p {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: 1000px;
-  margin: 1.5rem 0;
+/* ==================================================
+   15. Centered return navigation
+   ================================================== */
+
+main.content .page-return-links {
+  width: 100%;
 }
 
-.home-actions .button,
-.home-actions .button-secondary {
+main.content .page-return-links > p {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 1.5rem auto;
+  text-align: center !important;
+}
+
+/* ==================================================
+   16. Floating Feedback button
+   Assumes a 40px footer; remains raised while scrolling.
+   ================================================== */
+
+.floating-feedback {
+  position: fixed;
+  right: calc(0.5rem + env(safe-area-inset-right, 0px));
+  bottom: calc(
+    var(--nav-height) + 8px + env(safe-area-inset-bottom, 0px)
+  );
+  z-index: 1040;
+
   box-sizing: border-box;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 30px;
+  padding: 0.65rem 1.1rem;
 
-  width: 100%;
-  height: 60px;
-  margin: 0;
-  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--button-text);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 18%);
 
-  text-align: center;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
   line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-/* Two columns on smaller screens */
+.floating-feedback:hover {
+  background: var(--accent);
+  color: var(--button-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.floating-feedback:focus-visible {
+  outline: 3px solid var(--heading);
+  outline-offset: 4px;
+}
+
+/* ==================================================
+   17. Responsive layout
+   ================================================== */
+
 @media (max-width: 700px) {
+  .button,
+  .button-secondary {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .note-card,
+  .shelf,
+  .project {
+    padding: 1.1rem;
+  }
+
   .home-actions > p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-/* One column on narrow phones */
-@media (max-width: 400px) {
-  .home-actions > p {
-    grid-template-columns: 1fr;
-  }
-}
-/* Mobile: put all social icons below the introductory text */
-@media (max-width: 700px) {
   .social-inline,
   .social-links {
-    flex-wrap: wrap;
     row-gap: 10px;
   }
 
@@ -1045,26 +964,61 @@ main.content .topic-suggestion-form .topic-privacy {
     text-align: left;
   }
 }
-/* same BG for project and note cards */
-body.quarto-light .project,
-body.quarto-light .note-card {
-  background: #EFF6FC;
+
+@media (max-width: 400px) {
+  .home-actions > p {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Match the footer to the navbar's 40px height */
-.nav-footer {
-  box-sizing: border-box;
-  min-height: 40px;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  align-items: center;
+/* ==================================================
+   18. Accessibility and print
+   Keep these overrides after all animation rules.
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .button-secondary,
+  .note-card,
+  .social-icon {
+    transition: none;
+  }
+
+  .button:hover,
+  .button-secondary:hover,
+  .note-card:hover,
+  .social-inline .social-icon:hover {
+    transform: none;
+  }
+
+  .animated-tagline > span:not(.tagline-cursor),
+  .animated-tagline > .tagline-cursor > i {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.nav-footer > div {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+@media (forced-colors: active) {
+  .animated-tagline > span:not(.tagline-cursor) {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .animated-tagline > .tagline-cursor > i {
+    background: CanvasText;
+    box-shadow: none;
+  }
 }
 
-.nav-footer p {
-  margin: 0;
+@media print {
+  .floating-feedback {
+    display: none;
+  }
 }
+

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="A macOS video conversion application designed to reduce file sizes while retaining source resolution, with multiple codecs, parallel processing, and queue management.">
 
-<title>index – D@n!$h297</title>
+<title>VEncoder: A macOS Application for Efficient Video Encoding – D@n!$h297</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -80,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -293,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">VEncoder: A macOS Application for Efficient Video Encoding</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -345,153 +346,261 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link active" data-scroll-target="#the-challenge">The Challenge</a></li>
+  <li><a href="#the-solution-a-centralized-video-conversion-workflow" id="toc-the-solution-a-centralized-video-conversion-workflow" class="nav-link" data-scroll-target="#the-solution-a-centralized-video-conversion-workflow">The Solution: A Centralized Video Conversion Workflow</a></li>
+  <li><a href="#encoding-controls" id="toc-encoding-controls" class="nav-link" data-scroll-target="#encoding-controls">Encoding Controls</a>
+  <ul class="collapse">
+  <li><a href="#multiple-target-codecs" id="toc-multiple-target-codecs" class="nav-link" data-scroll-target="#multiple-target-codecs">Multiple Target Codecs</a></li>
+  <li><a href="#retaining-source-resolution" id="toc-retaining-source-resolution" class="nav-link" data-scroll-target="#retaining-source-resolution">Retaining Source Resolution</a></li>
+  <li><a href="#language-and-subtitle-preferences" id="toc-language-and-subtitle-preferences" class="nav-link" data-scroll-target="#language-and-subtitle-preferences">Language and Subtitle Preferences</a></li>
+  <li><a href="#configurable-parallel-processing" id="toc-configurable-parallel-processing" class="nav-link" data-scroll-target="#configurable-parallel-processing">Configurable Parallel Processing</a></li>
+  </ul></li>
+  <li><a href="#queue-management" id="toc-queue-management" class="nav-link" data-scroll-target="#queue-management">Queue Management</a>
+  <ul class="collapse">
+  <li><a href="#status-based-filtering" id="toc-status-based-filtering" class="nav-link" data-scroll-target="#status-based-filtering">Status-Based Filtering</a></li>
+  <li><a href="#queue-reordering" id="toc-queue-reordering" class="nav-link" data-scroll-target="#queue-reordering">Queue Reordering</a></li>
+  </ul></li>
+  <li><a href="#output-folders-and-progress-visibility" id="toc-output-folders-and-progress-visibility" class="nav-link" data-scroll-target="#output-folders-and-progress-visibility">Output Folders and Progress Visibility</a>
+  <ul class="collapse">
+  <li><a href="#output-folder-management" id="toc-output-folder-management" class="nav-link" data-scroll-target="#output-folder-management">Output-Folder Management</a></li>
+  <li><a href="#progress-monitoring" id="toc-progress-monitoring" class="nav-link" data-scroll-target="#progress-monitoring">Progress Monitoring</a></li>
+  </ul></li>
+  <li><a href="#project-outcome" id="toc-project-outcome" class="nav-link" data-scroll-target="#project-outcome">Project Outcome</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
-
-
-
-<div class="hero">
-<p><img src="../assets/profile.jpeg" class="profile-image img-fluid"></p>
-<section id="greeting" class="level1">
-<h1>Hi, I’m Danish.</h1>
-<p>I’m a technology enthusiast passionate about exploring emerging technologies and transforming ideas into practical, real-world solutions.</p>
-<p>My interests include <strong>Artificial Intelligence, Local LLMs, Computer Vision, Oracle Database, Cloud Technologies, Kubernetes, OpenShift, Automation, and Software Engineering.</strong></p>
-<p>Here, I share technical knowledge, hands-on projects, practical notes, and lessons learned from continuous experimentation and professional experience.</p>
-<div class="animated-tagline">
-<p><span>Keep learning.</span> <span>Keep building.</span> <span>Turn ideas into reality.</span></p>
-<p><span class="tagline-cursor"> <i></i> <i></i> </span></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">VEncoder: A macOS Application for Efficient Video Encoding</h1>
 </div>
-<p><a href="../notes/11g_Unknown_facts.html" class="button">Explore my notes</a> <a href="#projects" class="button-secondary">View projects</a> <a href="#achievements" class="button">Achievements</a> <a href="#featured-notes" class="button-secondary">Featured Notes</a></p>
-</section>
+
+<div>
+  <div class="description">
+    A macOS video conversion application designed to reduce file sizes while retaining source resolution, with multiple codecs, parallel processing, and queue management.
+  </div>
 </div>
-<section id="now" class="level2">
-<h2 class="anchored" data-anchor-id="now">Now</h2>
-<p>I’m continuously exploring emerging technologies and expanding my technical knowledge in:</p>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>I developed VEncoder, a macOS application designed to make video compression and batch conversion easier to manage.</p>
+<p>The goal was to reduce video file sizes while retaining the original resolution, bring common encoding settings into one interface, and simplify the processing of multiple videos.</p>
+<p>VEncoder combines an FFmpeg-based conversion workflow with codec selection, configurable parallel processing, language preferences, output-folder management, and a searchable conversion queue.</p>
+<section id="the-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-challenge">The Challenge</h2>
+<p>Managing a growing video collection can involve more than choosing a smaller output format. Different files may require different encoding settings, contain multiple language tracks, or need to be processed in a particular order.</p>
+<p>Repeatedly configuring individual conversions also makes larger batches time-consuming to organize.</p>
+<p>I wanted to bring these tasks into a single macOS application that could:</p>
 <ul>
-<li><strong>Artificial Intelligence:</strong> Generative AI, Local LLMs, and intelligent applications.</li>
-<li><strong>Cloud Technologies:</strong> Microsoft Azure, Google Cloud Platform, and cloud-native solutions.</li>
-<li><strong>Containers and Orchestration:</strong> Kubernetes, Red Hat OpenShift, and container technologies.</li>
-<li><strong>Database Technologies:</strong> Oracle Database, cloud databases, and database automation.</li>
-<li><strong>Software Engineering:</strong> Python, Shell scripting, automation, and application development.</li>
+<li>Reduce storage requirements without requiring a lower resolution.</li>
+<li>Provide a choice of target video codecs.</li>
+<li>Process multiple videos through a managed queue.</li>
+<li>Allow control over the number of simultaneous conversions.</li>
+<li>Simplify language selection and output-folder configuration.</li>
+<li>Make progress and processing status visible in one place.</li>
 </ul>
-<p>My focus is on transforming what I learn into practical solutions, improving existing processes, and sharing useful technical insights.</p>
 </section>
-<section id="featured-notes" class="level2">
-<h2 class="anchored" data-anchor-id="featured-notes">Featured Notes</h2>
-<p>A collection of technical notes, experiments, and learning resources.</p>
-<div class="featured-grid">
-<section id="local-llms" class="level3 note-card">
-<h3 class="anchored" data-anchor-id="local-llms"><a href="../notes/wip.html" class="card-link">Local LLMs</a></h3>
-<p>Exploring locally hosted Large Language Models to build private, secure, and intelligent AI applications while maintaining control over sensitive data and infrastructure.</p>
-<p><code>Ollama</code> <code>OpenWebUI</code> <code>LLMs</code></p>
-</section>
-<section id="red-hat-openshift" class="level3 note-card">
-<h3 class="anchored" data-anchor-id="red-hat-openshift"><a href="../notes/wip.html" class="card-link">Red Hat OpenShift</a></h3>
-<p>Developing hands-on expertise in Kubernetes-based container orchestration, enterprise application deployment, hybrid cloud infrastructure, and cloud-native technologies.</p>
-<p><code>OpenShift</code> <code>Kubernetes</code> <code>Containers</code></p>
-</section>
-<section id="artificial-intelligence" class="level3 note-card">
-<h3 class="anchored" data-anchor-id="artificial-intelligence"><a href="../notes/wip.html" class="card-link">Artificial Intelligence</a></h3>
-<p>Exploring how AI can transform ideas into practical applications through intelligent solutions, workflow automation, and emerging generative AI technologies.</p>
-<p><code>ChatGPT</code> <code>Perplexity</code> <code>GenAI</code></p>
-</section>
+<section id="the-solution-a-centralized-video-conversion-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-a-centralized-video-conversion-workflow">The Solution: A Centralized Video Conversion Workflow</h2>
+<p>VEncoder provides a graphical interface for configuring and managing video conversions, rather than requiring users to prepare a separate command for each file.</p>
+<p>The interface brings together encoding settings, input videos, output locations, and queue controls.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/1-Home.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder on macOS showing a welcome panel, codec selection, language and resolution settings, parallel-process control, and an area for adding videos or folders."></p>
+<figcaption>VEncoder welcome screen introducing the application and its main capabilities.</figcaption>
+</figure>
 </div>
-<p><a href="../notes/11g_Unknown_facts.html" class="button text-link">Explore all notes →</a></p>
+<p>The workflow is organized around five steps:</p>
+<ol type="1">
+<li>Add videos or folders.</li>
+<li>Select a target codec.</li>
+<li>Configure resolution, language preferences, and parallel processing.</li>
+<li>Choose output folders.</li>
+<li>Start conversion and monitor the queue.</li>
+</ol>
 </section>
-<section id="achievements" class="level2">
-<h2 class="anchored" data-anchor-id="achievements">Achievements</h2>
-<p>Selected technical achievements, automation initiatives, and application development projects.</p>
-<div class="shelf-grid">
-<section id="oracle-database-recovery-cloning-automation" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="oracle-database-recovery-cloning-automation"><a href="../Achievements/wip.html">Oracle Database Recovery &amp; Cloning Automation</a></h3>
-<p>Designed and implemented a menu-driven Oracle Database recovery and cloning framework, replacing manual operational procedures with a standardized and automated solution.</p>
-<p>The framework improved operational efficiency, reliability, scalability, and database recovery turnaround time.</p>
-</section>
-<section id="oracle-db-creation-enhancements-bug-fixes" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="oracle-db-creation-enhancements-bug-fixes"><a href="../Achievements/wip.html">Oracle DB Creation – Enhancements &amp; Bug Fixes</a></h3>
-<p>Enhanced an existing Oracle Database creation framework to support newer database versions and enable parallel database provisioning across multiple target nodes.</p>
-<p>Improved automation capabilities, operational efficiency, and deployment flexibility.</p>
-</section>
-<section id="banking-application-logic-optimization" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="banking-application-logic-optimization"><a href="../Achievements/wip.html">Banking Application Logic Optimization</a></h3>
-<p>Identified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.</p>
-<p>Improved application reliability and ensured accurate processing of user-selected options.</p>
-</section>
-<section id="video-optimization-vencoder" class="level3 shelf">
-<h3 class="anchored" data-anchor-id="video-optimization-vencoder"><a href="../Achievements/wip.html">Video Optimization – VEncoder</a></h3>
-<p>Developed VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.</p>
-<p>Supports multiple encoding formats and parallel processing to leverage hardware acceleration, improve encoding performance, and optimize storage efficiency.</p>
-</section>
-</div>
-</section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">Projects</h2>
-<p>A selection of professional experience, technical implementations, automation solutions, and personal projects.</p>
-<div class="project-list">
-<section id="oracle-database-ebs-administration" class="level3 project">
-<h3 class="anchored" data-anchor-id="oracle-database-ebs-administration"><a href="../Achievements/wip.html">Oracle Database &amp; EBS Administration</a></h3>
-<p>Experienced in Oracle Database and Oracle E-Business Suite administration, including database and EBS upgrades, installation, configuration, and deployment.</p>
-<p>Worked with different database architectures, including:</p>
+<section id="encoding-controls" class="level2">
+<h2 class="anchored" data-anchor-id="encoding-controls">Encoding Controls</h2>
+<section id="multiple-target-codecs" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-target-codecs">Multiple Target Codecs</h3>
+<p>The interface provides the following target-codec options:</p>
 <ul>
-<li>Oracle RAC and non-RAC environments.</li>
-<li>Multitenant architecture (CDB/PDB).</li>
-<li>Database upgrades and migrations.</li>
-<li>Oracle EBS 12.1.x and 12.2.x administration.</li>
-<li>Linux and Solaris environments.</li>
+<li>H.264 / AVC.</li>
+<li>H.265 / HEVC.</li>
+<li>VP9.</li>
+<li>AV1.</li>
+<li>H.266 / VVC.</li>
 </ul>
-<p>Focused on maintaining supported versions, application compatibility, availability, security, and performance.</p>
-<p><strong>Technologies:</strong> <code>Oracle Database 10g–19c</code> <code>Oracle EBS 12.1.x–12.2.x</code> <code>Linux</code> <code>Solaris</code><br> <strong>Clients:</strong> <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> · <a href="https://www.mountsinai.org/" target="_blank" rel="noopener noreferrer">Mount Sinai</a> · <a href="https://www.ecgc.in/" target="_blank" rel="noopener noreferrer">ECGC</a> · <a href="https://www.netapp.com/" target="_blank" rel="noopener noreferrer">NetApp</a> · <a href="https://www.hdfc.bank.in/" target="_blank" rel="noopener noreferrer">HDFC Bank</a> · <a href="https://www.bell.ca/" target="_blank" rel="noopener noreferrer">Bell</a> · <a href="https://www.telefonica.com/en/" target="_blank" rel="noopener noreferrer">Telefónica</a> · <a href="https://www.bajajfinserv.in/" target="_blank" rel="noopener noreferrer">Bajaj Finserv</a> · <a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> · <a href="https://duniyafinance.com/" target="_blank" rel="noopener noreferrer">Duniya Finance</a></p>
-</section>
-<section id="hadoop-big-data-technologies" class="level3 project">
-<h3 class="anchored" data-anchor-id="hadoop-big-data-technologies"><a href="../Achievements/wip.html">Hadoop &amp; Big Data Technologies</a></h3>
-<p>Worked with enterprise Big Data platforms and distributed data-processing technologies, including Hadoop ecosystems and streaming platforms.</p>
-<p>Experience includes platform configuration, cluster administration, and supporting enterprise Big Data environments.</p>
-<p><strong>Technologies:</strong> <code>Hortonworks</code> <code>Cloudera</code> <code>Kafka</code> <code>Hadoop</code><br> <strong>Clients:</strong> <a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> · <a href="https://www.bmo.com/en-ca/main/personal/" target="_blank" rel="noopener noreferrer">BMO</a> · <a href="https://www.gapinc.com/en-us/" target="_blank" rel="noopener noreferrer">GAP</a> · <a href="https://www.marriott.com/default.mi" target="_blank" rel="noopener noreferrer">Marriott</a> · <a href="https://www.sncf-connect.com/en-en" target="_blank" rel="noopener noreferrer">SNCF</a> · <a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a></p>
-</section>
-<section id="cloud-technologies-azure-gcp" class="level3 project">
-<h3 class="anchored" data-anchor-id="cloud-technologies-azure-gcp"><a href="../Achievements/wip.html">Cloud Technologies – Azure &amp; GCP</a></h3>
-<p>Exploring and working with cloud infrastructure and services across Microsoft Azure and Google Cloud Platform.</p>
-<p>Focus areas include cloud infrastructure, resource provisioning, deployment architectures, and integrating enterprise technologies with cloud platforms.</p>
-<p><strong>Technologies:</strong> <code>Microsoft Azure</code> <code>Google Cloud Platform</code><br> <strong>Clients:</strong> <a href="https://www.rogers.com/" target="_blank" rel="noopener noreferrer">Rogers Communications</a> · <a href="https://www.enbridge.com/" target="_blank" rel="noopener noreferrer">Enbridge</a></p>
-</section>
-<section id="automation-scripting" class="level3 project">
-<h3 class="anchored" data-anchor-id="automation-scripting"><a href="../Achievements/wip.html">Automation &amp; Scripting</a></h3>
-<p>Developed automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.</p>
-<p>Focused on automating daily administrative tasks, routine jobs, and operational workflows.</p>
-<p><strong>Technologies:</strong> <code>Python</code> <code>Shell</code> <code>PowerShell</code><br> <strong>Clients:</strong> <a href="https://www.ca-cib.com/" target="_blank" rel="noopener noreferrer">CACIB</a> · <a href="https://www.mastercard.com/global/en.html" target="_blank" rel="noopener noreferrer">Mastercard</a> · <a href="https://www.zakathouse.org.kw/indexe.aspx" target="_blank" rel="noopener noreferrer">Zakathouse</a> · <a href="https://www.knitwellgroup.com/" target="_blank" rel="noopener noreferrer">Ascena</a></p>
-</section>
+<p>These options allow the encoding workflow to accommodate different storage and playback requirements.</p>
+<p>The interface also includes codec information popovers, giving users additional context when choosing an encoding format.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/3-Encoder.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder showing target-codec options for H.264, H.265, VP9, AV1, and H.266, with an H.265 information popover open."></p>
+<figcaption>VEncoder codec-selection panel with an information popover for H.265 / HEVC.</figcaption>
+</figure>
 </div>
-<p><a href="https://github.com/Danish297" class="text-link">Explore all projects on GitHub →</a></p>
+<p>The available encoder and hardware-acceleration path depend on the installed FFmpeg build, selected codec, and capabilities of the Mac. A codec appearing in the interface does not mean every Mac can encode it using hardware acceleration.</p>
 </section>
-<section id="elsewhere" class="level2">
-<h2 class="anchored" data-anchor-id="elsewhere">Elsewhere</h2>
-<div class="social-inline" role="group" aria-label="Social media profiles">
-
-  <span class="social-text">Connect with me on these platforms:</span>
-
-  <a class="social-icon" href="https://linkedin.com/in/hasnain-danish-shaikh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-    <img src="../assets/linkedin.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://github.com/Danish297" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-    <img src="../assets/github.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://facebook.com/danish297" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile">
-    <img src="../assets/facebook.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://x.com/danish297/" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-    <img src="../assets/x.svg" alt="" width="26" height="26">
-  </a>
-
-  <a class="social-icon" href="https://instagram.com/danishfrnz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-    <img src="../assets/instagram.svg" alt="" width="26" height="26">
-  </a>
-
+<section id="retaining-source-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="retaining-source-resolution">Retaining Source Resolution</h3>
+<p>VEncoder includes a “Same as source” resolution option, allowing users to retain the input video’s frame dimensions during conversion.</p>
+<p>This supports the project’s main objective: reducing file size without requiring a reduction in resolution.</p>
+<p>Preserving resolution does not mean the output is lossless. The final file size and visual quality still depend on the source material and encoding settings.</p>
+</section>
+<section id="language-and-subtitle-preferences" class="level3">
+<h3 class="anchored" data-anchor-id="language-and-subtitle-preferences">Language and Subtitle Preferences</h3>
+<p>A native-language preference helps guide automatic language and subtitle selection.</p>
+<p>The interface accepts a short language code, bringing this preference into the conversion setup rather than requiring users to configure it separately for each video.</p>
+</section>
+<section id="configurable-parallel-processing" class="level3">
+<h3 class="anchored" data-anchor-id="configurable-parallel-processing">Configurable Parallel Processing</h3>
+<p>The parallel-process control allows users to choose how many conversions run simultaneously.</p>
+<p>This provides a way to tune batch processing to the available system resources. Hardware acceleration, where supported, can complement this workflow, but parallel processing and hardware acceleration are separate capabilities.</p>
+<p>More simultaneous conversions do not automatically mean faster completion. The most suitable setting depends on the encoding workload and the machine’s available resources.</p>
+</section>
+</section>
+<section id="queue-management" class="level2">
+<h2 class="anchored" data-anchor-id="queue-management">Queue Management</h2>
+<p>A batch conversion tool needs more than encoding controls. It also needs to make a large collection of pending and completed work easy to navigate.</p>
+<p>VEncoder includes a queue with search, status filtering, and controls for adding videos, clearing completed entries, and clearing the queue.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/2-Queue.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder showing six queued videos and a status-filter menu with All, Converting, Waiting, Paused, Stopped, Completed, Failed, and Canceled categories."></p>
+<figcaption>VEncoder conversion queue with its status-filter menu open.</figcaption>
+</figure>
+</div>
+<section id="status-based-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="status-based-filtering">Status-Based Filtering</h3>
+<p>The queue can be filtered by processing state:</p>
+<ul>
+<li>All.</li>
+<li>Converting.</li>
+<li>Waiting.</li>
+<li>Paused.</li>
+<li>Stopped.</li>
+<li>Completed.</li>
+<li>Failed.</li>
+<li>Canceled.</li>
+</ul>
+<p>These categories help separate videos awaiting conversion from those that have finished or require attention.</p>
+</section>
+<section id="queue-reordering" class="level3">
+<h3 class="anchored" data-anchor-id="queue-reordering">Queue Reordering</h3>
+<p>Users can change the order of queued videos using:</p>
+<ul>
+<li>Move to Top.</li>
+<li>Move to Bottom.</li>
+<li>Move Up.</li>
+<li>Move Down.</li>
+</ul>
+<p>This allows priorities to change without removing and re-adding files.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/4-Move.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder displaying a queue-entry menu with Move to Top, Move to Bottom, Move Up, and Move Down options."></p>
+<figcaption>Queue-reordering controls for changing a video’s position in the conversion list.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="output-folders-and-progress-visibility" class="level2">
+<h2 class="anchored" data-anchor-id="output-folders-and-progress-visibility">Output Folders and Progress Visibility</h2>
+<section id="output-folder-management" class="level3">
+<h3 class="anchored" data-anchor-id="output-folder-management">Output-Folder Management</h3>
+<p>The output-folder panel keeps destination locations visible alongside the conversion settings.</p>
+<p>Users can add folders and manage the listed destinations from the same interface used to prepare the conversion queue.</p>
+</section>
+<section id="progress-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="progress-monitoring">Progress Monitoring</h3>
+<p>The application includes both queue-level status counts and an overall progress area.</p>
+<p>The interface provides space for:</p>
+<ul>
+<li>Overall completion percentage.</li>
+<li>Estimated remaining time.</li>
+<li>Average processing speed.</li>
+<li>Counts of completed, running, waiting, paused, and canceled items.</li>
+</ul>
+<p>This keeps the state of a batch visible without requiring users to inspect individual conversion commands.</p>
+</section>
+</section>
+<section id="project-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="project-outcome">Project Outcome</h2>
+<p>VEncoder brings video conversion setup and batch management into one macOS interface.</p>
+<p>The project combines:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Capability</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Multiple target codecs</td>
+<td style="text-align: left;">Provide flexibility when configuring conversions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Same-as-source resolution</td>
+<td style="text-align: left;">Retain the input video’s frame dimensions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Parallel processing</td>
+<td style="text-align: left;">Configure the number of simultaneous conversions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Language preferences</td>
+<td style="text-align: left;">Simplify language and subtitle selection</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Queue search and filters</td>
+<td style="text-align: left;">Find videos and review processing states</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queue reordering</td>
+<td style="text-align: left;">Adjust conversion priorities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Output-folder management</td>
+<td style="text-align: left;">Keep destination locations organized</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Progress indicators</td>
+<td style="text-align: left;">Track batch execution from one interface</td>
+</tr>
+</tbody>
+</table>
+<p>The screenshots demonstrate the application’s interface and workflow. They do not establish a measured compression ratio, encoding-speed improvement, or visual-quality score.</p>
+<p>Those results require before-and-after testing with documented source files, encoding settings, and hardware.</p>
+</section>
+<section id="key-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
+<p>VEncoder turns a collection of video conversion tasks into a structured, manageable workflow.</p>
+<p>Its central design goal is to improve storage efficiency while retaining source resolution, supported by flexible encoding options, configurable parallel processing, and practical queue-management controls.</p>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
 </div>
 
 
@@ -499,7 +608,7 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <!-- Site-wide floating link to the rendered feedback page. -->
-<a class="floating-feedback" href="../Achievements/feedback.html">
+<a class="floating-feedback" href="../feedback.html">
   Feedback
 </a>
 <script id="quarto-html-after-body" type="application/javascript">

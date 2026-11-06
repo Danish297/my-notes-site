@@ -1,5 +1,6 @@
 ---
 title: "Feedback"
+sidebar: false
 description: "Share feedback, report an issue, or suggest a topic."
 toc: false
 css:

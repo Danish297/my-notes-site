@@ -1,5 +1,0 @@
-# 404 — Page not found
-
-The page you requested is under development.
-
-[Return home](index.qmd)
