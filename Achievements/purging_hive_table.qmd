@@ -1,0 +1,122 @@
+---
+title: "Automating Hive Data Retention with Python"
+description: "A Python-based framework for automatically purging Hive data older than 36 months, simplifying recurring housekeeping and supporting consistent retention management."
+toc: true
+---
+
+I developed a Python-based framework to automatically purge data older
+than 36 months from Hive tables.
+
+The framework replaced repetitive cleanup activities with an automated,
+retention-based workflow, helping keep historical data management aligned
+with business requirements.
+
+## 1. The Challenge
+
+As historical data accumulated in Hive tables, recurring housekeeping
+was needed to manage information beyond the required retention period.
+
+Handling these activities manually meant repeatedly reviewing data
+eligibility and carrying out cleanup operations across the relevant
+tables.
+
+The objective was to simplify this process while applying a consistent
+36-month retention rule.
+
+The main priorities were:
+
+- Identify data that had exceeded the required retention period.
+- Reduce repetitive manual cleanup activities.
+- Apply the same retention criteria consistently.
+- Support storage housekeeping as historical data accumulated.
+- Make recurring purging activities easier to maintain.
+
+## 2. Technical Solution
+
+I developed a Python-based framework to automate the purging workflow
+for Hive tables containing data older than 36 months.
+
+The framework brought the retention rule and cleanup process into a
+reusable automation solution rather than treating each cleanup as an
+independent manual task.
+
+### Retention-Based Processing
+
+The central rule was straightforward:
+
+> Data older than 36 months becomes eligible for purging under the
+> applicable retention requirements.
+
+The retention period applies to the age of the data, rather than
+automatically treating a table's creation date as the age of every
+record it contains.
+
+### Automated Housekeeping
+
+The framework automated recurring purging activities, reducing the need
+for administrators to repeat the same cleanup steps manually.
+
+This provided a consistent approach to handling expired data across
+the Hive tables covered by the framework.
+
+### Reusable Python Framework
+
+Using a framework-based approach made the automation easier to maintain
+than a collection of separate, one-time cleanup scripts.
+
+The work focused on turning a recurring administrative requirement into
+a repeatable operational workflow.
+
+## 3. Workflow Overview
+
+The following summarizes the purpose of the framework at a high level,
+rather than documenting its internal implementation.
+
+| Stage | Purpose |
+|:--|:--|
+| Retention scope | Define the Hive data covered by the 36-month retention requirement |
+| Eligibility assessment | Identify data older than the retention threshold |
+| Purging | Execute cleanup for the eligible data within scope |
+| Ongoing operation | Repeat the retention-based housekeeping process |
+
+## 4. Results and Operational Impact
+
+The framework established an automated approach to Hive data-retention
+housekeeping.
+
+Its operational value included:
+
+- Reduced repetitive manual intervention.
+- More consistent application of the 36-month retention rule.
+- A reusable process for recurring cleanup.
+- Support for managing obsolete historical data.
+- A foundation for maintaining retention-based housekeeping as
+  operational requirements evolve.
+
+The project also supported storage-reclamation objectives by addressing
+data no longer required under the retention rule.
+
+No specific storage-saving figure, execution-time reduction, or query
+performance improvement is claimed here because those outcomes were
+not separately quantified.
+
+## 5. Key Achievement
+
+Developed a Python-based Hive purging framework that automated the
+cleanup of data older than 36 months.
+
+The achievement combined scripting and operational automation to
+simplify recurring administration and support consistent data-retention
+management.
+
+## Technologies
+
+Python · Apache Hive · Hadoop Ecosystem
+
+---
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::
