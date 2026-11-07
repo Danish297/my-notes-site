@@ -185,3 +185,33 @@ main.content .fb-page small {
   max-width: none;
   margin: 0;
 }
+
+/* Feedback submission states */
+.fb-page #fb-status {
+  max-width: none;
+  overflow-wrap: anywhere;
+}
+
+.fb-page #fb-status[data-state="sending"] {
+  border-left-style: dashed;
+}
+
+.fb-page #fb-status[data-state="success"] {
+  border-left-width: 5px;
+}
+
+.fb-page #fb-status[data-state="error"] {
+  border-left-width: 5px;
+  border-left-style: double;
+}
+
+.fb-page .fb-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fb-page #feedback-form[aria-busy="true"] {
+  cursor: progress;
+}

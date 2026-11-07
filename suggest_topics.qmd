@@ -183,3 +183,12 @@ of what you would like me to cover.
 ```
 
 Suggestions help me plan future notes, but publication is not guaranteed.
+
+---
+
+::: {.page-return-links}
+
+[Home](index.qmd) | [Achievements](index.qmd#achievements) | [Featured Notes](index.qmd#featured-notes) | [Projects](index.qmd#projects) | [Notes](notes/11g_Unknown_facts.qmd)
+
+:::
+

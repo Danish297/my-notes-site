@@ -62,7 +62,7 @@ format:
     css: styles.css
     # Add the floating feedback link to every rendered HTML page.
     include-after-body:
-      - _includes/floating-feedback.html 
+      - includes/floating-feedback.html 
     toc: false
     code-copy: true
     link-external-icon: true

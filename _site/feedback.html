@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Share feedback, report an issue, or suggest a topic.">
+<meta name="description" content="Share feedback, report an issue, or suggest an improvement.">
 
 <title>Feedback – D@n!$h297</title>
 <style>
@@ -307,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Share feedback, report an issue, or suggest a topic.
+    Share feedback, report an issue, or suggest an improvement.
   </div>
 </div>
 
@@ -325,81 +325,447 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="fb-page">
-  <!-- Introduction and privacy guidance remain visible without JavaScript. -->
+
   <div class="fb-intro">
     <span class="fb-eyebrow">HELP IMPROVE THIS SITE</span>
+
     <h2 class="anchored">Your experience matters.</h2>
-    <p>Found something useful, spotted a problem, or have an idea? Share what worked and what could be better.</p>
-    <ul class="fb-badges"><li>Contact details optional</li><li>No account needed</li><li>Only relevant details</li></ul>
+
+    <p>
+      Found something useful, spotted a problem, or have an idea?
+      Share what worked and what could be better.
+    </p>
+
+    <ul class="fb-badges">
+      <li>Contact details optional</li>
+      <li>No account needed</li>
+      <li>Only relevant details</li>
+    </ul>
   </div>
+
   <div class="fb-layout">
+
     <div class="fb-aside" role="note" aria-label="Before you start">
       <h2 class="anchored">A quick note</h2>
-      <p>Fields marked “required” must be completed. Everything else is optional.</p>
-      <p>Please do not include passwords, API keys, financial details, private client information, or sensitive logs.</p>
-      <p>For evidence, share a safe, redacted link. File uploads are not enabled.</p>
-      <p>Do not submit vulnerability details here. A private security reporting channel must be established separately.</p>
+
+      <p>
+        Fields marked “required” must be completed.
+        Everything else is optional.
+      </p>
+
+      <p>
+        Feedback is sent through FormSubmit to the site owner.
+        Please do not include passwords, API keys, financial details,
+        private client information, or sensitive logs.
+      </p>
+
+      <p>
+        For evidence, share a safe, redacted link.
+        File uploads are not enabled.
+      </p>
+
+      <p>
+        Do not submit vulnerability details through this form.
+        Use an agreed private security-reporting channel instead.
+      </p>
+
+      <p>
+        Your entries are cleared only after submission is confirmed.
+        If submission fails, they remain in the form.
+      </p>
     </div>
-    <!-- Set data-endpoint to an HTTPS receiver supporting this form's fields.
-         Keep it empty until server validation, privacy terms and spam controls are ready.
-         Native POST navigation lets the receiver own confirmed success/failure pages. -->
-    <form id="feedback-form" class="fb-form" method="post" data-endpoint="" aria-describedby="fb-status">
-      <p id="fb-status" class="fb-notice" role="status">Preview mode: sending is not configured. Your entries are not sent by this form.</p>
-      <noscript><p>JavaScript is required to enable this form. No submission is available without it.</p></noscript>
-      <!-- Disabled until the script attaches its submission guard. -->
+
+    <form id="feedback-form" class="fb-form" action="https://formsubmit.co/hasnainfrnz@gmail.com" method="POST" aria-describedby="fb-status">
+      <input type="hidden" name="_subject" value="New website feedback — Danish297">
+
+      <p id="fb-status" class="fb-notice" role="status" aria-live="polite" aria-atomic="true">
+        Feedback is sent through FormSubmit to the site owner.
+        Please do not include personal, confidential, or sensitive information.
+      </p>
+
+      <noscript>
+        <p>
+          JavaScript is required to enable this form.
+          No submission is available without it.
+        </p>
+      </noscript>
+
       <fieldset id="fb-controls" disabled="">
         <legend>1. What would you like to share?</legend>
 
-<div class="fb-field"><label for="fb-category">Feedback type (required)</label><select id="fb-category" name="category" required=""><option value="">Choose an option</option><option value="general">General feedback</option><option value="praise">Something I liked</option><option value="suggestion">Improvement or feature suggestion</option><option value="bug">Bug or technical issue</option><option value="correction">Content correction or broken link</option><option value="topic">Request a topic or tutorial</option><option value="accessibility">Accessibility issue</option><option value="privacy">Privacy concern (no sensitive details)</option><option value="other">Something else</option></select></div>
-<div class="fb-field"><label for="fb-subject">Short summary (required)</label><input id="fb-subject" name="subject" type="text" required="" maxlength="160"></div>
-<div class="fb-field"><label for="fb-message">Tell me more (required)</label><textarea id="fb-message" name="message" rows="5" maxlength="5000" required=""></textarea><small>Maximum 5,000 characters.</small></div>
-<div class="fb-field"><label for="fb-page_url">Page URL related to your feedback</label><input id="fb-page_url" name="page_url" type="url" maxlength="2048" placeholder="https://…"></div>
-<details class="fb-details"><summary>Ratings and interests (optional)</summary><div class="fb-grid">
-<div class="fb-field"><label for="fb-overall">Overall experience</label><select id="fb-overall" name="overall"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-usefulness">Content usefulness</label><select id="fb-usefulness" name="usefulness"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-navigation">Ease of navigation</label><select id="fb-navigation" name="navigation"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-speed">Loading speed</label><select id="fb-speed" name="speed"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-design">Design and readability</label><select id="fb-design" name="design"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-</div><fieldset class="fb-topics"><legend>Topics you are interested in</legend>
-<label class="fb-check"><input type="checkbox" name="topics" value="ai"> <span>AI and local LLMs</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="vision"> <span>Computer vision</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="oracle"> <span>Oracle Database and EBS</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="cloud"> <span>Cloud technologies</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="containers"> <span>Kubernetes and OpenShift</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="automation"> <span>Automation and scripting</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="other"> <span>Other</span></label>
-</fieldset></details>
-<!-- Technical details are optional and never collected automatically. -->
-<details class="fb-details"><summary>Issue details (for bugs, corrections, or accessibility problems)</summary>
-<div class="fb-field"><label for="fb-steps">Steps to reproduce the problem</label><textarea id="fb-steps" name="steps" rows="5" maxlength="3000"></textarea><small>Maximum 3,000 characters.</small></div>
-<div class="fb-field"><label for="fb-expected">What did you expect?</label><textarea id="fb-expected" name="expected" rows="5" maxlength="2000"></textarea><small>Maximum 2,000 characters.</small></div>
-<div class="fb-field"><label for="fb-actual">What actually happened?</label><textarea id="fb-actual" name="actual" rows="5" maxlength="2000"></textarea><small>Maximum 2,000 characters.</small></div>
-<div class="fb-grid">
-<div class="fb-field"><label for="fb-impact">How much does this affect you?</label><select id="fb-impact" name="impact"><option value="">Choose an option</option><option value="minor">Minor inconvenience</option><option value="workaround">Disruptive, but I have a workaround</option><option value="blocked">I cannot complete what I came to do</option></select></div>
-<div class="fb-field"><label for="fb-frequency">How often does it happen?</label><select id="fb-frequency" name="frequency"><option value="">Choose an option</option><option value="once">Once</option><option value="sometimes">Sometimes</option><option value="always">Every time</option></select></div>
-<div class="fb-field"><label for="fb-browser">Browser</label><select id="fb-browser" name="browser"><option value="">Choose an option</option><option value="Safari">Safari</option><option value="Microsoft Edge">Microsoft Edge</option><option value="Google Chrome">Google Chrome</option><option value="Mozilla Firefox">Mozilla Firefox</option><option value="Opera">Opera</option><option value="Other">Other</option><option value="Not sure">Not sure</option></select></div>
-<div class="fb-field"><label for="fb-browser_version">Browser version</label><input id="fb-browser_version" name="browser_version" type="text" maxlength="80"></div>
-<div class="fb-field"><label for="fb-device">Device type</label><select id="fb-device" name="device"><option value="">Choose an option</option><option value="desktop">Desktop</option><option value="laptop">Laptop</option><option value="tablet">Tablet</option><option value="phone">Phone</option><option value="other">Other / not sure</option></select></div>
-<div class="fb-field"><label for="fb-os">Operating system and version</label><input id="fb-os" name="os" type="text" maxlength="120"></div>
-<div class="fb-field"><label for="fb-theme">Site appearance</label><select id="fb-theme" name="theme"><option value="">Choose an option</option><option value="light">Light</option><option value="dark">Dark</option><option value="unknown">Not sure</option></select></div>
-<div class="fb-field"><label for="fb-assistive_technology">Assistive technology or zoom setting, if relevant</label><input id="fb-assistive_technology" name="assistive_technology" type="text" maxlength="160"></div>
+        <div class="fb-field">
+          <label for="fb-category">
+            Feedback type (required)
+          </label>
+
+          <select id="fb-category" name="category" required="">
+            <option value="">Choose an option</option>
+            <option value="general">General feedback</option>
+            <option value="praise">Something I liked</option>
+            <option value="suggestion">
+              Improvement or feature suggestion
+            </option>
+            <option value="bug">Bug or technical issue</option>
+            <option value="correction">
+              Content correction or broken link
+            </option>
+            <option value="topic">Request a topic or tutorial</option>
+            <option value="accessibility">Accessibility issue</option>
+            <option value="privacy">
+              Privacy concern (no sensitive details)
+            </option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="fb-field">
+          <label for="fb-subject">
+            Short summary (required)
+          </label>
+
+          <input id="fb-subject" name="subject" type="text" maxlength="160" placeholder="Briefly describe your feedback" required="">
+        </div>
+
+        <div class="fb-field">
+          <label for="fb-message">
+            Tell me more (required)
+          </label>
+
+          <textarea id="fb-message" name="message" rows="5" maxlength="5000" placeholder="What worked well, what needs improvement, or what went wrong?" aria-describedby="fb-message-help" required=""></textarea>
+
+          <small id="fb-message-help">
+            Maximum 5,000 characters.
+          </small>
+        </div>
+
+        <div class="fb-field">
+          <label for="fb-page_url">
+            Page URL related to your feedback
+          </label>
+
+          <input id="fb-page_url" name="page_url" type="url" maxlength="2048" placeholder="[https://](https://)...">
+        </div>
+
+        <details class="fb-details">
+          <summary>Ratings and interests (optional)</summary>
+
+          <div class="fb-grid">
+
+            <div class="fb-field">
+              <label for="fb-overall">Overall experience</label>
+
+              <select id="fb-overall" name="overall">
+                <option value="">Choose an option</option>
+                <option value="1">1 — Very poor</option>
+                <option value="2">2 — Poor</option>
+                <option value="3">3 — Okay</option>
+                <option value="4">4 — Good</option>
+                <option value="5">5 — Excellent</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-usefulness">Content usefulness</label>
+
+              <select id="fb-usefulness" name="usefulness">
+                <option value="">Choose an option</option>
+                <option value="1">1 — Very poor</option>
+                <option value="2">2 — Poor</option>
+                <option value="3">3 — Okay</option>
+                <option value="4">4 — Good</option>
+                <option value="5">5 — Excellent</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-navigation">Ease of navigation</label>
+
+              <select id="fb-navigation" name="navigation">
+                <option value="">Choose an option</option>
+                <option value="1">1 — Very poor</option>
+                <option value="2">2 — Poor</option>
+                <option value="3">3 — Okay</option>
+                <option value="4">4 — Good</option>
+                <option value="5">5 — Excellent</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-speed">Loading speed</label>
+
+              <select id="fb-speed" name="speed">
+                <option value="">Choose an option</option>
+                <option value="1">1 — Very poor</option>
+                <option value="2">2 — Poor</option>
+                <option value="3">3 — Okay</option>
+                <option value="4">4 — Good</option>
+                <option value="5">5 — Excellent</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-design">Design and readability</label>
+
+              <select id="fb-design" name="design">
+                <option value="">Choose an option</option>
+                <option value="1">1 — Very poor</option>
+                <option value="2">2 — Poor</option>
+                <option value="3">3 — Okay</option>
+                <option value="4">4 — Good</option>
+                <option value="5">5 — Excellent</option>
+              </select>
+            </div>
+
+          </div>
+
+          <fieldset class="fb-topics">
+            <legend>Topics you are interested in</legend>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="AI and local LLMs">
+              <span>AI and local LLMs</span>
+            </label>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="Computer vision">
+              <span>Computer vision</span>
+            </label>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="Oracle Database and EBS">
+              <span>Oracle Database and EBS</span>
+            </label>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="Cloud technologies">
+              <span>Cloud technologies</span>
+            </label>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="Kubernetes and OpenShift">
+              <span>Kubernetes and OpenShift</span>
+            </label>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="Automation and scripting">
+              <span>Automation and scripting</span>
+            </label>
+
+            <label class="fb-check">
+              <input type="checkbox" name="topics" value="Other">
+              <span>Other</span>
+            </label>
+          </fieldset>
+        </details>
+
+        <details class="fb-details">
+          <summary>
+            Issue details (for bugs, corrections, or accessibility problems)
+          </summary>
+
+          <div class="fb-field">
+            <label for="fb-steps">
+              Steps to reproduce the problem
+            </label>
+
+            <textarea id="fb-steps" name="steps" rows="5" maxlength="3000" aria-describedby="fb-steps-help"></textarea>
+
+            <small id="fb-steps-help">
+              Maximum 3,000 characters.
+            </small>
+          </div>
+
+          <div class="fb-field">
+            <label for="fb-expected">What did you expect?</label>
+
+            <textarea id="fb-expected" name="expected" rows="5" maxlength="2000" aria-describedby="fb-expected-help"></textarea>
+
+            <small id="fb-expected-help">
+              Maximum 2,000 characters.
+            </small>
+          </div>
+
+          <div class="fb-field">
+            <label for="fb-actual">What actually happened?</label>
+
+            <textarea id="fb-actual" name="actual" rows="5" maxlength="2000" aria-describedby="fb-actual-help"></textarea>
+
+            <small id="fb-actual-help">
+              Maximum 2,000 characters.
+            </small>
+          </div>
+
+          <div class="fb-grid">
+
+            <div class="fb-field">
+              <label for="fb-impact">
+                How much does this affect you?
+              </label>
+
+              <select id="fb-impact" name="impact">
+                <option value="">Choose an option</option>
+                <option value="minor">Minor inconvenience</option>
+                <option value="workaround">
+                  Disruptive, but I have a workaround
+                </option>
+                <option value="blocked">
+                  I cannot complete what I came to do
+                </option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-frequency">
+                How often does it happen?
+              </label>
+
+              <select id="fb-frequency" name="frequency">
+                <option value="">Choose an option</option>
+                <option value="once">Once</option>
+                <option value="sometimes">Sometimes</option>
+                <option value="always">Every time</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-browser">Browser</label>
+
+              <select id="fb-browser" name="browser">
+                <option value="">Choose an option</option>
+                <option value="Safari">Safari</option>
+                <option value="Microsoft Edge">Microsoft Edge</option>
+                <option value="Google Chrome">Google Chrome</option>
+                <option value="Mozilla Firefox">Mozilla Firefox</option>
+                <option value="Opera">Opera</option>
+                <option value="Other">Other</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-browser_version">Browser version</label>
+
+              <input id="fb-browser_version" name="browser_version" type="text" maxlength="80">
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-device">Device type</label>
+
+              <select id="fb-device" name="device">
+                <option value="">Choose an option</option>
+                <option value="desktop">Desktop</option>
+                <option value="laptop">Laptop</option>
+                <option value="tablet">Tablet</option>
+                <option value="phone">Phone</option>
+                <option value="other">Other / not sure</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-os">Operating system and version</label>
+
+              <input id="fb-os" name="os" type="text" maxlength="120">
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-theme">Site appearance</label>
+
+              <select id="fb-theme" name="theme">
+                <option value="">Choose an option</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="unknown">Not sure</option>
+              </select>
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-assistive_technology">
+                Assistive technology or zoom setting, if relevant
+              </label>
+
+              <input id="fb-assistive_technology" name="assistive_technology" type="text" maxlength="160">
+            </div>
+
+          </div>
+
+          <div class="fb-field">
+            <label for="fb-evidence_url">
+              Redacted screenshot or evidence URL
+            </label>
+
+            <input id="fb-evidence_url" name="evidence_url" type="url" maxlength="2048" aria-describedby="fb-evidence-help">
+
+            <small id="fb-evidence-help">
+              Only share a link you are authorized to disclose.
+              Review its sharing permissions first.
+            </small>
+          </div>
+        </details>
+
+        <details class="fb-details">
+          <summary>Your details and follow-up (optional)</summary>
+
+          <p>
+            You can leave your name and email blank.
+            An email address is needed only if you request a reply.
+          </p>
+
+          <div class="fb-grid">
+
+            <div class="fb-field">
+              <label for="fb-name">Name or nickname</label>
+
+              <input id="fb-name" name="name" type="text" maxlength="100" autocomplete="name">
+            </div>
+
+            <div class="fb-field">
+              <label for="fb-email">Email address</label>
+
+              <input id="fb-email" name="email" type="email" maxlength="254" autocomplete="email" aria-describedby="fb-email-help">
+
+              <small id="fb-email-help">
+                Required only when you select “I would like a reply.”
+              </small>
+            </div>
+
+          </div>
+
+          <label class="fb-check">
+            <input id="fb-reply" type="checkbox" name="reply_requested" value="yes">
+            <span>I would like a reply about this feedback.</span>
+          </label>
+        </details>
+
+        <label class="fb-check fb-ack">
+          <input id="fb-ack" type="checkbox" name="acknowledgement" value="yes" required="">
+
+          <span>
+            I have reviewed my message and have not included secrets
+            or sensitive personal information. (required)
+          </span>
+        </label>
+
+        <div class="fb-actions">
+          <button id="fb-submit" type="submit" disabled="">
+            Send feedback
+          </button>
+
+          <span id="fb-send-note">
+            Your entries are cleared only after submission is confirmed.
+          </span>
+        </div>
+
+      </fieldset>
+    </form>
+
+  </div>
 </div>
-<div class="fb-field"><label for="fb-evidence_url">Redacted screenshot or evidence URL</label><input id="fb-evidence_url" name="evidence_url" type="url" maxlength="2048"><small>Only share a link you are authorized to disclose. Review its sharing permissions first.</small></div>
-</details>
-<details class="fb-details"><summary>Your details and follow-up (optional)</summary>
-<p>You can leave name and email blank. An email address is needed only if you request a reply.</p><div class="fb-grid">
-<div class="fb-field"><label for="fb-name">Name or nickname</label><input id="fb-name" name="name" type="text" maxlength="100" autocomplete="name"></div>
-<div class="fb-field"><label for="fb-email">Email address</label><input id="fb-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
-</div><label class="fb-check"><input id="fb-reply" type="checkbox" name="reply_requested" value="yes"> <span>I would like a reply about this feedback.</span></label>
-</details>
-<!-- This is an acknowledgement, not marketing permission or a legal privacy policy. -->
-<label class="fb-check fb-ack"><input id="fb-ack" type="checkbox" name="acknowledgement" value="yes" required=""> <span>I have reviewed my message and have not included secrets or sensitive personal information. (required)</span></label>
-<div class="fb-actions"><button id="fb-submit" type="submit" disabled="">Send feedback</button><span id="fb-send-note">Submission unavailable until a receiver is configured.</span></div>
-</fieldset>
-</form>
-</div>
-</div>
+
 <script src="feedback.js" defer=""></script>
+<hr>
+<div class="page-return-links">
+<p><a href="./index.html">Home</a> | <a href="./index.html#achievements">Achievements</a> | <a href="./index.html#featured-notes">Featured Notes</a> | <a href="./index.html#projects">Projects</a> | <a href="./notes/11g_Unknown_facts.html">Notes</a></p>
+</div>
 
 
 

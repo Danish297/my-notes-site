@@ -90,11 +90,11 @@ Whether you are exploring a technical topic, looking for a practical solution, o
 
 ::: {.page-return-links}
 
-[Home](../index.qmd) |
-[Achievements](../index.qmd#achievements) |
-[Featured Notes](../index.qmd#featured-notes) |
-[Projects](../index.qmd#projects) |
-[Notes](../notes/11g_Unknown_facts.qmd)
+[Home](/index.qmd) |
+[Achievements](/index.qmd#achievements) |
+[Featured Notes](/index.qmd#featured-notes) |
+[Projects](/index.qmd#projects) |
+[Notes](/notes/11g_Unknown_facts.qmd)
 
 :::
 :::
