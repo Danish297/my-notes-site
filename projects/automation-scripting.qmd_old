@@ -1,0 +1,308 @@
+---
+title: "Automation & Scripting for Enterprise Operations"
+description: "Operational automation using Python, Shell, PowerShell, and Ansible, covering database health checks, reporting, maintenance, application monitoring, and workflow optimization."
+toc: true
+---
+
+I develop automation solutions that simplify repetitive administrative
+tasks, reduce manual intervention, and improve operational productivity.
+
+My work spans database administration, application monitoring, reporting,
+storage management, and scheduled enterprise workflows.
+
+Using Python, Shell, PowerShell, and Ansible, I turn recurring operational
+activities into repeatable processes that are easier to execute, monitor,
+and maintain.
+
+## Core Areas of Experience
+
+| Area | Technologies and focus |
+|:--|:--|
+| Scripting | Python, Shell, and PowerShell |
+| Operational automation | Ansible playbooks and reusable scripts |
+| Database operations | Oracle health checks, cloning, statistics, auditing, and storage monitoring |
+| Application monitoring | Availability checks, status reports, and exception reporting |
+| Workload optimization | Control-M, Hive, Spark, and HBase |
+| Housekeeping | Tableau logs and database alert logs |
+| Reporting | Scheduled HTML reports and operational summaries |
+
+## Measurable Workflow Improvements
+
+Two projects delivered measurable reductions in execution time.
+
+| Workflow | Before | After | Time saved | Reduction |
+|:--|--:|--:|--:|--:|
+| Control-M job | 52 hours | 4.5 hours | 47.5 hours per execution | Approximately 91% |
+| Weekly database cloning | Approximately 11 hours | Approximately 6.5 hours | Approximately 4.5 hours per week | Approximately 41% |
+
+These figures describe the specific workflows measured, not a
+platform-wide performance improvement or a separately measured reduction
+in administrator effort.
+
+### Control-M Job Optimization
+
+I optimized a long-running Control-M job, reducing execution time from
+52 hours to 4.5 hours.
+
+This substantially shortened the job's processing window and improved
+its operational turnaround.
+
+My broader performance work also includes optimizing long-running Hive,
+Spark, and HBase workloads and associated Control-M jobs to improve
+execution efficiency and operational reliability.
+
+### Weekly Database Cloning Automation
+
+I developed a menu-driven workflow for weekly Oracle Database cloning.
+
+The framework brought related operations into a centralized process,
+reducing repeated manual intervention and opportunities for execution
+errors.
+
+Weekly execution time decreased from approximately 11 hours to
+6.5 hours, saving approximately 4.5 hours each week.
+
+## Daily Health Checks and Reporting
+
+I automated daily health checks and reporting using Python scripts and
+Ansible playbooks.
+
+The objective was to consolidate recurring checks into a consistent
+operational view rather than requiring administrators to collect the
+same information manually each day.
+
+The generated reports support routine review, exception identification,
+and investigation of issues requiring attention.
+
+## Completed Operational Automations
+
+The following nine automations have been completed and are running
+successfully.
+
+Their successful operation refers to the automation workflows themselves.
+Monitoring reports may still identify failed backups, unavailable
+applications, or other conditions requiring investigation.
+
+### 1. Database Daily Health Report
+
+Automated the collection and presentation of key database, application,
+and server-health information.
+
+The reporting scope includes:
+
+- Instance status and database information.
+- Database size and space utilization.
+- ASM disk-group utilization.
+- Tablespace capacity and low-free-space checks, including checks for
+  less than 5% available space.
+- Archive log statistics.
+- Daily RMAN backup status.
+- Top SQL queries by resource consumption.
+- Sessions with high physical I/O activity.
+- EBS Concurrent Manager status.
+- Database export-backup verification.
+- Disk-space details for database and application servers.
+
+This provides a consolidated starting point for daily operational
+review and helps identify storage constraints, backup issues, and
+resource-intensive activity.
+
+The reporting approach is modular, allowing additional checks,
+databases, and servers to be incorporated as requirements evolve.
+
+### 2. Daily Auditing Reports
+
+Automated daily auditing reports to improve visibility and traceability
+of database activities.
+
+The reports support audit review and compliance-related activities
+without requiring the same information to be gathered manually.
+
+The approach accommodates different database audit configurations and
+user-activity reporting requirements.
+
+### 3. Automated Database Table Statistics Gathering
+
+Automated statistics gathering for selected database tables to keep
+optimizer statistics current.
+
+This standardizes a recurring maintenance activity and supports
+consistent query-optimization inputs.
+
+Additional tables can be included as application and maintenance
+requirements change.
+
+### 4. Daily Alert Log Monitoring
+
+Automated database alert-log review to surface errors and warnings
+requiring attention.
+
+The workflow produces log outputs that support investigation without
+requiring administrators to manually inspect every full alert log.
+
+The monitoring approach can accommodate different log locations,
+formats, and alert levels across environments.
+
+### 5. Application Availability Reporting
+
+Automated application endpoint checks and generated reports showing
+availability status and response information.
+
+The reporting includes:
+
+- A consolidated application-health view.
+- Working, warning, and failed status categories.
+- Response information for individual checks.
+- A separate exception report highlighting failed or warning entries.
+
+This helps direct operational attention to services requiring
+investigation.
+
+Availability results reflect the checks performed at the reporting time;
+they are not a guarantee of continuous application availability.
+
+The configuration-based approach allows additional application
+endpoints and environments to be included.
+
+### 6. Daily Table Growth Tracking
+
+Automated daily table-growth tracking to improve visibility into
+changing storage consumption.
+
+The reports support:
+
+- Reviewing growth trends.
+- Identifying unusual increases.
+- Planning future capacity.
+- Prioritizing storage investigations.
+
+The approach can be reused across databases, environments, and projects.
+
+### 7. Tableau Log Management
+
+Automated Tableau log housekeeping on Windows servers to reclaim space
+and support reliable platform operations.
+
+This reduces recurring manual cleanup and helps prevent unnecessary
+log accumulation from consuming available disk capacity.
+
+The housekeeping approach can be adapted to other tools with similar
+log-management requirements.
+
+### 8. Table and Tablespace Space Management
+
+Automated space-management activities to support table growth and
+reduce dependence on repeated manual intervention.
+
+The objective is to address capacity constraints before they interrupt
+database operations.
+
+This complements growth tracking and low-space reporting by bringing
+recurring space-management work into an automated workflow.
+
+### 9. Database Alert Log Management
+
+Automated scheduled database alert-log housekeeping, including monthly
+purging and backup for future reference.
+
+This is separate from daily alert-log monitoring:
+
+- Monitoring identifies errors and warnings.
+- Housekeeping manages accumulated log files and retained copies.
+
+The approach can be applied across multiple database environments.
+
+## Operational Reporting in Practice
+
+The reporting solutions bring database and application information into
+readable HTML outputs.
+
+### Database Reports
+
+Database reports consolidate information such as instance state,
+database size, tablespace utilization, archive activity, RMAN backup
+status, SQL activity, physical I/O, and server storage.
+
+Where applicable, they also include ASM information and EBS Concurrent
+Manager status.
+
+### Application Reports
+
+Application reports present endpoint status and response information
+in a consolidated view.
+
+A separate exception-focused report helps operators concentrate on
+entries requiring attention rather than reviewing every successful
+check individually.
+
+### Exception Visibility
+
+The purpose of monitoring automation is not to make every report appear
+healthy. It is to make operational conditions visible.
+
+A successfully generated report that identifies a failed backup or an
+unavailable application is performing its monitoring role.
+
+## Reusability and Extensibility
+
+I focus on automation that can evolve with operational requirements.
+
+Across these solutions, extension points include:
+
+- Adding databases and application servers.
+- Introducing new health checks.
+- Updating monitored application endpoints.
+- Expanding table lists and reporting scope.
+- Adapting log paths and housekeeping requirements.
+- Reusing scripts across environments.
+
+This makes the work more useful than a collection of isolated,
+one-time scripts.
+
+## Business and Operational Value
+
+| Area | Contribution |
+|:--|:--|
+| Productivity | Reduced repeated manual collection and maintenance activities |
+| Execution efficiency | Shortened the measured Control-M and cloning workflows |
+| Monitoring visibility | Consolidated database and application status into scheduled reports |
+| Capacity management | Added growth tracking, space checks, and space-management automation |
+| Maintenance consistency | Standardized statistics gathering and log housekeeping |
+| Investigation support | Produced audit, alert, and exception information for operational review |
+| Extensibility | Enabled additional checks and targets to be incorporated |
+
+Beyond the two measured execution-time improvements, the main value
+is operational consistency: recurring tasks follow a repeatable process,
+and administrators have clearer information for review and follow-up.
+
+## Client Environments Supported
+
+My automation and scripting experience includes work supporting
+environments for:
+
+CACIB · Mastercard · Zakathouse · Ascena
+
+The responsibilities described reflect experience across these
+engagements. The nine-item operational automation portfolio described
+above relates to the Zakat House environment.
+
+## Professional Focus
+
+I use scripting and automation to make enterprise operations easier
+to manage, not simply to replace individual commands.
+
+My focus is on repeatable workflows, useful reporting, reduced manual
+intervention, and solutions that can be extended as operational needs
+change.
+
+From daily health checks to database cloning and workload optimization,
+the goal is to give teams more consistent execution and better
+visibility into the systems they support.
+
+---
+
+::: {.page-return-links}
+
+[Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
+
+:::

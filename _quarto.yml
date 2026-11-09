@@ -7,7 +7,7 @@ website:
   title: "D@n!$h297"
   description: "Personal notes on AI, computer vision, software, and learning in public."
   favicon: assets/favicon.svg
-  site-url: https://danish297.github.io/my-notes-site/
+  site-url: "https://danish297.github.io/my-notes-site/"
 
   # Preserve Quarto-managed search, navigation, and responsive collapse.
   navbar:
@@ -23,13 +23,13 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/danish297/
+        href: "https://github.com/danish297/"
         aria-label: "GitHub profile (opens in a new tab)"
         target: _blank
         rel: "noopener noreferrer"
 
       - icon: linkedin
-        href: https://www.linkedin.com/in/hasnain-danish-shaikh/
+        href: "https://www.linkedin.com/in/hasnain-danish-shaikh/"
         aria-label: "LinkedIn profile (opens in a new tab)"
         target: _blank
         rel: "noopener noreferrer"
@@ -50,7 +50,8 @@ website:
     left: "© 2026 Danish297"
     right:
       - icon: github
-        href: https://github.com/danish297
+        href: "https://github.com/danish297"
+        aria-label: "GitHub profile"
 
 
 # Local stylesheet overrides both built-in themes; no new runtime libraries.

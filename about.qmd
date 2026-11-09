@@ -86,6 +86,7 @@ I hope you find something useful here, discover a new idea, or get inspired to e
 
 Whether you are exploring a technical topic, looking for a practical solution, or simply sharing an idea, your feedback and suggestions are always welcome.
 
+---
 <!-- Internal navigation. -->
 
 ::: {.page-return-links}

@@ -67,6 +67,7 @@ if (userInput != null && !userInput.trim().isEmpty()) {
 
 This illustrates how explicit validation and controlled option mapping can prevent incorrect input interpretation.
 
+---
 ::: {.page-return-links}
 
 [Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)

@@ -54,7 +54,7 @@ The available operations include:
 Administrators can enter comma-separated selections, such as `1,2,3`,
 or use `all` to select all five operations.
 
-![Main menu and interactive execution options, including comma-separated selections.](../assets/achievements/oracle-interactive-menu.jpg){fig-alt="Terminal screenshots showing the main menu and an interactive menu with restore and recovery, SPFILE migration, archive log configuration, RAC conversion, and RAC verification." width=100%}
+![Main menu and interactive execution options, including comma-separated selections.](../assets/attachments/oracle-interactive-menu.jpg){fig-alt="Terminal screenshots showing the main menu and an interactive menu with restore and recovery, SPFILE migration, archive log configuration, RAC conversion, and RAC verification." width=100%}
 
 This mode provides flexibility when only part of the workflow is required,
 rather than requiring execution of the complete process.
@@ -68,7 +68,7 @@ Instead of selecting operations individually, the administrator starts
 the predefined sequence with one selection, reducing the need for repeated
 manual intervention.
 
-![Non-interactive mode with a single option to execute the full workflow.](../assets/achievements/oracle-non-interactive-menu.jpg){fig-alt="Terminal screenshots showing selection of non-interactive mode and the option to execute the full workflow from database restore and recovery to RAC conversion." width=100%}
+![Non-interactive mode with a single option to execute the full workflow.](../assets/attachments/oracle-non-interactive-menu.jpg){fig-alt="Terminal screenshots showing selection of non-interactive mode and the option to execute the full workflow from database restore and recovery to RAC conversion." width=100%}
 
 Here, “non-interactive” refers to the execution workflow after the initial
 menu selection; the framework still presents a menu to start that workflow.
@@ -86,7 +86,7 @@ The framework reduced weekly database cloning execution time by
 | Time saved each week | 4.5 hours |
 | Execution-time reduction | Approximately 41% |
 
-![Weekly database cloning execution time before and after automation.](../assets/achievements/oracle-cloning-results.jpg){fig-alt="Results summary showing weekly database cloning execution time reduced from 11 hours to 6.5 hours, saving 4.5 hours per week, approximately 41 percent." width=100%}
+![Weekly database cloning execution time before and after automation.](../assets/attachments/oracle-cloning-results.jpg){fig-alt="Results summary showing weekly database cloning execution time reduced from 11 hours to 6.5 hours, saving 4.5 hours per week, approximately 41 percent." width=100%}
 
 The percentage reduction is calculated against the original execution time:
 
@@ -122,6 +122,7 @@ The most significant measured outcome was a reduction in weekly cloning
 execution time from 11 hours to 6.5 hours. The two execution modes preserved
 flexibility for individual tasks while simplifying the complete workflow.
 
+---
 ::: {.page-return-links}
 
 [Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)

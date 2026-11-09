@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Share feedback, report an issue, or suggest a topic.">
+<meta name="description" content="A macOS video conversion application designed to reduce file sizes while retaining source resolution, with multiple codecs, parallel processing, and queue management.">
 
-<title>Feedback – D@n!$h297</title>
+<title>VEncoder: A macOS Application for Efficient Video Encoding – D@n!$h297</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,11 +79,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="feedback.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -265,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/11g_Unknown_facts.html"> 
+    <a class="nav-link active" href="../notes/11g_Unknown_facts.html" aria-current="page"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -291,24 +289,104 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">VEncoder: A macOS Application for Efficient Video Encoding</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/11g_Unknown_facts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11g Unknown facts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/12c_new_features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12c New Features</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/19c_vs_23ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19c vs.&nbsp;23ai for DBAs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/NewOracleDB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NewOracleDB</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link active" data-scroll-target="#the-challenge">The Challenge</a></li>
+  <li><a href="#the-solution-a-centralized-video-conversion-workflow" id="toc-the-solution-a-centralized-video-conversion-workflow" class="nav-link" data-scroll-target="#the-solution-a-centralized-video-conversion-workflow">The Solution: A Centralized Video Conversion Workflow</a></li>
+  <li><a href="#encoding-controls" id="toc-encoding-controls" class="nav-link" data-scroll-target="#encoding-controls">Encoding Controls</a>
+  <ul class="collapse">
+  <li><a href="#multiple-target-codecs" id="toc-multiple-target-codecs" class="nav-link" data-scroll-target="#multiple-target-codecs">Multiple Target Codecs</a></li>
+  <li><a href="#retaining-source-resolution" id="toc-retaining-source-resolution" class="nav-link" data-scroll-target="#retaining-source-resolution">Retaining Source Resolution</a></li>
+  <li><a href="#language-and-subtitle-preferences" id="toc-language-and-subtitle-preferences" class="nav-link" data-scroll-target="#language-and-subtitle-preferences">Language and Subtitle Preferences</a></li>
+  <li><a href="#configurable-parallel-processing" id="toc-configurable-parallel-processing" class="nav-link" data-scroll-target="#configurable-parallel-processing">Configurable Parallel Processing</a></li>
+  </ul></li>
+  <li><a href="#queue-management" id="toc-queue-management" class="nav-link" data-scroll-target="#queue-management">Queue Management</a>
+  <ul class="collapse">
+  <li><a href="#status-based-filtering" id="toc-status-based-filtering" class="nav-link" data-scroll-target="#status-based-filtering">Status-Based Filtering</a></li>
+  <li><a href="#queue-reordering" id="toc-queue-reordering" class="nav-link" data-scroll-target="#queue-reordering">Queue Reordering</a></li>
+  </ul></li>
+  <li><a href="#output-folders-and-progress-visibility" id="toc-output-folders-and-progress-visibility" class="nav-link" data-scroll-target="#output-folders-and-progress-visibility">Output Folders and Progress Visibility</a>
+  <ul class="collapse">
+  <li><a href="#output-folder-management" id="toc-output-folder-management" class="nav-link" data-scroll-target="#output-folder-management">Output-Folder Management</a></li>
+  <li><a href="#progress-monitoring" id="toc-progress-monitoring" class="nav-link" data-scroll-target="#progress-monitoring">Progress Monitoring</a></li>
+  </ul></li>
+  <li><a href="#project-outcome" id="toc-project-outcome" class="nav-link" data-scroll-target="#project-outcome">Project Outcome</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Feedback</h1>
+<h1 class="title">VEncoder: A macOS Application for Efficient Video Encoding</h1>
 </div>
 
 <div>
   <div class="description">
-    Share feedback, report an issue, or suggest a topic.
+    A macOS video conversion application designed to reduce file sizes while retaining source resolution, with multiple codecs, parallel processing, and queue management.
   </div>
 </div>
 
@@ -325,84 +403,209 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="fb-page">
-  <!-- Introduction and privacy guidance remain visible without JavaScript. -->
-  <div class="fb-intro">
-    <span class="fb-eyebrow">HELP IMPROVE THIS SITE</span>
-    <h2 class="anchored">Your experience matters.</h2>
-    <p>Found something useful, spotted a problem, or have an idea? Share what worked and what could be better.</p>
-    <ul class="fb-badges"><li>Contact details optional</li><li>No account needed</li><li>Only relevant details</li></ul>
-  </div>
-  <div class="fb-layout">
-    <div class="fb-aside" role="note" aria-label="Before you start">
-      <h2 class="anchored">A quick note</h2>
-      <p>Fields marked “required” must be completed. Everything else is optional.</p>
-      <p>Please do not include passwords, API keys, financial details, private client information, or sensitive logs.</p>
-      <p>For evidence, share a safe, redacted link. File uploads are not enabled.</p>
-      <p>Do not submit vulnerability details here. A private security reporting channel must be established separately.</p>
-    </div>
-    <!-- Set data-endpoint to an HTTPS receiver supporting this form's fields.
-         Keep it empty until server validation, privacy terms and spam controls are ready.
-         Native POST navigation lets the receiver own confirmed success/failure pages. -->
-    <form id="feedback-form" class="fb-form" method="post" data-endpoint="" aria-describedby="fb-status">
-      <p id="fb-status" class="fb-notice" role="status">Preview mode: sending is not configured. Your entries are not sent by this form.</p>
-      <noscript><p>JavaScript is required to enable this form. No submission is available without it.</p></noscript>
-      <!-- Disabled until the script attaches its submission guard. -->
-      <fieldset id="fb-controls" disabled="">
-        <legend>1. What would you like to share?</legend>
-
-<div class="fb-field"><label for="fb-category">Feedback type (required)</label><select id="fb-category" name="category" required=""><option value="">Choose an option</option><option value="general">General feedback</option><option value="praise">Something I liked</option><option value="suggestion">Improvement or feature suggestion</option><option value="bug">Bug or technical issue</option><option value="correction">Content correction or broken link</option><option value="topic">Request a topic or tutorial</option><option value="accessibility">Accessibility issue</option><option value="privacy">Privacy concern (no sensitive details)</option><option value="other">Something else</option></select></div>
-<div class="fb-field"><label for="fb-subject">Short summary (required)</label><input id="fb-subject" name="subject" type="text" required="" maxlength="160"></div>
-<div class="fb-field"><label for="fb-message">Tell me more (required)</label><textarea id="fb-message" name="message" rows="5" maxlength="5000" required=""></textarea><small>Maximum 5,000 characters.</small></div>
-<div class="fb-field"><label for="fb-page_url">Page URL related to your feedback</label><input id="fb-page_url" name="page_url" type="url" maxlength="2048" placeholder="https://…"></div>
-<details class="fb-details"><summary>Ratings and interests (optional)</summary><div class="fb-grid">
-<div class="fb-field"><label for="fb-overall">Overall experience</label><select id="fb-overall" name="overall"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-usefulness">Content usefulness</label><select id="fb-usefulness" name="usefulness"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-navigation">Ease of navigation</label><select id="fb-navigation" name="navigation"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-speed">Loading speed</label><select id="fb-speed" name="speed"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-design">Design and readability</label><select id="fb-design" name="design"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-</div><fieldset class="fb-topics"><legend>Topics you are interested in</legend>
-<label class="fb-check"><input type="checkbox" name="topics" value="ai"> <span>AI and local LLMs</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="vision"> <span>Computer vision</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="oracle"> <span>Oracle Database and EBS</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="cloud"> <span>Cloud technologies</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="containers"> <span>Kubernetes and OpenShift</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="automation"> <span>Automation and scripting</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="other"> <span>Other</span></label>
-</fieldset></details>
-<!-- Technical details are optional and never collected automatically. -->
-<details class="fb-details"><summary>Issue details (for bugs, corrections, or accessibility problems)</summary>
-<div class="fb-field"><label for="fb-steps">Steps to reproduce the problem</label><textarea id="fb-steps" name="steps" rows="5" maxlength="3000"></textarea><small>Maximum 3,000 characters.</small></div>
-<div class="fb-field"><label for="fb-expected">What did you expect?</label><textarea id="fb-expected" name="expected" rows="5" maxlength="2000"></textarea><small>Maximum 2,000 characters.</small></div>
-<div class="fb-field"><label for="fb-actual">What actually happened?</label><textarea id="fb-actual" name="actual" rows="5" maxlength="2000"></textarea><small>Maximum 2,000 characters.</small></div>
-<div class="fb-grid">
-<div class="fb-field"><label for="fb-impact">How much does this affect you?</label><select id="fb-impact" name="impact"><option value="">Choose an option</option><option value="minor">Minor inconvenience</option><option value="workaround">Disruptive, but I have a workaround</option><option value="blocked">I cannot complete what I came to do</option></select></div>
-<div class="fb-field"><label for="fb-frequency">How often does it happen?</label><select id="fb-frequency" name="frequency"><option value="">Choose an option</option><option value="once">Once</option><option value="sometimes">Sometimes</option><option value="always">Every time</option></select></div>
-<div class="fb-field"><label for="fb-browser">Browser</label><select id="fb-browser" name="browser"><option value="">Choose an option</option><option value="Safari">Safari</option><option value="Microsoft Edge">Microsoft Edge</option><option value="Google Chrome">Google Chrome</option><option value="Mozilla Firefox">Mozilla Firefox</option><option value="Opera">Opera</option><option value="Other">Other</option><option value="Not sure">Not sure</option></select></div>
-<div class="fb-field"><label for="fb-browser_version">Browser version</label><input id="fb-browser_version" name="browser_version" type="text" maxlength="80"></div>
-<div class="fb-field"><label for="fb-device">Device type</label><select id="fb-device" name="device"><option value="">Choose an option</option><option value="desktop">Desktop</option><option value="laptop">Laptop</option><option value="tablet">Tablet</option><option value="phone">Phone</option><option value="other">Other / not sure</option></select></div>
-<div class="fb-field"><label for="fb-os">Operating system and version</label><input id="fb-os" name="os" type="text" maxlength="120"></div>
-<div class="fb-field"><label for="fb-theme">Site appearance</label><select id="fb-theme" name="theme"><option value="">Choose an option</option><option value="light">Light</option><option value="dark">Dark</option><option value="unknown">Not sure</option></select></div>
-<div class="fb-field"><label for="fb-assistive_technology">Assistive technology or zoom setting, if relevant</label><input id="fb-assistive_technology" name="assistive_technology" type="text" maxlength="160"></div>
+<p>I developed VEncoder, a macOS application designed to make video compression and batch conversion easier to manage.</p>
+<p>The goal was to reduce video file sizes while retaining the original resolution, bring common encoding settings into one interface, and simplify the processing of multiple videos.</p>
+<p>VEncoder combines an FFmpeg-based conversion workflow with codec selection, configurable parallel processing, language preferences, output-folder management, and a searchable conversion queue.</p>
+<section id="the-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-challenge">The Challenge</h2>
+<p>Managing a growing video collection can involve more than choosing a smaller output format. Different files may require different encoding settings, contain multiple language tracks, or need to be processed in a particular order.</p>
+<p>Repeatedly configuring individual conversions also makes larger batches time-consuming to organize.</p>
+<p>I wanted to bring these tasks into a single macOS application that could:</p>
+<ul>
+<li>Reduce storage requirements without requiring a lower resolution.</li>
+<li>Provide a choice of target video codecs.</li>
+<li>Process multiple videos through a managed queue.</li>
+<li>Allow control over the number of simultaneous conversions.</li>
+<li>Simplify language selection and output-folder configuration.</li>
+<li>Make progress and processing status visible in one place.</li>
+</ul>
+</section>
+<section id="the-solution-a-centralized-video-conversion-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-a-centralized-video-conversion-workflow">The Solution: A Centralized Video Conversion Workflow</h2>
+<p>VEncoder provides a graphical interface for configuring and managing video conversions, rather than requiring users to prepare a separate command for each file.</p>
+<p>The interface brings together encoding settings, input videos, output locations, and queue controls.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/1-Home.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder on macOS showing a welcome panel, codec selection, language and resolution settings, parallel-process control, and an area for adding videos or folders."></p>
+<figcaption>VEncoder welcome screen introducing the application and its main capabilities.</figcaption>
+</figure>
 </div>
-<div class="fb-field"><label for="fb-evidence_url">Redacted screenshot or evidence URL</label><input id="fb-evidence_url" name="evidence_url" type="url" maxlength="2048"><small>Only share a link you are authorized to disclose. Review its sharing permissions first.</small></div>
-</details>
-<details class="fb-details"><summary>Your details and follow-up (optional)</summary>
-<p>You can leave name and email blank. An email address is needed only if you request a reply.</p><div class="fb-grid">
-<div class="fb-field"><label for="fb-name">Name or nickname</label><input id="fb-name" name="name" type="text" maxlength="100" autocomplete="name"></div>
-<div class="fb-field"><label for="fb-email">Email address</label><input id="fb-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
-</div><label class="fb-check"><input id="fb-reply" type="checkbox" name="reply_requested" value="yes"> <span>I would like a reply about this feedback.</span></label>
-</details>
-<!-- This is an acknowledgement, not marketing permission or a legal privacy policy. -->
-<label class="fb-check fb-ack"><input id="fb-ack" type="checkbox" name="acknowledgement" value="yes" required=""> <span>I have reviewed my message and have not included secrets or sensitive personal information. (required)</span></label>
-<div class="fb-actions"><button id="fb-submit" type="submit" disabled="">Send feedback</button><span id="fb-send-note">Submission unavailable until a receiver is configured.</span></div>
-</fieldset>
-</form>
+<p>The workflow is organized around five steps:</p>
+<ol type="1">
+<li>Add videos or folders.</li>
+<li>Select a target codec.</li>
+<li>Configure resolution, language preferences, and parallel processing.</li>
+<li>Choose output folders.</li>
+<li>Start conversion and monitor the queue.</li>
+</ol>
+</section>
+<section id="encoding-controls" class="level2">
+<h2 class="anchored" data-anchor-id="encoding-controls">Encoding Controls</h2>
+<section id="multiple-target-codecs" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-target-codecs">Multiple Target Codecs</h3>
+<p>The interface provides the following target-codec options:</p>
+<ul>
+<li>H.264 / AVC.</li>
+<li>H.265 / HEVC.</li>
+<li>VP9.</li>
+<li>AV1.</li>
+<li>H.266 / VVC.</li>
+</ul>
+<p>These options allow the encoding workflow to accommodate different storage and playback requirements.</p>
+<p>The interface also includes codec information popovers, giving users additional context when choosing an encoding format.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/3-Encoder.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder showing target-codec options for H.264, H.265, VP9, AV1, and H.266, with an H.265 information popover open."></p>
+<figcaption>VEncoder codec-selection panel with an information popover for H.265 / HEVC.</figcaption>
+</figure>
 </div>
+<p>The available encoder and hardware-acceleration path depend on the installed FFmpeg build, selected codec, and capabilities of the Mac. A codec appearing in the interface does not mean every Mac can encode it using hardware acceleration.</p>
+</section>
+<section id="retaining-source-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="retaining-source-resolution">Retaining Source Resolution</h3>
+<p>VEncoder includes a “Same as source” resolution option, allowing users to retain the input video’s frame dimensions during conversion.</p>
+<p>This supports the project’s main objective: reducing file size without requiring a reduction in resolution.</p>
+<p>Preserving resolution does not mean the output is lossless. The final file size and visual quality still depend on the source material and encoding settings.</p>
+</section>
+<section id="language-and-subtitle-preferences" class="level3">
+<h3 class="anchored" data-anchor-id="language-and-subtitle-preferences">Language and Subtitle Preferences</h3>
+<p>A native-language preference helps guide automatic language and subtitle selection.</p>
+<p>The interface accepts a short language code, bringing this preference into the conversion setup rather than requiring users to configure it separately for each video.</p>
+</section>
+<section id="configurable-parallel-processing" class="level3">
+<h3 class="anchored" data-anchor-id="configurable-parallel-processing">Configurable Parallel Processing</h3>
+<p>The parallel-process control allows users to choose how many conversions run simultaneously.</p>
+<p>This provides a way to tune batch processing to the available system resources. Hardware acceleration, where supported, can complement this workflow, but parallel processing and hardware acceleration are separate capabilities.</p>
+<p>More simultaneous conversions do not automatically mean faster completion. The most suitable setting depends on the encoding workload and the machine’s available resources.</p>
+</section>
+</section>
+<section id="queue-management" class="level2">
+<h2 class="anchored" data-anchor-id="queue-management">Queue Management</h2>
+<p>A batch conversion tool needs more than encoding controls. It also needs to make a large collection of pending and completed work easy to navigate.</p>
+<p>VEncoder includes a queue with search, status filtering, and controls for adding videos, clearing completed entries, and clearing the queue.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/2-Queue.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder showing six queued videos and a status-filter menu with All, Converting, Waiting, Paused, Stopped, Completed, Failed, and Canceled categories."></p>
+<figcaption>VEncoder conversion queue with its status-filter menu open.</figcaption>
+</figure>
 </div>
-<script src="feedback.js" defer=""></script>
+<section id="status-based-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="status-based-filtering">Status-Based Filtering</h3>
+<p>The queue can be filtered by processing state:</p>
+<ul>
+<li>All.</li>
+<li>Converting.</li>
+<li>Waiting.</li>
+<li>Paused.</li>
+<li>Stopped.</li>
+<li>Completed.</li>
+<li>Failed.</li>
+<li>Canceled.</li>
+</ul>
+<p>These categories help separate videos awaiting conversion from those that have finished or require attention.</p>
+</section>
+<section id="queue-reordering" class="level3">
+<h3 class="anchored" data-anchor-id="queue-reordering">Queue Reordering</h3>
+<p>Users can change the order of queued videos using:</p>
+<ul>
+<li>Move to Top.</li>
+<li>Move to Bottom.</li>
+<li>Move Up.</li>
+<li>Move Down.</li>
+</ul>
+<p>This allows priorities to change without removing and re-adding files.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/4-Move.jpg" class="img-fluid figure-img" style="width:100.0%" alt="VEncoder displaying a queue-entry menu with Move to Top, Move to Bottom, Move Up, and Move Down options."></p>
+<figcaption>Queue-reordering controls for changing a video’s position in the conversion list.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="output-folders-and-progress-visibility" class="level2">
+<h2 class="anchored" data-anchor-id="output-folders-and-progress-visibility">Output Folders and Progress Visibility</h2>
+<section id="output-folder-management" class="level3">
+<h3 class="anchored" data-anchor-id="output-folder-management">Output-Folder Management</h3>
+<p>The output-folder panel keeps destination locations visible alongside the conversion settings.</p>
+<p>Users can add folders and manage the listed destinations from the same interface used to prepare the conversion queue.</p>
+</section>
+<section id="progress-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="progress-monitoring">Progress Monitoring</h3>
+<p>The application includes both queue-level status counts and an overall progress area.</p>
+<p>The interface provides space for:</p>
+<ul>
+<li>Overall completion percentage.</li>
+<li>Estimated remaining time.</li>
+<li>Average processing speed.</li>
+<li>Counts of completed, running, waiting, paused, and canceled items.</li>
+</ul>
+<p>This keeps the state of a batch visible without requiring users to inspect individual conversion commands.</p>
+</section>
+</section>
+<section id="project-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="project-outcome">Project Outcome</h2>
+<p>VEncoder brings video conversion setup and batch management into one macOS interface.</p>
+<p>The project combines:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Capability</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Multiple target codecs</td>
+<td style="text-align: left;">Provide flexibility when configuring conversions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Same-as-source resolution</td>
+<td style="text-align: left;">Retain the input video’s frame dimensions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Parallel processing</td>
+<td style="text-align: left;">Configure the number of simultaneous conversions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Language preferences</td>
+<td style="text-align: left;">Simplify language and subtitle selection</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Queue search and filters</td>
+<td style="text-align: left;">Find videos and review processing states</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Queue reordering</td>
+<td style="text-align: left;">Adjust conversion priorities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Output-folder management</td>
+<td style="text-align: left;">Keep destination locations organized</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Progress indicators</td>
+<td style="text-align: left;">Track batch execution from one interface</td>
+</tr>
+</tbody>
+</table>
+<p>The screenshots demonstrate the application’s interface and workflow. They do not establish a measured compression ratio, encoding-speed improvement, or visual-quality score.</p>
+<p>Those results require before-and-after testing with documented source files, encoding settings, and hardware.</p>
+</section>
+<section id="key-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
+<p>VEncoder turns a collection of video conversion tasks into a structured, manageable workflow.</p>
+<p>Its central design goal is to improve storage efficiency while retaining source resolution, supported by flexible encoding options, configurable parallel processing, and practical queue-management controls.</p>
+<hr>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <!-- Site-wide floating link to the rendered feedback page. -->
@@ -837,7 +1040,7 @@ ul.task-list li input[type="checkbox"] {
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/danish297">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="GitHub profile">
 </i> 
     </a>
   </li>  

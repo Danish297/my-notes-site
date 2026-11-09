@@ -102,7 +102,7 @@ Selected technical achievements, automation initiatives, and application develop
 
 ::: {.shelf}
 
-### [Oracle Database Recovery & Cloning Automation](Achievements/DB_rman-clone-automation.qmd)
+### [Oracle Database Recovery & Cloning Automation](achievements/DB_rman-clone-automation.qmd)
 
 Designed an automated, menu-driven Oracle Database recovery and cloning framework, replacing manual procedures.
 
@@ -111,7 +111,7 @@ It Reduced weekly cloning time by 41% (11 to 6.5 hours), minimizing errors and i
 
 ::: {.shelf}
 
-### [Oracle DB Creation – Enhancements & Bug Fixes](Achievements/db_script_enhancement.qmd)
+### [Oracle DB Creation – Enhancements & Bug Fixes](achievements/db_script_enhancement.qmd)
 
 Enhanced and modernized the Oracle Database creation framework to support Oracle 10g+ and enable parallel provisioning across 200+ target nodes.
 
@@ -121,7 +121,7 @@ It significantly improving automation, scalability, operational efficiency, and 
 
 ::: {.shelf}
 
-### [Banking Application Logic Optimization](Achievements/Banking_App_Logic_Optimization.qmd)
+### [Banking Application Logic Optimization](achievements/Banking_App_Logic_Optimization.qmd)
 
 Identified and resolved a logic issue in the Finacle banking application involving the interpretation of user inputs and option selections.
 
@@ -131,7 +131,7 @@ Improved application reliability and ensured accurate processing of user-selecte
 
 ::: {.shelf}
 
-### [Video Optimization – VEncoder](Achievements/vencoder.qmd)
+### [Video Optimization – VEncoder](achievements/vencoder.qmd)
 
 Developed VEncoder, a macOS application designed to reduce video file sizes without compromising resolution.
 
@@ -141,7 +141,7 @@ Supports multiple encoding formats and parallel processing to leverage hardware 
 
 ::: {.shelf}
 
-### [Hive Data Retention](Achievements/purging_hive_table.qmd)
+### [Hive Data Retention](achievements/purging_hive_table.qmd)
 
 Developed a Python-based framework to automate Hive table cleanup, purging data older than 36 months to simplify retention management and reduce manual effort.
 
@@ -219,9 +219,12 @@ Focus areas include cloud infrastructure, resource provisioning, deployment arch
 
 ### [Automation & Scripting](projects/automation-scripting.qmd)
 
-Developed automation solutions to simplify repetitive operational activities, reduce manual intervention, and improve productivity.
+Developed automation solutions to streamline operations, reduce manual effort, and improve efficiency.
 
-Focused on automating daily administrative tasks, routine jobs, and operational workflows.
+- Automated routine DBA activities.
+- Developed an RMAN cloning framework with RMAN Catalog support.
+- Implemented automated Hive data retention processes.
+- Optimized Zakat application performance during annual peak loads.
 
 **Technologies:** `Python` `Shell` `PowerShell`<br>
 **Clients:**

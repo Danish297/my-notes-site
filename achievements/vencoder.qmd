@@ -212,6 +212,7 @@ Its central design goal is to improve storage efficiency while retaining
 source resolution, supported by flexible encoding options, configurable
 parallel processing, and practical queue-management controls.
 
+---
 ::: {.page-return-links}
 
 [Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)

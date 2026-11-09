@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="A Python-based framework for automatically purging Hive data older than 36 months, simplifying recurring housekeeping and supporting consistent retention management.">
 
-<title>openshift_learning – D@n!$h297</title>
+<title>Automating Hive Data Retention with Python – D@n!$h297</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -80,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -293,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Automating Hive Data Retention with Python</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -345,16 +346,155 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link active" data-scroll-target="#the-challenge">1. The Challenge</a></li>
+  <li><a href="#technical-solution" id="toc-technical-solution" class="nav-link" data-scroll-target="#technical-solution">2. Technical Solution</a>
+  <ul class="collapse">
+  <li><a href="#retention-based-processing" id="toc-retention-based-processing" class="nav-link" data-scroll-target="#retention-based-processing">Retention-Based Processing</a></li>
+  <li><a href="#automated-housekeeping" id="toc-automated-housekeeping" class="nav-link" data-scroll-target="#automated-housekeeping">Automated Housekeeping</a></li>
+  <li><a href="#reusable-python-framework" id="toc-reusable-python-framework" class="nav-link" data-scroll-target="#reusable-python-framework">Reusable Python Framework</a></li>
+  </ul></li>
+  <li><a href="#workflow-overview" id="toc-workflow-overview" class="nav-link" data-scroll-target="#workflow-overview">3. Workflow Overview</a></li>
+  <li><a href="#results-and-operational-impact" id="toc-results-and-operational-impact" class="nav-link" data-scroll-target="#results-and-operational-impact">4. Results and Operational Impact</a></li>
+  <li><a href="#key-achievement" id="toc-key-achievement" class="nav-link" data-scroll-target="#key-achievement">5. Key Achievement</a></li>
+  <li><a href="#technologies" id="toc-technologies" class="nav-link" data-scroll-target="#technologies">Technologies</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Automating Hive Data Retention with Python</h1>
+</div>
+
+<div>
+  <div class="description">
+    A Python-based framework for automatically purging Hive data older than 36 months, simplifying recurring housekeeping and supporting consistent retention management.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p>I developed a Python-based framework to automatically purge data older than 36 months from Hive tables.</p>
+<p>The framework replaced repetitive cleanup activities with an automated, retention-based workflow, helping keep historical data management aligned with business requirements.</p>
+<section id="the-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-challenge">1. The Challenge</h2>
+<p>As historical data accumulated in Hive tables, recurring housekeeping was needed to manage information beyond the required retention period.</p>
+<p>Handling these activities manually meant repeatedly reviewing data eligibility and carrying out cleanup operations across the relevant tables.</p>
+<p>The objective was to simplify this process while applying a consistent 36-month retention rule.</p>
+<p>The main priorities were:</p>
+<ul>
+<li>Identify data that had exceeded the required retention period.</li>
+<li>Reduce repetitive manual cleanup activities.</li>
+<li>Apply the same retention criteria consistently.</li>
+<li>Support storage housekeeping as historical data accumulated.</li>
+<li>Make recurring purging activities easier to maintain.</li>
+</ul>
+</section>
+<section id="technical-solution" class="level2">
+<h2 class="anchored" data-anchor-id="technical-solution">2. Technical Solution</h2>
+<p>I developed a Python-based framework to automate the purging workflow for Hive tables containing data older than 36 months.</p>
+<p>The framework brought the retention rule and cleanup process into a reusable automation solution rather than treating each cleanup as an independent manual task.</p>
+<section id="retention-based-processing" class="level3">
+<h3 class="anchored" data-anchor-id="retention-based-processing">Retention-Based Processing</h3>
+<p>The central rule was straightforward:</p>
+<blockquote class="blockquote">
+<p>Data older than 36 months becomes eligible for purging under the applicable retention requirements.</p>
+</blockquote>
+<p>The retention period applies to the age of the data, rather than automatically treating a table’s creation date as the age of every record it contains.</p>
+</section>
+<section id="automated-housekeeping" class="level3">
+<h3 class="anchored" data-anchor-id="automated-housekeeping">Automated Housekeeping</h3>
+<p>The framework automated recurring purging activities, reducing the need for administrators to repeat the same cleanup steps manually.</p>
+<p>This provided a consistent approach to handling expired data across the Hive tables covered by the framework.</p>
+</section>
+<section id="reusable-python-framework" class="level3">
+<h3 class="anchored" data-anchor-id="reusable-python-framework">Reusable Python Framework</h3>
+<p>Using a framework-based approach made the automation easier to maintain than a collection of separate, one-time cleanup scripts.</p>
+<p>The work focused on turning a recurring administrative requirement into a repeatable operational workflow.</p>
+</section>
+</section>
+<section id="workflow-overview" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-overview">3. Workflow Overview</h2>
+<p>The following summarizes the purpose of the framework at a high level, rather than documenting its internal implementation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Retention scope</td>
+<td style="text-align: left;">Define the Hive data covered by the 36-month retention requirement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Eligibility assessment</td>
+<td style="text-align: left;">Identify data older than the retention threshold</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Purging</td>
+<td style="text-align: left;">Execute cleanup for the eligible data within scope</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ongoing operation</td>
+<td style="text-align: left;">Repeat the retention-based housekeeping process</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results-and-operational-impact" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-operational-impact">4. Results and Operational Impact</h2>
+<p>The framework established an automated approach to Hive data-retention housekeeping.</p>
+<p>Its operational value included:</p>
+<ul>
+<li>Reduced repetitive manual intervention.</li>
+<li>More consistent application of the 36-month retention rule.</li>
+<li>A reusable process for recurring cleanup.</li>
+<li>Support for managing obsolete historical data.</li>
+<li>A foundation for maintaining retention-based housekeeping as operational requirements evolve.</li>
+</ul>
+<p>The project also supported storage-reclamation objectives by addressing data no longer required under the retention rule.</p>
+<p>No specific storage-saving figure, execution-time reduction, or query performance improvement is claimed here because those outcomes were not separately quantified.</p>
+</section>
+<section id="key-achievement" class="level2">
+<h2 class="anchored" data-anchor-id="key-achievement">5. Key Achievement</h2>
+<p>Developed a Python-based Hive purging framework that automated the cleanup of data older than 36 months.</p>
+<p>The achievement combined scripting and operational automation to simplify recurring administration and support consistent data-retention management.</p>
+</section>
+<section id="technologies" class="level2">
+<h2 class="anchored" data-anchor-id="technologies">Technologies</h2>
+<p>Python · Apache Hive · Hadoop Ecosystem</p>
+<hr>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <!-- Site-wide floating link to the rendered feedback page. -->
@@ -789,7 +929,7 @@ ul.task-list li input[type="checkbox"] {
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/danish297">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="GitHub profile">
 </i> 
     </a>
   </li>  

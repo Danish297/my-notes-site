@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Share feedback, report an issue, or suggest a topic.">
+<meta name="description" content="How I built a menu-driven framework that reduced weekly database cloning execution time from 11 hours to 6.5 hours.">
 
-<title>Feedback – D@n!$h297</title>
+<title>Automating Oracle Database Recovery and Cloning – D@n!$h297</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,11 +79,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="feedback.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -265,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/11g_Unknown_facts.html"> 
+    <a class="nav-link active" href="../notes/11g_Unknown_facts.html" aria-current="page"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -291,24 +289,92 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Automating Oracle Database Recovery and Cloning</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/11g_Unknown_facts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11g Unknown facts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/12c_new_features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12c New Features</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/19c_vs_23ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19c vs.&nbsp;23ai for DBAs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/NewOracleDB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NewOracleDB</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link active" data-scroll-target="#the-challenge">The Challenge</a></li>
+  <li><a href="#the-solution-one-framework-two-execution-modes" id="toc-the-solution-one-framework-two-execution-modes" class="nav-link" data-scroll-target="#the-solution-one-framework-two-execution-modes">The Solution: One Framework, Two Execution Modes</a>
+  <ul class="collapse">
+  <li><a href="#interactive-mode-select-the-operations-you-need" id="toc-interactive-mode-select-the-operations-you-need" class="nav-link" data-scroll-target="#interactive-mode-select-the-operations-you-need">Interactive Mode: Select the Operations You Need</a></li>
+  <li><a href="#non-interactive-mode-run-the-complete-workflow" id="toc-non-interactive-mode-run-the-complete-workflow" class="nav-link" data-scroll-target="#non-interactive-mode-run-the-complete-workflow">Non-Interactive Mode: Run the Complete Workflow</a></li>
+  </ul></li>
+  <li><a href="#results-from-11-hours-to-6.5-hours" id="toc-results-from-11-hours-to-6.5-hours" class="nav-link" data-scroll-target="#results-from-11-hours-to-6.5-hours">Results: From 11 Hours to 6.5 Hours</a></li>
+  <li><a href="#operational-impact" id="toc-operational-impact" class="nav-link" data-scroll-target="#operational-impact">Operational Impact</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Feedback</h1>
+<h1 class="title">Automating Oracle Database Recovery and Cloning</h1>
 </div>
 
 <div>
   <div class="description">
-    Share feedback, report an issue, or suggest a topic.
+    How I built a menu-driven framework that reduced weekly database cloning execution time from 11 hours to 6.5 hours.
   </div>
 </div>
 
@@ -325,84 +391,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="fb-page">
-  <!-- Introduction and privacy guidance remain visible without JavaScript. -->
-  <div class="fb-intro">
-    <span class="fb-eyebrow">HELP IMPROVE THIS SITE</span>
-    <h2 class="anchored">Your experience matters.</h2>
-    <p>Found something useful, spotted a problem, or have an idea? Share what worked and what could be better.</p>
-    <ul class="fb-badges"><li>Contact details optional</li><li>No account needed</li><li>Only relevant details</li></ul>
-  </div>
-  <div class="fb-layout">
-    <div class="fb-aside" role="note" aria-label="Before you start">
-      <h2 class="anchored">A quick note</h2>
-      <p>Fields marked “required” must be completed. Everything else is optional.</p>
-      <p>Please do not include passwords, API keys, financial details, private client information, or sensitive logs.</p>
-      <p>For evidence, share a safe, redacted link. File uploads are not enabled.</p>
-      <p>Do not submit vulnerability details here. A private security reporting channel must be established separately.</p>
-    </div>
-    <!-- Set data-endpoint to an HTTPS receiver supporting this form's fields.
-         Keep it empty until server validation, privacy terms and spam controls are ready.
-         Native POST navigation lets the receiver own confirmed success/failure pages. -->
-    <form id="feedback-form" class="fb-form" method="post" data-endpoint="" aria-describedby="fb-status">
-      <p id="fb-status" class="fb-notice" role="status">Preview mode: sending is not configured. Your entries are not sent by this form.</p>
-      <noscript><p>JavaScript is required to enable this form. No submission is available without it.</p></noscript>
-      <!-- Disabled until the script attaches its submission guard. -->
-      <fieldset id="fb-controls" disabled="">
-        <legend>1. What would you like to share?</legend>
-
-<div class="fb-field"><label for="fb-category">Feedback type (required)</label><select id="fb-category" name="category" required=""><option value="">Choose an option</option><option value="general">General feedback</option><option value="praise">Something I liked</option><option value="suggestion">Improvement or feature suggestion</option><option value="bug">Bug or technical issue</option><option value="correction">Content correction or broken link</option><option value="topic">Request a topic or tutorial</option><option value="accessibility">Accessibility issue</option><option value="privacy">Privacy concern (no sensitive details)</option><option value="other">Something else</option></select></div>
-<div class="fb-field"><label for="fb-subject">Short summary (required)</label><input id="fb-subject" name="subject" type="text" required="" maxlength="160"></div>
-<div class="fb-field"><label for="fb-message">Tell me more (required)</label><textarea id="fb-message" name="message" rows="5" maxlength="5000" required=""></textarea><small>Maximum 5,000 characters.</small></div>
-<div class="fb-field"><label for="fb-page_url">Page URL related to your feedback</label><input id="fb-page_url" name="page_url" type="url" maxlength="2048" placeholder="https://…"></div>
-<details class="fb-details"><summary>Ratings and interests (optional)</summary><div class="fb-grid">
-<div class="fb-field"><label for="fb-overall">Overall experience</label><select id="fb-overall" name="overall"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-usefulness">Content usefulness</label><select id="fb-usefulness" name="usefulness"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-navigation">Ease of navigation</label><select id="fb-navigation" name="navigation"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-speed">Loading speed</label><select id="fb-speed" name="speed"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-<div class="fb-field"><label for="fb-design">Design and readability</label><select id="fb-design" name="design"><option value="">Choose an option</option><option value="1">1 — Very poor</option><option value="2">2 — Poor</option><option value="3">3 — Okay</option><option value="4">4 — Good</option><option value="5">5 — Excellent</option></select></div>
-</div><fieldset class="fb-topics"><legend>Topics you are interested in</legend>
-<label class="fb-check"><input type="checkbox" name="topics" value="ai"> <span>AI and local LLMs</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="vision"> <span>Computer vision</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="oracle"> <span>Oracle Database and EBS</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="cloud"> <span>Cloud technologies</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="containers"> <span>Kubernetes and OpenShift</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="automation"> <span>Automation and scripting</span></label>
-<label class="fb-check"><input type="checkbox" name="topics" value="other"> <span>Other</span></label>
-</fieldset></details>
-<!-- Technical details are optional and never collected automatically. -->
-<details class="fb-details"><summary>Issue details (for bugs, corrections, or accessibility problems)</summary>
-<div class="fb-field"><label for="fb-steps">Steps to reproduce the problem</label><textarea id="fb-steps" name="steps" rows="5" maxlength="3000"></textarea><small>Maximum 3,000 characters.</small></div>
-<div class="fb-field"><label for="fb-expected">What did you expect?</label><textarea id="fb-expected" name="expected" rows="5" maxlength="2000"></textarea><small>Maximum 2,000 characters.</small></div>
-<div class="fb-field"><label for="fb-actual">What actually happened?</label><textarea id="fb-actual" name="actual" rows="5" maxlength="2000"></textarea><small>Maximum 2,000 characters.</small></div>
-<div class="fb-grid">
-<div class="fb-field"><label for="fb-impact">How much does this affect you?</label><select id="fb-impact" name="impact"><option value="">Choose an option</option><option value="minor">Minor inconvenience</option><option value="workaround">Disruptive, but I have a workaround</option><option value="blocked">I cannot complete what I came to do</option></select></div>
-<div class="fb-field"><label for="fb-frequency">How often does it happen?</label><select id="fb-frequency" name="frequency"><option value="">Choose an option</option><option value="once">Once</option><option value="sometimes">Sometimes</option><option value="always">Every time</option></select></div>
-<div class="fb-field"><label for="fb-browser">Browser</label><select id="fb-browser" name="browser"><option value="">Choose an option</option><option value="Safari">Safari</option><option value="Microsoft Edge">Microsoft Edge</option><option value="Google Chrome">Google Chrome</option><option value="Mozilla Firefox">Mozilla Firefox</option><option value="Opera">Opera</option><option value="Other">Other</option><option value="Not sure">Not sure</option></select></div>
-<div class="fb-field"><label for="fb-browser_version">Browser version</label><input id="fb-browser_version" name="browser_version" type="text" maxlength="80"></div>
-<div class="fb-field"><label for="fb-device">Device type</label><select id="fb-device" name="device"><option value="">Choose an option</option><option value="desktop">Desktop</option><option value="laptop">Laptop</option><option value="tablet">Tablet</option><option value="phone">Phone</option><option value="other">Other / not sure</option></select></div>
-<div class="fb-field"><label for="fb-os">Operating system and version</label><input id="fb-os" name="os" type="text" maxlength="120"></div>
-<div class="fb-field"><label for="fb-theme">Site appearance</label><select id="fb-theme" name="theme"><option value="">Choose an option</option><option value="light">Light</option><option value="dark">Dark</option><option value="unknown">Not sure</option></select></div>
-<div class="fb-field"><label for="fb-assistive_technology">Assistive technology or zoom setting, if relevant</label><input id="fb-assistive_technology" name="assistive_technology" type="text" maxlength="160"></div>
+<p>I designed and implemented a menu-driven Oracle Database recovery and cloning framework to replace repetitive manual procedures with a centralized, standardized workflow.</p>
+<p>The result: <strong>approximately 41% less execution time</strong>, reducing weekly database cloning from 11 hours to 6.5 hours and saving 4.5 hours each week.</p>
+<section id="the-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-challenge">The Challenge</h2>
+<p>Database recovery and cloning involved multiple manual steps, operational dependencies, and repeated intervention. Administrators had to manage several related operations separately, increasing the effort required to complete the overall workflow.</p>
+<p>The main challenges were:</p>
+<ul>
+<li>Repeating the same recovery and cloning procedures each week.</li>
+<li>Coordinating individual operations and their dependencies.</li>
+<li>Maintaining consistent execution across multiple steps.</li>
+<li>Reducing opportunities for human error during repetitive tasks.</li>
+</ul>
+<p>I wanted a single framework that could support both selective execution and a complete cloning workflow without requiring administrators to repeat the same manual sequence.</p>
+</section>
+<section id="the-solution-one-framework-two-execution-modes" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-one-framework-two-execution-modes">The Solution: One Framework, Two Execution Modes</h2>
+<p>I developed a centralized menu-driven framework with interactive and non-interactive execution modes.</p>
+<p>Both modes use standardized execution flows, input handling, and reusable automation logic. The distinction is how much control the administrator needs over the individual steps.</p>
+<section id="interactive-mode-select-the-operations-you-need" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-mode-select-the-operations-you-need">Interactive Mode: Select the Operations You Need</h3>
+<p>Interactive mode allows the administrator to choose individual operations or select several operations together.</p>
+<p>The available operations include:</p>
+<ol type="1">
+<li>Database restore and recovery for cloning.</li>
+<li>SPFILE migration to ASM.</li>
+<li>Archive log configuration for local file systems and ASM.</li>
+<li>RAC conversion.</li>
+<li>RAC verification.</li>
+</ol>
+<p>Administrators can enter comma-separated selections, such as <code>1,2,3</code>, or use <code>all</code> to select all five operations.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/oracle-interactive-menu.jpg" class="img-fluid figure-img" style="width:100.0%" alt="Terminal screenshots showing the main menu and an interactive menu with restore and recovery, SPFILE migration, archive log configuration, RAC conversion, and RAC verification."></p>
+<figcaption>Main menu and interactive execution options, including comma-separated selections.</figcaption>
+</figure>
 </div>
-<div class="fb-field"><label for="fb-evidence_url">Redacted screenshot or evidence URL</label><input id="fb-evidence_url" name="evidence_url" type="url" maxlength="2048"><small>Only share a link you are authorized to disclose. Review its sharing permissions first.</small></div>
-</details>
-<details class="fb-details"><summary>Your details and follow-up (optional)</summary>
-<p>You can leave name and email blank. An email address is needed only if you request a reply.</p><div class="fb-grid">
-<div class="fb-field"><label for="fb-name">Name or nickname</label><input id="fb-name" name="name" type="text" maxlength="100" autocomplete="name"></div>
-<div class="fb-field"><label for="fb-email">Email address</label><input id="fb-email" name="email" type="email" maxlength="254" autocomplete="email"></div>
-</div><label class="fb-check"><input id="fb-reply" type="checkbox" name="reply_requested" value="yes"> <span>I would like a reply about this feedback.</span></label>
-</details>
-<!-- This is an acknowledgement, not marketing permission or a legal privacy policy. -->
-<label class="fb-check fb-ack"><input id="fb-ack" type="checkbox" name="acknowledgement" value="yes" required=""> <span>I have reviewed my message and have not included secrets or sensitive personal information. (required)</span></label>
-<div class="fb-actions"><button id="fb-submit" type="submit" disabled="">Send feedback</button><span id="fb-send-note">Submission unavailable until a receiver is configured.</span></div>
-</fieldset>
-</form>
+<p>This mode provides flexibility when only part of the workflow is required, rather than requiring execution of the complete process.</p>
+</section>
+<section id="non-interactive-mode-run-the-complete-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="non-interactive-mode-run-the-complete-workflow">Non-Interactive Mode: Run the Complete Workflow</h3>
+<p>Non-interactive mode provides a single menu selection to initiate the full workflow, from database restore and recovery through RAC conversion.</p>
+<p>Instead of selecting operations individually, the administrator starts the predefined sequence with one selection, reducing the need for repeated manual intervention.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/oracle-non-interactive-menu.jpg" class="img-fluid figure-img" style="width:100.0%" alt="Terminal screenshots showing selection of non-interactive mode and the option to execute the full workflow from database restore and recovery to RAC conversion."></p>
+<figcaption>Non-interactive mode with a single option to execute the full workflow.</figcaption>
+</figure>
 </div>
+<p>Here, “non-interactive” refers to the execution workflow after the initial menu selection; the framework still presents a menu to start that workflow.</p>
+</section>
+</section>
+<section id="results-from-11-hours-to-6.5-hours" class="level2">
+<h2 class="anchored" data-anchor-id="results-from-11-hours-to-6.5-hours">Results: From 11 Hours to 6.5 Hours</h2>
+<p>The framework reduced weekly database cloning execution time by 4.5 hours—a reduction of approximately 41% compared with the previous 11-hour process.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Measure</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Weekly execution time before automation</td>
+<td style="text-align: right;">11 hours</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weekly execution time after automation</td>
+<td style="text-align: right;">6.5 hours</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time saved each week</td>
+<td style="text-align: right;">4.5 hours</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Execution-time reduction</td>
+<td style="text-align: right;">Approximately 41%</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/attachments/oracle-cloning-results.jpg" class="img-fluid figure-img" style="width:100.0%" alt="Results summary showing weekly database cloning execution time reduced from 11 hours to 6.5 hours, saving 4.5 hours per week, approximately 41 percent."></p>
+<figcaption>Weekly database cloning execution time before and after automation.</figcaption>
+</figure>
 </div>
-<script src="feedback.js" defer=""></script>
+<p>The percentage reduction is calculated against the original execution time:</p>
+<p>[ = % ]</p>
+<p>These figures describe weekly cloning execution time, not a separately measured reduction in hands-on administrator effort.</p>
+</section>
+<section id="operational-impact" class="level2">
+<h2 class="anchored" data-anchor-id="operational-impact">Operational Impact</h2>
+<p>Beyond the measured time saving, the framework changed how the workflow was organized:</p>
+<ul>
+<li>Centralized related database operations behind one menu.</li>
+<li>Reduced repetitive manual intervention during execution.</li>
+<li>Standardized the sequence and handling of common operations.</li>
+<li>Supported both selective execution and a complete workflow.</li>
+<li>Created reusable automation logic for future enhancements.</li>
+</ul>
+<p>Reducing repeated manual steps also reduced opportunities for human error, although error-rate improvements were not separately quantified.</p>
+</section>
+<section id="key-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
+<p>This project turned a multi-step manual Oracle Database recovery and cloning process into a reusable, menu-driven workflow.</p>
+<p>The most significant measured outcome was a reduction in weekly cloning execution time from 11 hours to 6.5 hours. The two execution modes preserved flexibility for individual tasks while simplifying the complete workflow.</p>
+<hr>
+<div class="page-return-links">
+<p><a href="../index.html">Home</a> | <a href="../index.html#achievements">Achievements</a> | <a href="../index.html#featured-notes">Featured Notes</a> | <a href="../index.html#projects">Projects</a> | <a href="../notes/11g_Unknown_facts.html">Notes</a></p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <!-- Site-wide floating link to the rendered feedback page. -->
@@ -837,7 +938,7 @@ ul.task-list li input[type="checkbox"] {
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/danish297">
-      <i class="bi bi-github" role="img">
+      <i class="bi bi-github" role="img" aria-label="GitHub profile">
 </i> 
     </a>
   </li>  

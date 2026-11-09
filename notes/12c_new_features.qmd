@@ -372,6 +372,7 @@ The feature descriptions are based on Oracle's documentation:
 - [Oracle Database 12c SQL Language Reference: CREATE TABLE](https://docs.oracle.com/database/121/SQLRF/statements_7002.htm)
 - [Oracle Database 12c SQL Language Reference: SELECT](https://docs.oracle.com/database/121/SQLRF/statements_10002.htm)
 
+---
 ::: {.page-return-links}
 
 [Home](../index.qmd) | [Achievements](../index.qmd#achievements) | [Featured Notes](../index.qmd#featured-notes) | [Projects](../index.qmd#projects) | [Notes](../notes/11g_Unknown_facts.qmd)
